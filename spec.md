@@ -1,6 +1,4 @@
-# Spec: [Nombre de la Tarea]
-- Objetivo: [Funcionalidad del componente]
-- Stack: Astro, TypeScript, CSS Puro
-- Archivo destino: src/components/[nombre].astro
-- i18n: Catalán base, Castellano referencia
-- DoD: Accesibilidad AA, semántica HTML5, sin frameworks CSS.
+1. Tipo: Estructura básica de la Landing Page.
+2. Tecnologías: Astro + TypeScript + CSS Puro.
+3. Ramas: Sincronización e igualdad entre 'main' y 'dev'.
+4. Objetivo: Validar que los archivos iniciales son correctos en ambas ramas.
