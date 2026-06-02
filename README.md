@@ -1,43 +1,13 @@
-# Astro Starter Kit: Minimal
+# Red3Conecta - Landing Page
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Infraestructura digital compartida construida con el tercer sector, para el tercer sector. Un proyecto impulsado por Factoría F5 y Fundació Formació i Treball, con el soporte de UNADA (Aigües de Barcelona).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🛠️ Especificaciones Técnicas
+- **Framework:** Astro (Plantilla Minimal)
+- **Lenguaje:** TypeScript
+- **Idioma:** Catalán de forma exclusiva (`src/pages/` nativo).
+- **Estilos:** CSS Nativo encapsulado mediante etiquetas `<style>` dentro de cada componente Astro. No se utilizan frameworks de utilidades ni librerías externas de estilos.
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 🌿 Flujo de Git
+- `main`: Rama de producción (Protegida).
+- `dev`: Rama de integración. Los cambios se unifican aquí antes de generar la Pull Request hacia `main`.
