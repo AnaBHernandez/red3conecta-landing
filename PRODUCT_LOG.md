@@ -13,14 +13,14 @@ Bitácora histórica del desarrollo de la landing page de Red3Conecta. Registra 
 
 ---
 
-## 🟢 [HITO 2]: Arquitectura de Estilos y Chasis Base (Sprint 1)
-- **Problema:** Saneamiento de las hojas de estilo base de la diseñadora y maquetación del chasis raíz de la landing de sección única para evitar colapsos visuales y asegurar la navegación nativa por anclas sin usar layouts redundantes.
+## 🟢 [HITO 2]: Arquitectura de Estilos y Chasis Base (Sprint 1 - COMPLETADO)
+- **Problema:** Saneamiento de las hojas de estilo base de la diseñadora y maquetación del chasis raíz de la landing de sección única para evitar colapsos visuales y asegurar la navegación nativa por anclas sin usar layouts redundantes. Bloqueo inicial por error de TypeScript (`Cannot find module '../i18n/ca.json'`).
 - **MVP:**
+  - Creación física del directorio `src/i18n/` y archivo `src/i18n/ca.json` con las claves oficiales en catalán del documento de contenidos de Jesús Rivera.
   - Depuración de sintaxis en `src/styles/global.css`, saneando las llaves de cierre del bloque `:root`.
   - Implementación de resets universales (`*`), comportamiento de desplazamiento suave (`scroll-behavior: smooth`) y offset de anclas (`scroll-margin-top: 80px`) para evitar el solapamiento con el menú fijo corporativo.
-  - Creación del archivo unilingüe de internacionalización `src/i18n/ca.json` con los literales oficiales para `nav` y `footer` extraídos del documento de contenidos aprobado por Jesús Rivera.
   - Maquetación del chasis raíz semántico en `src/pages/index.astro` con atributo `lang="ca"` obligado para cumplir con la accesibilidad WCAG AA.
-- **QA-IA:** Sintaxis de cascada CSS validada y pruebas de tipado de datos estáticos completadas con éxito en el frontmatter de Astro sin errores de compilación (`npm run dev`).
+- **QA-IA:** Sintaxis de cascada CSS y módulo JSON validados. El entorno en la rama `dev` compila al 100% sin errores de tipado o archivos faltantes mediante `npm run build`. El árbol de directorios locales cumple de forma estricta las líneas rojas de Paula.
 
 ---
 
