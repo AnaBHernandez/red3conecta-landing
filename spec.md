@@ -1,6 +1,8 @@
-# Spec: [Nombre de la Tarea]
-- Objetivo: [Funcionalidad del componente]
-- Stack: Astro, TypeScript, CSS Puro
-- Archivo destino: src/components/[nombre].astro
-- i18n: Catalán base, Castellano referencia
-- DoD: Accesibilidad AA, semántica HTML5, sin frameworks CSS.
+- **Objetivo**: Crear `Navbar.astro` semántico, responsivo, adaptado a entidad social.
+- **Ruta**: `src/components/Navbar.astro`
+- **Contenido**: Logo `Red3Conecta`, enlaces de navegación y botón CTA dinámico.
+- **i18n**: Consumir textos desde `src/i18n/ca.json` (`t.navbar`).
+- **CSS**: Scoped, CSS puro, variables `:root`, sin frameworks de estilos.
+- **Accesibilidad**: `nav` semántico, `aria-label`, contraste WCAG AA.
+- **Responsivo**: Menú colapsable/hamburguesa mediante CSS/JS nativo.
+- **Git**: Rama activa `feature/navbar`. Bloqueo estricto de `main`.

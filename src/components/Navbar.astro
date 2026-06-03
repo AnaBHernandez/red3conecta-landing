@@ -1,0 +1,115 @@
+---
+// 1. Importamos el diccionario en catalán para cumplir con la internacionalización (i18n)
+import t from '../i18n/ca.json';
+---
+
+<nav class="navbar" aria-label="Navegació principal">
+  <div class="navbar__container">
+    <a href="/" class="navbar__logo">
+      Red3<span class="logo__accent">Conecta</span>
+    </a>
+
+    <button class="navbar__toggle" aria-expanded="false" aria-label="Obrir menú de navegació">
+      <span class="toggle__bar"></span>
+      <span class="toggle__bar"></span>
+      <span class="toggle__bar"></span>
+    </button>
+
+    <div class="navbar__menu">
+      <ul class="navbar__list">
+        <li><a href="#why" class="navbar__link">{t.nav.why}</a></li>
+        <li><a href="#challenges" class="navbar__link">{t.nav.challenges}</a></li>
+        <li><a href="#ally" class="navbar__link">{t.nav.ally}</a></li>
+        <li><a href="#ecosystem" class="navbar__link">{t.nav.ecosystem}</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  /* ============================================================
+     DESIGN TOKENS — Sincronizado con el global.css de Paula
+     ============================================================ */
+  .navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--color-white, #ffffff);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .navbar__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-w-2xl, 1280px);
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .navbar__logo {
+    font-size: var(--text-md, 1.25rem);
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--color-black, #000000);
+  }
+
+  .logo__accent {
+    color: var(--color-light-brown, #edcfa6); 
+  }
+
+  .navbar__list {
+    display: flex;
+    list-style: none;
+    gap: var(--space-8, 32px);
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar__link {
+    text-decoration: none;
+    color: var(--color-black, #000000);
+    font-size: var(--text-base, 1rem);
+    font-weight: 500;
+    transition: color var(--transition-fast, 150ms ease);
+  }
+
+  .navbar__link:hover {
+    color: var(--color-light-brown, #edcfa6);
+  }
+
+  .navbar__menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar__toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    padding: var(--space-1, 4px);
+  }
+
+  .toggle__bar {
+    width: 24px;
+    height: 3px;
+    background-color: var(--color-black, #000000);
+  }
+
+  /* Vista de escritorio forzada para desarrollo */
+  @media (max-width: 768px) {
+    .navbar__toggle {
+      display: flex;
+    }
+    .navbar__list {
+      flex-direction: column;
+      gap: var(--space-4, 16px);
+    }
+  }
+</style>
