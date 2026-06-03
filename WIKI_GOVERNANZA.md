@@ -3,13 +3,10 @@
 Este documento actúa como la fuente única de verdad para el desarrollo, estándares de código y políticas de integración del equipo.
 
 ## 👥 Equipo y Matriz de Roles Híbrida (Multi-IA)
-- **Ana Belén (Scrum Master):** Facilitadora, controladora del flujo de Git y propietaria de las decisiones lógicas.
+- **Ana Belén (Scrum Master):** Facilitadora, controladora del flujo de Git, propietaria de las decisiones lógicas y encargada de la revisión e integración final de Pull Requests.
 - **Paula (Gestora de Proyecto):** Coordinación general, diseño conceptual y plazos de entrega.
-- **Cynthia (Desarrolladora Frontend):** Maquetación semántica y CSS puro.
-- **Jessica (Desarrolladora Frontend & QA):** Auditoría técnica, pruebas de responsive/i18n en local y aprobaciones de Pull Requests.
-- **Gemini (Nube):** Arquitecto Senior y Mentor (Validación de lógica, Specs y Red Teaming).
-- **Claude (Nube):** Especialista en Refactorización Avanzada y Accesibilidad (WCAG AA).
-- **Ollama (Local en VS Code):** Ejecutor atómico (Generación de código repetitivo, autocompletado y ahorro de tokens).
+- **Cintia (Desarrolladora Frontend):** Maquetación semántica y CSS puro (Usuario de GitHub: @Zebdon).
+- **Jessica (Desarrolladora Frontend):** Maquetación de componentes visuales asignados e i18n en catalán.
 
 ## 🛑 Líneas Rojas del Desarrollo
 1. **Protección de Ramas:** Queda prohibido hacer push directo a `main`. Todo el trabajo de Sprints se integra en `dev`.

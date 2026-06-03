@@ -43,10 +43,20 @@ Bitácora histórica del desarrollo de la landing page de Red3Conecta. Registra 
 
 ---
 
-## 🟢 [HITO 5]: Integración Modular y Apertura del Ciclo de QA (Sprint 1 - COMPLETADO)
+## 🟢 [HITO 5]: Apertura del Ciclo de QA e Inclusión del Equipo (Sprint 1 - COMPLETADO)
 - **Problema:** Necesidad de unificar el componente dinámico `<Navbar />` dentro del chasis estructural definitivo y aislar los envíos en el servidor remoto de GitHub, evitando alteraciones accidentales de la rama común de desarrollo (`dev`) antes de pasar la auditoría interna.
 - **MVP:**
   - Sustitución del menú HTML plano manual por la inyección limpia del componente modular `<Navbar />` en `index.astro`.
   - Saneamiento y limpieza de la rama local `dev` mediante el comando `git restore` para asegurar la neutralidad del repositorio.
-  - Sincronización masiva de los cambios en la rama de trabajo aislada `feature/navbar` y apertura formal de la **Pull Request (PR)** dirigida hacia la rama `dev`.
-- **QA-IA:** Flujo Git Flow cerrado con éxito por parte de la Scrum Master. El código queda en estado "En Revisión" en la Wiki, transfiriendo el relevo a Jessica (QA) para la verificación física del comportamiento responsivo e i18n en su máquina local antes de autorizar el *merge*.
+  - Sincronización masiva de los cambios en la rama de trabajo aislada `feature/navbar` y apertura formal de la **Pull Request (PR #28)** dirigida hacia la rama `dev`.
+- **QA-IA:** Flujo Git Flow cerrado con éxito por parte de la Scrum Master. El código queda en estado de revisión visual, alineando el proceso con el acuerdo de simplificación de herramientas del equipo.
+
+---
+
+## 🟢 [HITO 6]: Integración Definitiva de la Navbar y Cierre del Sprint 1 (Sprint 1 - COMPLETADO)
+- **Problema:** Consolidación final del código de la cabecera en el servidor remoto. El botón de fusión requería una auditoría limpia, la desvinculación de bloqueos técnicos para perfiles sin terminal y el registro oficial en el histórico del proyecto.
+- **MVP:**
+  - Ejecución profesional del *Merge* de la Pull Request #28 directamente desde la interfaz web de GitHub como Administradora de la organización.
+  - Sincronización de un commit de fusión unificado en el Git Log histórico de la rama de integración.
+  - Reestructuración estratégica y consenso del reparto de los 8 componentes de diseño del Figma para los Sprints 2 y 3.
+- **QA-IA:** Fusión completada con éxito al 100% sin conflictos de código. El contador del repositorio remoto confirma de manera exacta la inserción del doceavo commit de ventaja sobre la rama base (`main`). El chasis superior queda blindado y disponible para el equipo.
