@@ -5,9 +5,9 @@ Bitácora histórica del desarrollo de la landing page de Red3Conecta. Registra 
 ---
 
 ## 🟢 [HITO 1]: Establecimiento de la Gobernanza y Ecosistema de Orquestación (Sprint 1)
-- [cite_start]**Problema:** Necesidad de migrar del enfoque de servidor Express antiguo a una arquitectura estática moderna con Astro[cite: 502], aislar dependencias correctamente, fijar estándares visuales y coordinar un entorno de trabajo híbrido con modelos de IA en local para optimizar el consumo de tokens.
-- [cite_start]**MVP:** - Definición del flujo Git Flow simplificado en la rama de integración `dev`[cite: 561, 570].
-  - [cite_start]Creación de la política de nombres de ramas de tareas bajo el formato `feature/*`[cite: 570, 572].
+- **Problema:** Necesidad de migrar del enfoque de servidor Express antiguo a una arquitectura estática moderna con Astro, aislar dependencias correctamente, fijar estándares visuales y coordinar un entorno de trabajo híbrido con modelos de IA en local para optimizar el consumo de tokens.
+- **MVP:** - Definición del flujo Git Flow simplificado en la rama de integración `dev`.
+  - Creación de la política de nombres de ramas de tareas bajo el formato `feature/*`.
   - Establecimiento del modelo híbrido de desarrollo y orquestación del proyecto (Ana Belén + Gemini + Claude + Ollama).
 - **QA-IA:** Verificación del aislamiento de `node_modules` mediante el archivo oculto `.gitignore` en la raíz del espacio de trabajo.
 
@@ -33,9 +33,20 @@ Bitácora histórica del desarrollo de la landing page de Red3Conecta. Registra 
 
 ---
 
-## 🟢 [HITO 4]: Componente de Navegación Semántico y Accesible (Sprint 1 - COMPLETADO)
-- **Problema:** Necesidad de implementar un menú de navegación fijo, responsivo y adaptado para el tercer sector, asegurando que no contenga textos fijos (hardcoded) y cumpla con las pautas de accesibilidad WCAG AA para lectores de pantalla.
-- **MVP:** - Creación de `src/components/Navbar.astro` estructurado con la etiqueta semántica `<nav>` y atributos de accesibilidad (`aria-label`, `aria-expanded`).
-  - Vinculación e integración completa de los textos del menú y botones dinámicos mediante el archivo de traducción unilingüe en catalán `src/i18n/ca.json`.
-  - Inclusión de estilos Scoped nativos para el comportamiento responsivo (menú colapsable/hamburguesa) y script de interacción ultra-ligero sin dependencias externas.
-- **QA-IA:** Validación semántica y de accesibilidad completada. El código no contiene clases de Tailwind o Bootstrap. La integración con el diccionario i18n evita rupturas de tipado en TypeScript.
+## 🟢 [HITO 4]: Alineación de Design Tokens y Desbloqueo de Cascada CSS (Sprint 1 - COMPLETADO)
+- **Problema:** Colapso visual en el servidor de desarrollo local (`http://localhost:4321`). El componente `Navbar.astro` ignoraba los estilos globales debido a una desalineación de nombres de variables CSS y a un error de sintaxis en la primera línea de `global.css`, donde la falta de un salto de línea limpio unía el bloque de comentarios corporativos de Paula con la apertura del `:root`.
+- **MVP:**
+  - Refactorización atómica de los estilos encapsulados de la Navbar para consumir estrictamente los tokens oficiales de Paula (`--color-white`, `--color-black`, `--color-light-brown`, etc.).
+  - Corrección sintáctica del archivo `src/styles/global.css`, aplicando un espaciado limpio para habilitar el parseo correcto de las propiedades `:root`.
+  - Vinculación explícita e importación del archivo de estilos globales en el *frontmatter* de `src/pages/index.astro`.
+- **QA-IA:** Compilación local exitosa. Verificación visual en navegador de la correcta aplicación del esquema de color cálido, tipografías estructuradas y pseudo-clases (`:hover`) corporativas sobre el componente.
+
+---
+
+## 🟢 [HITO 5]: Integración Modular y Apertura del Ciclo de QA (Sprint 1 - COMPLETADO)
+- **Problema:** Necesidad de unificar el componente dinámico `<Navbar />` dentro del chasis estructural definitivo y aislar los envíos en el servidor remoto de GitHub, evitando alteraciones accidentales de la rama común de desarrollo (`dev`) antes de pasar la auditoría interna.
+- **MVP:**
+  - Sustitución del menú HTML plano manual por la inyección limpia del componente modular `<Navbar />` en `index.astro`.
+  - Saneamiento y limpieza de la rama local `dev` mediante el comando `git restore` para asegurar la neutralidad del repositorio.
+  - Sincronización masiva de los cambios en la rama de trabajo aislada `feature/navbar` y apertura formal de la **Pull Request (PR)** dirigida hacia la rama `dev`.
+- **QA-IA:** Flujo Git Flow cerrado con éxito por parte de la Scrum Master. El código queda en estado "En Revisión" en la Wiki, transfiriendo el relevo a Jessica (QA) para la verificación física del comportamiento responsivo e i18n en su máquina local antes de autorizar el *merge*.

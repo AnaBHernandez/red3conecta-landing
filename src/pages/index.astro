@@ -1,7 +1,7 @@
 ---
-// Importación de estilos globales y diccionario en Catalán
 import '../styles/global.css';
 import t from '../i18n/ca.json';
+import Navbar from '../components/Navbar.astro';
 ---
 
 <!DOCTYPE html>
@@ -13,14 +13,7 @@ import t from '../i18n/ca.json';
 </head>
 <body>
 
-    <header>
-        <nav class="navbar-placeholder">
-            <a href="#why">{t.nav.why}</a>
-            <a href="#challenges">{t.nav.challenges}</a>
-            <a href="#ally">{t.nav.ally}</a>
-            <a href="#ecosystem">{t.nav.ecosystem}</a>
-        </nav>
-    </header>
+    <Navbar />
 
     <main>
         <section id="why"></section>
@@ -29,8 +22,8 @@ import t from '../i18n/ca.json';
         <section id="ecosystem"></section>
     </main>
 
-    <footer>
-        <div class="footer-content">
+    <footer class="footer">
+        <div class="footer__content">
             <p>{t.footer.collab}</p>
             <small>{t.footer.rights}</small>
         </div>
