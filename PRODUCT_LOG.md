@@ -30,3 +30,12 @@ Bitácora histórica del desarrollo de la landing page de Red3Conecta. Registra 
   - Preservación íntegra de los archivos físicos de documentación creados en el espacio de trabajo local.
   - Reempaquetado y confirmación del commit con el mensaje de control redactado estrictamente en español.
 - **QA-IA:** Verificación del árbol de Git limpia. Los archivos `PRODUCT_LOG.md` y `WIKI_GOVERNANZA.md` han pasado con éxito al histórico de la rama `dev`.
+
+---
+
+## 🟢 [HITO 4]: Componente de Navegación Semántico y Accesible (Sprint 1 - COMPLETADO)
+- **Problema:** Necesidad de implementar un menú de navegación fijo, responsivo y adaptado para el tercer sector, asegurando que no contenga textos fijos (hardcoded) y cumpla con las pautas de accesibilidad WCAG AA para lectores de pantalla.
+- **MVP:** - Creación de `src/components/Navbar.astro` estructurado con la etiqueta semántica `<nav>` y atributos de accesibilidad (`aria-label`, `aria-expanded`).
+  - Vinculación e integración completa de los textos del menú y botones dinámicos mediante el archivo de traducción unilingüe en catalán `src/i18n/ca.json`.
+  - Inclusión de estilos Scoped nativos para el comportamiento responsivo (menú colapsable/hamburguesa) y script de interacción ultra-ligero sin dependencias externas.
+- **QA-IA:** Validación semántica y de accesibilidad completada. El código no contiene clases de Tailwind o Bootstrap. La integración con el diccionario i18n evita rupturas de tipado en TypeScript.
