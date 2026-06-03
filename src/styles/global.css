@@ -1,28 +1,121 @@
-/* Variables Globales de Diseño Corporativo */
+/* ============================================================
+   DESIGN TOKENS — global.css
+   Importar en el layout base: import './global.css'
+   o en astro.config si se usa como hoja global.
+   ============================================================ */
+
 :root {
-  --color-crema: #fdfbf7;
-  --color-marron: #4a3b32;
-  --color-marron-claro: #8c7565;
-  --color-texto: #2d2520;
-  --alto-navbar: 80px;
-}
 
-/* Resets Universales y Comportamiento de Scroll */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  /* ----------------------------------------------------------
+     COLORES
+     Uso: var(--color-<nombre>)
+  ---------------------------------------------------------- */
 
-html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background-color: var(--color-crema);
-  color: var(--color-texto);
-  scroll-behavior: smooth;
-}
+  /* Paleta cálida principal */
+  --color-light-brown:  rgb(237, 207, 176); /* fondos destacados, cards cálidas, hover suave      */
+  --color-dark-cream:   rgb(241, 229, 217); /* fondo de secciones secundarias, bordes suaves       */
+  --color-light-cream:  rgb(252, 242, 227); /* fondo de página principal, áreas de lectura         */
 
-/* Corrección de Solapamiento para Navegación por Anclas */
-section {
-  scroll-margin-top: var(--alto-navbar);
-  padding: 4rem 2rem;
+  /* Neutros básicos */
+  --color-white:  rgb(255, 255, 255);       /* fondos puros, modales, tooltips                     */
+  --color-black:  rgb(0,   0,   0);         /* texto de máximo contraste, iconos, bordes definidos */
+
+
+  /* ----------------------------------------------------------
+     TIPOGRAFÍA — tamaños de fuente (escala modular ×1.25)
+     Uso: var(--text-<nivel>)
+  ---------------------------------------------------------- */
+
+  --text-xs:   0.64rem;   /*  ~10px — etiquetas, badges, metadata secundaria      */
+  --text-sm:   0.8rem;    /*  ~13px — captions, notas al pie, texto de ayuda      */
+  --text-base: 1rem;      /*  ~16px — cuerpo de texto, párrafos, inputs           */
+  --text-md:   1.25rem;   /*  ~20px — subtítulos, lead paragraphs, cards          */
+  --text-lg:   1.563rem;  /*  ~25px — títulos de sección (h3, h4)                 */
+  --text-xl:   1.953rem;  /*  ~31px — títulos de bloque (h2)                      */
+  --text-2xl:  2.441rem;  /*  ~39px — títulos de página (h1)                      */
+  --text-3xl:  3.052rem;  /*  ~49px — heroes, titulares de impacto                */
+
+
+  /* ----------------------------------------------------------
+     INTERLINEADO (line-height)
+     Uso: var(--leading-<tipo>)
+  ---------------------------------------------------------- */
+
+  --leading-tight:  1.2;   /* titulares grandes, display text                     */
+  --leading-snug:   1.35;  /* subtítulos, cards cortas                            */
+  --leading-base:   1.6;   /* párrafos de cuerpo — óptimo para lectura            */
+  --leading-loose:  1.85;  /* texto legal, notas, accesibilidad aumentada         */
+
+
+  /* ----------------------------------------------------------
+     ESPACIADO — padding, margin, gap (escala ×2 base 4px)
+     Uso: var(--space-<nivel>)
+  ---------------------------------------------------------- */
+
+  --space-1:   4px;   /* micro-gap: separación entre icono y label, dot indicators  */
+  --space-2:   8px;   /* gap interno de chips, badges, spacing entre líneas densas  */
+  --space-3:  12px;   /* padding de inputs pequeños, gap de listas compactas        */
+  --space-4:  16px;   /* padding base de botones y campos de formulario             */
+  --space-5:  20px;   /* padding de cards pequeñas, gap entre elementos inline      */
+  --space-6:  24px;   /* padding de cards estándar, gap de grids compactos          */
+  --space-8:  32px;   /* separación entre secciones menores, padding de modales     */
+  --space-10: 40px;   /* padding de secciones internas, gap de grids de contenido   */
+  --space-12: 48px;   /* separación entre bloques de contenido relacionado          */
+  --space-16: 64px;   /* padding de secciones principales (py de <section>)         */
+  --space-20: 80px;   /* separación entre secciones independientes                  */
+  --space-24: 96px;   /* márgenes de hero, secciones de gran respiro visual         */
+  --space-32: 128px;  /* separación máxima entre bloques de página (full sections)  */
+
+
+  /* ----------------------------------------------------------
+     BORDES — radios y grosores
+     Uso: var(--radius-<nivel>) / var(--border-<grosor>)
+  ---------------------------------------------------------- */
+
+  --radius-sm:   4px;   /* inputs, badges, chips — bordes ligeramente redondeados  */
+  --radius-md:   8px;   /* cards, dropdowns, botones estándar                      */
+  --radius-lg:  16px;   /* cards destacadas, modales, paneles                      */
+  --radius-xl:  24px;   /* componentes con mucho radio, imágenes decorativas        */
+  --radius-full: 9999px; /* pastillas (pills), avatares, toggles circulares         */
+
+  --border-thin:   1px; /* separadores sutiles, divisores dentro de componentes    */
+  --border-base:   2px; /* borde de inputs en foco, cards con énfasis              */
+  --border-thick:  4px; /* bordes de acento, highlight lateral (left-border)       */
+
+
+  /* ----------------------------------------------------------
+     SOMBRAS
+     Uso: var(--shadow-<nivel>)
+  ---------------------------------------------------------- */
+
+  --shadow-sm:  0 1px  3px  rgba(0,0,0,.08);  /* elevación mínima: chips, badges        */
+  --shadow-md:  0 4px  12px rgba(0,0,0,.10);  /* cards, dropdowns, tooltips             */
+  --shadow-lg:  0 8px  24px rgba(0,0,0,.12);  /* modales, drawers, elementos flotantes  */
+  --shadow-xl:  0 16px 48px rgba(0,0,0,.16);  /* overlays, hero cards de impacto        */
+
+
+  /* ----------------------------------------------------------
+     TRANSICIONES
+     Uso: var(--transition-<velocidad>)
+  ---------------------------------------------------------- */
+
+  --transition-fast:   150ms ease;      /* micro-interacciones: hover de icono, check    */
+  --transition-base:   250ms ease;      /* hover de botones, cards, cambios de color     */
+  --transition-slow:   400ms ease;      /* apertura de modales, expansiones de acordeón  */
+  --transition-xslow:  600ms ease-out;  /* animaciones de entrada de página, heroes      */
+
+
+  /* ----------------------------------------------------------
+     ANCHURAS MÁXIMAS (layout)
+     Uso: var(--max-w-<tamaño>)
+  ---------------------------------------------------------- */
+
+  --max-w-xs:   320px;  /* sidebars estrechas, formularios mínimos              */
+  --max-w-sm:   480px;  /* modales pequeños, tarjetas de auth                   */
+  --max-w-md:   640px;  /* formularios estándar, artículos de blog              */
+  --max-w-lg:   768px;  /* contenido editorial con márgenes cómodos             */
+  --max-w-xl:   1024px; /* layout de página con sidebar                         */
+  --max-w-2xl:  1280px; /* contenedor principal del sitio (wrapper estándar)    */
+  --max-w-full: 100%;   /* fullwidth: heroes, banners, secciones de fondo       */
+
 }
