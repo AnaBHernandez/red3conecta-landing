@@ -1,0 +1,28 @@
+/* Variables Globales de Diseño Corporativo */
+:root {
+  --color-crema: #fdfbf7;
+  --color-marron: #4a3b32;
+  --color-marron-claro: #8c7565;
+  --color-texto: #2d2520;
+  --alto-navbar: 80px;
+}
+
+/* Resets Universales y Comportamiento de Scroll */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--color-crema);
+  color: var(--color-texto);
+  scroll-behavior: smooth;
+}
+
+/* Corrección de Solapamiento para Navegación por Anclas */
+section {
+  scroll-margin-top: var(--alto-navbar);
+  padding: 4rem 2rem;
+}
