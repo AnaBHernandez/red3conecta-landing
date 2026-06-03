@@ -1,4 +1,8 @@
-1. Tipo: Estructura básica de la Landing Page.
-2. Tecnologías: Astro + TypeScript + CSS Puro.
-3. Ramas: Sincronización e igualdad entre 'main' y 'dev'.
-4. Objetivo: Validar que los archivos iniciales son correctos en ambas ramas.
+- **Objetivo**: Crear `Navbar.astro` semántico, responsivo, adaptado a entidad social.
+- **Ruta**: `src/components/Navbar.astro`
+- **Contenido**: Logo `Red3Conecta`, enlaces de navegación y botón CTA dinámico.
+- **i18n**: Consumir textos desde `src/i18n/ca.json` (`t.navbar`).
+- **CSS**: Scoped, CSS puro, variables `:root`, sin frameworks de estilos.
+- **Accesibilidad**: `nav` semántico, `aria-label`, contraste WCAG AA.
+- **Responsivo**: Menú colapsable/hamburguesa mediante CSS/JS nativo.
+- **Git**: Rama activa `feature/navbar`. Bloqueo estricto de `main`.

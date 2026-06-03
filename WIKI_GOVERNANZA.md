@@ -33,3 +33,12 @@ El equipo aplica una separación estricta de responsabilidades para la documenta
    - Es el registro automático del código. No escribimos a mano qué archivos cambiaron; delegamos esta tarea en Git mediante mensajes de commit claros y estructurados en la terminal de Ubuntu.
 3. **`PRODUCT_LOG.md` (La Bitácora Comercial):**
    - Es el diario acumulativo que recoge los hitos del proyecto (Problema, MVP entregado y validación de QA) para que la Gestora de Proyecto (Paula) y los stakeholders entiendan la evolución del negocio sin leer código.
+
+## 🔗 Referencias y Buenas Prácticas Oficiales
+- **Documentación de Proyectos con Wikis**: [Guía Oficial de GitHub Wikis](https://docs.github.com/es/communities/documenting-your-project-with-wikis/about-wikis) (Aplicado para la separación de README/Wiki y la edición de la documentación como repositorios Git independientes).
+
+## 📐 Marco Oficial de Competencias (Skills del Equipo)
+Para garantizar el rigor técnico del proyecto, el equipo alinea sus habilidades con los estándares oficiales de la industria:
+- **Desarrollo Semántico e i18n**: Conforme a las especificaciones oficiales de [MDN Web Docs](https://developer.mozilla.org/) (Astro nativo sin frameworks de terceros).
+- **Accesibilidad y Red Teaming (WCAG AA)**: Validado bajo las directrices oficiales del [W3C (Web Accessibility Initiative)](https://www.w3.org/WAI/) para asegurar la navegación universal.
+- **Gobernanza y Documentación**: Basado en las buenas prácticas de repositorios documentales de [GitHub Communities](https://docs.github.com/es/communities/documenting-your-project-with-wikis/about-wikis).
