@@ -48,15 +48,13 @@ Bitácora histórica del desarrollo de la landing page de Red3Conecta. Registra 
 - **MVP:**
   - Sustitución del menú HTML plano manual por la inyección limpia del componente modular `<Navbar />` en `index.astro`.
   - Saneamiento y limpieza de la rama local `dev` mediante el comando `git restore` para asegurar la neutralidad del repositorio.
-  - Sincronización masiva de los cambios en la rama de trabajo aislada `feature/navbar` y apertura formal de la **Pull Request (PR #28)** dirigida hacia la rama `dev`.
-- **QA-IA:** Flujo Git Flow cerrado con éxito por parte de la Scrum Master. El código queda en estado de revisión visual, alineando el proceso con el acuerdo de simplificación de herramientas del equipo.
+  - Sincronización masiva de los cambios en la rama de trabajo aislada `feature/navbar` y apertura formal de la **Pull Request (PR)** dirigida hacia la rama `dev`.
+- **QA-IA:** Flujo Git Flow cerrado con éxito por parte de la Scrum Master. El código queda en estado "En Revisión" en la Wiki, transfiriendo el relevo a Jessica (QA) para la verificación física del comportamiento responsivo e i18n en su máquina local antes de autorizar el *merge*.
 
----
-
-## 🟢 [HITO 6]: Integración Definitiva de la Navbar y Cierre del Sprint 1 (Sprint 1 - COMPLETADO)
-- **Problema:** Consolidación final del código de la cabecera en el servidor remoto. El botón de fusión requería una auditoría limpia, la desvinculación de bloqueos técnicos para perfiles sin terminal y el registro oficial en el histórico del proyecto.
+## 🟢 [HITO 6]: Consolidación de la Navbar y Depuración de Design Tokens (Sprint 1 - COMPLETADO)
+- **Problema:** Los enlaces de la barra se volvían de color azul y subrayados por defecto tras ser pulsados debido a la falta de control de estados nativos del navegador. Además, el texto del footer se solapaba por detrás de la Navbar al hacer scroll debido a que la propiedad `position: sticky` flotaba sobre un contenedor transparente sin un fondo opaco definido.
 - **MVP:**
-  - Ejecución profesional del *Merge* de la Pull Request #28 directamente desde la interfaz web de GitHub como Administradora de la organización.
-  - Sincronización de un commit de fusión unificado en el Git Log histórico de la rama de integración.
-  - Reestructuración estratégica y consenso del reparto de los 8 componentes de diseño del Figma para los Sprints 2 y 3.
-- **QA-IA:** Fusión completada con éxito al 100% sin conflictos de código. El contador del repositorio remoto confirma de manera exacta la inserción del doceavo commit de ventaja sobre la rama base (`main`). El chasis superior queda blindado y disponible para el equipo.
+  - Optimización radical de `src/styles/global.css`, eliminando el 100% de los comentarios informativos para aligerar la carga de la cascada CSS y agilizar el parseo.
+  - Implementación de las pseudo-clases `:visited` y `:active` fijadas en color negro (`var(--color-black)`) con la regla estricta `!important` en `Navbar.astro` para anular permanentemente los estilos por defecto del navegador.
+  - Corrección de la clase `.navbar` inyectando un fondo opaco `#ffffff` sólido y una sombra de separación base (`box-shadow`) de respiro visual.
+- **QA-IA:** Verificación en `localhost:4321` exitosa tras incorporar la importación de `global.css` en la raíz. La barra se comporta como un bloque sólido, opaco e independiente, y los enlaces mantienen el flujo cromático corporativo antes y después de interactuar con ellos. Cambios fusionados y subidos limpiamente a la rama remota `dev`.
