@@ -27,18 +27,17 @@ import t from '../i18n/ca.json';
 </nav>
 
 <style>
-  /* ============================================================
-     DESIGN TOKENS — Sincronizado con el global.css de Paula
-     ============================================================ */
-  .navbar {
+.navbar {
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: var(--color-white, #ffffff);
-    box-shadow: var(--shadow-sm);
-    padding: var(--space-4) var(--space-6);
+    /* Forzamos el color blanco puro de fondo para que no sea transparente */
+    background-color: #ffffff; 
+    /* Le metemos una pequeña sombra abajo para separarla visualmente del contenido */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); 
+    padding: var(--space-4, 16px) var(--space-6, 24px);
   }
 
   .navbar__container {
@@ -69,16 +68,21 @@ import t from '../i18n/ca.json';
     padding: 0;
   }
 
-  .navbar__link {
-    text-decoration: none;
-    color: var(--color-black, #000000);
+.navbar__link,
+  .navbar__link:visited {
+    text-decoration: none !important; /* Quita el subrayado azul horroroso */
+    color: var(--color-black, #000000) !important; /* Fuerza el color negro */
     font-size: var(--text-base, 1rem);
     font-weight: 500;
     transition: color var(--transition-fast, 150ms ease);
   }
 
   .navbar__link:hover {
-    color: var(--color-light-brown, #edcfa6);
+    color: var(--color-light-brown, #edcfa6) !important;
+  }
+
+  .navbar__link:active {
+    color: var(--color-black, #000000);
   }
 
   .navbar__menu {

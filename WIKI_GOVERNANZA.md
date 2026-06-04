@@ -13,7 +13,7 @@ Este documento actúa como la fuente única de verdad para el desarrollo, están
 
 ## 🛑 Líneas Rojas del Desarrollo
 1. **Protección de Ramas:** Queda prohibido hacer push directo a `main`. Todo el trabajo de Sprints se integra en `dev`.
-2. **CSS Puro Obligatorio:** Prohibido el uso de Tailwind, Bootstrap o Sass. Todo el diseño se estructura con CSS nativo usando variables globales en `:root` dentro de `src/styles/global.css`.
+2. **CSS Puro Obligatorio:** Prohibido el uso de Tailwind, Bootstrap o Sass. Todo el diseño se estructura con CSS nativo usando variables globales en `:root` dentro de `src/styles/global.css`. **Línea de control adicional:** En todos los componentes interactivos con enlaces (`<a>`), es obligatorio declarar explícitamente los estados `.clase:visited` y `.clase:active` sincronizados con el color base del token para evitar que los navegadores apliquen el azul o el morado por defecto del sistema. Las barras de navegación fijas o pegajosas (`sticky`/`fixed`) deben llevar siempre un fondo opaco definido de respaldo para impedir el solapamiento visual del contenido inferior.
 3. **Estrategia i18n Unilingüe:** Por decisión unánime del equipo (validada por el correo de Jesús Rivera), la landing se maquetará exclusivamente en **Catalán**. No se escribirán textos fijos (`hardcoded`) en el chasis; todos se consumirán desde `src/i18n/ca.json`.
 4. **Layouts de Astro:** Siguiendo las directrices del Notion de Paula, al ser una landing page informativa de sección única (SPA), se prescinde de la carpeta `layouts/`. El archivo `src/pages/index.astro` actúa como el chasis HTML5 directo.
 
