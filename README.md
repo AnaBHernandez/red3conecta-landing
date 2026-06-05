@@ -10,4 +10,4 @@ Infraestructura digital compartida construida con el tercer sector, para el terc
 ## 🌿 Flujo de Trabajo en Git (Git Flow)
 - `main`: Rama sagrada de producción (Protegida).
 - `dev`: Rama común de integración para la unificación de los Sprints.
-- `feature/*`: Ramas de desarrollo atómico aisladas para cada componente.
+- `landing-page`: Rama compartida donde trabaja TODO el equipo (no ramas aisladas).

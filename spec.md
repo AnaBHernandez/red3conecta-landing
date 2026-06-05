@@ -1,8 +1,9 @@
-- **Objetivo**: Crear `Navbar.astro` semántico, responsivo, adaptado a entidad social.
-- **Ruta**: `src/components/Navbar.astro`
-- **Contenido**: Logo `Red3Conecta`, enlaces de navegación y botón CTA dinámico.
-- **i18n**: Consumir textos desde `src/i18n/ca.json` (`t.navbar`).
-- **CSS**: Scoped, CSS puro, variables `:root`, sin frameworks de estilos.
-- **Accesibilidad**: `nav` semántico, `aria-label`, contraste WCAG AA.
-- **Responsivo**: Menú colapsable/hamburguesa mediante CSS/JS nativo.
-- **Git**: Rama activa `feature/navbar`. Bloqueo estricto de `main`.
+- **Objetivo**: Crear `Footer.astro` semántico, modular con créditos institucionales en catalán.
+- **Ruta**: `src/components/Footer.astro`
+- **Contenido**: Enlaces navegación secundaria, textos legales, créditos (Factoría F5, Fundació Formació i Treball, UNADA).
+- **i18n**: 100% textos desde `src/i18n/ca.json` (catalán).
+- **CSS**: CSS Puro, Flexbox/Grid, variables `:root`, sin frameworks.
+- **Accesibilidad**: `<footer>` semántico, `aria-label`, contraste WCAG AA, navegación teclado.
+- **Responsivo**: Columnas apiladas móvil, layout horizontal desktop.
+- **Estados**: `:visited`, `:active` en enlaces (color negro `--color-black`).
+- **Git**: Rama compartida `landing-page`. 

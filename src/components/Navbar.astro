@@ -1,6 +1,5 @@
 ---
-// 1. Importamos el diccionario en catalán para cumplir con la internacionalización (i18n)
-import t from '../i18n/ca.json';
+import t from "../i18n/ca.json";
 ---
 
 <nav class="navbar" aria-label="Navegació principal">
@@ -9,7 +8,11 @@ import t from '../i18n/ca.json';
       Red3<span class="logo__accent">Conecta</span>
     </a>
 
-    <button class="navbar__toggle" aria-expanded="false" aria-label="Obrir menú de navegació">
+    <button
+      class="navbar__toggle"
+      aria-expanded="false"
+      aria-label="Obrir menú de navegació"
+    >
       <span class="toggle__bar"></span>
       <span class="toggle__bar"></span>
       <span class="toggle__bar"></span>
@@ -18,7 +21,9 @@ import t from '../i18n/ca.json';
     <div class="navbar__menu">
       <ul class="navbar__list">
         <li><a href="#why" class="navbar__link">{t.nav.why}</a></li>
-        <li><a href="#challenges" class="navbar__link">{t.nav.challenges}</a></li>
+        <li>
+          <a href="#challenges" class="navbar__link">{t.nav.challenges}</a>
+        </li>
         <li><a href="#ally" class="navbar__link">{t.nav.ally}</a></li>
         <li><a href="#ecosystem" class="navbar__link">{t.nav.ecosystem}</a></li>
       </ul>
@@ -27,16 +32,14 @@ import t from '../i18n/ca.json';
 </nav>
 
 <style>
-.navbar {
+  .navbar {
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    /* Forzamos el color blanco puro de fondo para que no sea transparente */
-    background-color: #ffffff; 
-    /* Le metemos una pequeña sombra abajo para separarla visualmente del contenido */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); 
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     padding: var(--space-4, 16px) var(--space-6, 24px);
   }
 
@@ -57,7 +60,7 @@ import t from '../i18n/ca.json';
   }
 
   .logo__accent {
-    color: var(--color-light-brown, #edcfa6); 
+    color: var(--color-light-brown, #edcfa6);
   }
 
   .navbar__list {
@@ -68,10 +71,10 @@ import t from '../i18n/ca.json';
     padding: 0;
   }
 
-.navbar__link,
+  .navbar__link,
   .navbar__link:visited {
-    text-decoration: none !important; /* Quita el subrayado azul horroroso */
-    color: var(--color-black, #000000) !important; /* Fuerza el color negro */
+    text-decoration: none !important;
+    color: var(--color-black, #000000) !important;
     font-size: var(--text-base, 1rem);
     font-weight: 500;
     transition: color var(--transition-fast, 150ms ease);
@@ -106,7 +109,6 @@ import t from '../i18n/ca.json';
     background-color: var(--color-black, #000000);
   }
 
-  /* Vista de escritorio forzada para desarrollo */
   @media (max-width: 768px) {
     .navbar__toggle {
       display: flex;

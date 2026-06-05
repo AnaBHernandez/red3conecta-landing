@@ -58,3 +58,19 @@ Bitácora histórica del desarrollo de la landing page de Red3Conecta. Registra 
   - Implementación de las pseudo-clases `:visited` y `:active` fijadas en color negro (`var(--color-black)`) con la regla estricta `!important` en `Navbar.astro` para anular permanentemente los estilos por defecto del navegador.
   - Corrección de la clase `.navbar` inyectando un fondo opaco `#ffffff` sólido y una sombra de separación base (`box-shadow`) de respiro visual.
 - **QA-IA:** Verificación en `localhost:4321` exitosa tras incorporar la importación de `global.css` en la raíz. La barra se comporta como un bloque sólido, opaco e independiente, y los enlaces mantienen el flujo cromático corporativo antes y después de interactuar con ellos. Cambios fusionados y subidos limpiamente a la rama remota `dev`.
+
+## 🟢 [HITO 7]: Migración a Rama Compartida Landing-Page (Sprint 1 - COMPLETADO)
+- **Problema:** Necesidad de cambiar estrategia Git Flow: eliminar ramas `feature/*` individuales y adoptar rama compartida `landing-page` para trabajo coordinado del equipo.
+- **MVP:**
+  - Creación de rama `landing-page` desde `dev`
+  - Nuevo flujo: compañeras pushean a `landing-page`, Ana Belén verifica y mergea a `dev`
+  - Actualización de wikis GitHub con nueva política de ramas
+- **QA-IA:** Rama creada, flujo documentado en wikis, equipo alineado.
+
+---
+
+## 📋 SPRINT 1 - ESTADO ACTUAL
+✅ **#12 Layout + Base CSS** - Completado  
+✅ **#13 Navbar** - Completado  
+⏳ **#14 Footer** - Cintia (en Landing-page)  
+⏳ **#18 Plan de Pruebas WCAG AA** - Ana Belén (siguiente)
