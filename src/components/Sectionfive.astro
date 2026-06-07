@@ -1,0 +1,137 @@
+---
+---
+
+<div class="container-alpha">
+    <h2>Construït des del territori. Amb el territori. I governat per ell.</h2>
+    <p class="container-alpha__subtitle">
+        Red3Conecta no s'ha dissenyat en un laboratori extern al tercer
+        sector. Cada decisió de disseny, cada funcionalitat i cada prioritat
+        s'ha definit conjuntament amb les entitats que l'utilitzen.
+    </p>
+
+    <!-- FILA 1: 4 cards cuadradas en row -->
+    <div class="cards-row">
+        <div class="card-small">
+            <img src="/icon-location.png" alt="icon ubicacion" class="card-icon" />
+            <div class="card-content">
+                <h3>Cocreació real, no consulta simbòlica</h3>
+                <p>En un procés d'acceleració realitzat gràcies al suport d'Unada, el projecte ha passat per processos de recerca i validacions directes amb dones usuàries.</p>
+            </div>
+        </div>
+
+        <div class="card-small">
+            <img src="/icon-social-network.png" alt="social icon" class="card-icon" />
+            <div class="card-content">
+                <h3>Governança compartida</h3>
+                <p>Red3Conecta no pertany a cap empresa. Pertany a l'ecosistema que la construeix. Les entitats participants tenen veu en les decisions.</p>
+            </div>
+        </div>
+
+        <div class="card-small">
+            <img src="/icon-location.png" alt="icon ubicacion" class="card-icon" />
+            <div class="card-content">
+                <h3>Ahorro de temps real per als professionals</h3>
+                <p>La intel·ligència artificial interpreta consultes en llenguatge natural i retorna recomanacions argumentades en segons.</p>
+            </div>
+        </div>
+
+        <div class="card-small">
+            <img src="/icon-location.png" alt="icon ubicacion" class="card-icon" />
+            <div class="card-content">
+                <h3>Xarxa viva d'entitats</h3>
+                <p>El catàleg de recursos es construeix i s'actualitza col·lectivament entre les entitats participants.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILA 2: 2 cards anchas apiladas en column -->
+    <div class="cards-column">
+        <div class="card-wide">
+            <img src="/icon-location.png" alt="icon ubicacion" class="card-icon" />
+            <div class="card-content">
+                <h3>Tecnologia al servei de l'impacte</h3>
+                <p>La IA no és el centre del projecte. És l'eina que fa possible la connexió. El centre és el treball del tercer sector i les persones que atén.</p>
+            </div>
+        </div>
+
+        <div class="card-wide">
+            <img src="/icon-location.png" alt="icon ubicacion" class="card-icon" />
+            <div class="card-content">
+                <h3>Pilotatge amb impacte mesurable</h3>
+                <p>El projecte es pilota amb entitats reals, amb indicadors de seguiment i avaluació d'impacte. Perquè innovació social sense mesura no és innovació: és intenció.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .container-alpha {
+        background-color: #f5f0eb;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .container-alpha h2 {
+        font-size: 2rem;
+        color: var(--color-primary);
+        margin: 0;
+    }
+
+    .container-alpha__subtitle {
+        color: #666;
+        margin: 0;
+    }
+
+    /* --- FILA 4 CARDS --- */
+    .cards-row {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .card-small {
+        background-color: white;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        flex: 1;
+    }
+
+    /* --- COLUMNA 2 CARDS ANCHAS --- */
+    .cards-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .card-wide {
+        background-color: white;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    /* --- COMUN --- */
+    .card-icon {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+    }
+
+    .card-content h3 {
+        margin: 0;
+        color: var(--color-primary);
+    }
+
+    .card-content p {
+        margin: 0;
+        line-height: 1.6;
+    }
+</style>

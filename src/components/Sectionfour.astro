@@ -1,0 +1,167 @@
+---
+import Card from "./Card.astro"
+---
+
+<div class="container">
+
+  <!-- TÍTULO Y DESCRIPCIÓN -->
+  <div class="container__header">
+    <h2>Red3Conecta: la infraestructura digital compartida del tercer sector.</h2>
+    <p>Una plataforma web amb intel·ligència artificial conversacional i un catàleg centralitzat de recursos, dissenyada per als dos actors clau de qualsevol servei social: els professionals que acompanyen i les persones que necessiten suport.</p>
+  </div>
+
+  <!-- BLOC A Y BLOC B EN ROW -->
+  <div class="container__blocs">
+
+    <div class="bloc bloc--a">
+      <h3>Per a professionals del tercer sector</h3>
+      <p class="bloc__tagline">Menys temps gestionant. Més temps atenent.</p>
+      <ul>
+        <li>Catàleg de recursos validat, editable i actualitzat col·lectivament.</li>
+        <li>Cercador intel·ligent amb recomanacions argumentades en segons.</li>
+        <li>Filtres per tipologia, territori, perfil i requisits d'accés.</li>
+        <li>Coordinació i derivació entre entitats àgil i traçable.</li>
+        <li>Registre de consultes i aprenentatge continu.</li>
+      </ul>
+      <p class="bloc__result">Reducció de més del 50% del temps dedicat a cerques i coordinació manual.</p>
+    </div>
+
+    <div class="bloc bloc--b">
+      <h3>Per a les persones ateses</h3>
+      <p class="bloc__tagline">Accés clar. Sense barreres. Des de qualsevol dispositiu.</p>
+      <ul>
+        <li>Buscador simplificat amb llenguatge clar i accessible.</li>
+        <li>Navegació guiada cap als recursos adaptats al seu perfil.</li>
+        <li>Accessible des del mòbil, sense coneixements tecnològics avançats.</li>
+      </ul>
+      <p class="bloc__result">Millora de l'autonomia en la cerca de recursos i reducció de la dependència d'intermediaris.</p>
+    </div>
+
+  </div>
+
+  <!-- CASOS DE USO -->
+  <div class="container__casos">
+    <h3 class="casos__titulo">Casos d'ús concrets</h3>
+
+    <div class="casos__grid">
+      <Card
+  icon="/icon-inertion-place.png"
+  title="Professional d'inserció laboral"
+  description="..."
+  variant="caso"
+/>
+<Card
+  icon="/icon-chat.png"
+  title="Equip d'atenció a persones grans"
+  description="..."
+  variant="caso"
+/>
+<Card
+  icon="/icon-education.png"
+  title="Persona jove en situació de vulnerabilitat"
+  description="..."
+  variant="caso"
+/>
+    </div>
+  </div>
+
+</div>
+
+<style>
+  .container {
+    background-color: rgb(243, 187, 135);
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    gap: 2.5rem;
+  }
+
+  /* HEADER */
+  .container__header h2 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin: 0 0 1rem 0;
+  }
+
+  .container__header p {
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* BLOCS */
+  .container__blocs {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .bloc {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bloc h3 {
+    margin: 0;
+    color: var(--color-primary);
+  }
+
+  .bloc__tagline {
+    font-style: italic;
+    color: #555;
+    margin: 0;
+  }
+
+  .bloc ul {
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+  }
+
+  .bloc li {
+    line-height: 1.5;
+    color: #333;
+  }
+
+  .bloc--a {
+    border-left: 6px solid var(--color-secondary);
+  }
+
+  .bloc--b {
+    border-left: 6px solid var(--color-primary);
+  }
+
+  .bloc__result {
+    margin: 0;
+    font-weight: bold;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+  }
+
+  /* CASOS */
+  .container__casos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .casos__titulo {
+    margin: 0;
+    color: var(--color-primary);
+    font-size: 1.3rem;
+  }
+
+  .casos__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+</style>

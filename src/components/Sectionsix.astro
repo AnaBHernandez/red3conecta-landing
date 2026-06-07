@@ -1,0 +1,119 @@
+---
+const kpis = [
+    { numero: "+200", descripcion: "persones usuàries en fase pilot" },
+    { numero: "+23", descripcion: "entitats socials participants" },
+    { numero: "+23", descripcion: "professionals del tercer sector implicats" },
+    {
+        numero: "−50%",
+        descripcion:
+            "reducció esperada del temps de cerca i coordinació manual",
+    },
+    {
+        numero: "+30%",
+        descripcion: "millora esperada de l'autonomia de les persones ateses",
+    },
+    {
+        numero: "9+",
+        descripcion:
+            "cicles de validació completats amb professionals i persones usuàries",
+    },
+    {
+        numero: "3,5:1 – 5:1",
+        descripcion: "SROI estimat — retorn social per euro invertit*",
+    },
+];
+---
+
+<div class="stats">
+    <div class="stats__header">
+        <h2>No mesurem intencions. Mesurem resultats.</h2>
+        <p>
+            Red3Conecta s'avalua amb indicadors reals, des del primer dia de
+            pilotatge. L'impacte es mesura en temps recuperat, derivacions
+            millorades i persones millor ateses.
+        </p>
+    </div>
+
+    <div class="stats__grid">
+        {
+            kpis.map((kpi) => (
+                <div class="kpi">
+                    <span class="kpi__numero">{kpi.numero}</span>
+                    <p class="kpi__descripcion">{kpi.descripcion}</p>
+                </div>
+            ))
+        }
+    </div>
+
+    <p class="stats__nota">
+        *Aquests resultats s'avaluaran en el marc d'un procés formal d'anàlisi
+        SROI previst per al segon semestre de 2026, amb l'acompanyament d'una
+        avaluació independent.
+    </p>
+</div>
+
+<style>
+    .stats {
+        background-color: #f5f0eb;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    /* HEADER */
+    .stats__header h2 {
+        font-size: 1.8rem;
+        color: var(--color-primary);
+        margin: 0 0 1rem 0;
+    }
+
+    .stats__header p {
+        color: #444;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* GRID DE KPIS */
+    .stats__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .kpi {
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        border-bottom: 4px solid orange;
+    }
+
+    .kpi__numero {
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: var(--color-primary);
+        line-height: 1;
+    }
+
+    .kpi__descripcion {
+        margin: 0;
+        color: #555;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* NOTA AL PIE */
+    .stats__nota {
+        margin: 0;
+        color: #888;
+        font-size: 0.8rem;
+        font-style: italic;
+        line-height: 1.5;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding-top: 1rem;
+    }
+</style>
