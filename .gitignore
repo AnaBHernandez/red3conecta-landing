@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# logs y gobernanza
+PRODUCT_LOG.md
+WIKI_GOVERNANZA.md
