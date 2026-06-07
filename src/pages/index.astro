@@ -1,33 +1,37 @@
 ---
-import '../styles/global.css';
-import t from '../i18n/ca.json';
-import Navbar from '../components/Navbar.astro';
+import "../styles/global.css";
+import t from "../i18n/ca.json";
+import Card from "../components/Card.astro";
+import Navbar from "../components/Navbar.astro";
+import Sectionfive from "../components/Sectionfive.astro";
+import Sectionfour from "../components/Sectionfour.astro";
+import Sectionsix from "../components/Sectionsix.astro";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ca">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Red3Conecta - Infraestructura Digital per al Tercer Sector</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <Navbar />
 
     <main>
-        <section id="why"></section>
-        <section id="challenges"></section>
-        <section id="ally"></section>
-        <section id="ecosystem"></section>
+      <section id="why"><Sectionfour /></section>
+      <section id="challenges"><Sectionfive /></section>
+      <section id="ally"><Sectionsix /></section>
+      <section id="ecosystem">
+        <h2>{t.nav.ecosystem}</h2>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="footer__content">
-            <p>{t.footer.collab}</p>
-            <small>{t.footer.rights}</small>
-        </div>
+      <div class="footer__content">
+        <p>{t.footer.collab}</p>
+        <small>{t.footer.rights}</small>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>
