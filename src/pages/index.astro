@@ -2,6 +2,9 @@
 import '../styles/global.css';
 import t from '../i18n/ca.json';
 import Navbar from '../components/Navbar.astro';
+import Sectionfour from '../components/Sectionfour.astro';
+import Sectionfive from '../components/Sectionfive.astro';
+import Sectionsix from '../components/Sectionsix.astro';
 ---
 
 <!DOCTYPE html>
@@ -19,7 +22,11 @@ import Navbar from '../components/Navbar.astro';
         <section id="why"></section>
         <section id="challenges"></section>
         <section id="ally"></section>
-        <section id="ecosystem"></section>
+        <section id="ecosystem">
+            <Sectionfour/>
+            <Sectionfive/>
+            <Sectionsix/>
+        </section>
     </main>
 
     <footer class="footer">
