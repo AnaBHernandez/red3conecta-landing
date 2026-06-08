@@ -16,16 +16,16 @@ const { icon, title, description, variant = "default" } = Astro.props;
     padding: 5px;
     height: 70px;
     margin: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
     font-size: 12px;
     border-radius: 2%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-    border-left: 8px solid;  /* ✅ añade solid */
+    border-left: 8px solid;  
     display: flex;
     flex-direction: row;
-    align-items: center;     /* ✅ centra verticalmente */
+    align-items: center;     
 }
     .card__content {
         display: flex;
@@ -49,8 +49,8 @@ const { icon, title, description, variant = "default" } = Astro.props;
         border-color:var(--color-red);
     }
     .card__icon{
-        width: 30px;
-        height: 30px;
+        width: 45px;
+        height: 45px;
         flex-shrink: 0;
     }
     .card--caso {
