@@ -7,8 +7,8 @@ import t from "../i18n/ca.json";
   <p class="hero__subtitle">{t.hero.subtitle}</p>
 
   <div class="hero__cta">
-    <button class="btn btn--primary">t.hero.btn.demo</button>
-    <button class="btn btn--secondary">t.hero.btb_join</button>
+    <button class="btn btn--primary">{t.hero.btn_demo}</button>
+    <button class="btn btn--secondary">{t.hero.btn_join}</button>
   </div>
 
   <small>{t.hero.context}</small>
@@ -21,5 +21,33 @@ import t from "../i18n/ca.json";
     align-items: center;
     padding: 3rem 2rem;
     gap: 1.5rem;
+    text-align: center;
+  }
+
+  .hero__cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md); /* 8px segons global_2.css */
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-base);
+    border: var(--border-base) solid transparent;
+  }
+  .btn--primary {
+    background-color: var(--color-black); /* Contraste alto para WCAG */
+    color: var(--color-white);
+  }
+  .btn--secondary {
+    background-color: transparent;
+    color: var(--color-black);
+    border-color: var(--color-black);
+  }
+  btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
   }
 </style>

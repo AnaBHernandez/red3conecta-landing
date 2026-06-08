@@ -1,10 +1,9 @@
 ---
 import t from "../i18n/ca.json";
-import Card from "./Sectionfive.astro";
+import Card from "./Card.astro";
 ---
 
 <div class="container">
-  <!-- TÍTULO Y DESCRIPCIÓN -->
   <div class="container__header">
     <h2>
       Red3Conecta: la infraestructura digital compartida del tercer sector.
@@ -17,7 +16,7 @@ import Card from "./Sectionfive.astro";
     </p>
   </div>
 
-  <!-- BLOC A Y BLOC B EN ROW -->
+  <!-- BLOC A Y BLOC B  -->
   <div class="container__blocs">
     <div class="bloc bloc--a">
       <h3>Per a professionals del tercer sector</h3>
@@ -85,7 +84,7 @@ import Card from "./Sectionfive.astro";
 
 <style>
   .container {
-    background-color: rgb(243, 187, 135);
+    background-color: var(--color-light-brown);
     display: flex;
     flex-direction: column;
     padding: 3rem;
@@ -95,7 +94,7 @@ import Card from "./Sectionfive.astro";
   /* HEADER */
   .container__header h2 {
     font-size: 1.8rem;
-    color: var(--color-primary);
+    color: var(--color-black);
     margin: 0 0 1rem 0;
   }
 
@@ -113,7 +112,7 @@ import Card from "./Sectionfive.astro";
   }
 
   .bloc {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--color-light-cream);
     backdrop-filter: blur(10px);
     border-radius: 1rem;
     padding: 2rem;
@@ -171,7 +170,7 @@ import Card from "./Sectionfive.astro";
 
   .casos__titulo {
     margin: 0;
-    color: var(--color-primary);
+    color: var(--color-black);
     font-size: 1.3rem;
   }
 
