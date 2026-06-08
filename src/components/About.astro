@@ -1,0 +1,259 @@
+<section id="about" class="about">
+    <div class="about-shape about-shape-one"></div>
+
+<div class="dots"></div>
+
+<div class="circle-1"></div>
+<div class="circle-2"></div>
+<div class="circle-3"></div>
+  <div class="about-container">
+    <div class="about-content">
+        <span class="badge">
+  Innovació Social Aplicada
+</span>
+  <h2>Per què neix Red3Conecta?</h2>
+
+  <p>
+    Creiem que el tercer sector mereix una infraestructura digital
+    creada específicament per a les seves necessitats.
+  </p>
+
+  <p>
+    Red3Conecta vol facilitar la col·laboració entre entitats,
+    professionals i persones usuàries mitjançant eines compartides.
+  </p>
+
+  <p>
+    El nostre objectiu és reduir el temps dedicat a tasques
+    administratives i augmentar el temps d'atenció a les persones.
+  </p>
+ 
+</div>
+
+
+
+    <div class="about-image">
+      <img src="/imagenes/about1.jpg" alt="Col·laboració entre entitats socials" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: 6rem 2rem;
+    background: #fffaf2;
+  }
+
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 2rem;
+  }
+
+  .about-content {
+    background: #fbf0df;
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about-content{
+  background:#efe7dc;
+  padding:3rem;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+.about-image img{
+  border-radius:24px;
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+.about-container{
+  gap: 4rem;
+}
+
+  .about-tag {
+    display: inline-block;
+    width: fit-content;
+    background: #e8d9bf;
+    color: #3b2416;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content h2 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    color: #c66a24;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content h2 br + * {
+    color: #1f1a16;
+  }
+
+  .about-content p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #4a3b31;
+    margin-bottom: 2rem;
+  }
+  
+
+  .about-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .about-buttons a {
+    text-decoration: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+  }
+
+  .btn-primary {
+    background: #c66a24;
+    color: white;
+  }
+
+  .btn-secondary {
+    border: 2px solid #7a2f1d;
+    color: #3b2416;
+    background: transparent;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-fit:cover;
+  }
+
+ .about {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Círculo superior izquierdo */
+.about::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: #d8b98f;
+  border-radius: 50%;
+  top: -120px;
+  left: -120px;
+  opacity: 0.15;
+}
+
+/* Círculo inferior derecho */
+.about::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: #d8b98f;
+  border-radius: 50%;
+  bottom: -100px;
+  right: -80px;
+  opacity: 0.10;
+}
+
+.about {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-shape {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.18;
+}
+
+.about-shape-one {
+  width: 260px;
+  height: 260px;
+  background: #d8b98f;
+  border-radius: 50%;
+  top: -90px;
+  left: -90px;
+}
+
+.about-shape-two {
+  font-size: 5rem;
+  right: 8%;
+  bottom: 12%;
+}
+
+.circle-1{
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:#e8d8c4;
+  top:120px;
+  right:120px;
+  opacity:.15;
+}
+
+.circle-2{
+  position:absolute;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:#d8b98f;
+  bottom:80px;
+  left:120px;
+  opacity:.12;
+}
+
+.circle-3 {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: #d8b98f;
+  top: 80px;
+  right: -80px;
+  opacity: 0.08;
+}
+.dots{
+  position:absolute;
+  top:120px;
+  right:120px;
+  width:80px;
+  height:80px;
+  opacity:.15;
+  background-image:radial-gradient(#c97a2b 2px, transparent 2px);
+  background-size:16px 16px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #d9ccb6;
+  color: #6d5b49;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+  @media (max-width: 768px) {
+    .about-container {
+      grid-template-columns: 1fr;
+    }
+
+    .about-content {
+      padding: 3rem 2rem;
+    }
+  }
+</style>
