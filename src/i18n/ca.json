@@ -5,8 +5,51 @@
     "ally": "Com es construeix",
     "ecosystem": "Ecosistema i col·laboradors"
   },
+  "hero": {
+    "title": "Menys temps gestionant. Més temps atenent.",
+    "subtitle": "Red3Conecta és la infraestructura digital construïda amb el tercer sector, per al tercer sector.",
+    "btn_demo": "Sol·licita una demo",
+    "btn_join": "Suma't a la xarxa",
+    "context": "Un projecte impulsat per Factoría F5 i Fundació Formació i Treball."
+  },
   "footer": {
-    "collab": "Un projecte impulsat per Factoría F5 i Fundació Formació i Treball, amb el suport de UNADA, l'acceleradora social d'Aigües de Barcelona.",
+    "title": "Red3Conecta",
+    "desc": "Infraestructura digital col·laborativa construïda amb el tercer sector, per al tercer sector.",
+    "contact_label": "Per a més informació:",
+    "email": "contacte@red3conecta.org",
+    "linkedin": "LinkedIn del projecte",
+    "impulsat": "Projecte impulsat per Factoría F5 i Fundació Formació i Treball.",
     "rights": "© 2026 Red3Conecta. Tots els drets reservats."
+  },
+  "platform": {
+    "title": "Red3Conecta: la infraestructura digital compartida del tercer sector.",
+    "desc": "Una plataforma web amb IA i un catàleg centralitzat de recursos per als dos actors clau: professionals i persones ateses.",
+    "bloc_a_title": "Per a professionals del tercer sector",
+    "bloc_a_tag": "Menys temps gestionant. Més temps atenent.",
+    "bloc_a_list": [
+      "Catàleg de recursos validat i actualitzat col·lectivament.",
+      "Cercador intel·ligent amb recomanacions argumentades.",
+      "Filtres per tipologia, territori, perfil i requisits.",
+      "Coordinació i derivació entre entitats àgil.",
+      "Registre de consultes i aprenentatge continu."
+    ],
+    "bloc_b_title": "Per a les persones ateses",
+    "bloc_b_tag": "Accés clar. Sense barreres. Des de qualsevol dispositiu.",
+    "bloc_b_list": [
+      "Buscador simplificat amb llenguatge clar.",
+      "Navegació guiada cap als recursos adaptats.",
+      "Accessible des del mòbil."
+    ]
+  },
+  "impact": {
+    "title": "No mesurem intencions. Mesurem resultats.",
+    "subtitle": "L'impacte es mesura en temps recuperat i persones millor ateses.",
+    "kpis": [
+      { "numero": "+200", "descripcion": "persones usuàries en fase pilot" },
+      { "numero": "+23", "descripcion": "entitats socials participants" },
+      { "numero": "−50%", "descripcion": "reducció temps de cerca i coordinació" },
+      { "numero": "3,5:1", "descripcion": "SROI estimat — retorn social" }
+    ],
+    "note": "*Aquests resultats s'avaluaran al segon semestre de 2026."
   }
 }
