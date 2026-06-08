@@ -1,42 +1,59 @@
 ---
-import Card from "./Card.astro"
+import t from "../i18n/ca.json";
+import Card from "./Sectionfive.astro";
 ---
 
 <div class="container">
-
   <!-- TÍTULO Y DESCRIPCIÓN -->
   <div class="container__header">
-    <h2>Red3Conecta: la infraestructura digital compartida del tercer sector.</h2>
-    <p>Una plataforma web amb intel·ligència artificial conversacional i un catàleg centralitzat de recursos, dissenyada per als dos actors clau de qualsevol servei social: els professionals que acompanyen i les persones que necessiten suport.</p>
+    <h2>
+      Red3Conecta: la infraestructura digital compartida del tercer sector.
+    </h2>
+    <p>
+      Una plataforma web amb intel·ligència artificial conversacional i un
+      catàleg centralitzat de recursos, dissenyada per als dos actors clau de
+      qualsevol servei social: els professionals que acompanyen i les persones
+      que necessiten suport.
+    </p>
   </div>
 
   <!-- BLOC A Y BLOC B EN ROW -->
   <div class="container__blocs">
-
     <div class="bloc bloc--a">
       <h3>Per a professionals del tercer sector</h3>
       <p class="bloc__tagline">Menys temps gestionant. Més temps atenent.</p>
       <ul>
-        <li>Catàleg de recursos validat, editable i actualitzat col·lectivament.</li>
+        <li>
+          Catàleg de recursos validat, editable i actualitzat col·lectivament.
+        </li>
         <li>Cercador intel·ligent amb recomanacions argumentades en segons.</li>
         <li>Filtres per tipologia, territori, perfil i requisits d'accés.</li>
         <li>Coordinació i derivació entre entitats àgil i traçable.</li>
         <li>Registre de consultes i aprenentatge continu.</li>
       </ul>
-      <p class="bloc__result">Reducció de més del 50% del temps dedicat a cerques i coordinació manual.</p>
+      <p class="bloc__result">
+        Reducció de més del 50% del temps dedicat a cerques i coordinació
+        manual.
+      </p>
     </div>
 
     <div class="bloc bloc--b">
       <h3>Per a les persones ateses</h3>
-      <p class="bloc__tagline">Accés clar. Sense barreres. Des de qualsevol dispositiu.</p>
+      <p class="bloc__tagline">
+        Accés clar. Sense barreres. Des de qualsevol dispositiu.
+      </p>
       <ul>
         <li>Buscador simplificat amb llenguatge clar i accessible.</li>
         <li>Navegació guiada cap als recursos adaptats al seu perfil.</li>
-        <li>Accessible des del mòbil, sense coneixements tecnològics avançats.</li>
+        <li>
+          Accessible des del mòbil, sense coneixements tecnològics avançats.
+        </li>
       </ul>
-      <p class="bloc__result">Millora de l'autonomia en la cerca de recursos i reducció de la dependència d'intermediaris.</p>
+      <p class="bloc__result">
+        Millora de l'autonomia en la cerca de recursos i reducció de la
+        dependència d'intermediaris.
+      </p>
     </div>
-
   </div>
 
   <!-- CASOS DE USO -->
@@ -45,26 +62,25 @@ import Card from "./Card.astro"
 
     <div class="casos__grid">
       <Card
-  icon="/icon-inertion-place.png"
-  title="Professional d'inserció laboral"
-  description="..."
-  variant="caso"
-/>
-<Card
-  icon="/icon-chat.png"
-  title="Equip d'atenció a persones grans"
-  description="..."
-  variant="caso"
-/>
-<Card
-  icon="/icon-education.png"
-  title="Persona jove en situació de vulnerabilitat"
-  description="..."
-  variant="caso"
-/>
+        icon="/icon-inertion-place.png"
+        title="Professional d'inserció laboral"
+        description="..."
+        variant="caso"
+      />
+      <Card
+        icon="/icon-chat.png"
+        title="Equip d'atenció a persones grans"
+        description="..."
+        variant="caso"
+      />
+      <Card
+        icon="/icon-education.png"
+        title="Persona jove en situació de vulnerabilitat"
+        description="..."
+        variant="caso"
+      />
     </div>
   </div>
-
 </div>
 
 <style>

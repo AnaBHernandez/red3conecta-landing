@@ -1,3 +1,8 @@
+---
+// Importación del contrato de traducción
+import i18n from "../i18n/ca.json";
+---
+
 <footer class="footer">
   <div class="footer-content">
     <div>
@@ -32,31 +37,31 @@
 
 <style>
   .footer {
-    background: #fff7f2;
-    border-top: 2px solid #f0d4bf;
+    background-color: #e8dccb;
+    color: #5b3a29;
     padding: 3rem 2rem;
     text-align: center;
+    border-top: 2px solid #f0d4bf;
   }
 
   .footer-content {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
   .footer h2 {
-    color: #c87b4a;
+    color: #c97a3d;
     margin-bottom: 1rem;
   }
 
   .footer p {
-    margin: 0.8rem 0;
+    margin-bottom: 1rem;
   }
 
   .footer-links {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    flex-wrap: wrap;
     margin: 1.5rem 0;
   }
 
@@ -66,31 +71,10 @@
     font-weight: 600;
   }
 
-  .footer-links a:hover {
-    text-decoration: underline;
+  .footer-links a:visited {
+    color: #9a5e37;
+  } /* WCAG AA */
+  .footer-links a:active {
+    color: #5b3a29;
   }
-
-  .footer-bottom {
-    margin-top: 2rem;
-    color: #666;
-    font-size: 0.9rem;
-  }
-  .footer {
-  background-color: #e8dccb;
-  color: #5b3a29;
-}
-.footer h2 {
-  color: #c97a3d;
-}
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.footer p {
-  margin-bottom: 1rem;
-}
-
-.footer-links {
-  margin: 1.5rem 0;
-}
 </style>

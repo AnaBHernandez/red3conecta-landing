@@ -1,0 +1,25 @@
+---
+import t from "../i18n/ca.json";
+---
+
+<section class="hero" aria-label="Hero pricipal">
+  <h1>{t.hero.title}</h1>
+  <p class="hero__subtitle">{t.hero.subtitle}</p>
+
+  <div class="hero__cta">
+    <button class="btn btn--primary">t.hero.btn.demo</button>
+    <button class="btn btn--secondary">t.hero.btb_join</button>
+  </div>
+
+  <small>{t.hero.context}</small>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem;
+    gap: 1.5rem;
+  }
+</style>
