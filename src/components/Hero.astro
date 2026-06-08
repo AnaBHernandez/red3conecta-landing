@@ -59,9 +59,10 @@ import t from "../i18n/ca.json";
     border-radius: 11px;
     border: none;
     cursor: pointer;
-    transition:
-      background-color 0.2s ease,
-      transform 0.1s ease;
+   transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,        
+    box-shadow 0.2s ease;
   }
   .btn--primary {
     background-color: var(--color-black);
@@ -72,8 +73,18 @@ import t from "../i18n/ca.json";
     color: var(--color-black);
     border-color: var(--color-black);
   }
-  btn:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-  }
+
+.btn--primary:hover {
+  background-color: #333333;        /* negro suavizado */
+  color: var(--color-white);
+  transform: scale(1.05);           /* crece un 5% */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn--secondary:hover {
+  background-color: #f0f0f0;        /* blanco suavizado a gris muy claro */
+  color: var(--color-black);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
 </style>
