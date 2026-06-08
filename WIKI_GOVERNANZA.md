@@ -1,16 +1,37 @@
-## Estado del Proyecto (Sprint 2 - Fase de Inicio)
-- **Hitos Alcanzados:** Layout, Base CSS, Navbar, Footer, Hero.
+# 🏛️ Wiki de Gobernanza: Red3Conecta
+
+## 1. Estado del Proyecto (Sprint 2 - Fase de Ejecución)
+- **Hitos Alcanzados:** #12 Layout, #13 Navbar, #14 Footer, #19 Hero.
 - **Ramas Git:** `landing-page` (Activa), `dev`, `main`.
-- **Arquitectura:** Estructura de `/src/components/` alineada 1:1 con el Backlog del Proyecto.
 - **Reglas de Oro:**
   1. No Tailwind/Bootstrap/Sass.
   2. i18n exclusivo en `src/i18n/ca.json`.
   3. Prohibido hardcoded strings.
-  4. Nomenclatura de archivos vinculada estrictamente al ID de tarea del Backlog.
-- **QA & Accesibilidad:** Auditoría WCAG AA (#18) tras desbloqueo de #17.
+  4. Nomenclatura de archivos vinculada a ID de tarea.
+- **QA & Accesibilidad:** Auditoría WCAG AA (#18) en curso.
 
-## Responsables
-- **Paula:** Gestora, Assets visuales (#17), Challenges (#21), Ally (#22).
-- **Ana Belén:** Scrum Master, Integración SPA, QA Funcional (#18), Hero (#19).
-- **Cintia:** Frontend (Footer #14, About #20).
-- **Jessica:** Frontend (Ecosystem #24, Partners #25).
+## 2. Matriz de Responsabilidades
+| Responsable | Rol | Tareas Asignadas (Sprint 2) |
+| :--- | :--- | :--- |
+| **Paula** | Gestora | Assets visuales (#17), Challenges (#21), Ally (#22), Impact (#29) |
+| **Ana Belén** | Scrum Master | QA Funcional (#18), Hero (#19), Integración final |
+| **Cintia** | Frontend | About (#20) |
+| **Jessica** | Frontend | Ecosystem (#24), Partners (#25) |
+
+## 📊 Estado Actual del Sprint 1/2
+
+### HITOS COMPLETADOS
+- ✅ #17 Figma Assets (Paula).
+- ✅ #12 Layout + Base CSS.
+- ✅ #13 Navbar.
+- ✅ #14 Footer.
+- ✅ #19 Hero.
+- ✅ #29 Sectionsix.astro.
+- ✅ #21 Sectionfive.astro.
+- ✅ #22 Sectionfour.astro.
+
+### PENDIENTES (SPRINT 1 & 2)
+
+- ⏳ #18 Estrategia de Calidad: QA, Accesibilidad y WCAG AA (Ana Belén).
+- ⏳ #20 About (Cintia).
+- ⏳ #25 Partners (Jessica).

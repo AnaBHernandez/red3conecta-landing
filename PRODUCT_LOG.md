@@ -1,27 +1,29 @@
 # PRODUCT_LOG.md
 *Última actualización: 08/06/2026 | Scrum Master: Ana Belén*
 
-## 🏁 ESTADO: SPRINT 1 (Cierre)
-| Componente | Estado | Responsable | Notas |
-| :--- | :--- | :--- | :--- |
-| **#12 Layout** | ✅ HECHO | Ana Belén | CSS Nativo |
-| **#13 Navbar** | ✅ HECHO | Ana Belén | i18n + WCAG AA |
-| **#14 Footer** | ✅ HECHO | Cintia | CSS saneado |
-| **#17 Assets** | 🔴 BLOQUEO | Paula | Pendiente migración a /public |
-| **#18 Auditoría**| ⏳ ESPERA | Ana Belén | Plan Pruebas WCAG AA |
+## 🏁 ESTADO: SPRINT 1 & 2 (Integración)
+| ID | Componente | Responsable | Estado | Notas |
+| :--- | :--- | :--- | :--- | :--- |
+| **#12** | Layout | Ana Belén | ✅ HECHO | CSS Nativo |
+| **#13** | Navbar | Ana Belén | ✅ HECHO | i18n + WCAG AA |
+| **#14** | Footer | Cintia | ✅ HECHO | CSS saneado |
+| **#17** | Assets | Paula | ✅ HECHO | Migración a /public |
+| **#19** | Hero | Ana Belén | ✅ HECHO | Estructura semántica |
+| **#21** | Sectionfive | Paula | ✅ HECHO | Maquetación |
+| **#22** | Sectionfour | Paula | ✅ HECHO | Maquetación |
+| **#29** | Sectionsix | Paula | ✅ HECHO | Maquetación |
+| **N/A** | Card.astro | N/A | ✅ REINSTALADO | Recuperado inventario |
 
-## 🚀 SPRINT 2 (En curso)
-| Componente | Estado | Responsable | Notas |
+## 🚀 PENDIENTES (QA Y EJECUCIÓN)
+| ID | Tarea | Responsable | Estado |
 | :--- | :--- | :--- | :--- |
-| **#19 Hero** | ✅ HECHO | Ana Belén | Estructura semántica + i18n |
-| **#20 About** | 📋 PENDIENTE | Cintia | (Antiguo Sectionfive) |
-| **#21 Challenges**| 📋 PENDIENTE | Paula | (Antiguo Sectionsix) |
-| **#22 Ally** | 📋 PENDIENTE | Paula | - |
-| **#23 Platform** | 📋 PENDIENTE | Ana Belén | (Antiguo Sectionfour) |
-| **#29 Impact** | 📋 PENDIENTE | Paula | - |
+| **#18/#23** | QA Global + Plan WCAG AA | Ana Belén | 📋 PENDIENTE |
+| **#20** | About | Cintia | 📋 PENDIENTE |
+| **#24** | Ecosystem | Jessica | 📋 PENDIENTE |
+| **#25** | Partners | Jessica | 📋 PENDIENTE |
+| **#26** | Brand & Testeo | Paula | 📋 PENDIENTE |
+| **#27** | Deploy | Ana Belén | 📋 PENDIENTE |
 
 ## 🚧 LOG DE INCIDENCIAS
-* **Bloqueo Crítico (#17):** Errores 404 en la carga de iconos. El desarrollo depende de Paula.
-* **Gestión de Gobernanza:** Se ha eliminado `Card.astro` del inventario activo para optimizar el bundle.
-* **Sincronización:** Se ha mantenido la nomenclatura `Sectionfour/five/six` en el sistema de archivos para evitar roturas de compilación, pero se han mapeado correctamente en este Log contra las tareas del Backlog.
-* **Calidad (Línea Roja #5):** Se detecta texto *hardcoded* en componentes de terceros. Se ha establecido el plan de refactorización centralizada en `ca.json` para el día 09/06/2026.
+- **Restauración:** Se reincorpora `Card.astro` al sistema de archivos tras validación de dependencias.
+- **Calidad (Línea Roja #5):** Pendiente refactorización de textos *hardcoded* a `ca.json` para el 09/06/2026.

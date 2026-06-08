@@ -4,10 +4,16 @@ import t from "../i18n/ca.json";
 
 <nav class="navbar" aria-label="Navegació principal">
   <div class="navbar__container">
-    <a href="/" class="navbar__logo">
-      Red3<span class="logo__accent">Conecta</span>
+    <a href="/" class="navbar__logo"
+      ><!-- Logo integrado desde /public/Modelo_B.png -->
+      <img
+        src="/Modelo_B.png"
+        alt="Logotip de Red3Conecta"
+        width="90"
+        height="85"
+        loading="eager"
+      />
     </a>
-
     <button
       class="navbar__toggle"
       aria-expanded="false"
@@ -38,7 +44,7 @@ import t from "../i18n/ca.json";
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #ffffff;
+    background-color: #ff914d;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     padding: var(--space-4, 16px) var(--space-6, 24px);
   }
