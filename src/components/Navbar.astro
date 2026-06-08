@@ -44,19 +44,21 @@ import t from "../i18n/ca.json";
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #ff914d;
+    background: linear-gradient(to right, rgb(255, 167, 112), rgb(255, 200, 160));
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    padding: var(--space-4, 16px) var(--space-6, 24px);
+     padding: var(--space-4, 16px) clamp(16px, 4vw, 48px);
   }
 
-  .navbar__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: var(--max-w-2xl, 1280px);
-    margin: 0 auto;
-    width: 100%;
-  }
+ .navbar__container {
+  display: flex;
+  justify-content: center;  /* ← centra todo */
+  align-items: center;
+  gap: clamp(24px, 5vw, 80px); /* ← espacio entre logo y links */
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 
   .navbar__logo {
     font-size: var(--text-md, 1.25rem);
@@ -70,18 +72,19 @@ import t from "../i18n/ca.json";
   }
 
   .navbar__list {
-    display: flex;
-    list-style: none;
-    gap: var(--space-8, 32px);
-    margin: 0;
-    padding: 0;
-  }
+  display: flex;
+  list-style: none;
+  gap: clamp(10px, 2vw, 24px); /* ← gap fluido más contenido */
+  margin: 0;
+  padding: 0;
+}
 
   .navbar__link,
   .navbar__link:visited {
     text-decoration: none !important;
     color: var(--color-black, #000000) !important;
-    font-size: var(--text-base, 1rem);
+   font-size: clamp(0.75rem, 1vw, 0.95rem); /* más agresivo */
+   white-space: nowrap;
     font-weight: 500;
     transition: color var(--transition-fast, 150ms ease);
   }
