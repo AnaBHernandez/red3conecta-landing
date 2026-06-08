@@ -80,18 +80,21 @@ import t from "../i18n/ca.json";
 }
 
   .navbar__link,
-  .navbar__link:visited {
-    text-decoration: none !important;
-    color: var(--color-black, #000000) !important;
-   font-size: clamp(0.75rem, 1vw, 0.95rem); /* más agresivo */
-   white-space: nowrap;
-    font-weight: 500;
-    transition: color var(--transition-fast, 150ms ease);
-  }
+.navbar__link:visited {
+  text-decoration: none !important;
+  color: var(--color-black, #000000) !important;
+  font-size: clamp(0.75rem, 1vw, 0.95rem);
+  white-space: nowrap;
+  font-weight: 500;
+  transition: 
+    color var(--transition-fast, 150ms ease),
+    font-size 150ms ease;        /* ← añadido */
+}
 
-  .navbar__link:hover {
-    color: var(--color-light-brown, #edcfa6) !important;
-  }
+.navbar__link:hover {
+  color:chocolate !important;
+  font-size: clamp(0.82rem, 1.1vw, 1.05rem); /* ← ~10% más grande */
+}
 
   .navbar__link:active {
     color: var(--color-black, #000000);
