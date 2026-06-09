@@ -3,24 +3,10 @@ const kpis = [
     { numero: "+200", descripcion: "persones usuàries en fase pilot" },
     { numero: "+23", descripcion: "entitats socials participants" },
     { numero: "+23", descripcion: "professionals del tercer sector implicats" },
-    {
-        numero: "−50%",
-        descripcion:
-            "reducció esperada del temps de cerca i coordinació manual",
-    },
-    {
-        numero: "+30%",
-        descripcion: "millora esperada de l'autonomia de les persones ateses",
-    },
-    {
-        numero: "9+",
-        descripcion:
-            "cicles de validació completats amb professionals i persones usuàries",
-    },
-    {
-        numero: "3,5:1 – 5:1",
-        descripcion: "SROI estimat — retorn social per euro invertit*",
-    },
+    { numero: "−50%", descripcion: "reducció esperada del temps de cerca i coordinació manual" },
+    { numero: "+30%", descripcion: "millora esperada de l'autonomia de les persones ateses" },
+    { numero: "9+", descripcion: "cicles de validació completats amb professionals i persones usuàries" },
+    { numero: "3,5:1 – 5:1", descripcion: "SROI estimat — retorn social per euro invertit*" },
 ];
 ---
 
@@ -34,6 +20,32 @@ const kpis = [
         </p>
     </div>
 
+    <div class="stats__grid">
+        {kpis.map((kpi) => {
+            const match = kpi.numero.match(/\d+([.,]\d+)?/);
+            const numerico = match ? match[0].replace(",", ".") : null;
+            const animable = numerico && !kpi.numero.includes(":");
+
+            return (
+                <div class="kpi">
+                    <span
+                        class="kpi__numero"
+                        data-target={animable ? numerico : null}
+                        data-formato={animable ? kpi.numero : null}
+                    >
+                        {kpi.numero}
+                    </span>
+                    <p class="kpi__descripcion">{kpi.descripcion}</p>
+                </div>
+            );
+        })}
+    </div>
+
+    <p class="stats__nota">
+        * El SROI (Social Return on Investment) és una metodologia estandarditzada
+        d'avaluació d'impacte social que quantifica el valor generat per cada euro invertit.
+    </p>
+</div>
 
 <style>
     .stats {
@@ -44,7 +56,6 @@ const kpis = [
         gap: 2.5rem;
     }
 
-    /* HEADER */
     .stats__header h2 {
         font-size: 1.8rem;
         color: var(--color-primary);
@@ -57,7 +68,6 @@ const kpis = [
         margin: 0;
     }
 
-    /* GRID DE KPIS */
     .stats__grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -66,13 +76,18 @@ const kpis = [
 
     .kpi {
         background-color: var(--color-light-cream);
-        backdrop-filter: blur(10px);
         border-radius: 1rem;
         padding: 1.5rem;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        border-bottom: 4px solid orange;
+        border-bottom: 4px solid rgba(255, 166, 0, 0.365);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .kpi:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: var(--shadow-md);
     }
 
     .kpi__numero {
@@ -80,6 +95,12 @@ const kpis = [
         font-weight: bold;
         color: var(--color-primary);
         line-height: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    
+    .kpi__numero.is-animating {
+        opacity: 0.6;
     }
 
     .kpi__descripcion {
@@ -89,10 +110,9 @@ const kpis = [
         line-height: 1.5;
     }
 
-    /* NOTA AL PIE */
     .stats__nota {
         margin: 0;
-        color: var(--color-black)
+        color: var(--color-black);
         font-size: 0.8rem;
         font-style: italic;
         line-height: 1.5;
@@ -100,3 +120,48 @@ const kpis = [
         padding-top: 1rem;
     }
 </style>
+
+<script>
+    const counters = document.querySelectorAll<HTMLElement>(".kpi__numero[data-target]");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+
+                const el = entry.target as HTMLElement;
+                const target = parseFloat(el.dataset.target!);
+                const formato = el.dataset.formato!;
+                const duration = 1600;
+                const start = performance.now();
+
+                el.classList.add("is-animating");
+
+                const tick = (now: number) => {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // easing cúbico: arranca rápido y frena al final
+                    const ease = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.round(ease * target);
+
+                    // Reconstruye el formato original sustituyendo solo el número
+                    el.textContent = formato.replace(/\d+([.,]\d+)?/, String(current));
+
+                    if (progress < 1) {
+                        requestAnimationFrame(tick);
+                    } else {
+                        // Al terminar muestra el valor exacto original
+                        el.textContent = formato;
+                        el.classList.remove("is-animating");
+                    }
+                };
+
+                requestAnimationFrame(tick);
+                observer.unobserve(el); // solo anima una vez
+            });
+        },
+        { threshold: 0.3 }
+    );
+
+    counters.forEach((el) => observer.observe(el));
+</script>

@@ -16,76 +16,76 @@ import Card from "./Card.astro";
     </p>
   </div>
 
-  <!-- BLOC A Y BLOC B  -->
+  <!-- BLOC A Y BLOC B -->
   <div class="container__blocs">
     <div class="bloc bloc--a">
-      <h3>Per a professionals del tercer sector</h3>
-      <p class="bloc__tagline">Menys temps gestionant. Més temps atenent.</p>
-      <ul>
-        <li>
-          Catàleg de recursos validat, editable i actualitzat col·lectivament.
-        </li>
-        <li>Cercador intel·ligent amb recomanacions argumentades en segons.</li>
-        <li>Filtres per tipologia, territori, perfil i requisits d'accés.</li>
-        <li>Coordinació i derivació entre entitats àgil i traçable.</li>
-        <li>Registre de consultes i aprenentatge continu.</li>
-      </ul>
-      <p class="bloc__result">
-        Reducció de més del 50% del temps dedicat a cerques i coordinació
-        manual.
-      </p>
+      <div class="bloc__overlay"></div>
+      <div class="bloc__content">
+        <h3>Per a professionals del tercer sector</h3>
+        <p class="bloc__tagline">Menys temps gestionant. Més temps atenent.</p>
+        <ul>
+          <li>Catàleg de recursos validat, editable i actualitzat col·lectivament.</li>
+          <li>Cercador intel·ligent amb recomanacions argumentades en segons.</li>
+          <li>Filtres per tipologia, territori, perfil i requisits d'accés.</li>
+          <li>Coordinació i derivació entre entitats àgil i traçable.</li>
+          <li>Registre de consultes i aprenentatge continu.</li>
+        </ul>
+        <p class="bloc__result">
+          Reducció de més del 50% del temps dedicat a cerques i coordinació manual.
+        </p>
+      </div>
     </div>
 
     <div class="bloc bloc--b">
-      <h3>Per a les persones ateses</h3>
-      <p class="bloc__tagline">
-        Accés clar. Sense barreres. Des de qualsevol dispositiu.
-      </p>
-      <ul>
-        <li>Buscador simplificat amb llenguatge clar i accessible.</li>
-        <li>Navegació guiada cap als recursos adaptats al seu perfil.</li>
-        <li>
-          Accessible des del mòbil, sense coneixements tecnològics avançats.
-        </li>
-      </ul>
-      <p class="bloc__result">
-        Millora de l'autonomia en la cerca de recursos i reducció de la
-        dependència d'intermediaris.
-      </p>
+      <div class="bloc__overlay"></div>
+      <div class="bloc__content">
+        <h3>Per a les persones ateses</h3>
+        <p class="bloc__tagline">
+          Accés clar. Sense barreres. Des de qualsevol dispositiu.
+        </p>
+        <ul>
+          <li>Buscador simplificat amb llenguatge clar i accessible.</li>
+          <li>Navegació guiada cap als recursos adaptats al seu perfil.</li>
+          <li>Accessible des del mòbil, sense coneixements tecnològics avançats.</li>
+        </ul>
+        <p class="bloc__result">
+          Millora de l'autonomia en la cerca de recursos i reducció de la
+          dependència d'intermediaris.
+        </p>
+      </div>
     </div>
   </div>
 
   <!-- CASOS DE USO -->
   <div class="container__casos">
     <h3 class="casos__titulo">Casos d'ús concrets</h3>
-
     <div class="casos__grid">
       <Card
-  icon="/icon-inertion-place.png"
-  title="Professional d'inserció laboral"
-  description="Una professional d&#39;una entitat d&#39;inserció laboral descriu el perfil d&#39;una persona en
+        icon="/icon-inertion-place.png"
+        title="Professional d'inserció laboral"
+        description="Una professional d&#39;una entitat d&#39;inserció laboral descriu el perfil d&#39;una persona en
 llenguatge natural. Red3Conecta li retorna en segons els recursos del territori que
 millor s&#39;adapten al cas — ex: formació, suport econòmic, acompanyament psicosocial,
 etc. —, amb justificació de cada recomanació i informació de contacte directa."
-  variant="caso"
-/>
-<Card
-  icon="/icon-nursing-home.png"
-  title="Equip d'atenció a persones grans"
-  description="Un equip d&#39;atenció a persones grans d&#39;una entitat necessita derivar un cas a un servei
+        variant="caso"
+      />
+      <Card
+        icon="/icon-nursing-home.png"
+        title="Equip d'atenció a persones grans"
+        description="Un equip d&#39;atenció a persones grans d&#39;una entitat necessita derivar un cas a un servei
 especialitzat d&#39;una altra organització. A través de Red3Conecta, localitza el recurs,
 comprova la disponibilitat i formalitza la derivació — tot des d&#39;un únic entorn, en
 minuts."
-  variant="caso"
-/>
-<Card
-  icon="/icons-call-on-iphone.png"
-  title="Persona jove en situació de vulnerabilitat"
-  description="Una persona jove en situació de vulnerabilitat accedeix des del mòbil al cercador i
+        variant="caso"
+      />
+      <Card
+        icon="/icons-call-on-iphone.png"
+        title="Persona jove en situació de vulnerabilitat"
+        description="Una persona jove en situació de vulnerabilitat accedeix des del mòbil al cercador i
 navega de manera autònoma pels serveis disponibles al seu municipi, filtrats per tipus
 de suport i requisits d&#39;accés."
-  variant="caso"
-/>
+        variant="caso"
+      />
     </div>
   </div>
 </div>
@@ -111,6 +111,13 @@ de suport i requisits d&#39;accés."
     line-height: 1.6;
     margin: 0;
   }
+  li{
+    background: rgba(255, 255, 255, 0.15); 
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(4px);
+    font-weight:bolder;
+  }
 
   /* BLOCS */
   .container__blocs {
@@ -120,24 +127,56 @@ de suport i requisits d&#39;accés."
   }
 
   .bloc {
-    background-color: var(--color-light-cream);
-    backdrop-filter: blur(10px);
+    position: relative;
     border-radius: 1rem;
-    padding: 2rem;
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    overflow: hidden;               /* recorta overlay e imagen */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .bloc h3 {
+  .bloc:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  .bloc--a {
+    background-image: url("public/imagenes/social-team.jpg");
+    border-left: 6px solid rgba(255, 127, 80, 0.646);
+  }
+
+  .bloc--b {
+    background-image: url("public/imagenes/social-media.jpg");
+    border-left: 6px solid rgba(255, 127, 80, 0.646);
+  }
+  .bloc__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.52);
+    z-index: 0;
+    transition: background 0.3s ease;
+  }
+
+  .bloc:hover .bloc__overlay {
+    background: rgba(0, 0, 0, 0.38); /* se aclara un poco al hover */
+  }
+  .bloc__content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;            
+  }
+  .bloc__content h3 {
     margin: 0;
-    color: var(--color-primary);
+    color: white;
+    font-size: 1.3rem;
   }
 
   .bloc__tagline {
     font-style: italic;
-    color: #555;
+    color: rgba(255, 255, 255, 0.85);
     margin: 0;
   }
 
@@ -151,21 +190,18 @@ de suport i requisits d&#39;accés."
 
   .bloc li {
     line-height: 1.5;
-    color: #333;
-  }
-
-  .bloc--a {
-    border-left: 6px solid var(--color-secondary);
-  }
-
-  .bloc--b {
-    border-left: 6px solid var(--color-primary);
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .bloc__result {
     margin: 0;
     font-weight: bold;
     font-size: 0.9rem;
+    color: white;
+    background: rgba(255, 255, 255, 0.15); 
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(4px);
   }
 
   /* CASOS */

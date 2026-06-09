@@ -19,12 +19,13 @@ const { icon, title, description, variant = "default" } = Astro.props;
     font-size: 12px;
     border-radius: 2%;
     background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-left: 8px solid;  
     display: flex;
     flex-direction: row;
     align-items: center;     
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
     .card__content {
         display: flex;
@@ -54,7 +55,14 @@ const { icon, title, description, variant = "default" } = Astro.props;
     }
     .card--caso {
     border-left: none;
-    border-top: 4px solid orange;
-    border-bottom: 4px solid orange;
+    border-top: 4px solid rgba(173, 92, 0, 0.628);
+    border-bottom: 4px solid rgba(162, 78, 0, 0.653);
+}
+.card:hover {
+  transform: scale(1.04) translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.08);
+  /* O si prefieres el overlay blanco: */
+  background-color: rgba(255, 255, 255, 0.267);
 }
 </style>
