@@ -1,0 +1,154 @@
+---
+import i18n from "../i18n/ca.json";
+const s9 = i18n.section9;
+---
+
+<section class="section9" aria-labelledby="s9-heading">
+  <div class="container">
+    <div class="section-header">
+      <h2 id="s9-heading" class="section-title">{s9.title}</h2>
+      <p class="section-intro">{s9.intro}</p>
+    </div>
+
+    <div class="awards-block">
+      <h3 class="subsection-title">{s9.awardsTitle}</h3>
+      <dl class="items-list">
+        {
+          s9.awards.map((award: any) => (
+            <div class="item-row">
+              <dt class="item-placeholder">{award.placeholder}</dt>
+              <dd class="item-desc">{award.description}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+
+    <div class="funders-block">
+      <h3 class="subsection-title">{s9.fundersTitle}</h3>
+      <dl class="items-list">
+        {
+          s9.funders.map((funder: any) => (
+            <div class="item-row">
+              <dt class="item-placeholder">{funder.placeholder}</dt>
+              <dd class="item-desc">{funder.description}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+
+    <aside class="team-note" role="note" aria-label="Nota per a l'equip">
+      <span class="team-note__icon" aria-hidden="true">ℹ</span>
+      <p>{s9.teamNote}</p>
+    </aside>
+  </div>
+</section>
+<style>
+  .section9 {
+    --s-bg: #ffffff;
+    --s-bg-row: #faf7f2;
+    --s-bg-note: #fef9ec;
+    --s-text-primary: #2c1810;
+    --s-text-secondary: #5c3d2e;
+    --s-text-muted: #8b7355;
+    --s-accent: #8b6914;
+    --s-accent-light: #e8d5b7;
+    --s-border: #e8ddd0;
+    --s-border-note: #d4a017;
+    --s-radius: 12px;
+
+    background-color: var(--s-bg);
+    padding: clamp(3rem, 8vw, 6rem) 0;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 5vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+    font-weight: 700;
+    color: var(--s-text-primary);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .section-intro {
+    font-size: clamp(1rem, 2.2vw, 1.125rem);
+    color: var(--s-text-secondary);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .subsection-title {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 600;
+    color: var(--s-text-primary);
+    margin: 0 0 1.25rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--s-border);
+  }
+
+  .items-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    border: 1px solid var(--s-border);
+    border-radius: var(--s-radius);
+    overflow: hidden;
+  }
+
+  .item-row {
+    display: grid;
+    grid-template-columns: minmax(160px, 200px) 1fr;
+    border-bottom: 1px solid var(--s-border);
+  }
+
+  .item-row:last-child {
+    border-bottom: none;
+  }
+  .item-row:nth-child(even) {
+    background-color: var(--s-bg-row);
+  }
+
+  .item-placeholder {
+    padding: 1.25rem;
+    font-weight: 700;
+    color: var(--s-text-primary);
+    border-right: 1px solid var(--s-border);
+    font-family: monospace;
+  }
+
+  .item-desc {
+    padding: 1.25rem;
+    color: var(--s-text-secondary);
+    margin: 0;
+    font-style: italic;
+  }
+
+  .team-note {
+    display: flex;
+    gap: 0.875rem;
+    background-color: var(--s-bg-note);
+    border-left: 4px solid var(--s-border-note);
+    padding: 1rem;
+    font-size: 0.875rem;
+    color: var(--s-text-muted);
+  }
+
+  @media (max-width: 560px) {
+    .item-row {
+      grid-template-columns: 1fr;
+    }
+    .item-placeholder {
+      border-right: none;
+      border-bottom: 1px solid var(--s-border);
+    }
+  }
+</style>

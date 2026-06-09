@@ -51,5 +51,48 @@
       { "numero": "3,5:1", "descripcion": "SROI estimat — retorn social" }
     ],
     "note": "*Aquests resultats s'avaluaran al segon semestre de 2026."
-  }
+  },
+  "section7": {
+    "title": "Un projecte. Tot un ecosistema.",
+    "intro": "Red3Conecta no és una iniciativa aïllada. És el resultat d'una col·laboració real entre entitats amb trajectòria, propòsit compartit i compromís territorial.",
+    "driversTitle": "Entitats impulsores",
+    "drivers": [
+      { "name": "Factoría F5", "description": "Entitat especialitzada en formació tecnològica i innovació social. Lidera el desenvolupament tècnic." },
+      { "name": "Fundació Formació i Treball", "description": "Entitat de referència en inserció laboral i acompanyament social." }
+    ],
+    "supportTitle": "Suport institucional",
+    "supportQuote": "El projecte pilot ha estat possible gràcies al suport tècnic i financer de UNADA, l'acceleradora social d'Aigües de Barcelona.",
+    "networkNote": "Red3Conecta compta amb la participació activa d'entitats col·laboradores del tercer sector metropolità."
+  },
+  "section8": {
+    "title": "Ja coneixes el potencial de Red3Conecta?",
+    "intro": "El futur del tercer sector es construeix col·laborant. No esperis més per transformar la gestió dels teus serveis.",
+    "ctas": [
+      {
+        "label": "Sol·licita una demo",
+        "description": "Veure la plataforma en funcionament.",
+        "arrow": "→"
+      },
+      {
+        "label": "Suma't com a entitat",
+        "description": "Forma part de l'ecosistema Red3Conecta.",
+        "arrow": "→"
+      }
+    ],
+    "contactNote": "Tens dubtes? Escriu-nos a contacte@red3conecta.org",
+    "footer": "© 2026 Red3Conecta. Projecte pilot impulsat per Factoría F5 i Fundació Formació i Treball."
+  },
+  "section9": {
+  "title": "Premis i reconeixements",
+  "intro": "Red3Conecta avança gràcies al suport d'institucions i la validació de la nostra trajectòria.",
+  "awardsTitle": "Premis",
+  "awards": [
+    { "placeholder": "[ Premi 1 ]", "description": "Descripció del premi o menció aconseguida." }
+  ],
+  "fundersTitle": "Finançadors i col·laboradors",
+  "funders": [
+    { "placeholder": "[ Col·laborador 1 ]", "description": "Entitat que dona suport a la iniciativa." }
+  ],
+  "teamNote": "Nota per a l'equip: Aquesta secció conté dades pendents d'omplir. Assegureu-vos de tenir els textos definitius abans del pas a producció."
+}
 }

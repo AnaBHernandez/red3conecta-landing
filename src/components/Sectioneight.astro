@@ -1,0 +1,146 @@
+---
+// src/components/Sectioneight.astro
+import i18n from "../i18n/ca.json";
+const s8 = (i18n as any).section8;
+---
+
+<section class="section8" aria-labelledby="s8-heading">
+  <div class="container">
+    <div class="cta-card">
+      <h2 id="s8-heading" class="cta-title">{s8.title}</h2>
+      <p class="cta-intro">{s8.intro}</p>
+
+      <div class="cta-buttons">
+        {
+          s8.ctas.map((cta: any, index: number) => (
+            <a
+              href="#"
+              class:list={[
+                "cta-btn",
+                index === 0 ? "cta-btn--primary" : "cta-btn--secondary",
+              ]}
+              aria-label={cta.label}
+            >
+              <span class="cta-btn__arrow" aria-hidden="true">
+                {cta.arrow}
+              </span>
+              <span class="cta-btn__text">
+                <strong class="cta-btn__label">{cta.label}</strong>
+                <span class="cta-btn__desc">{cta.description}</span>
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <footer class="section-footer">
+      <p class="contact-note">{s8.contactNote}</p>
+      <p class="footer-credits">{s8.footer}</p>
+    </footer>
+  </div>
+</section>
+
+<style>
+  .section8 {
+    --s-bg-main: #e8d5b7;
+    --s-bg-page: #faf7f2;
+    --s-text-primary: #2c1810;
+    --s-text-secondary: #5c3d2e;
+    --s-text-muted: #8b7355;
+    --s-accent: #8b6914;
+    --s-border: #2c1810;
+
+    background-color: var(--s-bg-page);
+    padding: clamp(3rem, 8vw, 6rem) 0;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 5vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .cta-card {
+    background-color: var(--s-bg-main);
+    border-radius: 12px;
+    padding: clamp(2rem, 6vw, 4rem) clamp(1.5rem, 5vw, 3.5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: var(--s-text-primary);
+    margin: 0;
+  }
+
+  .cta-intro {
+    font-size: clamp(0.95rem, 2.2vw, 1.0625rem);
+    color: var(--s-text-secondary);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .cta-btn {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--s-border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--s-text-primary);
+    flex: 1;
+    min-width: 240px;
+    max-width: 320px;
+    transition: all 0.2s ease;
+  }
+
+  .cta-btn--primary {
+    background-color: rgba(44, 24, 16, 0.07);
+  }
+
+  .cta-btn:hover {
+    background-color: rgba(44, 24, 16, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .cta-btn__arrow {
+    color: var(--s-accent);
+    font-weight: 700;
+  }
+
+  .cta-btn__label {
+    font-weight: 700;
+    display: block;
+  }
+
+  .cta-btn__desc {
+    font-size: 0.8125rem;
+    color: var(--s-text-secondary);
+    display: block;
+  }
+
+  .section-footer {
+    text-align: center;
+    color: var(--s-text-muted);
+    font-style: italic;
+    font-size: 0.875rem;
+  }
+</style>
