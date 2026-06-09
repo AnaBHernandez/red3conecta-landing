@@ -150,23 +150,33 @@ de suport i requisits d&#39;accés."
     border-left: 6px solid rgba(255, 127, 80, 0.646);
   }
   .bloc__overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.52);
-    z-index: 0;
-    transition: background 0.3s ease;
-  }
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08); /* tinte blanco muy sutil */
+  backdrop-filter: blur(2px);            /* desenfoca ligeramente la imagen */
+  z-index: 0;
+}
 
   .bloc:hover .bloc__overlay {
     background: rgba(0, 0, 0, 0.38); /* se aclara un poco al hover */
   }
   .bloc__content {
-    position: relative;
-    z-index: 1;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;            
+   position: relative;
+  z-index: 1;
+  margin: 1.5rem;                        /* separa el cristal del borde del bloc */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: white;
+
+  /* aquí está el glassmorphism */
+  background: rgba(0, 0, 0, 0.35);      /* fondo oscuro semitransparente */
+  backdrop-filter: blur(12px);           /* el blur que da el efecto cristal */
+  -webkit-backdrop-filter: blur(12px);   /* compatibilidad Safari */
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15); /* borde cristal */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   }
   .bloc__content h3 {
     margin: 0;
