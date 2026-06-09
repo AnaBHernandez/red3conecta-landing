@@ -15,10 +15,26 @@ import Sectionnine from "../components/Sectionnine.astro";
 
 <html lang="ca">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Red3Conecta</title>
-  </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red3Conecta</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Strichpunkt+Sans:wght@400..900&display=swap" rel="stylesheet" />
+  <style is:global>
+  body {
+  font-family: var(--font-secondary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-optical-sizing: auto;
+  font-variation-settings: "wdth" 100;
+}
+</style>
+</head>
   <body>
     <Navbar />
     <main>

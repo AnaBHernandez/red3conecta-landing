@@ -61,4 +61,8 @@
   --max-w-xl: 1024px;
   --max-w-2xl: 1280px;
   --max-w-full: 100%;
+/* Fuentes */
+  --font-primary: "Raleway", sans-serif;
+  --font-secondary: "Strichpunkt Sans", sans-serif;
 }
+
