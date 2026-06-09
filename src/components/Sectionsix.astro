@@ -22,16 +22,16 @@ const kpis = [
 
     <div class="stats__grid">
         {kpis.map((kpi) => {
-            const match = kpi.numero.match(/\d+([.,]\d+)?/);
-            const numerico = match ? match[0].replace(",", ".") : null;
-            const animable = numerico && !kpi.numero.includes(":");
+            const numeroEncontrado = kpi.numero.match(/\d+([.,]\d+)?/);
+            const soloElNumero = numeroEncontrado ? numeroEncontrado[0].replace(",", ".") : null;
+            const sePuedeAnimar = soloElNumero && !kpi.numero.includes(":");
 
             return (
                 <div class="kpi">
                     <span
                         class="kpi__numero"
-                        data-target={animable ? numerico : null}
-                        data-formato={animable ? kpi.numero : null}
+                        data-target={sePuedeAnimar ? soloElNumero : null}
+                        data-formato={sePuedeAnimar ? kpi.numero : null}
                     >
                         {kpi.numero}
                     </span>
@@ -81,7 +81,7 @@ const kpis = [
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        border-bottom: 4px solid rgba(255, 166, 0, 0.365);
+        border-bottom: 4px solid orange;
         transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
@@ -95,10 +95,8 @@ const kpis = [
         font-weight: bold;
         color: var(--color-primary);
         line-height: 1;
-        transition: opacity 0.3s ease;
     }
 
-    
     .kpi__numero.is-animating {
         opacity: 0.6;
     }
@@ -122,46 +120,43 @@ const kpis = [
 </style>
 
 <script>
-    const counters = document.querySelectorAll<HTMLElement>(".kpi__numero[data-target]");
+    const contadores = document.querySelectorAll(".kpi__numero[data-target]");
 
-    const observer = new IntersectionObserver(
+    const observador = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
 
                 const el = entry.target as HTMLElement;
-                const target = parseFloat(el.dataset.target!);
-                const formato = el.dataset.formato!;
-                const duration = 1600;
-                const start = performance.now();
+                const numeroFinal = parseFloat(el.dataset.target!);
+                const textoCompleto = el.dataset.formato!;
+                const duracion = 1600;
+                const inicio = performance.now();
 
                 el.classList.add("is-animating");
 
-                const tick = (now: number) => {
-                    const elapsed = now - start;
-                    const progress = Math.min(elapsed / duration, 1);
-                    // easing cúbico: arranca rápido y frena al final
-                    const ease = 1 - Math.pow(1 - progress, 3);
-                    const current = Math.round(ease * target);
+                const animar = (ahora: number) => {
+                    const transcurrido = ahora - inicio;
+                    const progreso = Math.min(transcurrido / duracion, 1);
+                    const ease = 1 - Math.pow(1 - progreso, 3);
+                    const actual = Math.round(ease * numeroFinal);
 
-                    // Reconstruye el formato original sustituyendo solo el número
-                    el.textContent = formato.replace(/\d+([.,]\d+)?/, String(current));
+                    el.textContent = textoCompleto.replace(/\d+([.,]\d+)?/, String(actual));
 
-                    if (progress < 1) {
-                        requestAnimationFrame(tick);
+                    if (progreso < 1) {
+                        requestAnimationFrame(animar);
                     } else {
-                        // Al terminar muestra el valor exacto original
-                        el.textContent = formato;
+                        el.textContent = textoCompleto;
                         el.classList.remove("is-animating");
                     }
                 };
 
-                requestAnimationFrame(tick);
-                observer.unobserve(el); // solo anima una vez
+                requestAnimationFrame(animar);
+                observador.unobserve(el);
             });
         },
         { threshold: 0.3 }
     );
 
-    counters.forEach((el) => observer.observe(el));
+    contadores.forEach((el) => observador.observe(el));
 </script>
