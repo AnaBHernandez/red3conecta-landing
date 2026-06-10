@@ -39,6 +39,68 @@
       "Buscador simplificat amb llenguatge clar.",
       "Navegació guiada cap als recursos adaptats.",
       "Accessible des del mòbil."
+    ],
+    "casos_title": "Casos d'ús concrets",
+    "casos": [
+      {
+        "icon": "/icon-inertion-place.png",
+        "title": "Professional d'inserció laboral",
+        "description": "Una professional d'una entitat d'inserció laboral descriu el perfil d'una persona en llenguatge natural. Red3Conecta li retorna en segons els recursos del territori que millor s'adapten al cas."
+      },
+      {
+        "icon": "/icon-nursing-home.png",
+        "title": "Equip d'atenció a persones grans",
+        "description": "Un equip d'atenció a persones grans d'una entitat necessita derivar un cas a un servei especialitzat d'una altra organització. A través de Red3Conecta, localitza el recurs i formalitza la derivació en minuts."
+      },
+      {
+        "icon": "/icons-call-on-iphone.png",
+        "title": "Persona jove en situació de vulnerabilitat",
+        "description": "Una persona jove accedeix des del mòbil al cercador i navega de manera autònoma pels serveis disponibles al seu municipi."
+      }
+    ]
+  },
+  "section5": {
+    "title": "Construït des del territori. Amb el territori. I governat per ell.",
+    "subtitle": "Red3Conecta no s'ha dissenyat en un laboratori extern al tercer sector. Cada decisió s'ha definit conjuntament amb les entitats que l'utilitzen.",
+    "cards_small": [
+      {
+        "icon": "/icon-social.png",
+        "icon_alt": "icon social",
+        "title": "Cocreació real, no consulta simbòlica",
+        "desc": "En un procés d'acceleració realitzat gràcies al suport d'Unada, el projecte ha passat per processos de recerca i validacions directes amb dones usuàries."
+      },
+      {
+        "icon": "/icon-online-community.png",
+        "icon_alt": "community icon",
+        "title": "Governança compartida",
+        "desc": "Red3Conecta no pertany a cap empresa. Pertany a l'ecosistema que la construeix. Les entitats participants tenen veu en les decisions."
+      },
+      {
+        "icon": "/icon-time.png",
+        "icon_alt": "icon time",
+        "title": "Ahorro de temps real per als professionals",
+        "desc": "La intel·ligència artificial interpreta consultes en llenguatge natural i retorna recomanacions argumentades en segons."
+      },
+      {
+        "icon": "/icon-resources.png",
+        "icon_alt": "icon resources",
+        "title": "Xarxa viva d'entitats",
+        "desc": "El catàleg de recursos es construeix i s'actualitza col·lectivament entre les entitats participants."
+      }
+    ],
+    "cards_wide": [
+      {
+        "icon": "/icon-red-technology.png",
+        "icon_alt": "icon red technology",
+        "title": "Tecnologia al servei de l'impacte",
+        "desc": "La IA no és el centre del projecte. És l'eina que fa possible la connexió. El centre és el treball del tercer sector i les persones que atén."
+      },
+      {
+        "icon": "/icon-study.png",
+        "icon_alt": "icon study",
+        "title": "Pilotatge amb impacte mesurable",
+        "desc": "El projecte es pilota amb entitats reals, amb indicadors de seguiment i avaluació d'impacte. Perquè innovació social sense mesura no és innovació: és intenció."
+      }
     ]
   },
   "impact": {
@@ -83,16 +145,16 @@
     "footer": "© 2026 Red3Conecta. Projecte pilot impulsat per Factoría F5 i Fundació Formació i Treball."
   },
   "section9": {
-  "title": "Premis i reconeixements",
-  "intro": "Red3Conecta avança gràcies al suport d'institucions i la validació de la nostra trajectòria.",
-  "awardsTitle": "Premis",
-  "awards": [
-    { "placeholder": "[ Premi 1 ]", "description": "Descripció del premi o menció aconseguida." }
-  ],
-  "fundersTitle": "Finançadors i col·laboradors",
-  "funders": [
-    { "placeholder": "[ Col·laborador 1 ]", "description": "Entitat que dona suport a la iniciativa." }
-  ],
-  "teamNote": "Nota per a l'equip: Aquesta secció conté dades pendents d'omplir. Assegureu-vos de tenir els textos definitius abans del pas a producció."
-}
+    "title": "Premis i reconeixements",
+    "intro": "Red3Conecta avança gràcies al suport d'institucions i la validació de la nostra trajectòria.",
+    "awardsTitle": "Premis",
+    "awards": [
+      { "placeholder": "[ Premi 1 ]", "description": "Descripció del premi o menció aconseguida." }
+    ],
+    "fundersTitle": "Finançadors i col·laboradors",
+    "funders": [
+      { "placeholder": "[ Col·laborador 1 ]", "description": "Entitat que dona suport a la iniciativa." }
+    ],
+    "teamNote": "Nota per a l'equip: Aquesta secció conté dades pendents d'omplir. Assegureu-vos de tenir els textos definitius abans del pas a producció."
+  }
 }

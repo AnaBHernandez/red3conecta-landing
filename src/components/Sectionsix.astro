@@ -1,23 +1,13 @@
 ---
-const kpis = [
-    { numero: "+200", descripcion: "persones usuàries en fase pilot" },
-    { numero: "+23", descripcion: "entitats socials participants" },
-    { numero: "+23", descripcion: "professionals del tercer sector implicats" },
-    { numero: "−50%", descripcion: "reducció esperada del temps de cerca i coordinació manual" },
-    { numero: "+30%", descripcion: "millora esperada de l'autonomia de les persones ateses" },
-    { numero: "9+", descripcion: "cicles de validació completats amb professionals i persones usuàries" },
-    { numero: "3,5:1 – 5:1", descripcion: "SROI estimat — retorn social per euro invertit*" },
-];
+import t from "../i18n/ca.json";
+
+const kpis = t.impact.kpis;
 ---
 
 <div class="stats">
     <div class="stats__header">
-        <h2>No mesurem intencions. Mesurem resultats.</h2>
-        <p>
-            Red3Conecta s'avalua amb indicadors reals, des del primer dia de
-            pilotatge. L'impacte es mesura en temps recuperat, derivacions
-            millorades i persones millor ateses.
-        </p>
+        <h2>{t.impact.title}</h2>
+        <p>{t.impact.subtitle}</p>
     </div>
 
     <div class="stats__grid">
@@ -41,10 +31,7 @@ const kpis = [
         })}
     </div>
 
-    <p class="stats__nota">
-        * El SROI (Social Return on Investment) és una metodologia estandarditzada
-        d'avaluació d'impacte social que quantifica el valor generat per cada euro invertit.
-    </p>
+    <p class="stats__nota">{t.impact.note}</p>
 </div>
 
 <style>
