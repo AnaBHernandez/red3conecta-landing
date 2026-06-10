@@ -12,14 +12,44 @@
     "btn_join": "Suma't a la xarxa",
     "context": "Un projecte impulsat per Factoría F5 i Fundació Formació i Treball."
   },
+  "about": {
+    "title": "Per què neix Red3Conecta?",
+    "items": [
+      "Creiem que el tercer sector mereix una infraestructura digital creada específicament per a les seves necessitats.",
+      "Red3Conecta vol facilitar la col·laboració entre entitats, professionals i persones usuàries.",
+      "El nostre objectiu és reduir les tasques administratives i augmentar el temps d'atenció a les persones."
+    ],
+    "img_alt": "Col·laboració entre entitats socials",
+    "active_tag": "Projecte actiu"
+  },
   "footer": {
-    "title": "Red3Conecta",
+    "brand": "Red3Conecta",
     "desc": "Infraestructura digital col·laborativa construïda amb el tercer sector, per al tercer sector.",
-    "contact_label": "Per a més informació:",
     "email": "contacte@red3conecta.org",
-    "linkedin": "LinkedIn del projecte",
-    "impulsat": "Projecte impulsat per Factoría F5 i Fundació Formació i Treball.",
-    "rights": "© 2026 Red3Conecta. Tots els drets reservats."
+    "nav_label": "Navegació",
+    "nav_links": [
+      "Per què neix Red3Conecta",
+      "La plataforma",
+      "Com es construeix",
+      "Ecosistema"
+    ],
+    "partners_label": "Impulsors",
+    "partners": [
+      "Factoría F5",
+      "Fundació Formació i Treball",
+      "UNADA · Aigües de Barcelona"
+    ],
+    "newsletter_label": "Rep novetats del projecte",
+    "newsletter_placeholder": "el-teu@email.cat",
+    "newsletter_ok": "✓ Gràcies! Et contactarem aviat.",
+    "chips": ["Tercer sector", "IA aplicada", "Impacte social"],
+    "bottom": "Projecte impulsat per <strong>Factoría F5</strong> i <strong>Fundació Formació i Treball</strong>.",
+    "rights": "© 2026 Red3Conecta. Tots els drets reservats.",
+    "aria_social": "Xarxes socials",
+    "aria_linkedin": "LinkedIn de Red3Conecta",
+    "aria_instagram": "Instagram de Red3Conecta",
+    "aria_twitter": "X (Twitter) de Red3Conecta",
+    "aria_subscribe": "Subscriure's"
   },
   "platform": {
     "title": "Red3Conecta: la infraestructura digital compartida del tercer sector.",

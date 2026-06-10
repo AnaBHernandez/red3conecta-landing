@@ -64,29 +64,5 @@
 /* Fuentes */
   --font-primary: "Raleway", sans-serif;
   --font-secondary: "Strichpunkt Sans", sans-serif;
-
-.logo-item {
-  background: #ffffff;
-  border: 1px solid #e8ddd0;
-  border-radius: 12px;
-  width: 160px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 12px;
-  flex-shrink: 0;
-  padding: 12px 16px;
 }
 
-.logo-item img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.logo-item--dark {
-  background: #1a1a1a;
-  border-color: #333;
-}  
-}
