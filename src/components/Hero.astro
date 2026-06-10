@@ -19,11 +19,12 @@ import t from "../i18n/ca.json";
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem 2rem;
+    padding: clamp(3rem,5vw,4.5rem) clamp(1.25rem,3vw,2.5rem);
     gap: 2rem;
     text-align: center;
     background-color: var(--color-light-brown);
     width: 100%;
+    box-sizing: border-box;
   }
   .hero h1 {
     font-size: 2rem;
