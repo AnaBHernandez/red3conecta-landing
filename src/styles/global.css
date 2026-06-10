@@ -1,10 +1,18 @@
 :root {
-  --color-light-brown: rgb(237, 207, 176);
-  --color-dark-cream: rgb(241, 229, 217);
-  --color-light-cream: rgb(252, 242, 227);
+  /* Paleta principal */
+  --color-cream-light:  #F1E5D9;   /* el más claro, casi blanco roto */
+  --color-peach-soft:   #FFD8BE;   /* melocotón suave */
+  --color-peach-mid:    #FFC7AD;   /* melocotón medio */
+  --color-peach-warm:   #FFB2A9;   /* melocotón cálido, casi salmón */
 
-  --color-white: rgb(255, 255, 255);
-  --color-black: rgb(0, 0, 0);
+  /* Aliases semánticos — úsalos en los componentes */
+  --color-background:   var(--color-cream-light);
+  --color-surface:      var(--color-peach-soft);
+  --color-accent:       var(--color-peach-mid);
+  --color-highlight:    var(--color-peach-warm);
+
+  --color-white: #ffffff;
+  --color-black: #1a1a1a;     
 
   --text-xs: 0.64rem;
   --text-sm: 0.8rem;
@@ -62,7 +70,7 @@
   --max-w-2xl: 1280px;
   --max-w-full: 100%;
 /* Fuentes */
-  --font-primary: "Raleway", sans-serif;
-  --font-secondary: "Strichpunkt Sans", sans-serif;
+--font-primary:   "PT Sans", sans-serif;    /* títulos h1-h6 */
+--font-secondary: "Cantarell", sans-serif;  /* cuerpo de texto */
 }
 
