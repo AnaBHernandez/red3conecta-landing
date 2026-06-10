@@ -33,24 +33,17 @@ import t from "../i18n/ca.json";
 
 
 <style>
-    .container-alpha {
-        background-color: var( --color-dark-cream);
-        padding: 3rem;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
+   .container-alpha {
+  background-color: var(--color-cream-light); /* era --color-dark-cream */
+}
 
-    .container-alpha h2 {
-        font-size: 2rem;
-        color: var(--color-black);
-        margin: 0;
-    }
+.container-alpha h2 {
+  color: var(--color-black);
+}
 
-    .container-alpha__subtitle {
-        color: #666;
-        margin: 0;
-    }
+.container-alpha__subtitle {
+  color: var(--color-black);
+}
 
     /* ---  CARDS --- */
     .cards-row {
@@ -73,7 +66,7 @@ import t from "../i18n/ca.json";
         transform: scale(1.1); translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
   filter: brightness(1.08);
-  background-color: rgba(255, 134, 134, 0.196);
+  background-color: var(--color-peach-mid);
     }
 
     /* --- COLUMNA 2 CARDS ANCHAS --- */
@@ -96,7 +89,7 @@ import t from "../i18n/ca.json";
          transform: scale(1.04); translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
   filter: brightness(1.08);
-  background-color: rgba(176, 71, 45, 0.196);
+  background-color: var(--color-peach-warm);
     }
 
     /* --- COMUN --- */
@@ -108,7 +101,7 @@ import t from "../i18n/ca.json";
 
     .card-content h3 {
         margin: 0;
-        color: var(--color-primary);
+        color: var(--color-black);
     }
 
     .card-content p {

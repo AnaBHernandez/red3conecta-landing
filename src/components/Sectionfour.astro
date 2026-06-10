@@ -50,25 +50,21 @@ import Card from "./Card.astro";
 
 <style>
   .container {
-    background-color: var(--color-light-brown);
-    display: flex;
-    flex-direction: column;
-    padding: 3rem;
-    gap: 2.5rem;
-  }
+  background-color: var(--color-cream-light); /* era --color-light-brown */
+}
 
-  /* HEADER */
-  .container__header h2 {
-    font-size: 1.8rem;
-    color: var(--color-black);
-    margin: 0 0 1rem 0;
-  }
+.container__header h2 {
+  color: var(--color-black);
+}
 
-  .container__header p {
-    color: #444;
-    line-height: 1.6;
-    margin: 0;
-  }
+.container__header p {
+  color: rgba(26, 26, 26, 0.6); /* era #444 */
+}
+
+.casos__titulo {
+  color: var(--color-black);
+}
+
   li{
     background: rgba(255, 255, 255, 0.15); 
     padding: 0.5rem 0.75rem;
