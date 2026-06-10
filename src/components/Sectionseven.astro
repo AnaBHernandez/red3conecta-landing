@@ -1,93 +1,146 @@
 ---
-// src/components/Impact.astro
 import i18n from "../i18n/ca.json";
-const { impact } = i18n;
+const s7 = (i18n as any).section7;
 ---
 
-<section class="stats" aria-labelledby="stats-title">
-  <div class="stats__header">
-    <h2 id="stats-title">{impact.title}</h2>
-    <p>{impact.subtitle}</p>
-  </div>
+<section class="s7">
+  <div class="s7__container">
+    <div class="s7__header">
+      <h2 class="s7__title">{s7.title}</h2>
+      <p class="s7__intro">{s7.intro}</p>
+    </div>
 
-  <div class="stats__grid">
-    {
-      impact.kpis.map((kpi: any) => (
-        <div class="kpi" role="region" aria-label={kpi.descripcion}>
-          <span class="kpi__numero">{kpi.numero}</span>
-          <p class="kpi__descripcion">{kpi.descripcion}</p>
-        </div>
-      ))
-    }
-  </div>
+    <div class="s7__block">
+      <h3 class="s7__subtitle">{s7.driversTitle}</h3>
+      <div class="s7__grid">
+        {s7.drivers.map((driver: any) => (
+          <div class="s7__card">
+            <h4 class="s7__card-name">{driver.name}</h4>
+            <p class="s7__card-desc">{driver.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
 
-  <p class="stats__nota">
-    {impact.note}
-  </p>
+    <div class="s7__block">
+      <h3 class="s7__subtitle">{s7.supportTitle}</h3>
+      <blockquote class="s7__quote">{s7.supportQuote}</blockquote>
+      <p class="s7__network">{s7.networkNote}</p>
+    </div>
+  </div>
 </section>
 
 <style>
-  .stats {
-    background-color: var(--color-light-brown);
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-
-  /* HEADER */
-  .stats__header h2 {
-    font-size: 1.8rem;
-    color: var(--color-primary);
-    margin: 0 0 1rem 0;
-  }
-
-  .stats__header p {
-    color: #000000;
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  /* GRID DE KPIS */
-  .stats__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  .kpi {
+  .s7 {
     background-color: var(--color-light-cream);
-    backdrop-filter: blur(10px);
-    border-radius: 1rem;
-    padding: 1.5rem;
+    padding: var(--space-16) 0;
+  }
+
+  .s7__container {
+    max-width: var(--max-w-xl);
+    margin: 0 auto;
+    padding: 0 var(--space-8);
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    border-bottom: 4px solid orange;
+    gap: var(--space-12);
   }
 
-  .kpi__numero {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: var(--color-primary);
-    line-height: 1;
+  .s7__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 780px;
   }
 
-  .kpi__descripcion {
-    margin: 0;
+  .s7__title {
+    font-family: var(--font-primary);
+    font-size: var(--text-3xl);
+    font-weight: 700;
     color: var(--color-black);
-    font-size: 0.9rem;
-    line-height: 1.5;
+    line-height: var(--leading-tight);
+    margin: 0;
   }
 
-  /* NOTA AL PIE */
-  .stats__nota {
+  .s7__intro {
+    font-size: var(--text-base);
+    color: var(--color-black);
+    line-height: var(--leading-loose);
     margin: 0;
-    color: var(--color-black); /* Corregido punto y coma */
-    font-size: 0.8rem;
+  }
+
+  .s7__block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .s7__subtitle {
+    font-family: var(--font-primary);
+    font-size: var(--text-md);
+    font-weight: 600;
+    color: var(--color-black);
+    margin: 0;
+    padding-bottom: var(--space-3);
+    border-bottom: var(--border-base) solid var(--color-dark-cream);
+  }
+
+  .s7__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .s7__card {
+    background: var(--color-white);
+    border: var(--border-thin) solid var(--color-dark-cream);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-base), transform var(--transition-base);
+  }
+
+  .s7__card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .s7__card-name {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-black);
+    margin: 0;
+    padding-left: var(--space-4);
+    border-left: var(--border-thick) solid var(--color-light-brown);
+  }
+
+  .s7__card-desc {
+    font-size: var(--text-sm);
+    color: var(--color-black);
+    line-height: var(--leading-base);
+    margin: 0;
+  }
+
+  .s7__quote {
+    background: var(--color-dark-cream);
+    border-left: var(--border-thick) solid var(--color-light-brown);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: var(--space-4) var(--space-6);
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--color-black);
+    line-height: var(--leading-base);
     font-style: italic;
-    line-height: 1.5;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    padding-top: 1rem;
+  }
+
+  .s7__network {
+    font-size: var(--text-sm);
+    color: var(--color-black);
+    line-height: var(--leading-base);
+    font-style: italic;
+    margin: 0;
   }
 </style>
