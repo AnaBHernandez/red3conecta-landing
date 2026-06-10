@@ -34,16 +34,17 @@
 ## ⏳ Sprint 3 — EN CURSO
 | ID | Tarea | Responsable | Estado |
 |---|---|---|---|
-| #26 | Gestión de Recursos de Marca y Apoyo en Testeo Visual | Paula | ⏳ POR HACER |
-| #28 | Mejoras de Estilos Dinámicos | Equipo | ⏳ POR HACER |
-| #27 | Git Merges + Deploy Netlify | Ana Belén | ⏳ POR HACER |
+| #18 | Migración i18n (ca.json mejorado) | Equipo | ⏳ EN CURSO |
+| #31 | Mejoras de Estilos Dinámicos | Equipo | ⏳ EN CURSO |
+| #26 | Gestión de Recursos de Marca y Apoyo en Testeo Visual | Paula | ⏳ SIGUIENTE |
+| #27 | Git Merges + Deploy Netlify | Ana Belén | ⏳ SIGUIENTE |
 
 ---
 
 ## 📋 Auditoría y QA
-| Tarea | Responsable | Estado |
-|---|---|---|
-| #18 Estrategia de Calidad: QA, Accesibilidad y WCAG AA | Ana Belén | 🔍 EN REVISIÓN |
+| ID | Tarea | Responsable | Estado |
+|---|---|---|---|
+| #32 | Estrategia de Calidad: QA, Accesibilidad y WCAG AA | Ana Belén | 🔍 EN REVISIÓN |
 
 ---
 
@@ -73,23 +74,24 @@
 - Dev y main sincronizadas
 - Ana: única autora de merges a dev
 
-### [HITO 6] Wiki Completa (Sprint 2)
-- 5 páginas de documentación
+### [HITO 6] Wiki Completa (Sprint 2-3)
+- 6 páginas de documentación
 - Guía i18n paso a paso
-- Política de trabajo
+- Deploy en Netlify
+- QA y Validación
 
 ### [HITO 7] Deploy Preparado (Sprint 3)
 - Netlify conectado
 - Wiki de Deploy documentada
-- Política de Deploy a definir con equipo
+- Política de Deploy (a definir con equipo)
 
 ---
 
 ## 📌 Próximos Pasos
 - [ ] Paula: Finalizar #26 (Recursos Marca)
-- [ ] Equipo: Mejoras de estilos (#28)
-- [ ] Ana: Deploy en Netlify (#27)
-- [ ] Ana: Auditoría final QA (#18)
+- [ ] Equipo: Migración i18n #18 + Mejoras estilos #31
+- [ ] Ana: Deploy en Netlify #27
+- [ ] Ana: Auditoría final QA #32
 
 ---
 
@@ -109,4 +111,4 @@
 - **Deploy:** https://red3conecta.netlify.app (próximamente)
 - **Rama principal:** `landing-page` (compartida)
 
-*Nota: Recordad que para Sprint 3 la prioridad es Deploy en Netlify y Mejoras de Estilos. La migración i18n ya está documentada en Wiki.*
+*Nota: Recordad que para Sprint 3 la prioridad es Deploy en Netlify (#27), Mejoras de Estilos (#31) e i18n (#18). La auditoría QA (#32) está en revisión.*

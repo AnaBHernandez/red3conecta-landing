@@ -104,7 +104,7 @@
 - Grid responsivo
 - Status: ✅ HECHO
 
-#### Sectionnine.astro (#30 wards)
+#### Sectionnine.astro (#30 — Awards)
 - Bloque awards + bloque funders
 - Listas semánticas (<dl>)
 - Stack en móvil
@@ -114,29 +114,48 @@
 
 ### Sprint 3 (EN CURSO)
 
-#### #26 Gestión de Recursos de Marca
+#### #18 Migración i18n (Equipo)
+- Extraer textos de componentes Sprint 2
+- Agregar a `src/i18n/ca.json`
+- 100% sin hardcoded
+- Status: ⏳ EN CURSO
+- Asignado: Equipo
+
+#### #31 Mejoras de Estilos Dinámicos (Equipo)
+- Variables CSS :root mejoradas (colores, espacios, tipografía)
+- Transiciones suaves (0.3s ease)
+- Animaciones entrada (fade-in, slide)
+- Hover/focus states optimizados
+- 3+ breakpoints: ≤375px, 768px, ≥1024px
+- **Cintia:** About + Footer
+- **Paula:** Section4, 5, 6
+- **Jessica:** Section7, 8, 9
+- **Ana:** Hero + coordinación
+- Status: ⏳ EN CURSO
+- Asignado: Equipo
+
+#### #26 Gestión de Recursos de Marca (Paula)
 - Assets de marca compilados
 - Paleta + tipografía documentadas
 - Testing visual cross-browser
 - Status: ⏳ POR HACER
 - Asignado: Paula
 
-#### #28 Mejoras de Estilos Dinámicos
-- Variables CSS mejoradas
-- Transiciones suaves (0.3s)
-- Animaciones entrada (fade-in, slide)
-- Hover/focus states optimizados
-- 3+ breakpoints claros
-- Status: ⏳ POR HACER
-- Asignado: Equipo
-
-#### #27 Git Merges + Deploy Netlify
+#### #27 Git Merges + Deploy Netlify (Ana)
 - Merges landing-page → dev → main
 - Netlify conectado
 - Build settings: npm run build → dist
 - Deploy automático en push a main
 - URL en vivo verificada
 - Status: ⏳ POR HACER
+- Asignado: Ana Belén
+
+#### #32 Estrategia de Calidad: QA, Accesibilidad y WCAG AA (Ana)
+- Validación WCAG AA (contraste, teclado, aria-labels)
+- Testing responsive (≤375px, 768px, ≥1024px)
+- Testing Lighthouse
+- Testing cross-browser
+- Status: 🔍 EN REVISIÓN
 - Asignado: Ana Belén
 
 ---

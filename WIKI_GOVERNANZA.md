@@ -14,9 +14,9 @@
 | Responsable | Componentes | Sprint |
 |---|---|---|
 | **Ana Belén** (Scrum Master) | Layout, Navbar, Hero, QA, Deploy | 1-3 |
-| **Cintia** | About, Footer | 1-2 |
-| **Paula** | Sectionfour (Challenges), Sectionfive (Ally), Sectionsix (Impact), Marca | 2-3 |
-| **Jessica** | Sectionseven (Partners), Sectioneight (Ecosystem), Sectionnine (Awards) | 2-3 |
+| **Cintia** | About, Footer, Mejoras estilos #31 | 1-3 |
+| **Paula** | Sectionfour (Challenges), Sectionfive (Ally), Sectionsix (Impact), Marca #26, Mejoras estilos #31 | 2-3 |
+| **Jessica** | Sectionseven (Partners), Sectioneight (Ecosystem), Sectionnine (Awards), Mejoras estilos #31 | 2-3 |
 
 ---
 
@@ -114,7 +114,7 @@ Antes de mergear:
 
 ## 7. Rama landing-page
 
-- **Propósito:** Rama compartida para Sprint 2-3
+- **Propósito:** Rama compartida para Sprint 1-3
 - **Protección:** Solo Ana puede mergear a dev
 - **Política:** No se borra hasta final
 - **Sincronización:** Diaria con origin
