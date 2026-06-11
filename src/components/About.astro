@@ -17,44 +17,70 @@ const a = t.about;
   <div class="about-blob about-blob--c" aria-hidden="true"></div>
 
   <!-- Floating geometric shapes -->
-  <svg class="about-geo" aria-hidden="true" viewBox="0 0 700 520" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <polygon class="geo-tri geo-tri--1" points="60,18 112,108 8,108"/>
-    <polygon class="geo-tri geo-tri--2" points="580,310 632,400 528,400"/>
-    <polygon class="geo-tri geo-tri--3" points="340,440 370,490 310,490"/>
-    <rect class="geo-diamond geo-diamond--1" x="260" y="30" width="28" height="28" rx="3" transform="rotate(45 274 44)"/>
-    <rect class="geo-diamond geo-diamond--2" x="620" y="160" width="20" height="20" rx="2" transform="rotate(45 630 170)"/>
-    <circle class="geo-circle geo-circle--1" cx="490" cy="60" r="20"/>
-    <circle class="geo-circle geo-circle--2" cx="130" cy="430" r="13"/>
-    <line class="geo-line geo-line--1" x1="30" y1="250" x2="100" y2="310"/>
-    <line class="geo-line geo-line--2" x1="580" y1="200" x2="640" y2="240"/>
+  <svg
+    class="about-geo"
+    aria-hidden="true"
+    viewBox="0 0 700 520"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <polygon class="geo-tri geo-tri--1" points="60,18 112,108 8,108"></polygon>
+    <polygon class="geo-tri geo-tri--2" points="580,310 632,400 528,400"
+    ></polygon>
+    <polygon class="geo-tri geo-tri--3" points="340,440 370,490 310,490"
+    ></polygon>
+    <rect
+      class="geo-diamond geo-diamond--1"
+      x="260"
+      y="30"
+      width="28"
+      height="28"
+      rx="3"
+      transform="rotate(45 274 44)"></rect>
+    <rect
+      class="geo-diamond geo-diamond--2"
+      x="620"
+      y="160"
+      width="20"
+      height="20"
+      rx="2"
+      transform="rotate(45 630 170)"></rect>
+    <circle class="geo-circle geo-circle--1" cx="490" cy="60" r="20"></circle>
+    <circle class="geo-circle geo-circle--2" cx="130" cy="430" r="13"></circle>
+    <line class="geo-line geo-line--1" x1="30" y1="250" x2="100" y2="310"
+    ></line>
+    <line class="geo-line geo-line--2" x1="580" y1="200" x2="640" y2="240"
+    ></line>
   </svg>
 
   <div class="about-container">
-    <!-- Left: text card -->
     <div class="about-content">
-      <h2 data-anim data-delay="0" set:html={a.title.replace("Red3Conecta?", "<span>Red3Conecta?</span>")}></h2>
-      <div class="about-line" data-anim data-delay="240" aria-hidden="true"></div>
+      <h2
+        data-anim
+        data-delay="0"
+        set:html={a.title.replace("Red3Conecta?", "<span>Red3Conecta?</span>")}
+      />
+      <div class="about-line" data-anim data-delay="240" aria-hidden="true">
+      </div>
 
       <ul class="about-items" role="list">
-        {a.items.map((text, i) => (
-          <li class="about-item" data-anim data-delay={340 + i * 120}>
-            <span class="about-item__num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
-            <p>{text}</p>
-          </li>
-        ))}
+        {
+          a.items.map((text, i) => (
+            <li class="about-item" data-anim data-delay={340 + i * 120}>
+              <span class="about-item__num" aria-hidden="true">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <p>{text}</p>
+            </li>
+          ))
+        }
       </ul>
-
-     
     </div>
 
     <!-- Right: image -->
     <div class="about-image" data-anim data-delay="180">
       <div class="about-image__frame">
-        <img
-          src="/imagenes/about1.jpg"
-          alt={a.img_alt}
-          loading="lazy"
-        />
+        <img src="/imagenes/about1.jpg" alt={a.img_alt} loading="lazy" />
         <div class="about-image__tag">
           <span class="about-image__tag-dot"></span>
           {a.active_tag}
@@ -67,80 +93,97 @@ const a = t.about;
 <style>
   /* ── Keyframes ──────────────────────────────────────── */
   @keyframes orb-1 {
-    0%,100% { transform: translate(0,0) scale(1); }
-    40%      { transform: translate(24px,-18px) scale(1.08); }
-    70%      { transform: translate(-14px,12px) scale(.93); }
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    40% {
+      transform: translate(24px, -18px) scale(1.08);
+    }
+    70% {
+      transform: translate(-14px, 12px) scale(0.93);
+    }
   }
   @keyframes orb-2 {
-    0%,100% { transform: translate(0,0); }
-    50%      { transform: translate(-22px,16px); }
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-22px, 16px);
+    }
   }
   @keyframes orb-3 {
-    0%,100% { transform: translate(0,0) rotate(0deg); }
-    50%      { transform: translate(18px,-12px) rotate(10deg); }
+    0%,
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(18px, -12px) rotate(10deg);
+    }
   }
   @keyframes ring-spin {
-    from { transform: translate(-50%,-50%) rotate(0deg); }
-    to   { transform: translate(-50%,-50%) rotate(360deg); }
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
   }
   @keyframes dots-drift {
-    0%,100% { transform: translate(0,0); }
-    50%      { transform: translate(7px,-7px); }
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(7px, -7px);
+    }
   }
   @keyframes float-img {
-    0%,100% { transform: translateY(0); }
-    50%      { transform: translateY(-10px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
   @keyframes dot-ping {
-    0%   { box-shadow: 0 0 0 0 rgba(34,197,94,.55); }
-    70%  { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
-    100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+    0% {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
+    }
+    70% {
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
   }
   @keyframes draw-line {
-    from { width: 0; }
-    to   { width: 56px; }
+    from {
+      width: 0;
+    }
+    to {
+      width: 56px;
+    }
   }
   @keyframes bg-pulse {
-    0%,100% { opacity: .5; }
-    50%      { opacity: 1; }
-  }
-  @keyframes morph-a {
-    0%,100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-    25%     { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-    50%     { border-radius: 50% 60% 30% 70% / 40% 50% 60% 50%; }
-    75%     { border-radius: 70% 30% 50% 60% / 30% 70% 40% 60%; }
-  }
-  @keyframes morph-b {
-    0%,100% { border-radius: 40% 60% 60% 40% / 40% 60% 40% 60%; }
-    33%     { border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%; }
-    66%     { border-radius: 50% 50% 30% 70% / 70% 30% 60% 40%; }
-  }
-  @keyframes morph-c {
-    0%,100% { border-radius: 70% 30% 40% 60% / 50% 70% 30% 50%; }
-    50%     { border-radius: 30% 70% 60% 40% / 60% 40% 70% 30%; }
-  }
-  @keyframes geo-float-1 {
-    0%,100% { transform: translateY(0) rotate(0deg); opacity: .10; }
-    50%     { transform: translateY(-18px) rotate(12deg); opacity: .18; }
-  }
-  @keyframes geo-float-2 {
-    0%,100% { transform: translateY(0) rotate(45deg); opacity: .09; }
-    50%     { transform: translateY(14px) rotate(60deg); opacity: .16; }
-  }
-  @keyframes geo-float-3 {
-    0%,100% { transform: translateY(0); opacity: .07; }
-    50%     { transform: translateY(-10px); opacity: .14; }
-  }
-  @keyframes geo-dash {
-    from { stroke-dashoffset: 120; }
-    to   { stroke-dashoffset: 0; }
+    0%,
+    100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
   }
 
   /* ── Scroll-reveal ──────────────────────────────────── */
   [data-anim] {
     opacity: 0;
     transform: translateY(24px);
-    transition: opacity .55s ease, transform .55s ease;
+    transition:
+      opacity 0.55s ease,
+      transform 0.55s ease;
   }
   [data-anim].is-visible {
     opacity: 1;
@@ -149,54 +192,92 @@ const a = t.about;
 
   /* ── Section ────────────────────────────────────────── */
   .about {
-    padding: clamp(3rem,5vw,4.5rem) clamp(1.25rem,3vw,2.5rem);
+    padding: clamp(3rem, 5vw, 4.5rem) clamp(1.25rem, 3vw, 2.5rem);
     background: #fffaf2;
     position: relative;
     overflow: hidden;
   }
   /* Animated warm glow behind content */
   .about::before {
-    content: '';
-    position: absolute; inset: 0;
+    content: "";
+    position: absolute;
+    inset: 0;
     background:
-      radial-gradient(ellipse at 15% 80%, rgba(249,115,22,.06) 0%, transparent 55%),
-      radial-gradient(ellipse at 85% 20%, rgba(216,185,143,.08) 0%, transparent 55%);
+      radial-gradient(
+        ellipse at 15% 80%,
+        rgba(249, 115, 22, 0.06) 0%,
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse at 85% 20%,
+        rgba(216, 185, 143, 0.08) 0%,
+        transparent 55%
+      );
     animation: bg-pulse 9s ease-in-out infinite;
     pointer-events: none;
   }
 
   /* ── Decorative orbs ────────────────────────────────── */
-  .about-orb { position: absolute; border-radius: 50%; pointer-events: none; }
+  .about-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
   .about-orb--1 {
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(216,185,143,.3) 0%, transparent 70%);
-    top: -110px; left: -110px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+      circle,
+      rgba(216, 185, 143, 0.3) 0%,
+      transparent 70%
+    );
+    top: -110px;
+    left: -110px;
     animation: orb-1 13s ease-in-out infinite;
   }
   .about-orb--2 {
-    width: 200px; height: 200px;
-    background: radial-gradient(circle, rgba(198,106,36,.18) 0%, transparent 70%);
-    bottom: -70px; right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(
+      circle,
+      rgba(198, 106, 36, 0.18) 0%,
+      transparent 70%
+    );
+    bottom: -70px;
+    right: -50px;
     animation: orb-2 10s ease-in-out infinite;
   }
   .about-orb--3 {
-    width: 140px; height: 140px;
-    background: radial-gradient(circle, rgba(216,185,143,.15) 0%, transparent 70%);
-    top: 40%; right: 4%;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(
+      circle,
+      rgba(216, 185, 143, 0.15) 0%,
+      transparent 70%
+    );
+    top: 40%;
+    right: 4%;
     animation: orb-3 15s ease-in-out infinite;
   }
   .about-dots {
-    position: absolute; top: 15%; right: 12%;
-    width: 80px; height: 80px; opacity: .2;
+    position: absolute;
+    top: 15%;
+    right: 12%;
+    width: 80px;
+    height: 80px;
+    opacity: 0.2;
     background-image: radial-gradient(#c97a2b 2px, transparent 2px);
     background-size: 14px 14px;
     animation: dots-drift 9s ease-in-out infinite;
   }
   /* Spinning ring */
   .about-ring {
-    position: absolute; top: 30%; left: 5%;
-    width: 120px; height: 120px;
-    border: 1px dashed rgba(198,106,36,.18);
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    width: 120px;
+    height: 120px;
+    border: 1px dashed rgba(198, 106, 36, 0.18);
     border-radius: 50%;
     animation: ring-spin 20s linear infinite;
     pointer-events: none;
@@ -204,10 +285,14 @@ const a = t.about;
 
   /* ── Grid ───────────────────────────────────────────── */
   .about-container {
-    max-width: 1100px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr;
-    align-items: stretch; gap: 2.5rem;
-    position: relative; z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 2.5rem;
+    position: relative;
+    z-index: 1;
   }
 
   /* ── Content card ───────────────────────────────────── */
@@ -215,203 +300,311 @@ const a = t.about;
     background: linear-gradient(145deg, #f7efe4 0%, #efe7dc 100%);
     padding: 2.5rem 2.5rem 2rem;
     border-radius: 20px;
-    box-shadow:
-      0 8px 28px rgba(0,0,0,.08),
-      0 0 0 1.5px rgba(198,106,36,.15),
-      inset 0 1px 0 rgba(255,255,255,.65);
-    display: flex; flex-direction: column;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
   }
 
   /* ── Heading ────────────────────────────────────────── */
   @keyframes glow-pulse {
-    0%, 100% { text-shadow: 0 0 8px rgba(198,106,36,.0), 0 2px 12px rgba(0,0,0,.08); }
-    50%       { text-shadow: 0 0 18px rgba(198,106,36,.28), 0 2px 12px rgba(0,0,0,.08); }
+    0%,
+    100% {
+      text-shadow:
+        0 0 8px rgba(198, 106, 36, 0),
+        0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+    50% {
+      text-shadow:
+        0 0 18px rgba(198, 106, 36, 0.28),
+        0 2px 12px rgba(0, 0, 0, 0.08);
+    }
   }
   @keyframes shimmer-text {
-    0%   { background-position: -200% center; }
-    100% { background-position: 200% center; }
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
   }
 
   .about-content h2 {
-    font-size: clamp(2rem, 4vw, 3.1rem);
-    line-height: 1.12; font-weight: 900;
-    color: #1a140e;
-    margin: 0 0 .4rem;
-    letter-spacing: -.02em;
-    animation: glow-pulse 4s ease-in-out infinite;
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    line-height: 1.15;
+    font-weight: 800;
+    color: #1f1a16;
+    margin: 0 0 0.4rem;
   }
   .about-content h2 span {
-    background: linear-gradient(90deg, #c66a24 0%, #f97316 40%, #fdba74 60%, #c66a24 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: shimmer-text 3s linear infinite;
-    font-style: italic;
+    color: #c66a24;
   }
 
   /* ── Accent line (draws itself in) ─────────────────── */
   .about-line {
-    height: 3px; width: 0;
+    height: 3px;
+    width: 0;
     background: linear-gradient(90deg, #f97316, #fdba74);
-    border-radius: 999px; margin-bottom: 1.5rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
     /* override default data-anim transform */
     transform: none !important;
-    transition: width .85s .1s ease, opacity .3s ease !important;
+    transition:
+      width 0.85s 0.1s ease,
+      opacity 0.3s ease !important;
   }
-  .about-line.is-visible { width: 56px; }
+  .about-line.is-visible {
+    width: 56px;
+  }
 
   /* ── Item list ──────────────────────────────────────── */
-  .about-items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .4rem; }
+  .about-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
 
   .about-item {
-    padding: .75rem .9rem .75rem 1rem;
+    padding: 0.75rem 0.9rem 0.75rem 1rem;
     border-left: 2px solid transparent;
     border-radius: 0 10px 10px 0;
-    transition: border-color 240ms, background 240ms, transform 300ms cubic-bezier(.34,1.56,.64,1);
+    transition:
+      border-color 240ms,
+      background 240ms,
+      transform 240ms;
     cursor: default;
     transform-origin: left center;
   }
   .about-item:hover {
     border-left-color: #c66a24;
-    background: rgba(198,106,36,.07);
-    transform: scale(1.04);
+    background: rgba(198, 106, 36, 0.07);
+    transform: translateX(5px);
   }
 
   .about-item__num {
     display: block;
-    font-size: .68rem; font-weight: 900; letter-spacing: 1.5px;
-    color: #c66a24; opacity: .65; margin-bottom: .25rem;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #c66a24;
+    opacity: 0.45;
+    margin-bottom: 0.2rem;
     font-family: "Plus Jakarta Sans", sans-serif;
     transition: opacity 240ms;
   }
-  .about-item:hover .about-item__num { opacity: 1; }
-
-  .about-item p {
-    font-size: .92rem; line-height: 1.7;
-    color: #2e221a; margin: 0;
-    font-weight: 500;
+  .about-item:hover .about-item__num {
+    opacity: 1;
   }
 
-  
+  .about-item p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #4a3b31;
+    margin: 0;
+  }
 
   /* ── Image column ───────────────────────────────────── */
   .about-image {
-    height: 100%; min-height: 400px;
+    height: 100%;
+    min-height: 400px;
     position: relative;
   }
   .about-image__frame {
-    position: relative; height: 100%; min-height: 400px;
-    border-radius: 20px; overflow: hidden;
-    box-shadow: 0 18px 48px rgba(0,0,0,.1);
+    position: relative;
+    height: 100%;
+    min-height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.1);
     animation: float-img 5s ease-in-out infinite;
     transition: box-shadow 300ms;
   }
   .about-image__frame:hover {
-    box-shadow: 0 26px 60px rgba(0,0,0,.15);
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.15);
   }
   .about-image__frame img {
-    width: 100%; height: 100%;
-    object-fit: cover; display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
     transition: transform 500ms ease;
   }
-  .about-image__frame:hover img { transform: scale(1.04); }
+  .about-image__frame:hover img {
+    transform: scale(1.04);
+  }
 
   /* ── Image overlay tag ──────────────────────────────── */
   .about-image__tag {
-    position: absolute; bottom: 1.1rem; left: 1.1rem;
-    display: inline-flex; align-items: center; gap: .45rem;
-    background: rgba(255,250,242,.92);
+    position: absolute;
+    bottom: 1.1rem;
+    left: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(255, 250, 242, 0.92);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(198,106,36,.2);
+    border: 1px solid rgba(198, 106, 36, 0.2);
     border-radius: 999px;
-    padding: .35rem .85rem;
-    font-size: .75rem; font-weight: 700; color: #6d5b49;
-    box-shadow: 0 4px 14px rgba(0,0,0,.09);
-    transition: transform 250ms, box-shadow 250ms;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #6d5b49;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+    transition:
+      transform 250ms,
+      box-shadow 250ms;
     z-index: 2;
   }
   .about-image__frame:hover .about-image__tag {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,.13);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.13);
   }
   .about-image__tag-dot {
-    width: 7px; height: 7px; border-radius: 50%;
-    background: #22c55e; flex-shrink: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+    flex-shrink: 0;
     animation: dot-ping 2.5s ease-in-out infinite;
   }
 
   /* ── Morphing blobs ────────────────────────────────── */
   .about-blob {
-    position: absolute; pointer-events: none;
-    filter: blur(55px); mix-blend-mode: multiply;
+    position: absolute;
+    pointer-events: none;
+    filter: blur(55px);
+    mix-blend-mode: multiply;
     will-change: border-radius, transform;
   }
   .about-blob--a {
-    width: 380px; height: 320px;
-    background: radial-gradient(circle at 40% 40%, rgba(249,115,22,.22), rgba(216,185,143,.12) 70%);
-    top: -80px; right: -60px;
-    animation: morph-a 18s ease-in-out infinite, orb-1 22s ease-in-out infinite;
+    width: 380px;
+    height: 320px;
+    background: radial-gradient(
+      circle at 40% 40%,
+      rgba(249, 115, 22, 0.22),
+      rgba(216, 185, 143, 0.12) 70%
+    );
+    top: -80px;
+    right: -60px;
+    animation:
+      morph-a 18s ease-in-out infinite,
+      orb-1 22s ease-in-out infinite;
   }
   .about-blob--b {
-    width: 280px; height: 260px;
-    background: radial-gradient(circle at 55% 55%, rgba(198,106,36,.18), rgba(253,186,116,.10) 70%);
-    bottom: -60px; left: -40px;
-    animation: morph-b 14s ease-in-out infinite, orb-2 18s ease-in-out infinite;
+    width: 280px;
+    height: 260px;
+    background: radial-gradient(
+      circle at 55% 55%,
+      rgba(198, 106, 36, 0.18),
+      rgba(253, 186, 116, 0.1) 70%
+    );
+    bottom: -60px;
+    left: -40px;
+    animation:
+      morph-b 14s ease-in-out infinite,
+      orb-2 18s ease-in-out infinite;
   }
   .about-blob--c {
-    width: 180px; height: 180px;
-    background: radial-gradient(circle, rgba(216,185,143,.20), transparent 70%);
-    top: 55%; left: 38%;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(
+      circle,
+      rgba(216, 185, 143, 0.2),
+      transparent 70%
+    );
+    top: 55%;
+    left: 38%;
     animation: morph-c 20s ease-in-out infinite;
   }
 
   /* ── Geometric SVG overlay ──────────────────────────── */
   .about-geo {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    pointer-events: none; overflow: visible;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
   }
   .geo-tri {
-    fill: none; stroke: #c66a24; stroke-width: 1.2;
-    opacity: .10;
+    fill: none;
+    stroke: #c66a24;
+    stroke-width: 1.2;
+    opacity: 0.1;
   }
-  .geo-tri--1 { animation: geo-float-1 9s ease-in-out infinite; }
-  .geo-tri--2 { animation: geo-float-1 11s ease-in-out infinite 1.5s; }
+  .geo-tri--1 {
+    animation: geo-float-1 9s ease-in-out infinite;
+  }
+  .geo-tri--2 {
+    animation: geo-float-1 11s ease-in-out infinite 1.5s;
+  }
   .geo-tri--3 {
-    fill: rgba(249,115,22,.06);
+    fill: rgba(249, 115, 22, 0.06);
     animation: geo-float-3 7s ease-in-out infinite 0.8s;
   }
   .geo-diamond {
-    fill: none; stroke: #d8b98f; stroke-width: 1;
-    opacity: .13;
+    fill: none;
+    stroke: #d8b98f;
+    stroke-width: 1;
+    opacity: 0.13;
   }
-  .geo-diamond--1 { animation: geo-float-2 12s ease-in-out infinite; }
-  .geo-diamond--2 { animation: geo-float-2 8s ease-in-out infinite 2s; }
+  .geo-diamond--1 {
+    animation: geo-float-2 12s ease-in-out infinite;
+  }
+  .geo-diamond--2 {
+    animation: geo-float-2 8s ease-in-out infinite 2s;
+  }
   .geo-circle {
-    fill: none; stroke: #c66a24; stroke-width: 1;
-    stroke-dasharray: 6 4; opacity: .11;
+    fill: none;
+    stroke: #c66a24;
+    stroke-width: 1;
+    stroke-dasharray: 6 4;
+    opacity: 0.11;
   }
-  .geo-circle--1 { animation: geo-float-1 10s ease-in-out infinite 0.5s; }
-  .geo-circle--2 { animation: geo-float-3 13s ease-in-out infinite 1s; }
+  .geo-circle--1 {
+    animation: geo-float-1 10s ease-in-out infinite 0.5s;
+  }
+  .geo-circle--2 {
+    animation: geo-float-3 13s ease-in-out infinite 1s;
+  }
   .geo-line {
-    stroke: #d8b98f; stroke-width: 1;
+    stroke: #d8b98f;
+    stroke-width: 1;
     stroke-dasharray: 6 5;
-    opacity: .12;
+    opacity: 0.12;
     animation: geo-float-3 15s ease-in-out infinite;
   }
-  .geo-line--2 { animation-delay: 3s; }
+  .geo-line--2 {
+    animation-delay: 3s;
+  }
 
   /* ── Responsive ─────────────────────────────────────── */
   @media (max-width: 900px) {
-    .about-container { grid-template-columns: 1fr; gap: 2rem; }
-    .about-image { order: -1; min-height: 280px; }
-    .about-image__frame { min-height: 280px; animation: none; }
+    .about-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .about-image {
+      order: -1;
+      min-height: 280px;
+    }
+    .about-image__frame {
+      min-height: 280px;
+      animation: none;
+    }
   }
   @media (max-width: 480px) {
-    .about { padding: 3.5rem 1.25rem; }
-    .about-content { padding: 1.75rem 1.5rem 1.5rem; }
-    .about-item { padding: .65rem .75rem .65rem .85rem; }
+    .about {
+      padding: 3.5rem 1.25rem;
+    }
+    .about-content {
+      padding: 1.75rem 1.5rem 1.5rem;
+    }
+    .about-item {
+      padding: 0.65rem 0.75rem 0.65rem 0.85rem;
+    }
   }
 </style>
 
@@ -422,15 +615,15 @@ const a = t.about;
         if (entry.isIntersecting) {
           const el = entry.target as HTMLElement;
           const delay = Number(el.dataset.delay ?? 0);
-          setTimeout(() => el.classList.add('is-visible'), delay);
+          setTimeout(() => el.classList.add("is-visible"), delay);
           observer.unobserve(el);
         }
       });
     },
-    { threshold: 0.12 }
+    { threshold: 0.12 },
   );
 
   document
-    .querySelectorAll('#about [data-anim]')
+    .querySelectorAll("#about [data-anim]")
     .forEach((el) => observer.observe(el));
 </script>
