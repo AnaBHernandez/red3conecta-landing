@@ -178,12 +178,18 @@
   "intro": "Red3Conecta avança gràcies al suport d'institucions i la validació de la nostra trajectòria.",
   "awardsTitle": "Premis",
   "awards": [
-    { "placeholder": "[ Premi 1 ]", "description": "Descripció del premi o menció aconseguida." }
-  ],
+  { "placeholder": "Deloitte", "description": "Projecte seleccionat en categoria inserció laboral en el programa \"Conoce mi proyecto\"." },
+  { "placeholder": "Aigües de Barcelona", "description": "Projecte guanyador convocatòria UNADA, l'acceleradora social d'Aigües de Barcelona." },
+  { "placeholder": "IA for Good", "description": "Projecte seleccionat entre les 20 millors iniciatives d'IA per a fins socials de 2026." }
+],
   "fundersTitle": "Finançadors i col·laboradors",
   "funders": [
-    { "placeholder": "[ Col·laborador 1 ]", "description": "Entitat que dona suport a la iniciativa." }
-  ],
+  { "name": "Eduvic", "logo": "/logos/EDUVIC_blanc.png", "dark": true },
+{ "name": "GetUp Fundación", "logo": "/logos/FGU_logo_version_1.png", "dark": true },  { "name": "Surt", "logo": "/logos/Logo-2-fons-transparent_format_vectorial.svg", "dark": false },
+  { "name": "JAPI", "logo": "/logos/JAPI_blanc.jpg", "dark": false },
+  { "name": "Fundació Surt", "logo": "/logos/Logo-FS_magenta.png", "dark": false },
+  { "name": "Som Llar", "logo": "/logos/SomLlar_blanco.png", "dark": true }
+],
   "teamNote": "Nota per a l'equip: Aquesta secció conté dades pendents d'omplir. Assegureu-vos de tenir els textos definitius abans del pas a producció."
 }
 }
