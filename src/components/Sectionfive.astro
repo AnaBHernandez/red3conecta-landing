@@ -1,87 +1,49 @@
 ---
+import t from "../i18n/ca.json";
 ---
 
 <div class="container-alpha">
-    <h2>Construït des del territori. Amb el territori. I governat per ell.</h2>
-    <p class="container-alpha__subtitle">
-        Red3Conecta no s'ha dissenyat en un laboratori extern al tercer
-        sector. Cada decisió de disseny, cada funcionalitat i cada prioritat
-        s'ha definit conjuntament amb les entitats que l'utilitzen.
-    </p>
+    <h2>{t.section5.title}</h2>
+    <p class="container-alpha__subtitle">{t.section5.subtitle}</p>
 
     <div class="cards-row">
+      {t.section5.cards_small.map((card) => (
         <div class="card-small">
-            <img src="/icon-social.png" alt="icon social" class="card-icon" />
-            <div class="card-content">
-                <h3>Cocreació real, no consulta simbòlica</h3>
-                <p>En un procés d'acceleració realitzat gràcies al suport d'Unada, el projecte ha passat per processos de recerca i validacions directes amb dones usuàries.</p>
-            </div>
+          <img src={card.icon} alt={card.icon_alt} class="card-icon" />
+          <div class="card-content">
+            <h3>{card.title}</h3>
+            <p>{card.desc}</p>
+          </div>
         </div>
-
-        <div class="card-small">
-            <img src="/icon-online-community.png" alt="comunity icon" class="card-icon" />
-            <div class="card-content">
-                <h3>Governança compartida</h3>
-                <p>Red3Conecta no pertany a cap empresa. Pertany a l'ecosistema que la construeix. Les entitats participants tenen veu en les decisions.</p>
-            </div>
-        </div>
-
-        <div class="card-small">
-            <img src="/icon-time.png" alt="icon time" class="card-icon" />
-            <div class="card-content">
-                <h3>Ahorro de temps real per als professionals</h3>
-                <p>La intel·ligència artificial interpreta consultes en llenguatge natural i retorna recomanacions argumentades en segons.</p>
-            </div>
-        </div>
-
-        <div class="card-small">
-            <img src="/icon-resources.png" alt="icon resources" class="card-icon" />
-            <div class="card-content">
-                <h3>Xarxa viva d'entitats</h3>
-                <p>El catàleg de recursos es construeix i s'actualitza col·lectivament entre les entitats participants.</p>
-            </div>
-        </div>
+      ))}
     </div>
 
-    <!-- FILA 2: 2 cards anchas apiladas en column -->
     <div class="cards-column">
+      {t.section5.cards_wide.map((card) => (
         <div class="card-wide">
-            <img src="/icon-red-technology.png" alt="icon red technology" class="card-icon" />
-            <div class="card-content">
-                <h3>Tecnologia al servei de l'impacte</h3>
-                <p>La IA no és el centre del projecte. És l'eina que fa possible la connexió. El centre és el treball del tercer sector i les persones que atén.</p>
-            </div>
+          <img src={card.icon} alt={card.icon_alt} class="card-icon" />
+          <div class="card-content">
+            <h3>{card.title}</h3>
+            <p>{card.desc}</p>
+          </div>
         </div>
-
-        <div class="card-wide">
-            <img src="/icon-study.png" alt="icon study" class="card-icon" />
-            <div class="card-content">
-                <h3>Pilotatge amb impacte mesurable</h3>
-                <p>El projecte es pilota amb entitats reals, amb indicadors de seguiment i avaluació d'impacte. Perquè innovació social sense mesura no és innovació: és intenció.</p>
-            </div>
-        </div>
+      ))}
     </div>
 </div>
 
+
 <style>
-    .container-alpha {
-        background-color: var( --color-dark-cream);
-        padding: 3rem;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
+   .container-alpha {
+  background-color: var(--color-cream-light); 
+}
 
-    .container-alpha h2 {
-        font-size: 2rem;
-        color: var(--color-black);
-        margin: 0;
-    }
+.container-alpha h2 {
+  color: var(--color-black);
+}
 
-    .container-alpha__subtitle {
-        color: #666;
-        margin: 0;
-    }
+.container-alpha__subtitle {
+  color: var(--color-black);
+}
 
     /* ---  CARDS --- */
     .cards-row {
@@ -104,7 +66,7 @@
         transform: scale(1.1); translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
   filter: brightness(1.08);
-  background-color: rgba(255, 134, 134, 0.196);
+  background-color: var(--color-peach-mid);
     }
 
     /* --- COLUMNA 2 CARDS ANCHAS --- */
@@ -127,7 +89,7 @@
          transform: scale(1.04); translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
   filter: brightness(1.08);
-  background-color: rgba(176, 71, 45, 0.196);
+  background-color: var(--color-peach-warm);
     }
 
     /* --- COMUN --- */
@@ -139,7 +101,7 @@
 
     .card-content h3 {
         margin: 0;
-        color: var(--color-primary);
+        color: var(--color-black);
     }
 
     .card-content p {

@@ -1,23 +1,13 @@
 ---
-const kpis = [
-    { numero: "+200", descripcion: "persones usuàries en fase pilot" },
-    { numero: "+23", descripcion: "entitats socials participants" },
-    { numero: "+23", descripcion: "professionals del tercer sector implicats" },
-    { numero: "−50%", descripcion: "reducció esperada del temps de cerca i coordinació manual" },
-    { numero: "+30%", descripcion: "millora esperada de l'autonomia de les persones ateses" },
-    { numero: "9+", descripcion: "cicles de validació completats amb professionals i persones usuàries" },
-    { numero: "3,5:1 – 5:1", descripcion: "SROI estimat — retorn social per euro invertit*" },
-];
+import t from "../i18n/ca.json";
+
+const kpis = t.impact.kpis;
 ---
 
 <div class="stats">
     <div class="stats__header">
-        <h2>No mesurem intencions. Mesurem resultats.</h2>
-        <p>
-            Red3Conecta s'avalua amb indicadors reals, des del primer dia de
-            pilotatge. L'impacte es mesura en temps recuperat, derivacions
-            millorades i persones millor ateses.
-        </p>
+        <h2>{t.impact.title}</h2>
+        <p>{t.impact.subtitle}</p>
     </div>
 
     <div class="stats__grid">
@@ -41,15 +31,12 @@ const kpis = [
         })}
     </div>
 
-    <p class="stats__nota">
-        * El SROI (Social Return on Investment) és una metodologia estandarditzada
-        d'avaluació d'impacte social que quantifica el valor generat per cada euro invertit.
-    </p>
+    <p class="stats__nota">{t.impact.note}</p>
 </div>
 
 <style>
     .stats {
-        background-color: var(--color-light-brown);
+        background-color: var(--color-peach-soft); 
         padding: 3rem;
         display: flex;
         flex-direction: column;
@@ -58,12 +45,12 @@ const kpis = [
 
     .stats__header h2 {
         font-size: 1.8rem;
-        color: var(--color-primary);
+        color: var(--color-black);
         margin: 0 0 1rem 0;
     }
 
     .stats__header p {
-        color: #000000;
+        color: var(--color-black);
         line-height: 1.6;
         margin: 0;
     }
@@ -75,13 +62,13 @@ const kpis = [
     }
 
     .kpi {
-        background-color: var(--color-light-cream);
+        background-color: var(--color-white); 
+        border-bottom: 4px solid var(--color-peach-warm); 
         border-radius: 1rem;
         padding: 1.5rem;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        border-bottom: 4px solid orange;
         transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
@@ -89,13 +76,13 @@ const kpis = [
         transform: translateY(-4px) scale(1.1);translateY(-4px);
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
         filter: brightness(1.08);
-        background-color: rgba(255, 255, 255, 0.395);
+        background-color: var(--color-peach-soft);
     }
 
     .kpi__numero {
         font-size: 2.2rem;
         font-weight: bold;
-        color: var(--color-primary);
+        color: var(--color-black);
         line-height: 1;
     }
 
@@ -132,7 +119,7 @@ const kpis = [
                 const el = entry.target as HTMLElement;
                 const numeroFinal = parseFloat(el.dataset.target!);
                 const textoCompleto = el.dataset.formato!;
-                const duracion = 1600;
+                const duracion = 2000;
                 const inicio = performance.now();
 
                 el.classList.add("is-animating");
