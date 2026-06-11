@@ -1,9 +1,11 @@
 ---
 import i18n from "../i18n/ca.json";
+
 const s7 = (i18n as any).section7;
 ---
 
 <section class="s7">
+  id="ecosystem">
   <div class="s7__container">
     <div class="s7__header">
       <h2 class="s7__title">{s7.title}</h2>
@@ -13,12 +15,14 @@ const s7 = (i18n as any).section7;
     <div class="s7__block">
       <h3 class="s7__subtitle">{s7.driversTitle}</h3>
       <div class="s7__grid">
-        {s7.drivers.map((driver: any) => (
-          <div class="s7__card">
-            <h4 class="s7__card-name">{driver.name}</h4>
-            <p class="s7__card-desc">{driver.description}</p>
-          </div>
-        ))}
+        {
+          s7.drivers.map((driver: any) => (
+            <div class="s7__card">
+              <h4 class="s7__card-name">{driver.name}</h4>
+              <p class="s7__card-desc">{driver.description}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
 
@@ -99,7 +103,9 @@ const s7 = (i18n as any).section7;
     flex-direction: column;
     gap: var(--space-3);
     box-shadow: var(--shadow-sm);
-    transition: box-shadow var(--transition-base), transform var(--transition-base);
+    transition:
+      box-shadow var(--transition-base),
+      transform var(--transition-base);
   }
 
   .s7__card:hover {

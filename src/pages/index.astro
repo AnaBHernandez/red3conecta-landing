@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import t from "../i18n/ca.json";
 import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
@@ -9,48 +8,90 @@ import Sectionfive from "../components/Sectionfive.astro";
 import Sectionsix from "../components/Sectionsix.astro";
 import Sectionseven from "../components/Sectionseven.astro";
 import Sectioneight from "../components/Sectioneight.astro";
-import Footer from "../components/Footer.astro";
 import Sectionnine from "../components/Sectionnine.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="ca">
   <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Red3Conecta</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Red3Conecta</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Strichpunkt+Sans:wght@400..900&display=swap" rel="stylesheet" />
- 
- <style is:global>
-  body {
-    font-family: var(--font-secondary);
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Strichpunkt+Sans:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style is:global>
+      body {
+        font-family: var(--font-secondary);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-primary);
+        font-optical-sizing: auto;
+        font-variation-settings: "wdth" 100;
+      }
+    </style>
+  </head>
+</html>
+<body>
+  <Navbar />
+
+  <main>
+    <section id="why">
+      <Hero />
+    </section>
+
+    <section id="challenges">
+      <About />
+    </section>
+
+    <section id="ally"></section>
+
+    <section id="ecosystem">
+      <Sectionfour />
+      <Sectionfive />
+      <Sectionsix />
+      <Sectionseven />
+      <Sectioneight />
+      <Sectionnine />
+    </section>
+  </main>
+
+  <Footer />
+</body>
+
+<style is:global>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  body {
+    font-family: var(--font-primary);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-primary);
     font-optical-sizing: auto;
     font-variation-settings: "wdth" 100;
   }
 </style>
-</style>
-</head>
-  <body>
-    <Navbar />
-    <main>
-      <About />
-      <Hero />
-      <section id="ecosystem">
-        <Sectionfour />
-        <Sectionfive />
-        <Sectionsix />
-        <Sectionseven />
-        <Sectioneight />
-        <Sectionnine />
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>

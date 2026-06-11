@@ -5,19 +5,13 @@ import t from "../i18n/ca.json";
 <nav class="navbar" aria-label="Navegació principal">
   <div class="navbar__container">
     <a href="/" class="navbar__logo">
-      <img
-        src="/Modelo_B.png"
-        alt="Logotip de Red3Conecta"
-        width="52"
-        height="49"
-        loading="eager"
-      />
+      <img src="/Modelo_B.png" alt="Logotip" width="52" height="49" />
     </a>
 
     <button
       class="navbar__toggle"
       aria-expanded="false"
-      aria-label="Obrir menú de navegació"
+      aria-label="Obrir menú"
     >
       <span class="toggle__bar"></span>
       <span class="toggle__bar"></span>
@@ -26,208 +20,105 @@ import t from "../i18n/ca.json";
 
     <div class="navbar__menu" id="navbar-menu">
       <ul class="navbar__list">
-        <li><a href="#why"         class="navbar__link">{t.nav.why}</a></li>
-        <li><a href="#challenges"  class="navbar__link">{t.nav.challenges}</a></li>
-        <li><a href="#ally"        class="navbar__link">{t.nav.ally}</a></li>
-        <li><a href="#ecosystem"   class="navbar__link">{t.nav.ecosystem}</a></li>
+        <li><a href="#why" class="navbar__link">{t.nav.why}</a></li>
+        <li>
+          <a href="#challenges" class="navbar__link">{t.nav.challenges}</a>
+        </li>
+        <li><a href="#ally" class="navbar__link">{t.nav.ally}</a></li>
+        <li><a href="#ecosystem" class="navbar__link">{t.nav.ecosystem}</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <style>
-  /* ── Base ────────────────────────────────────────────── */
   .navbar {
+    background-color: #1a0d04;
+    padding: 1rem 2rem;
     position: sticky;
-    top: 0; left: 0;
-    width: 100%;
+    top: 0;
     z-index: 1000;
-    background: linear-gradient(
-      to right,
-      rgb(255, 167, 112),
-      rgb(255, 200, 160)
-    );
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    padding: var(--space-4, 16px) clamp(16px, 4vw, 48px);
-    background: linear-gradient(to right, rgb(255,167,112), rgb(255,200,160));
-    box-shadow: 0 2px 8px rgba(0,0,0,.06);
-    padding: 8px clamp(1.25rem, 3vw, 2.5rem);
+    border-bottom: 1px solid rgba(249, 115, 22, 0.22);
   }
 
   .navbar__container {
     display: flex;
-    justify-content: space-between; /* ← centra todo */
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: var(
-      --max-w-xl
-    ); /* O el valor de píxeles que uses en otras secciones */
-    margin: 0 auto; /* Esto es lo que lo centra y le da los márgenes iguales al resto */
-    padding: 0 var(--space-6); /* Asegura que no toque los bordes en móvil */
-    box-sizing: border-box;
-  }
-  /* ── Container: logo izq, links der ─────────────────── */
-  .navbar__container {
-    display: flex;
-    justify-content: space-between; /* logo a la izquierda, menú a la derecha */
-    align-items: center;
-    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    box-sizing: border-box;
-  }
-
-  /* ── Logo ────────────────────────────────────────────── */
-  .navbar__logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    flex-shrink: 0;
-  }
-  .navbar__logo img {
-    display: block;
-  }
-
-  /* ── Menu (desktop) ──────────────────────────────────── */
-  .navbar__menu {
-    display: flex;
-    align-items: center;
   }
 
   .navbar__list {
     display: flex;
     list-style: none;
-    gap: clamp(10px, 2vw, 24px); /* ← gap fluido más contenido */
+    gap: 2rem;
     margin: 0;
     padding: 0;
   }
-    display: flex;
-    list-style: none;
-    gap: clamp(12px, 2vw, 28px);
-    margin: 0; padding: 0;
-  }
 
-  .navbar__link,
-  .navbar__link:visited {
-    text-decoration: none !important;
-    color: var(--color-black, #000000) !important;
-    font-size: clamp(0.75rem, 1vw, 0.95rem);
-    white-space: nowrap;
-    font-weight: 500;
-    transition:
-      color var(--transition-fast, 150ms ease),
-      font-size 150ms ease; /* ← añadido */
-  }
-
-  .navbar__link:hover {
-    color: chocolate !important;
-    font-size: clamp(0.82rem, 1.1vw, 1.05rem); /* ← ~10% más grande */
-  }
-
-  .navbar__link:active {
-    color: var(--color-black, #000000);
-  .navbar__link:visited {
+  .navbar__link {
     text-decoration: none;
-    color: #000;
-    font-size: clamp(0.78rem, 1vw, 0.95rem);
-    font-weight: 500;
-    white-space: nowrap;
-    padding: 4px 2px;
-    border-bottom: 2px solid transparent;
-    transition: color 150ms, border-color 150ms;
+    color: #f97316;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 200ms;
   }
   .navbar__link:hover {
-    color: #c25c1a;
-    border-bottom-color: #c25c1a;
+    color: #ffffff;
   }
 
-  /* ── Toggle button (oculto en desktop) ───────────────── */
   .navbar__toggle {
     display: none;
-    flex-direction: column;
-    gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 6px;
-    border-radius: 6px;
-    transition: background 150ms;
   }
-  .navbar__toggle:hover { background: rgba(0,0,0,.06); }
-
   .toggle__bar {
     display: block;
-    width: 22px; height: 2px;
-    background: #000;
-    border-radius: 2px;
-    transition: transform 250ms, opacity 250ms;
+    width: 25px;
+    height: 3px;
+    background: #f97316;
+    margin: 4px 0;
   }
 
-  /* Animación X cuando está abierto */
-  .navbar__toggle[aria-expanded="true"] .toggle__bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-  .navbar__toggle[aria-expanded="true"] .toggle__bar:nth-child(2) {
-    opacity: 0;
-  }
-  .navbar__toggle[aria-expanded="true"] .toggle__bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-
-  /* ── Responsive ──────────────────────────────────────── */
   @media (max-width: 768px) {
     .navbar__toggle {
       display: flex;
+      flex-direction: column;
     }
 
     .navbar__menu {
       display: none;
       position: absolute;
-      top: 100%; left: 0; right: 0;
-      background: linear-gradient(to right, rgb(255,167,112), rgb(255,200,160));
-      padding: 1rem clamp(1.25rem, 3vw, 2.5rem) 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,.1);
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #1a0d04;
+      padding: 2rem;
+      border-bottom: 1px solid #f97316;
     }
     .navbar__menu.is-open {
-      display: flex;
+      display: flex !important;
     }
-
     .navbar__list {
       flex-direction: column;
-      gap: 0;
-      width: 100%;
+      gap: 1.5rem;
+      align-items: center;
     }
-
-    .navbar__link {
-      display: block;
-      padding: 10px 0;
-      font-size: 1rem;
-      border-bottom: 1px solid rgba(0,0,0,.08);
-    }
-    .navbar__list li:last-child .navbar__link {
-      border-bottom: none;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .navbar__logo img { width: 42px; height: 40px; }
   }
 </style>
 
 <script>
-  const toggle = document.querySelector('.navbar__toggle') as HTMLButtonElement | null;
-  const menu   = document.getElementById('navbar-menu');
+  // Astro carga scripts al cargar la página
+  const toggle = document.querySelector(".navbar__toggle");
+  const menu = document.getElementById("navbar-menu");
 
-  toggle?.addEventListener('click', () => {
-    const isOpen = menu?.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  // Cierra el menú al hacer clic en un enlace
-  menu?.querySelectorAll('.navbar__link').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('is-open');
-      toggle?.setAttribute('aria-expanded', 'false');
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("is-open");
+      const isExpanded = menu.classList.contains("is-open");
+      toggle.setAttribute("aria-expanded", String(isExpanded));
     });
-  });
+  }
 </script>
