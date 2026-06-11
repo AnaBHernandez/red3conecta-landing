@@ -11,6 +11,24 @@ const a = t.about;
   <div class="about-dots" aria-hidden="true"></div>
   <div class="about-ring" aria-hidden="true"></div>
 
+  <!-- Morphing blobs -->
+  <div class="about-blob about-blob--a" aria-hidden="true"></div>
+  <div class="about-blob about-blob--b" aria-hidden="true"></div>
+  <div class="about-blob about-blob--c" aria-hidden="true"></div>
+
+  <!-- Floating geometric shapes -->
+  <svg class="about-geo" aria-hidden="true" viewBox="0 0 700 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon class="geo-tri geo-tri--1" points="60,18 112,108 8,108"/>
+    <polygon class="geo-tri geo-tri--2" points="580,310 632,400 528,400"/>
+    <polygon class="geo-tri geo-tri--3" points="340,440 370,490 310,490"/>
+    <rect class="geo-diamond geo-diamond--1" x="260" y="30" width="28" height="28" rx="3" transform="rotate(45 274 44)"/>
+    <rect class="geo-diamond geo-diamond--2" x="620" y="160" width="20" height="20" rx="2" transform="rotate(45 630 170)"/>
+    <circle class="geo-circle geo-circle--1" cx="490" cy="60" r="20"/>
+    <circle class="geo-circle geo-circle--2" cx="130" cy="430" r="13"/>
+    <line class="geo-line geo-line--1" x1="30" y1="250" x2="100" y2="310"/>
+    <line class="geo-line geo-line--2" x1="580" y1="200" x2="640" y2="240"/>
+  </svg>
+
   <div class="about-container">
     <!-- Left: text card -->
     <div class="about-content">
@@ -25,6 +43,8 @@ const a = t.about;
           </li>
         ))}
       </ul>
+
+     
     </div>
 
     <!-- Right: image -->
@@ -83,6 +103,37 @@ const a = t.about;
   @keyframes bg-pulse {
     0%,100% { opacity: .5; }
     50%      { opacity: 1; }
+  }
+  @keyframes morph-a {
+    0%,100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    25%     { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    50%     { border-radius: 50% 60% 30% 70% / 40% 50% 60% 50%; }
+    75%     { border-radius: 70% 30% 50% 60% / 30% 70% 40% 60%; }
+  }
+  @keyframes morph-b {
+    0%,100% { border-radius: 40% 60% 60% 40% / 40% 60% 40% 60%; }
+    33%     { border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%; }
+    66%     { border-radius: 50% 50% 30% 70% / 70% 30% 60% 40%; }
+  }
+  @keyframes morph-c {
+    0%,100% { border-radius: 70% 30% 40% 60% / 50% 70% 30% 50%; }
+    50%     { border-radius: 30% 70% 60% 40% / 60% 40% 70% 30%; }
+  }
+  @keyframes geo-float-1 {
+    0%,100% { transform: translateY(0) rotate(0deg); opacity: .10; }
+    50%     { transform: translateY(-18px) rotate(12deg); opacity: .18; }
+  }
+  @keyframes geo-float-2 {
+    0%,100% { transform: translateY(0) rotate(45deg); opacity: .09; }
+    50%     { transform: translateY(14px) rotate(60deg); opacity: .16; }
+  }
+  @keyframes geo-float-3 {
+    0%,100% { transform: translateY(0); opacity: .07; }
+    50%     { transform: translateY(-10px); opacity: .14; }
+  }
+  @keyframes geo-dash {
+    from { stroke-dashoffset: 120; }
+    to   { stroke-dashoffset: 0; }
   }
 
   /* ── Scroll-reveal ──────────────────────────────────── */
@@ -161,20 +212,43 @@ const a = t.about;
 
   /* ── Content card ───────────────────────────────────── */
   .about-content {
-    background: #efe7dc;
+    background: linear-gradient(145deg, #f7efe4 0%, #efe7dc 100%);
     padding: 2.5rem 2.5rem 2rem;
     border-radius: 20px;
-    box-shadow: 0 8px 28px rgba(0,0,0,.06);
+    box-shadow:
+      0 8px 28px rgba(0,0,0,.08),
+      0 0 0 1.5px rgba(198,106,36,.15),
+      inset 0 1px 0 rgba(255,255,255,.65);
     display: flex; flex-direction: column;
   }
 
   /* ── Heading ────────────────────────────────────────── */
-  .about-content h2 {
-    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-    line-height: 1.15; font-weight: 800;
-    color: #1f1a16; margin: 0 0 .4rem;
+  @keyframes glow-pulse {
+    0%, 100% { text-shadow: 0 0 8px rgba(198,106,36,.0), 0 2px 12px rgba(0,0,0,.08); }
+    50%       { text-shadow: 0 0 18px rgba(198,106,36,.28), 0 2px 12px rgba(0,0,0,.08); }
   }
-  .about-content h2 span { color: #c66a24; }
+  @keyframes shimmer-text {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .about-content h2 {
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    line-height: 1.12; font-weight: 900;
+    color: #1a140e;
+    margin: 0 0 .4rem;
+    letter-spacing: -.02em;
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+  .about-content h2 span {
+    background: linear-gradient(90deg, #c66a24 0%, #f97316 40%, #fdba74 60%, #c66a24 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer-text 3s linear infinite;
+    font-style: italic;
+  }
 
   /* ── Accent line (draws itself in) ─────────────────── */
   .about-line {
@@ -194,28 +268,32 @@ const a = t.about;
     padding: .75rem .9rem .75rem 1rem;
     border-left: 2px solid transparent;
     border-radius: 0 10px 10px 0;
-    transition: border-color 240ms, background 240ms, transform 240ms;
+    transition: border-color 240ms, background 240ms, transform 300ms cubic-bezier(.34,1.56,.64,1);
     cursor: default;
+    transform-origin: left center;
   }
   .about-item:hover {
     border-left-color: #c66a24;
     background: rgba(198,106,36,.07);
-    transform: translateX(5px);
+    transform: scale(1.04);
   }
 
   .about-item__num {
     display: block;
-    font-size: .62rem; font-weight: 800; letter-spacing: 1px;
-    color: #c66a24; opacity: .45; margin-bottom: .2rem;
+    font-size: .68rem; font-weight: 900; letter-spacing: 1.5px;
+    color: #c66a24; opacity: .65; margin-bottom: .25rem;
     font-family: "Plus Jakarta Sans", sans-serif;
     transition: opacity 240ms;
   }
   .about-item:hover .about-item__num { opacity: 1; }
 
   .about-item p {
-    font-size: .88rem; line-height: 1.65;
-    color: #4a3b31; margin: 0;
+    font-size: .92rem; line-height: 1.7;
+    color: #2e221a; margin: 0;
+    font-weight: 500;
   }
+
+  
 
   /* ── Image column ───────────────────────────────────── */
   .about-image {
@@ -262,6 +340,67 @@ const a = t.about;
     background: #22c55e; flex-shrink: 0;
     animation: dot-ping 2.5s ease-in-out infinite;
   }
+
+  /* ── Morphing blobs ────────────────────────────────── */
+  .about-blob {
+    position: absolute; pointer-events: none;
+    filter: blur(55px); mix-blend-mode: multiply;
+    will-change: border-radius, transform;
+  }
+  .about-blob--a {
+    width: 380px; height: 320px;
+    background: radial-gradient(circle at 40% 40%, rgba(249,115,22,.22), rgba(216,185,143,.12) 70%);
+    top: -80px; right: -60px;
+    animation: morph-a 18s ease-in-out infinite, orb-1 22s ease-in-out infinite;
+  }
+  .about-blob--b {
+    width: 280px; height: 260px;
+    background: radial-gradient(circle at 55% 55%, rgba(198,106,36,.18), rgba(253,186,116,.10) 70%);
+    bottom: -60px; left: -40px;
+    animation: morph-b 14s ease-in-out infinite, orb-2 18s ease-in-out infinite;
+  }
+  .about-blob--c {
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, rgba(216,185,143,.20), transparent 70%);
+    top: 55%; left: 38%;
+    animation: morph-c 20s ease-in-out infinite;
+  }
+
+  /* ── Geometric SVG overlay ──────────────────────────── */
+  .about-geo {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; overflow: visible;
+  }
+  .geo-tri {
+    fill: none; stroke: #c66a24; stroke-width: 1.2;
+    opacity: .10;
+  }
+  .geo-tri--1 { animation: geo-float-1 9s ease-in-out infinite; }
+  .geo-tri--2 { animation: geo-float-1 11s ease-in-out infinite 1.5s; }
+  .geo-tri--3 {
+    fill: rgba(249,115,22,.06);
+    animation: geo-float-3 7s ease-in-out infinite 0.8s;
+  }
+  .geo-diamond {
+    fill: none; stroke: #d8b98f; stroke-width: 1;
+    opacity: .13;
+  }
+  .geo-diamond--1 { animation: geo-float-2 12s ease-in-out infinite; }
+  .geo-diamond--2 { animation: geo-float-2 8s ease-in-out infinite 2s; }
+  .geo-circle {
+    fill: none; stroke: #c66a24; stroke-width: 1;
+    stroke-dasharray: 6 4; opacity: .11;
+  }
+  .geo-circle--1 { animation: geo-float-1 10s ease-in-out infinite 0.5s; }
+  .geo-circle--2 { animation: geo-float-3 13s ease-in-out infinite 1s; }
+  .geo-line {
+    stroke: #d8b98f; stroke-width: 1;
+    stroke-dasharray: 6 5;
+    opacity: .12;
+    animation: geo-float-3 15s ease-in-out infinite;
+  }
+  .geo-line--2 { animation-delay: 3s; }
 
   /* ── Responsive ─────────────────────────────────────── */
   @media (max-width: 900px) {
