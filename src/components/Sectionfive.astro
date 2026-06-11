@@ -1,7 +1,7 @@
 ---
 import t from "../i18n/ca.json";
 ---
-
+<div class="bk_section"> 
 <div class="container-alpha">
   <div class="alpha_tittle">
     <h2>{t.section5.title}</h2>
@@ -10,7 +10,8 @@ import t from "../i18n/ca.json";
 </div>
 
 <div class="cards-row">
-    {t.section5.cards_small.map((card) => (
+  {
+    t.section5.cards_small.map((card) => (
       <div class="card-small" data-card-small>
         <button class="card-small__button" aria-expanded="false">
           <img src={card.icon} alt={card.icon_alt} class="card-icon" />
@@ -21,11 +22,13 @@ import t from "../i18n/ca.json";
           <p>{card.desc}</p>
         </div>
       </div>
-    ))}
-  </div>
+    ))
+  }
+</div>
 
-    <div class="cards-column">
-    {t.section5.cards_wide.map((card) => (
+<div class="cards-column">
+  {
+    t.section5.cards_wide.map((card) => (
       <div class="card-wide" data-card-wide>
         <button class="card-wide__button" aria-expanded="false">
           <img src={card.icon} alt={card.icon_alt} class="card-icon" />
@@ -38,53 +41,61 @@ import t from "../i18n/ca.json";
           <p>{card.desc}</p>
         </div>
       </div>
-    ))}
-  </div>
+    ))
+  }
 </div>
-
-
+</div>
 <style>
-   .container-alpha {
-  background-color:rgba(233, 150, 122, 0.195); 
-  border-top:  var(--space-20);
-}
-
-.container-alpha h2 {
-  color: var(--color-black);
-}
-
-.container-alpha__subtitle {
-  color: var(--color-black);
-}
-.alpha_tittle {
-  padding: 2rem 1.5rem;
-  background-color: var(--color-peach-warm);
-  border-radius: 4rem;
-  margin-bottom: var( --space-2);
-  margin-top: var(--space-20);
-  border-color: var(--color-peach-soft);
-  border-width: 5px;
-  border-style: solid;
-}
-
-    /* ---  CARDS --- */
-    .cards-row {
-        display: flex;
-        flex-direction: row;
-        gap: 1.5rem;
-    background-color:rgba(245, 194, 117, 0.175);
+  .container-alpha {
+    background-color: rgba(233, 150, 122, 0.045);
+    margin-top: var(--space-1);
+    margin-bottom: 0;
+    padding: 2rem 1.5rem;
     border-radius: 1rem;
+  }
+
+  .container-alpha h2 {
+    color: var(--color-black);
+  }
+
+  .container-alpha__subtitle {
+    color: var(--color-black);
+  }
+  .alpha_tittle {
+    padding: 2rem 1.5rem;
+    background-color: var(--color-peach-warm);
+    border-radius: 1rem;
+    margin-bottom: var(--space-2);
+    width: 100%;
+
+    border-color: var(--color-peach-soft);
+    border-width: 5px;
+    border-style: solid;
+  }
+
+  /* ---  CARDS --- */
+  .cards-row {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    background-color: rgba(245, 194, 117, 0.419);
+    border-radius: var(--space-20);
     flex: 1;
     overflow: hidden;
-    transition: box-shadow 0.25s ease, background-color 0.35s ease;
+    transition:
+      box-shadow 0.25s ease,
+      background-color 0.35s ease;
+    padding: 1.5rem;
+    margin: var(--space-2);
+    margin-top: 0;
   }
 
   .card-small:hover {
     box-shadow: var(--shadow-md);
-    background-color: var(--color-peach-soft);
+    background-color: rgba(255, 81, 0, 0.189);
+    border-radius: 1rem;
   }
 
-  
   .card-small__button {
     display: flex;
     flex-direction: column;
@@ -96,7 +107,7 @@ import t from "../i18n/ca.json";
     border: none;
     cursor: pointer;
     text-align: center;
-     background-color: var(--color-peach-mid: );
+
     transition: background 0.2s ease;
   }
 
@@ -104,10 +115,11 @@ import t from "../i18n/ca.json";
     margin: 0;
     font-size: 0.95rem;
     color: var(--color-black);
-    transition: font-size 0.3s ease, opacity 0.3s ease;
+    transition:
+      font-size 0.3s ease,
+      opacity 0.3s ease;
   }
 
-  
   .card-small--abierta .card-small__button h3 {
     font-size: 0.8rem;
     opacity: 0.7;
@@ -118,7 +130,10 @@ import t from "../i18n/ca.json";
     max-height: 0;
     overflow: hidden;
     padding: 0 1rem;
-    transition: max-height 0.4s ease, padding 0.4s ease;
+    transition:
+      max-height 0.4s ease,
+      padding 0.4s ease;
+      border-bottom: var(--space-12);
   }
 
   /* cuerpo abierto */
@@ -136,7 +151,9 @@ import t from "../i18n/ca.json";
     text-align: left;
     opacity: 0;
     transform: translateY(-6px);
-    transition: opacity 0.3s ease 0.15s, transform 0.3s ease 0.15s;
+    transition:
+      opacity 0.3s ease 0.15s,
+      transform 0.3s ease 0.15s;
   }
 
   .card-small--abierta .card-small__body p {
@@ -144,19 +161,22 @@ import t from "../i18n/ca.json";
     transform: translateY(0);
   }
 
-  /* ── CARDS ANCHAS ── */
   .cards-column {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    align-items:flex-start
+    align-items: flex-start;
+    margin-bottom: var(--space-12);
   }
 
   .card-wide {
     background-color: var(--color-cream-light);
     border-radius: 1rem;
     overflow: hidden;
-    transition: box-shadow 0.25s ease, background-color 0.25s ease;
+    transition:
+      box-shadow 0.25s ease,
+      background-color 0.25s ease;
+    max-width: 400px;
   }
 
   .card-wide:hover {
@@ -176,7 +196,7 @@ import t from "../i18n/ca.json";
     cursor: pointer;
     text-align: left;
     transition: background 0.2s ease;
-     background-color: var(--color-cream-light);
+    background-color: var(--color-cream-light);
   }
 
   .card-wide__header {
@@ -190,7 +210,9 @@ import t from "../i18n/ca.json";
     margin: 0;
     font-size: 1rem;
     color: var(--color-black);
-    transition: font-size 0.3s ease, opacity 0.3s ease;
+    transition:
+      font-size 0.3s ease,
+      opacity 0.3s ease;
   }
 
   .card-wide--abierta .card-wide__header h3 {
@@ -203,7 +225,9 @@ import t from "../i18n/ca.json";
     max-height: 0;
     overflow: hidden;
     padding: 0 1.5rem;
-    transition: max-height 0.4s ease, padding 0.4s ease;
+    transition:
+      max-height 0.4s ease,
+      padding 0.4s ease;
   }
 
   /* cuerpo abierto */
@@ -220,9 +244,11 @@ import t from "../i18n/ca.json";
     color: var(--color-black);
     opacity: 0;
     transform: translateX(-8px);
-    transition: opacity 0.3s ease 0.15s, transform 0.3s ease 0.15s;
-    background-color:rgba(255, 127, 80, 0.129);
-    height:100px;
+    transition:
+      opacity 0.3s ease 0.15s,
+      transform 0.3s ease 0.15s;
+    background-color: rgba(255, 127, 80, 0.129);
+    height: 100px;
   }
 
   .card-wide--abierta .card-wide__body p {
@@ -235,7 +261,10 @@ import t from "../i18n/ca.json";
     width: 48px;
     height: 48px;
     flex-shrink: 0;
-    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    transition:
+      width 0.3s ease,
+      height 0.3s ease,
+      opacity 0.3s ease;
   }
 
   .card-small--abierta .card-icon,
@@ -256,6 +285,14 @@ import t from "../i18n/ca.json";
   .card-wide--abierta .card__flecha {
     transform: rotate(180deg);
   }
+  .bk_section {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 var(--space-2);
+    background-color:rgba(255, 176, 119, 0.364);
+    border-top:var(--space-12)
+  }
 </style>
 
 <script>
@@ -271,7 +308,10 @@ import t from "../i18n/ca.json";
       // Cierra todas las small
       tarjetasSmall.forEach((t) => {
         t.classList.remove("card-small--abierta");
-        t.querySelector(".card-small__button")?.setAttribute("aria-expanded", "false");
+        t.querySelector(".card-small__button")?.setAttribute(
+          "aria-expanded",
+          "false",
+        );
       });
 
       if (!estaAbierta) {
@@ -293,7 +333,10 @@ import t from "../i18n/ca.json";
       // Cierra todas las wide
       tarjetasWide.forEach((t) => {
         t.classList.remove("card-wide--abierta");
-        t.querySelector(".card-wide__button")?.setAttribute("aria-expanded", "false");
+        t.querySelector(".card-wide__button")?.setAttribute(
+          "aria-expanded",
+          "false",
+        );
       });
 
       if (!estaAbierta) {
