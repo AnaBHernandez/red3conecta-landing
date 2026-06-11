@@ -50,7 +50,8 @@ import Card from "./Card.astro";
 
 <style>
   .container {
-  background-color: var(--color-cream-light); /* era --color-light-brown */
+  background-color: var(--color-cream-light); 
+  width: auto;
 }
 
 .container__header h2 {
@@ -84,7 +85,7 @@ import Card from "./Card.astro";
     position: relative;
     border-radius: 1rem;
     flex: 1;
-    overflow: hidden;               /* recorta overlay e imagen */
+    overflow: hidden;               
     background-size: cover;
     background-position: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -96,12 +97,12 @@ import Card from "./Card.astro";
   }
   .bloc--a {
     background-image: url("public/imagenes/social-team.jpg");
-    border-left: 6px solid rgba(255, 127, 80, 0.646);
+    border-left: 6px solid rgba(255, 127, 80, 0.306);
   }
 
   .bloc--b {
     background-image: url("public/imagenes/social-media.jpg");
-    border-left: 6px solid rgba(255, 127, 80, 0.646);
+    border-left: 6px solid rgba(255, 127, 80, 0.306);
   }
   .bloc__overlay {
   position: absolute;
@@ -172,6 +173,7 @@ import Card from "./Card.astro";
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    
   }
 
   .casos__titulo {
@@ -181,8 +183,9 @@ import Card from "./Card.astro";
   }
 
   .casos__grid {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  width: 100%;     
+}
 </style>
