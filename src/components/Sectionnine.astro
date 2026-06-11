@@ -3,7 +3,7 @@ import i18n from "../i18n/ca.json";
 const s9 = i18n.section9;
 ---
 
-<section class="section9" aria-labelledby="s9-heading">
+<section id="ecosystem" class="section9" aria-labelledby="s9-heading">
   <div class="container">
     <div class="section-header">
       <h2 id="s9-heading" class="section-title">{s9.title}</h2>
@@ -28,194 +28,213 @@ const s9 = i18n.section9;
       <h3 class="subsection-title">{s9.fundersTitle}</h3>
       <div class="carousel-wrap">
         <div class="carousel-track">
-          {s9.funders.map((funder: any) => (
-            <div class:list={["logo-item", funder.dark ? "logo-item--dark" : ""]}>
-              <img src={funder.logo} alt={funder.name} />
-            </div>
-          ))}
-          {s9.funders.map((funder: any) => (
-            <div class:list={["logo-item", funder.dark ? "logo-item--dark" : ""]}>
-              <img src={funder.logo} alt={funder.name} />
-            </div>
-          ))}
+          {
+            s9.funders.map((funder: any) => (
+              <div
+                class:list={["logo-item", funder.dark ? "logo-item--dark" : ""]}
+              >
+                <img src={funder.logo} alt={funder.name} />
+              </div>
+            ))
+          }
+          {
+            s9.funders.map((funder: any) => (
+              <div
+                class:list={["logo-item", funder.dark ? "logo-item--dark" : ""]}
+              >
+                <img src={funder.logo} alt={funder.name} />
+              </div>
+            ))
+          }
         </div>
       </div>
-  
+    </div>
+
+    <style>
+      .section9 {
+        --s-bg: #ffffff;
+        --s-bg-row: #faf7f2;
+        --s-bg-note: #fef9ec;
+        --s-text-primary: #2c1810;
+        --s-text-secondary: #5c3d2e;
+        --s-text-muted: #8b7355;
+        --s-accent: #8b6914;
+        --s-accent-light: #e8d5b7;
+        --s-border: #e8ddd0;
+        --s-border-note: #d4a017;
+        --s-radius: 12px;
+
+        background-color: var(--s-bg);
+        padding: clamp(3rem, 8vw, 6rem) 0;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 clamp(1rem, 5vw, 2.5rem);
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2.5rem, 6vw, 4rem);
+      }
+
+      .section-title {
+        font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+        font-weight: 700;
+        color: var(--s-text-primary);
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .section-intro {
+        font-size: clamp(1rem, 2.2vw, 1.125rem);
+        color: var(--s-text-secondary);
+        line-height: 1.75;
+        margin: 0;
+      }
+
+      .subsection-title {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        font-weight: 600;
+        color: var(--s-text-primary);
+        margin: 0 0 1.25rem 0;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid var(--s-border);
+      }
+
+      .items-list {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        border: 1px solid var(--s-border);
+        border-radius: var(--s-radius);
+        overflow: hidden;
+      }
+
+      .item-row {
+        display: grid;
+        grid-template-columns: minmax(160px, 200px) 1fr;
+        border-bottom: 1px solid var(--s-border);
+      }
+
+      .item-row:last-child {
+        border-bottom: none;
+      }
+      .item-row:nth-child(even) {
+        background-color: var(--s-bg-row);
+      }
+
+      .item-placeholder {
+        padding: 1.25rem;
+        font-weight: 700;
+        color: var(--s-text-primary);
+        border-right: 1px solid var(--s-border);
+      }
+
+      .item-desc {
+        padding: 1.25rem;
+        color: var(--s-text-secondary);
+        margin: 0;
+        font-style: italic;
+      }
+
+      .team-note {
+        display: flex;
+        gap: 0.875rem;
+        background-color: var(--s-bg-note);
+        border-left: 4px solid var(--s-border-note);
+        padding: 1rem;
+        font-size: 0.875rem;
+        color: var(--s-text-muted);
+      }
+
+      .funders-block {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .carousel-wrap {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .carousel-wrap::before,
+      .carousel-wrap::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 60px;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .carousel-wrap::before {
+        left: 0;
+        background: linear-gradient(to right, #ffffff, transparent);
+      }
+
+      .carousel-wrap::after {
+        right: 0;
+        background: linear-gradient(to left, #ffffff, transparent);
+      }
+
+      .carousel-track {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        animation: logoScroll 18s linear infinite;
+      }
+
+      .carousel-track:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes logoScroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (max-width: 560px) {
+        .item-row {
+          grid-template-columns: 1fr;
+        }
+        .item-placeholder {
+          border-right: none;
+          border-bottom: 1px solid var(--s-border);
+        }
+      }
+    </style>
+
+    <style is:global>
+      .logo-item {
+        background: #ffffff;
+        border: 1px solid #e8ddd0;
+        border-radius: 12px;
+        width: 160px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 12px;
+        flex-shrink: 0;
+        padding: 12px 16px;
+      }
+
+      .logo-item img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      .logo-item--dark {
+        background: #1a1a1a;
+        border-color: #333;
+      }
+    </style>
+  </div>
 </section>
-
-<style>
-  .section9 {
-    --s-bg: #ffffff;
-    --s-bg-row: #faf7f2;
-    --s-bg-note: #fef9ec;
-    --s-text-primary: #2c1810;
-    --s-text-secondary: #5c3d2e;
-    --s-text-muted: #8b7355;
-    --s-accent: #8b6914;
-    --s-accent-light: #e8d5b7;
-    --s-border: #e8ddd0;
-    --s-border-note: #d4a017;
-    --s-radius: 12px;
-
-    background-color: var(--s-bg);
-    padding: clamp(3rem, 8vw, 6rem) 0;
-  }
-
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 clamp(1rem, 5vw, 2.5rem);
-    display: flex;
-    flex-direction: column;
-    gap: clamp(2.5rem, 6vw, 4rem);
-  }
-
-  .section-title {
-    font-size: clamp(1.75rem, 4.5vw, 2.75rem);
-    font-weight: 700;
-    color: var(--s-text-primary);
-    line-height: 1.2;
-    margin: 0;
-  }
-
-  .section-intro {
-    font-size: clamp(1rem, 2.2vw, 1.125rem);
-    color: var(--s-text-secondary);
-    line-height: 1.75;
-    margin: 0;
-  }
-
-  .subsection-title {
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    font-weight: 600;
-    color: var(--s-text-primary);
-    margin: 0 0 1.25rem 0;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--s-border);
-  }
-
-  .items-list {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    border: 1px solid var(--s-border);
-    border-radius: var(--s-radius);
-    overflow: hidden;
-  }
-
-  .item-row {
-    display: grid;
-    grid-template-columns: minmax(160px, 200px) 1fr;
-    border-bottom: 1px solid var(--s-border);
-  }
-
-  .item-row:last-child { border-bottom: none; }
-  .item-row:nth-child(even) { background-color: var(--s-bg-row); }
-
-  .item-placeholder {
-    padding: 1.25rem;
-    font-weight: 700;
-    color: var(--s-text-primary);
-    border-right: 1px solid var(--s-border);
-  }
-
-  .item-desc {
-    padding: 1.25rem;
-    color: var(--s-text-secondary);
-    margin: 0;
-    font-style: italic;
-  }
-
-  .team-note {
-    display: flex;
-    gap: 0.875rem;
-    background-color: var(--s-bg-note);
-    border-left: 4px solid var(--s-border-note);
-    padding: 1rem;
-    font-size: 0.875rem;
-    color: var(--s-text-muted);
-  }
-
-  .funders-block {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .carousel-wrap {
-    overflow: hidden;
-    position: relative;
-  }
-
-  .carousel-wrap::before,
-  .carousel-wrap::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 60px;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .carousel-wrap::before {
-    left: 0;
-    background: linear-gradient(to right, #ffffff, transparent);
-  }
-
-  .carousel-wrap::after {
-    right: 0;
-    background: linear-gradient(to left, #ffffff, transparent);
-  }
-
-  .carousel-track {
-    display: flex;
-    align-items: center;
-    width: max-content;
-    animation: logoScroll 18s linear infinite;
-  }
-
-  .carousel-track:hover {
-    animation-play-state: paused;
-  }
-
-  @keyframes logoScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  @media (max-width: 560px) {
-    .item-row { grid-template-columns: 1fr; }
-    .item-placeholder {
-      border-right: none;
-      border-bottom: 1px solid var(--s-border);
-    }
-  }
-</style>
-
-<style is:global>
-  .logo-item {
-    background: #ffffff;
-    border: 1px solid #e8ddd0;
-    border-radius: 12px;
-    width: 160px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 12px;
-    flex-shrink: 0;
-    padding: 12px 16px;
-  }
-
-  .logo-item img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-
-  .logo-item--dark {
-    background: #1a1a1a;
-    border-color: #333;
-  }
-</style>

@@ -1,8 +1,8 @@
 ---
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
-import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
+import Hero from "../components/Hero.astro";
 import Sectionfour from "../components/Sectionfour.astro";
 import Sectionfive from "../components/Sectionfive.astro";
 import Sectionsix from "../components/Sectionsix.astro";
@@ -46,26 +46,20 @@ import Footer from "../components/Footer.astro";
 </html>
 <body>
   <Navbar />
-
   <main>
-    <section id="why">
-      <Hero />
-    </section>
-
-    <section id="challenges">
-      <About />
-    </section>
-
+    <section id="challenges"><About /></section>
+    <section id="why"><Hero /></section>
     <section id="ally"></section>
 
-    <section id="ecosystem">
-      <Sectionfour />
-      <Sectionfive />
-      <Sectionsix />
-      <Sectionseven />
-      <Sectioneight />
+    <Sectionfour />
+    <Sectionfive />
+    <Sectionsix />
+    <Sectionseven />
+    <Sectioneight />
+
+    <div id="ecosystem">
       <Sectionnine />
-    </section>
+    </div>
   </main>
 
   <Footer />
