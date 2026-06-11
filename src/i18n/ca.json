@@ -21,6 +21,7 @@
     ],
     "img_alt": "Col·laboració entre entitats socials",
     "active_tag": "Projecte actiu"
+    
   },
   "footer": {
     "brand": "Red3Conecta",
@@ -170,21 +171,19 @@
         "description": "Forma part de l'ecosistema Red3Conecta.",
         "arrow": "→"
       }
-    ],
-    "contactNote": "Tens dubtes? Escriu-nos a contacte@red3conecta.org",
-    "footer": "© 2026 Red3Conecta. Projecte pilot impulsat per Factoría F5 i Fundació Formació i Treball."
+    ]
   },
   "section9": {
-    "title": "Premis i reconeixements",
-    "intro": "Red3Conecta avança gràcies al suport d'institucions i la validació de la nostra trajectòria.",
-    "awardsTitle": "Premis",
-    "awards": [
-      { "placeholder": "[ Premi 1 ]", "description": "Descripció del premi o menció aconseguida." }
-    ],
-    "fundersTitle": "Finançadors i col·laboradors",
-    "funders": [
-      { "placeholder": "[ Col·laborador 1 ]", "description": "Entitat que dona suport a la iniciativa." }
-    ],
-    "teamNote": "Nota per a l'equip: Aquesta secció conté dades pendents d'omplir. Assegureu-vos de tenir els textos definitius abans del pas a producció."
-  }
+  "title": "Premis i reconeixements",
+  "intro": "Red3Conecta avança gràcies al suport d'institucions i la validació de la nostra trajectòria.",
+  "awardsTitle": "Premis",
+  "awards": [
+    { "placeholder": "[ Premi 1 ]", "description": "Descripció del premi o menció aconseguida." }
+  ],
+  "fundersTitle": "Finançadors i col·laboradors",
+  "funders": [
+    { "placeholder": "[ Col·laborador 1 ]", "description": "Entitat que dona suport a la iniciativa." }
+  ],
+  "teamNote": "Nota per a l'equip: Aquesta secció conté dades pendents d'omplir. Assegureu-vos de tenir els textos definitius abans del pas a producció."
+}
 }
