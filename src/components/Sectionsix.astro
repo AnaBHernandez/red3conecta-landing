@@ -119,7 +119,7 @@ const kpis = t.impact.kpis;
                 const el = entry.target as HTMLElement;
                 const numeroFinal = parseFloat(el.dataset.target!);
                 const textoCompleto = el.dataset.formato!;
-                const duracion = 2000;
+                const duracion = 3500;
                 const inicio = performance.now();
 
                 el.classList.add("is-animating");
@@ -127,7 +127,7 @@ const kpis = t.impact.kpis;
                 const animar = (ahora: number) => {
                     const transcurrido = ahora - inicio;
                     const progreso = Math.min(transcurrido / duracion, 1);
-                    const ease = 1 - Math.pow(1 - progreso, 3);
+                    const ease = 1 - Math.pow(1 - progreso, 2);
                     const actual = Math.round(ease * numeroFinal);
 
                     el.textContent = textoCompleto.replace(/\d+([.,]\d+)?/, String(actual));
