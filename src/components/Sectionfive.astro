@@ -1,50 +1,60 @@
 ---
 import t from "../i18n/ca.json";
 ---
-<div class="bk_section"> 
-<div class="container-alpha">
-  <div class="alpha_tittle">
-    <h2>{t.section5.title}</h2>
-    <p class="container-alpha__subtitle">{t.section5.subtitle}</p>
+
+<div class="bk_section">
+  <div class="container-alpha">
+    <div class="alpha_tittle">
+      <h2>{t.section5.title}</h2>
+      <p class="container-alpha__subtitle">{t.section5.subtitle}</p>
+    </div>
+  </div>
+
+  <div class="cards-row">
+    {
+      t.section5.cards_small.map((card) => (
+        <div class="card-small" data-card-small>
+          <button class="card-small__button" aria-expanded="false">
+            <img src={card.icon} alt={card.icon_alt} class="card-icon" />
+            <h3>{card.title}</h3>
+            <!-- PILL CTA -->
+            <span class="card__cta">
+              <span class="card__cta-text">Veure més</span>
+              <span class="card__flecha">▾</span>
+            </span>
+          </button>
+          <div class="card-small__body">
+            <p>{card.desc}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="cards-column">
+    {
+      t.section5.cards_wide.map((card) => (
+        <div class="card-wide" data-card-wide>
+          <button class="card-wide__button" aria-expanded="false">
+            <img src={card.icon} alt={card.icon_alt} class="card-icon" />
+            <div class="card-wide__header">
+              <h3>{card.title}</h3>
+              <!-- PILL CTA -->
+              <span class="card__cta">
+                <span class="card__cta-text">Veure més</span>
+                <span class="card__flecha">▾</span>
+              </span>
+            </div>
+          </button>
+          <div class="card-wide__body">
+            <p>{card.desc}</p>
+          </div>
+        </div>
+      ))
+    }
   </div>
 </div>
 
-<div class="cards-row">
-  {
-    t.section5.cards_small.map((card) => (
-      <div class="card-small" data-card-small>
-        <button class="card-small__button" aria-expanded="false">
-          <img src={card.icon} alt={card.icon_alt} class="card-icon" />
-          <h3>{card.title}</h3>
-          <span class="card__flecha">▾</span>
-        </button>
-        <div class="card-small__body">
-          <p>{card.desc}</p>
-        </div>
-      </div>
-    ))
-  }
-</div>
-
-<div class="cards-column">
-  {
-    t.section5.cards_wide.map((card) => (
-      <div class="card-wide" data-card-wide>
-        <button class="card-wide__button" aria-expanded="false">
-          <img src={card.icon} alt={card.icon_alt} class="card-icon" />
-          <div class="card-wide__header">
-            <h3>{card.title}</h3>
-            <span class="card__flecha">▾</span>
-          </div>
-        </button>
-        <div class="card-wide__body">
-          <p>{card.desc}</p>
-        </div>
-      </div>
-    ))
-  }
-</div>
-</div>
 <style>
   .container-alpha {
     background-color: rgba(233, 150, 122, 0.045);
@@ -61,39 +71,46 @@ import t from "../i18n/ca.json";
   .container-alpha__subtitle {
     color: var(--color-black);
   }
+
   .alpha_tittle {
     padding: 2rem 1.5rem;
     background-color: var(--color-peach-warm);
     border-radius: 1rem;
-    margin-bottom: var(--space-2);
     width: 100%;
-
-    border-color: var(--color-peach-soft);
-    border-width: 5px;
-    border-style: solid;
+    border-top: 8px solid var(--color-peach-soft);
+    border-bottom: 8px solid var(--color-peach-soft);
+    border-width: 8px;
+    margin-bottom: var(--space-1);
   }
 
-  /* ---  CARDS --- */
+  /* --- CARDS PEQUEÑAS --- */
   .cards-row {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1.5rem;
     background-color: rgba(245, 194, 117, 0.419);
-    border-radius: var(--space-20);
-    flex: 1;
-    overflow: hidden;
-    transition:
-      box-shadow 0.25s ease,
-      background-color 0.35s ease;
-    padding: 1.5rem;
+    border-radius: 1.5rem;
+    padding: 1rem 1.5rem;
     margin: var(--space-2);
     margin-top: 0;
+    align-items: flex-start;
+  }
+
+  .card-small {
+    flex: 1;
+    border-radius: 1rem;
+    overflow: hidden;
+    outline: 2px solid transparent;
+    transition:
+      box-shadow 0.25s ease,
+      background-color 0.25s ease,
+      outline 0.2s ease;
   }
 
   .card-small:hover {
     box-shadow: var(--shadow-md);
     background-color: rgba(255, 81, 0, 0.189);
-    border-radius: 1rem;
+    outline: 2px solid var(--color-peach-warm);
   }
 
   .card-small__button {
@@ -107,17 +124,19 @@ import t from "../i18n/ca.json";
     border: none;
     cursor: pointer;
     text-align: center;
-
+    border-radius: 1rem;
     transition: background 0.2s ease;
+  }
+
+  .card-small__button:focus-visible {
+    outline: 2px solid var(--color-peach-warm);
   }
 
   .card-small__button h3 {
     margin: 0;
     font-size: 0.95rem;
     color: var(--color-black);
-    transition:
-      font-size 0.3s ease,
-      opacity 0.3s ease;
+    transition: font-size 0.3s ease, opacity 0.3s ease;
   }
 
   .card-small--abierta .card-small__button h3 {
@@ -130,10 +149,7 @@ import t from "../i18n/ca.json";
     max-height: 0;
     overflow: hidden;
     padding: 0 1rem;
-    transition:
-      max-height 0.4s ease,
-      padding 0.4s ease;
-      border-bottom: var(--space-12);
+    transition: max-height 0.4s ease, padding 0.4s ease;
   }
 
   /* cuerpo abierto */
@@ -151,9 +167,7 @@ import t from "../i18n/ca.json";
     text-align: left;
     opacity: 0;
     transform: translateY(-6px);
-    transition:
-      opacity 0.3s ease 0.15s,
-      transform 0.3s ease 0.15s;
+    transition: opacity 0.3s ease 0.15s, transform 0.3s ease 0.15s;
   }
 
   .card-small--abierta .card-small__body p {
@@ -161,27 +175,33 @@ import t from "../i18n/ca.json";
     transform: translateY(0);
   }
 
+  /* --- CARDS ANCHAS --- */
   .cards-column {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: flex-start;
+    padding: var(--space-3);
     margin-bottom: var(--space-12);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .card-wide {
-    background-color: var(--color-cream-light);
-    border-radius: 1rem;
+    background-color: var(--color-peach-soft);
+    border-radius: 2rem;
     overflow: hidden;
+    flex: 1;
+    outline: 2px solid transparent;
     transition:
       box-shadow 0.25s ease,
-      background-color 0.25s ease;
-    max-width: 400px;
+      background-color 0.25s ease,
+      outline 0.2s ease;
   }
 
   .card-wide:hover {
     box-shadow: var(--shadow-md);
-    background-color: var(--color-peach-soft);
+    outline: 2px solid var(--color-peach-warm);
   }
 
   .card-wide__button {
@@ -195,8 +215,12 @@ import t from "../i18n/ca.json";
     border: none;
     cursor: pointer;
     text-align: left;
+    border-radius: 1rem;
     transition: background 0.2s ease;
-    background-color: var(--color-cream-light);
+  }
+
+  .card-wide__button:focus-visible {
+    outline: 2px solid var(--color-peach-warm);
   }
 
   .card-wide__header {
@@ -204,15 +228,14 @@ import t from "../i18n/ca.json";
     flex: 1;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
   }
 
   .card-wide__header h3 {
     margin: 0;
     font-size: 1rem;
     color: var(--color-black);
-    transition:
-      font-size 0.3s ease,
-      opacity 0.3s ease;
+    transition: font-size 0.3s ease, opacity 0.3s ease;
   }
 
   .card-wide--abierta .card-wide__header h3 {
@@ -225,15 +248,13 @@ import t from "../i18n/ca.json";
     max-height: 0;
     overflow: hidden;
     padding: 0 1.5rem;
-    transition:
-      max-height 0.4s ease,
-      padding 0.4s ease;
+    transition: max-height 0.4s ease, padding 0.4s ease;
   }
 
   /* cuerpo abierto */
   .card-wide--abierta .card-wide__body {
     max-height: 200px;
-    padding: 0.25rem 1.5rem 1.2rem 4.5rem; /* sangría alineada con el texto del header */
+    padding: 0.25rem 1.5rem 1.2rem 4.5rem;
     border-top: 1px solid rgba(0, 0, 0, 0.07);
   }
 
@@ -244,11 +265,7 @@ import t from "../i18n/ca.json";
     color: var(--color-black);
     opacity: 0;
     transform: translateX(-8px);
-    transition:
-      opacity 0.3s ease 0.15s,
-      transform 0.3s ease 0.15s;
-    background-color: rgba(255, 127, 80, 0.129);
-    height: 100px;
+    transition: opacity 0.3s ease 0.15s, transform 0.3s ease 0.15s;
   }
 
   .card-wide--abierta .card-wide__body p {
@@ -256,24 +273,32 @@ import t from "../i18n/ca.json";
     transform: translateX(0);
   }
 
-  /* ── COMÚN ── */
-  .card-icon {
-    width: 48px;
-    height: 48px;
+  /* --- PILL CTA --- */
+  .card__cta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(0, 0, 0, 0.07);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    color: var(--color-black);
     flex-shrink: 0;
-    transition:
-      width 0.3s ease,
-      height 0.3s ease,
-      opacity 0.3s ease;
+    transition: background 0.2s ease;
   }
 
-  .card-small--abierta .card-icon,
-  .card-wide--abierta .card-icon {
-    width: 36px;
-    height: 36px;
-    opacity: 0.6;
+  .card-small__button:hover .card__cta,
+  .card-wide__button:hover .card__cta {
+    background: rgba(0, 0, 0, 0.13);
   }
 
+  /* Texto del pill desaparece al abrir */
+  .card-small--abierta .card__cta-text,
+  .card-wide--abierta .card__cta-text {
+    display: none;
+  }
+
+  /* Flecha gira al abrir */
   .card__flecha {
     font-size: 1rem;
     color: var(--color-black);
@@ -285,18 +310,34 @@ import t from "../i18n/ca.json";
   .card-wide--abierta .card__flecha {
     transform: rotate(180deg);
   }
+
+  /* --- COMÚN --- */
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+  }
+
+  .card-small--abierta .card-icon,
+  .card-wide--abierta .card-icon {
+    width: 36px;
+    height: 36px;
+    opacity: 0.6;
+  }
+
   .bk_section {
     display: flex;
     flex-direction: column;
     gap: 0;
     padding: 0 var(--space-2);
-    background-color:rgba(255, 176, 119, 0.364);
-    border-top:var(--space-12)
+    background-color: rgba(255, 176, 119, 0.364);
+    border-top: var(--space-12);
   }
 </style>
 
 <script>
-  // ── Cards pequeñas — acordeón independiente ──
+  // Cards pequeñas
   const tarjetasSmall = document.querySelectorAll("[data-card-small]");
 
   tarjetasSmall.forEach((tarjeta) => {
@@ -305,13 +346,9 @@ import t from "../i18n/ca.json";
     boton?.addEventListener("click", () => {
       const estaAbierta = tarjeta.classList.contains("card-small--abierta");
 
-      // Cierra todas las small
       tarjetasSmall.forEach((t) => {
         t.classList.remove("card-small--abierta");
-        t.querySelector(".card-small__button")?.setAttribute(
-          "aria-expanded",
-          "false",
-        );
+        t.querySelector(".card-small__button")?.setAttribute("aria-expanded", "false");
       });
 
       if (!estaAbierta) {
@@ -321,7 +358,7 @@ import t from "../i18n/ca.json";
     });
   });
 
-  // ── Cards anchas — acordeón independiente ──
+  // Cards anchas
   const tarjetasWide = document.querySelectorAll("[data-card-wide]");
 
   tarjetasWide.forEach((tarjeta) => {
@@ -330,13 +367,9 @@ import t from "../i18n/ca.json";
     boton?.addEventListener("click", () => {
       const estaAbierta = tarjeta.classList.contains("card-wide--abierta");
 
-      // Cierra todas las wide
       tarjetasWide.forEach((t) => {
         t.classList.remove("card-wide--abierta");
-        t.querySelector(".card-wide__button")?.setAttribute(
-          "aria-expanded",
-          "false",
-        );
+        t.querySelector(".card-wide__button")?.setAttribute("aria-expanded", "false");
       });
 
       if (!estaAbierta) {

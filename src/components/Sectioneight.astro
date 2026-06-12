@@ -52,14 +52,14 @@ const s8 = (i18n as any).section8;
 
 <style>
   .section8 {
-    --s-bg-main: #e8d5b7;
-    --s-bg-page: #faf7f2;
-    --s-text-primary: #2c1810;
-    --s-text-secondary: #5c3d2e;
-    --s-text-muted: #8b7355;
-    --s-accent: #8b6914;
-    --s-border: #2c1810;
-    --s-corner: #8b6914;
+    --s-bg-main: var(--color-peach-soft);       /* #FFD8BE — fondo de la card */
+    --s-bg-page: var(--color-cream-light);      /* #F1E5D9 — fondo de la sección */
+    --s-text-primary: #3a1f0d;                  /* marrón oscuro, legible sobre melocotón */
+    --s-text-secondary: #6b3a26;                /* marrón medio para texto de cuerpo */
+    --s-text-muted: #9e6b50;                    /* marrón claro para texto secundario */
+    --s-accent: var(--color-peach-warm);        /* #FFB2A9 — flechas de los botones */
+    --s-border: #3a1f0d;                        /* borde marrón oscuro de los botones */
+    --s-corner: var(--color-peach-warm);        /* #FFB2A9 — esquinas animadas */
     --s-corner-size: 22px;
     --s-corner-thick: 2.5px;
 
@@ -279,7 +279,7 @@ const s8 = (i18n as any).section8;
   }
 
   .cta-btn--primary {
-    background-color: rgba(44, 24, 16, 0.07);
+    background-color: rgba(255, 178, 169, 0.18);   /* tinte peach-warm */
   }
 
   .cta-btn::after {
@@ -289,7 +289,7 @@ const s8 = (i18n as any).section8;
     background: linear-gradient(
       115deg,
       transparent 30%,
-      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0.4) 50%,
       transparent 70%
     );
     transform: translateX(-120%);
@@ -302,9 +302,9 @@ const s8 = (i18n as any).section8;
   }
 
   .cta-btn:hover {
-    background-color: rgba(44, 24, 16, 0.13);
+    background-color: rgba(255, 178, 169, 0.30);   /* hover peach-warm más intenso */
     transform: translateY(-4px) rotateX(4deg) scale(1.02);
-    box-shadow: 0 8px 20px rgba(44, 24, 16, 0.12);
+    box-shadow: 0 8px 20px rgba(255, 114, 100, 0.18);
   }
   .cta-btn__arrow {
     color: var(--s-accent);

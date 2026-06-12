@@ -10,6 +10,11 @@
   --color-surface:      var(--color-peach-soft);
   --color-accent:       var(--color-peach-mid);
   --color-highlight:    var(--color-peach-warm);
+  /* Aliases de compatibilidad — evitan que componentes del equipo se rompan */
+--color-light-brown:  var(--color-peach-soft);
+--color-primary:      var(--color-peach-warm);
+--color-secondary:    var(--color-peach-mid);
+--color-red:          #e05a4e;
 
   --color-white: #ffffff;
   --color-black: #1a1a1a;     

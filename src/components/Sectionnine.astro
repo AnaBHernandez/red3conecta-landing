@@ -12,16 +12,27 @@ const s9 = i18n.section9;
 
     <div class="awards-block">
       <h3 class="subsection-title">{s9.awardsTitle}</h3>
-      <dl class="items-list">
+      <div class="accordion">
         {
-          s9.awards.map((award: any) => (
-            <div class="item-row">
-              <dt class="item-placeholder">{award.placeholder}</dt>
-              <dd class="item-desc">{award.description}</dd>
-            </div>
+          awardsWithExtras.map((award: any) => (
+            <details class="accordion-item">
+              <summary class="accordion-header">
+                <span class="accordion-label">
+                  {award.logo && (
+                    <img class="item-logo" src={award.logo} alt={award.alt} />
+                  )}
+                  <span class="item-name">{award.placeholder}</span>
+                </span>
+                <span class="accordion-icon" aria-hidden="true" />
+              </summary>
+              <div class="accordion-body">
+                <p class="item-desc">{award.description}</p>
+                {award.info && <p class="item-info">{award.info}</p>}
+              </div>
+            </details>
           ))
         }
-      </dl>
+      </div>
     </div>
 
     <div class="funders-block">

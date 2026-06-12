@@ -5,8 +5,14 @@ const { icon, title, description, variant = "default" } = Astro.props;
 <div class={`card card--${variant}`} data-card>
   <button class="card__button" aria-expanded="false">
     <img src={icon} alt={title} class="card__icon" />
-    <h3 class="card__titulo">{title}</h3>
-    <span class="card__flecha">▾</span>
+    <div class="card__content">
+      <h3>{title}</h3>
+    </div>
+    <!-- PILL CTA -->
+    <span class="card__cta">
+      <span class="card__cta-text">Veure més</span>
+      <span class="card__flecha">▾</span>
+    </span>
   </button>
 
   <div class="card__body">
@@ -15,48 +21,65 @@ const { icon, title, description, variant = "default" } = Astro.props;
 </div>
 
 <style>
-  /* CONTENEDOR — compacto por defecto, se expande al abrirse */
   .card {
-    width: fit-content;
-    min-width: 320px;
-    max-width: 420px;
     padding: 0;
     margin: 8px 0;
-    border-radius: 0.75rem;
-    background-color: rgba(225, 120, 0, 0.02);
+    font-size: var(--text-base);
+    border-radius: 1rem;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 8px solid;
     overflow: hidden;
+    height: auto;
+    min-height: 70px;
+    /* expansión horizontal al abrirse */
+    width: fit-content;
+    min-width: 280px;
+    max-width: 420px;
+    outline: 2px solid transparent;
     transition:
       width 0.4s ease,
       max-width 0.4s ease,
-      box-shadow 0.25s ease;
+      box-shadow 0.25s ease,
+      outline 0.2s ease,
+      background-color 0.25s ease;
   }
 
-  /* ABIERTA — ocupa todo el ancho disponible */
+  /* Al abrirse ocupa todo el ancho disponible */
   .card--abierta {
     width: 100%;
     max-width: 100%;
   }
 
-  /* CABECERA — siempre visible */
+  .card:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    outline: 2px solid var(--color-peach-warm);
+    background-color: var(--color-peach-soft);
+  }
+
+  /* BOTÓN CABECERA */
   .card__button {
     display: flex;
     align-items: center;
     flex-direction: row;
     gap: 0.75rem;
     width: 100%;
-    padding: 10px 16px;
+    padding: 10px 14px;
     background: none;
     border: none;
     cursor: pointer;
     text-align: left;
     min-height: 70px;
+    border-radius: 1rem;
     transition: background 0.2s ease;
   }
 
   .card__button:hover {
     background-color: rgba(255, 202, 137, 0.3);
+  }
+
+  .card__button:focus-visible {
+    outline: 2px solid var(--color-peach-warm);
   }
 
   .card__icon {
@@ -66,30 +89,57 @@ const { icon, title, description, variant = "default" } = Astro.props;
     transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
   }
 
-  /* Icono se encoge al abrir */
   .card--abierta .card__icon {
     width: 36px;
     height: 36px;
+    opacity: 0.6;
+  }
+
+  .card__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .card__content h3 {
+    margin: 0;
+    font-size: 1rem;
+    transition: font-size 0.3s ease, opacity 0.3s ease;
+  }
+
+  .card--abierta .card__content h3 {
+    font-size: 0.85rem;
     opacity: 0.7;
   }
 
-  .card__titulo {
-    flex: 1;
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: font-size 0.3s ease;
+  /* PILL CTA */
+  .card__cta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(0, 0, 0, 0.07);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    color: var(--color-black);
+    flex-shrink: 0;
+    white-space: nowrap;
+    transition: background 0.2s ease;
   }
 
-  /* Título se reduce al abrir */
-  .card--abierta .card__titulo {
-    font-size: 0.85rem;
-    opacity: 0.75;
+  .card__button:hover .card__cta {
+    background: rgba(0, 0, 0, 0.13);
+  }
+
+  /* Texto del pill desaparece al abrir */
+  .card--abierta .card__cta-text {
+    display: none;
   }
 
   .card__flecha {
     flex-shrink: 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--color-black);
     transition: transform 0.3s ease;
   }
@@ -98,31 +148,33 @@ const { icon, title, description, variant = "default" } = Astro.props;
     transform: rotate(180deg);
   }
 
-  /* CUERPO — cerrado */
+  /* CUERPO CERRADO */
   .card__body {
     max-height: 0;
     overflow: hidden;
-    padding: 0 1.2rem;
+    padding: 0 14px;
     transition:
-      max-height 0.4s ease,
-      padding 0.4s ease;
+      max-height 0.35s ease,
+      padding 0.35s ease,
+      border-top 0.35s ease;
+    border-top: 0px solid transparent;
   }
 
-  /* CUERPO — abierto */
+  /* CUERPO ABIERTO */
   .card--abierta .card__body {
-    max-height: 300px;
-    padding: 0.5rem 1.5rem 1.2rem;
+    max-height: 250px;
+    padding: 0.75rem 1.2rem 1rem;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .card__body p {
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     line-height: 1.6;
     color: var(--color-black);
     opacity: 0;
-    transform: translateX(-8px); 
-    transition: opacity 0.3s ease 0.15s, transform 0.3s ease 0.15s;
+    transform: translateX(-8px);
+    transition: opacity 0.25s ease 0.1s, transform 0.25s ease 0.1s;
   }
 
   .card--abierta .card__body p {
@@ -132,18 +184,14 @@ const { icon, title, description, variant = "default" } = Astro.props;
 
   /* VARIANTES */
   .card--caso {
+    border-left: none;
     border-top: 3px solid var(--color-peach-warm);
     border-bottom: 3px solid var(--color-peach-warm);
-    border-radius: 3rem;
   }
 
-  .card--talk    { border-left: 6px solid var(--color-secondary); }
-  .card--formacion { border-left: 6px solid var(--color-primary); }
-  .card--insertion { border-left: 6px solid var(--color-red); }
-
-  .card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.316);
-  }
+  .card--talk    { border-color: var(--color-secondary); }
+  .card--formacion { border-color: var(--color-primary); }
+  .card--insertion { border-color: var(--color-red); }
 </style>
 
 <script>
