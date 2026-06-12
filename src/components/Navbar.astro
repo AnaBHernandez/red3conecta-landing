@@ -63,12 +63,16 @@ import t from "../i18n/ca.json";
     margin: 0;
     padding: 0;
   }
-
+  color: var(--color-black);
   .navbar__link {
     text-decoration: none;
-    color: var(--color-accent);
+    color: var(--color-black);
     font-weight: 700;
     transition: color var(--transition-base);
+  }
+  .navbar__link:hover,
+  .navbar__link:focus {
+    color: var(--color-brand-orange); /* Aplicando el naranja */
   }
 
   .navbar__link:visited {
@@ -76,9 +80,6 @@ import t from "../i18n/ca.json";
   }
   .navbar__link:active {
     color: var(--color-highlight);
-  }
-  .navbar__link:hover {
-    color: var(--color-white);
   }
 
   .navbar__toggle {
