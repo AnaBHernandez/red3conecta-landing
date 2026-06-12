@@ -5,7 +5,12 @@ import t from "../i18n/ca.json";
 <nav class="navbar" aria-label="Navegació principal">
   <div class="navbar__container">
     <a href="/" class="navbar__logo">
-      <img src="/Modelo_B.png" alt="Logotip" width="111" height="111" />
+      <img
+        src="/Modelo_B.png"
+        alt="Inici de Red3Conecta"
+        width="111"
+        height="111"
+      />
     </a>
 
     <button
@@ -26,6 +31,7 @@ import t from "../i18n/ca.json";
         </li>
         <li><a href="#ally" class="navbar__link">{t.nav.ally}</a></li>
         <li><a href="#ecosystem" class="navbar__link">{t.nav.ecosystem}</a></li>
+        <span class="footer__divider-name">Red<em>3</em>Conecta</span>
       </ul>
     </div>
   </div>
@@ -33,12 +39,13 @@ import t from "../i18n/ca.json";
 
 <style>
   .navbar {
-    background-color: #1a0d04;
+    background-color: var(--color-black);
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(249, 115, 22, 0.22);
+    border-bottom: var(--border-thin) solid var(--color-accent);
+    backdrop-filter: blur(10px);
   }
 
   .navbar__container {
@@ -59,13 +66,19 @@ import t from "../i18n/ca.json";
 
   .navbar__link {
     text-decoration: none;
-    color: #f97316;
+    color: var(--color-accent);
     font-weight: 700;
-    font-size: 0.9rem;
-    transition: color 200ms;
+    transition: color var(--transition-base);
+  }
+
+  .navbar__link:visited {
+    color: var(--color-accent);
+  }
+  .navbar__link:active {
+    color: var(--color-highlight);
   }
   .navbar__link:hover {
-    color: #ffffff;
+    color: var(--color-white);
   }
 
   .navbar__toggle {
@@ -74,11 +87,12 @@ import t from "../i18n/ca.json";
     border: none;
     cursor: pointer;
   }
+
   .toggle__bar {
     display: block;
     width: 25px;
     height: 3px;
-    background: #f97316;
+    background: var(--color-accent);
     margin: 4px 0;
   }
 
@@ -94,13 +108,16 @@ import t from "../i18n/ca.json";
       top: 100%;
       left: 0;
       right: 0;
-      background: #1a0d04;
+      background: var(--color-black);
       padding: 2rem;
-      border-bottom: 1px solid #f97316;
+      border-bottom: 1px solid var(--color-accent);
     }
+
     .navbar__menu.is-open {
       display: flex !important;
+      flex-direction: column;
     }
+
     .navbar__list {
       flex-direction: column;
       gap: 1.5rem;
@@ -110,14 +127,12 @@ import t from "../i18n/ca.json";
 </style>
 
 <script>
-  // Astro carga scripts al cargar la página
   const toggle = document.querySelector(".navbar__toggle");
   const menu = document.getElementById("navbar-menu");
 
   if (toggle && menu) {
     toggle.addEventListener("click", () => {
-      menu.classList.toggle("is-open");
-      const isExpanded = menu.classList.contains("is-open");
+      const isExpanded = menu.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", String(isExpanded));
     });
   }
