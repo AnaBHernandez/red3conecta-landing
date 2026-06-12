@@ -2,26 +2,12 @@
 import t from "../i18n/ca.json";
 ---
 
-<nav class="navbar" aria-label="Navegació principal">
+<nav class="navbar">
   <div class="navbar__container">
-    <a href="/" class="navbar__logo">
-      <img
-        src="/Modelo_B.png"
-        alt="Inici de Red3Conecta"
-        width="111"
-        height="111"
-      />
+    <a href="/" class="navbar__brand">
+      <img src="/Modelo_B.png" alt="Logo" width="50" height="50" />
+      <h1 class="navbar__title">RED<span>3</span>CONECTA</h1>
     </a>
-
-    <button
-      class="navbar__toggle"
-      aria-expanded="false"
-      aria-label="Obrir menú"
-    >
-      <span class="toggle__bar"></span>
-      <span class="toggle__bar"></span>
-      <span class="toggle__bar"></span>
-    </button>
 
     <div class="navbar__menu" id="navbar-menu">
       <ul class="navbar__list">
@@ -31,110 +17,163 @@ import t from "../i18n/ca.json";
         </li>
         <li><a href="#ally" class="navbar__link">{t.nav.ally}</a></li>
         <li><a href="#ecosystem" class="navbar__link">{t.nav.ecosystem}</a></li>
-        <span class="footer__divider-name">Red<em>3</em>Conecta</span>
       </ul>
     </div>
+
+    <button class="navbar__toggle" aria-label="Menú">
+      <span class="toggle__bar"></span>
+      <span class="toggle__bar"></span>
+      <span class="toggle__bar"></span>
+    </button>
   </div>
 </nav>
 
 <style>
+  /* Animación del efecto brillo */
+  @keyframes name-shimmer {
+    0% {
+      background-position: -300% center;
+    }
+    100% {
+      background-position: 300% center;
+    }
+  }
+
   .navbar {
     background-color: var(--color-black);
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: var(--border-thin) solid var(--color-accent);
-    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-accent);
   }
-
   .navbar__container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     max-width: 1100px;
     margin: 0 auto;
   }
 
+  /* Bloque Logo + Título */
+  .navbar__brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+  }
+  .navbar__brand img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.15);
+    transition: transform 0.3s ease;
+  }
+  .navbar__brand:hover img {
+    transform: scale(1.05);
+  }
+
+  .navbar__title {
+    font-family: var(--font-primary);
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1;
+    background: linear-gradient(
+      90deg,
+      #fdf6ec 30%,
+      #fdba74 50%,
+      #f97316 60%,
+      #fdf6ec 75%
+    );
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: name-shimmer 5s linear infinite;
+  }
+  .navbar__title span {
+    color: var(--color-brand-marron);
+    -webkit-text-fill-color: var(--color-brand-marron);
+  }
+
+  /* --- MENU ESCRITORIO --- */
+  .navbar__menu {
+    display: flex;
+  }
   .navbar__list {
     display: flex;
     list-style: none;
     gap: 2rem;
     margin: 0;
-    padding: 0;
   }
-  color: var(--color-black);
   .navbar__link {
-    text-decoration: none;
-    color: var(--color-black);
+    color: var(--color-brand-orange);
     font-weight: 700;
-    transition: color var(--transition-base);
+    text-decoration: none;
+    font-size: 1rem;
   }
-  .navbar__link:hover,
-  .navbar__link:focus {
-    color: var(--color-brand-orange); /* Aplicando el naranja */
-  }
-
-  .navbar__link:visited {
-    color: var(--color-accent);
-  }
-  .navbar__link:active {
-    color: var(--color-highlight);
+  .navbar__link:hover {
+    color: #fff;
   }
 
+  /* --- MENU MOVIL --- */
   .navbar__toggle {
     display: none;
     background: none;
-    border: none;
+    border: 1px solid var(--color-accent);
+    padding: 0.5rem;
     cursor: pointer;
   }
-
   .toggle__bar {
     display: block;
     width: 25px;
     height: 3px;
-    background: var(--color-accent);
+    background: var(--color-brand-orange);
     margin: 4px 0;
   }
 
   @media (max-width: 768px) {
     .navbar__toggle {
-      display: flex;
-      flex-direction: column;
+      display: flex !important;
     }
-
     .navbar__menu {
       display: none;
       position: absolute;
       top: 100%;
       left: 0;
-      right: 0;
+      width: 100%;
+      height: 100vh;
       background: var(--color-black);
       padding: 2rem;
-      border-bottom: 1px solid var(--color-accent);
+      z-index: 1500;
+      flex-direction: column;
+      align-items: center;
     }
-
     .navbar__menu.is-open {
       display: flex !important;
-      flex-direction: column;
     }
-
     .navbar__list {
-      flex-direction: column;
-      gap: 1.5rem;
-      align-items: center;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 2rem !important;
+      margin-top: 2rem;
     }
   }
 </style>
-
 <script>
   const toggle = document.querySelector(".navbar__toggle");
   const menu = document.getElementById("navbar-menu");
 
   if (toggle && menu) {
     toggle.addEventListener("click", () => {
-      const isExpanded = menu.classList.toggle("is-open");
+      menu.classList.toggle("is-open");
+      const isExpanded = menu.classList.contains("is-open");
       toggle.setAttribute("aria-expanded", String(isExpanded));
+      console.log("Menú cambiado:", isExpanded); // Esto te ayudará a ver si hace algo
     });
   }
 </script>
