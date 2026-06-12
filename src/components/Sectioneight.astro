@@ -8,7 +8,7 @@ const s8 = (i18n as any).section8;
   <div class="container">
     <div class="cta-card" id="s8-card">
 
-      <!-- Esquinas animadas -->
+    
       <span class="corner corner--tl" aria-hidden="true"></span>
       <span class="corner corner--tr" aria-hidden="true"></span>
       <span class="corner corner--bl" aria-hidden="true"></span>
@@ -52,14 +52,14 @@ const s8 = (i18n as any).section8;
 
 <style>
   .section8 {
-    --s-bg-main: var(--color-peach-soft);       /* #FFD8BE — fondo de la card */
-    --s-bg-page: var(--color-cream-light);      /* #F1E5D9 — fondo de la sección */
-    --s-text-primary: #3a1f0d;                  /* marrón oscuro, legible sobre melocotón */
-    --s-text-secondary: #6b3a26;                /* marrón medio para texto de cuerpo */
-    --s-text-muted: #9e6b50;                    /* marrón claro para texto secundario */
-    --s-accent: var(--color-peach-warm);        /* #FFB2A9 — flechas de los botones */
-    --s-border: #3a1f0d;                        /* borde marrón oscuro de los botones */
-    --s-corner: var(--color-peach-warm);        /* #FFB2A9 — esquinas animadas */
+    --s-bg-main: var(--color-peach-soft);      
+    --s-bg-page: var(--color-cream-light);      
+    --s-text-primary: #3a1f0d;                  
+    --s-text-secondary: #6b3a26;                
+    --s-text-muted: #9e6b50;                   
+    --s-accent: var(--color-peach-warm);        
+    --s-border: #3a1f0d;                       
+    --s-corner: var(--color-peach-warm);        
     --s-corner-size: 22px;
     --s-corner-thick: 2.5px;
 
@@ -78,7 +78,6 @@ const s8 = (i18n as any).section8;
     gap: 2.5rem;
   }
 
-  /* ── Card ── */
   .cta-card {
     background-color: var(--s-bg-main);
     border-radius: 12px;
@@ -100,7 +99,6 @@ const s8 = (i18n as any).section8;
     animation: cardDrop 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
-  /* ── Corner brackets ── */
   .corner {
     position: absolute;
     width: var(--s-corner-size);
@@ -143,13 +141,6 @@ const s8 = (i18n as any).section8;
     border-bottom-right-radius: 3px;
   }
 
-  /*
-   * Estrategia de dos fases:
-   * 1. Slide-in (forwards): entra desde su dirección, termina en opacity:1 translate(0,0)
-   * 2. Breathe (infinite): arranca justo cuando termina el slide-in, mueve 2-3px de vuelta
-   *    El `animation-fill-mode: forwards` del slide garantiza que opacity quede en 1
-   *    antes de que empiece el breathe.
-   */
   .cta-card.is-visible .corner--tl {
     animation:
       cornerSlideInTL  0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards,
@@ -203,7 +194,6 @@ const s8 = (i18n as any).section8;
     to   { opacity: 1; transform: translate(0, 0); }
   }
 
-  /* Movimiento "respiración" — 2-3px hacia la dirección de cada esquina */
   @keyframes cornerBreatheTL {
     0%, 100% { opacity: 1; transform: translate(0, 0); }
     50%       { opacity: 0.7; transform: translate(-3px, -3px); }

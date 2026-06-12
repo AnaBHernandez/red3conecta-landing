@@ -77,16 +77,16 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
 
 <style>
   .section9 {
-    --s-bg: var(--color-cream-light);          /* #F1E5D9 — fondo general de la sección */
-    --s-bg-row: var(--color-peach-soft);        /* #FFD8BE — fondo de cabeceras del acordeón */
-    --s-bg-note: var(--color-peach-mid);        /* #FFC7AD — notas destacadas */
-    --s-text-primary: #3a1f0d;                  /* marrón oscuro para títulos */
-    --s-text-secondary: #6b3a26;                /* marrón medio para texto de cuerpo */
-    --s-text-muted: #9e6b50;                    /* marrón claro para texto secundario */
-    --s-accent: var(--color-peach-warm);        /* #FFB2A9 — acentos / hover */
-    --s-accent-light: var(--color-peach-soft);  /* #FFD8BE */
-    --s-border: var(--color-peach-mid);         /* #FFC7AD — bordes de tarjetas */
-    --s-border-note: var(--color-peach-warm);   /* #FFB2A9 */
+    --s-bg: var(--color-cream-light);        
+    --s-bg-row: var(--color-peach-soft);        
+    --s-bg-note: var(--color-peach-mid);       
+    --s-text-primary: #3a1f0d;           
+    --s-text-secondary: #6b3a26;               
+    --s-text-muted: #9e6b50;                    
+    --s-accent: var(--color-peach-warm);       
+    --s-accent-light: var(--color-peach-soft);  
+    --s-border: var(--color-peach-mid);         
+    --s-border-note: var(--color-peach-warm);   
     --s-radius: 12px;
 
     background-color: var(--s-bg);
@@ -126,7 +126,7 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
     border-bottom: 2px solid var(--s-border);
   }
 
-  /* ── Acordeón de premios ── */
+  
   .accordion {
     display: flex;
     flex-direction: column;
@@ -140,7 +140,7 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
     background-color: var(--color-white);
   }
 
-  /* Quita el triángulo nativo del <summary> */
+ 
   .accordion-header {
     display: flex;
     align-items: center;
@@ -187,7 +187,7 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
     text-overflow: ellipsis;
   }
 
-  /* Flecha que rota al abrir/cerrar */
+
   .accordion-icon {
     flex-shrink: 0;
     width: 12px;
