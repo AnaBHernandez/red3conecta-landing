@@ -2,24 +2,18 @@
 import i18n from "../i18n/ca.json";
 const s9 = i18n.section9;
 
-// Datos extra para cada premio: logo + información ampliada para el desplegable.
-// Las rutas de logo asumen que colocas los archivos en /public/logos/
-// (Astro sirve todo lo de /public en la raíz, ej: /public/logos/deloitte.png -> /logos/deloitte.png)
-const awardExtras: Record<string, { logo: string; alt: string; info: string }> = {
+const awardExtras: Record<string, { logo: string; alt: string; info?: string }> = {
   "Deloitte": {
     logo: "/logos/deloitte-com-logo.png",
-    alt: "Logo de Deloitte",
-    info: "Deloitte es una de las firmas de servicios profesionales más grandes del mundo, con presencia en auditoría, consultoría, asesoría financiera, legal e impacto social. A través de su programa 'Conoce mi proyecto' impulsa iniciativas sociales con potencial de inserción laboral.",
+    alt: "Logo de Deloitte"
   },
   "Aigües de Barcelona": {
     logo: "/logos/logo-vector-aigues-de-barcelona.webp",
-    alt: "Logo de Aigües de Barcelona",
-    info: "Aigües de Barcelona es la empresa encargada del ciclo integral del agua en el área metropolitana de Barcelona. Su programa UNADA es una aceleradora social que apoya proyectos con impacto positivo en el territorio y las personas.",
+    alt: "Logo de Aigües de Barcelona"
   },
   "IA for Good": {
     logo: "/logos/AI_for_Good_logo_2024_vertical.png",
-    alt: "Logo de IA for Good",
-    info: "IA for Good es una iniciativa que identifica y visibiliza proyectos que utilizan la inteligencia artificial con fines sociales, promoviendo soluciones tecnológicas responsables y con impacto positivo a nivel global.",
+    alt: "Logo de IA for Good"
   },
 };
 
