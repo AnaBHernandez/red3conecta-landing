@@ -4,14 +4,8 @@
     "challenges": "La plataforma",
     "ally": "Com es construeix",
     "ecosystem": "Ecosistema i col·laboradors"
-  },
-  "hero": {
-    "title": "Menys temps gestionant. Més temps atenent.",
-    "subtitle": "Red3Conecta és la infraestructura digital construïda amb el tercer sector, per al tercer sector.",
-    "btn_demo": "Sol·licita una demo",
-    "btn_join": "Suma't a la xarxa",
-    "context": "Un projecte impulsat per Factoría F5 i Fundació Formació i Treball."
-  },
+    },
+    
   "about": {
     "title": "Per què neix Red3Conecta?",
     "items": [
@@ -21,6 +15,14 @@
     ],
     "img_alt": "Col·laboració entre entitats socials",
     "active_tag": "Projecte actiu"
+  },
+  "hero": {
+    "title": "Menys temps gestionant. Més temps atenent.",
+    "subtitle": "Red3Conecta és la infraestructura digital construïda amb el tercer sector, per al tercer sector.",
+    "btn_demo": "Sol·licita una demo",
+    "btn_join": "Suma't a la xarxa",
+    "context": "Un projecte impulsat per Factoría F5 i Fundació Formació i Treball."
+  
     
   },
   "footer": {

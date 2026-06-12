@@ -78,6 +78,14 @@
 
 --font-primary:   "PT Sans", sans-serif;    /* títulos h1-h6 */
 --font-secondary: "Cantarell", sans-serif;  /* cuerpo de texto */
+
+/* Nuevo color corporativo */
+  --color-brand-orange: #f7731b;
+  --color-brand-orange-hover: #d55e0a;
+
+  /* Modificación de Alias Semánticos */
+  --color-brand-marron: var(--color-brand-orange);
+  --color-brand-marron-hover: var(--color-brand-orange-hover);
 }
 
 
