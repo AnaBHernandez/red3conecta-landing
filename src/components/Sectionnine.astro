@@ -1,6 +1,32 @@
 ---
 import i18n from "../i18n/ca.json";
 const s9 = i18n.section9;
+
+// Datos extra para cada premio: logo + información ampliada para el desplegable.
+// Las rutas de logo asumen que colocas los archivos en /public/logos/
+// (Astro sirve todo lo de /public en la raíz, ej: /public/logos/deloitte.png -> /logos/deloitte.png)
+const awardExtras: Record<string, { logo: string; alt: string; info: string }> = {
+  "Deloitte": {
+    logo: "/logos/deloitte-com-logo.png",
+    alt: "Logo de Deloitte",
+    info: "Deloitte es una de las firmas de servicios profesionales más grandes del mundo, con presencia en auditoría, consultoría, asesoría financiera, legal e impacto social. A través de su programa 'Conoce mi proyecto' impulsa iniciativas sociales con potencial de inserción laboral.",
+  },
+  "Aigües de Barcelona": {
+    logo: "/logos/logo-vector-aigues-de-barcelona.webp",
+    alt: "Logo de Aigües de Barcelona",
+    info: "Aigües de Barcelona es la empresa encargada del ciclo integral del agua en el área metropolitana de Barcelona. Su programa UNADA es una aceleradora social que apoya proyectos con impacto positivo en el territorio y las personas.",
+  },
+  "IA for Good": {
+    logo: "/logos/AI_for_Good_logo_2024_vertical.png",
+    alt: "Logo de IA for Good",
+    info: "IA for Good es una iniciativa que identifica y visibiliza proyectos que utilizan la inteligencia artificial con fines sociales, promoviendo soluciones tecnológicas responsables y con impacto positivo a nivel global.",
+  },
+};
+
+const awardsWithExtras = s9.awards.map((award: any) => ({
+  ...award,
+  ...(awardExtras[award.placeholder] ?? null),
+}));
 ---
 
 <section class="section9" aria-labelledby="s9-heading">
@@ -12,16 +38,27 @@ const s9 = i18n.section9;
 
     <div class="awards-block">
       <h3 class="subsection-title">{s9.awardsTitle}</h3>
-      <dl class="items-list">
+      <div class="accordion">
         {
-          s9.awards.map((award: any) => (
-            <div class="item-row">
-              <dt class="item-placeholder">{award.placeholder}</dt>
-              <dd class="item-desc">{award.description}</dd>
-            </div>
+          awardsWithExtras.map((award: any) => (
+            <details class="accordion-item">
+              <summary class="accordion-header">
+                <span class="accordion-label">
+                  {award.logo && (
+                    <img class="item-logo" src={award.logo} alt={award.alt} />
+                  )}
+                  <span class="item-name">{award.placeholder}</span>
+                </span>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="accordion-body">
+                <p class="item-desc">{award.description}</p>
+                {award.info && <p class="item-info">{award.info}</p>}
+              </div>
+            </details>
           ))
         }
-      </dl>
+      </div>
     </div>
 
     <div class="funders-block">
@@ -40,21 +77,22 @@ const s9 = i18n.section9;
           ))}
         </div>
       </div>
-  
+    </div>
+  </div>
 </section>
 
 <style>
   .section9 {
-    --s-bg: #ffffff;
-    --s-bg-row: #faf7f2;
-    --s-bg-note: #fef9ec;
-    --s-text-primary: #2c1810;
-    --s-text-secondary: #5c3d2e;
-    --s-text-muted: #8b7355;
-    --s-accent: #8b6914;
-    --s-accent-light: #e8d5b7;
-    --s-border: #e8ddd0;
-    --s-border-note: #d4a017;
+    --s-bg: var(--color-cream-light);          /* #F1E5D9 — fondo general de la sección */
+    --s-bg-row: var(--color-peach-soft);        /* #FFD8BE — fondo de cabeceras del acordeón */
+    --s-bg-note: var(--color-peach-mid);        /* #FFC7AD — notas destacadas */
+    --s-text-primary: #3a1f0d;                  /* marrón oscuro para títulos */
+    --s-text-secondary: #6b3a26;                /* marrón medio para texto de cuerpo */
+    --s-text-muted: #9e6b50;                    /* marrón claro para texto secundario */
+    --s-accent: var(--color-peach-warm);        /* #FFB2A9 — acentos / hover */
+    --s-accent-light: var(--color-peach-soft);  /* #FFD8BE */
+    --s-border: var(--color-peach-mid);         /* #FFC7AD — bordes de tarjetas */
+    --s-border-note: var(--color-peach-warm);   /* #FFB2A9 */
     --s-radius: 12px;
 
     background-color: var(--s-bg);
@@ -94,46 +132,109 @@ const s9 = i18n.section9;
     border-bottom: 2px solid var(--s-border);
   }
 
-  .items-list {
+  /* ── Acordeón de premios ── */
+  .accordion {
     display: flex;
     flex-direction: column;
-    margin: 0;
+    gap: 0.75rem;
+  }
+
+  .accordion-item {
     border: 1px solid var(--s-border);
     border-radius: var(--s-radius);
     overflow: hidden;
+    background-color: var(--color-white);
   }
 
-  .item-row {
-    display: grid;
-    grid-template-columns: minmax(160px, 200px) 1fr;
-    border-bottom: 1px solid var(--s-border);
+  /* Quita el triángulo nativo del <summary> */
+  .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    background-color: var(--s-bg-row);
+    list-style: none;
+    transition: background-color 0.2s ease;
   }
 
-  .item-row:last-child { border-bottom: none; }
-  .item-row:nth-child(even) { background-color: var(--s-bg-row); }
+  .accordion-header::-webkit-details-marker {
+    display: none;
+  }
 
-  .item-placeholder {
-    padding: 1.25rem;
+  .accordion-header:hover {
+    background-color: var(--s-accent-light);
+  }
+
+  .accordion-label {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    min-width: 0;
+  }
+
+  .item-logo {
+    height: 32px;
+    width: auto;
+    max-width: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+    background-color: var(--color-white);
+    border-radius: 4px;
+    padding: 2px 6px;
+  }
+
+  .item-name {
     font-weight: 700;
     color: var(--s-text-primary);
-    border-right: 1px solid var(--s-border);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Flecha que rota al abrir/cerrar */
+  .accordion-icon {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid var(--s-text-primary);
+    border-bottom: 2px solid var(--s-text-primary);
+    transform: rotate(45deg);
+    transition: transform 0.25s ease;
+    margin-top: -2px;
+  }
+
+  .accordion-item[open] .accordion-icon {
+    transform: rotate(-135deg);
+    margin-top: 2px;
+  }
+
+  .accordion-body {
+    padding: 1.25rem;
+    border-top: 1px solid var(--s-border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    animation: accordionFadeIn 0.25s ease;
+  }
+
+  @keyframes accordionFadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   .item-desc {
-    padding: 1.25rem;
     color: var(--s-text-secondary);
     margin: 0;
     font-style: italic;
   }
 
-  .team-note {
-    display: flex;
-    gap: 0.875rem;
-    background-color: var(--s-bg-note);
-    border-left: 4px solid var(--s-border-note);
-    padding: 1rem;
-    font-size: 0.875rem;
-    color: var(--s-text-muted);
+  .item-info {
+    color: var(--s-text-secondary);
+    margin: 0;
+    line-height: 1.75;
+    font-size: 0.9375rem;
   }
 
   .funders-block {
@@ -160,12 +261,12 @@ const s9 = i18n.section9;
 
   .carousel-wrap::before {
     left: 0;
-    background: linear-gradient(to right, #ffffff, transparent);
+    background: linear-gradient(to right, var(--s-bg), transparent);
   }
 
   .carousel-wrap::after {
     right: 0;
-    background: linear-gradient(to left, #ffffff, transparent);
+    background: linear-gradient(to left, var(--s-bg), transparent);
   }
 
   .carousel-track {
@@ -185,10 +286,14 @@ const s9 = i18n.section9;
   }
 
   @media (max-width: 560px) {
-    .item-row { grid-template-columns: 1fr; }
-    .item-placeholder {
-      border-right: none;
-      border-bottom: 1px solid var(--s-border);
+    .accordion-header {
+      padding: 0.875rem 1rem;
+    }
+    .item-logo {
+      height: 26px;
+    }
+    .item-name {
+      font-size: 0.875rem;
     }
   }
 </style>
@@ -196,7 +301,7 @@ const s9 = i18n.section9;
 <style is:global>
   .logo-item {
     background: #ffffff;
-    border: 1px solid #e8ddd0;
+    border: 1px solid var(--color-peach-mid);
     border-radius: 12px;
     width: 160px;
     height: 80px;
