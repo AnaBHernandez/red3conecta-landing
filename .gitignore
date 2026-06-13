@@ -1,6 +1,5 @@
 # build output
 dist/
-# generated types
 .astro/
 
 # dependencies
@@ -12,13 +11,28 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
 # environment variables
 .env
-.env.production
+.env.*
+!.env.example
 
 # macOS-specific files
 .DS_Store
 
 # jetbrains setting folder
 .idea/
+
+<<<<<<< HEAD
+# logs y gobernanza
+PRODUCT_LOG.md
+WIKI_GOVERNANZA.md
+=======
+# VS Code setting folder
+.vscode/
+*.code-workspace
+
+# OS junk
+Thumbs.db
+ehthumbs.db
+desktop.ini
+>>>>>>> landing-page

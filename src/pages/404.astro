@@ -1,0 +1,96 @@
+---
+---
+
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Pàgina no trobada | Red3Conecta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="error-page">
+      <div class="error-page__content">
+        <span class="error-page__code">404</span>
+        <h1>Aquesta pàgina no existeix</h1>
+        <p>Pot ser que l'enllaç sigui incorrecte o que la pàgina s'hagi eliminat.</p>
+        <a href="/" class="error-page__btn">Tornar a l'inici</a>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Cantarell", sans-serif;
+    background-color: #F1E5D9;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .error-page {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .error-page__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .error-page__code {
+    font-family: "PT Sans", sans-serif;
+    font-size: 8rem;
+    font-weight: 700;
+    color: #FFB2A9;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  h1 {
+    font-family: "PT Sans", sans-serif;
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1rem;
+    color: rgba(26, 26, 26, 0.6);
+    max-width: 400px;
+    line-height: 1.6;
+  }
+
+  .error-page__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.85rem 2rem;
+    background-color: #1a1a1a;
+    color: white;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .error-page__btn:hover {
+    background-color: #FFB2A9;
+    color: #1a1a1a;
+    transform: translateY(-2px);
+  }
+</style>

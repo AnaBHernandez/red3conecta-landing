@@ -1,0 +1,91 @@
+---
+import t from "../i18n/ca.json";
+---
+
+<section class="hero" aria-label="Hero pricipal">
+  <h1>{t.hero.title}</h1>
+  <p class="hero__subtitle">{t.hero.subtitle}</p>
+
+  <div class="hero__cta">
+    <button class="btn btn--primary">{t.hero.btn_demo}</button>
+    <button class="btn btn--secondary">{t.hero.btn_join}</button>
+  </div>
+
+  <small>{t.hero.context}</small>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(3rem,5vw,4.5rem) clamp(1.25rem,3vw,2.5rem);
+    gap: 2rem;
+    text-align: center;
+    background-color: var(--color-light-brown);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.1;
+    color: var(--color-black);
+    margin: 0;
+  }
+  .hero__subtitle {
+    font-size: 1.22rem;
+    color: #666;
+    margin: 0;
+    max-width: 800px;
+  }
+  .hero__cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .hero small {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--color-black);
+    margin-top: 1rem;
+    display: block;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    border-radius: 11px;
+    border: none;
+    cursor: pointer;
+   transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,        
+    box-shadow 0.2s ease;
+  }
+  .btn--primary {
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+  .btn--secondary {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-black);
+  }
+
+.btn--primary:hover {
+  background-color: #333333;        /* negro suavizado */
+  color: var(--color-white);
+  transform: scale(1.05);           /* crece un 5% */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn--secondary:hover {
+  background-color: #f0f0f0;        /* blanco suavizado a gris muy claro */
+  color: var(--color-black);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+</style>

@@ -1,0 +1,224 @@
+---
+import t from "../i18n/ca.json";
+import "../styles/global.css";
+---
+
+<nav class="navbar">
+  <div class="navbar__container">
+    <a href="/" class="navbar__brand">
+      <img src="/Modelo_B.png" alt="Logo" width="50" height="50" />
+      <h1 class="navbar__title">RED<span>3</span>CONECTA</h1>
+    </a>
+
+    <div class="navbar__menu" id="navbar-menu">
+      <ul class="navbar__list">
+        <li><a href="#about" class="navbar__link">{t.nav.why}</a></li>
+        <li>
+          <a href="#challenges" class="navbar__link">{t.nav.challenges}</a>
+        </li>
+        <li><a href="#ally" class="navbar__link">{t.nav.ally}</a></li>
+        <li><a href="#ecosystem" class="navbar__link">{t.nav.ecosystem}</a></li>
+      </ul>
+    </div>
+
+    <button
+      class="navbar__toggle"
+      aria-label="Menú"
+      aria-expanded="false"
+      aria-controls="navbar-menu"
+    >
+      <span class="toggle__bar"></span>
+      <span class="toggle__bar"></span>
+      <span class="toggle__bar"></span>
+    </button>
+  </div>
+</nav>
+
+<style>
+  /* --- 1. ANIMACIONES GLOBALES --- */
+  @keyframes name-shimmer {
+    0% {
+      background-position: -300% center;
+    }
+    100% {
+      background-position: 300% center;
+    }
+  }
+
+  /* --- 2. ESTILOS DE ESCRITORIO (BASE) --- */
+  .navbar {
+    background-color: var(--color-black);
+    padding: var(--space-4) var(--space-8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-accent);
+  }
+  .navbar__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .navbar__brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+  }
+  .navbar__brand img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.15);
+    transition: transform 0.3s ease;
+  }
+  .navbar__brand:hover img {
+    transform: scale(1.05);
+  }
+
+  .navbar__title {
+    font-family: var(--font-primary);
+    font-size: var(--text-xl);
+    font-weight: 800;
+    margin: 0;
+    line-height: 1;
+    background: linear-gradient(
+      90deg,
+      #fdf6ec 30%,
+      #fdba74 50%,
+      #f97316 60%,
+      #fdf6ec 75%
+    );
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: name-shimmer 5s linear infinite;
+  }
+  .navbar__title span {
+    color: var(--color-brand-marron);
+    -webkit-text-fill-color: var(--color-brand-marron);
+  }
+
+  .navbar__menu {
+    display: flex;
+  }
+  .navbar__list {
+    display: flex;
+    list-style: none;
+    gap: 3.5rem;
+    margin: 0;
+  }
+  .navbar__link {
+    color: var(--color-brand-orange);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: var(--text-base);
+    transition: color var(--transition-base);
+    position: relative;
+  }
+  .navbar__link:hover {
+    color: var(--color-white);
+  }
+  .navbar__link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Centrado */
+    width: 0;
+    height: 2px;
+    background-color: var(--color-brand-orange);
+    transition: width 0.3s ease;
+    transform: translateX(-50%); /* Centrado perfecto */
+  }
+  .navbar__link:hover::after {
+    width: 80%; /* El subrayado crece al pasar el ratón */
+  }
+
+  .navbar__toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--color-accent);
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  .toggle__bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--color-brand-orange);
+    margin: 4px 0;
+  }
+
+  /* --- 3. ESTILOS MÓVIL --- */
+  @media (max-width: 768px) {
+    .navbar__toggle {
+      display: flex !important;
+    }
+
+    .navbar__menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: auto;
+      background: var(--color-black);
+      padding: var(--space-8) 0;
+      z-index: 1500;
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 2px solid var(--color-brand-orange);
+    }
+    .navbar__menu.is-open {
+      display: flex !important;
+    }
+
+    .navbar__list {
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 2.5rem !important;
+      width: 100%;
+    }
+    .navbar__link {
+      font-size: var(--text-md);
+      padding: 0.5rem 1rem;
+      position: relative;
+    }
+
+    .navbar__link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-brand-orange);
+      transition: width 0.3s ease;
+      transform: translateX(-50%);
+    }
+    .navbar__link:hover::after {
+      width: 80%;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".navbar__toggle");
+    const menu = document.getElementById("navbar-menu");
+
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        const isExpanded = menu.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", isExpanded.toString());
+      });
+    }
+  });
+</script>

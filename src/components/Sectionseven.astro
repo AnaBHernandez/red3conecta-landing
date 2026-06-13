@@ -1,0 +1,211 @@
+---
+import i18n from "../i18n/ca.json";
+
+const s7 = (i18n as any).section7;
+---
+
+<section class="vc">
+  <div class="vc__container">
+
+    <div class="vc__header">
+      <div class="vc__dot-row">
+        <div class="vc__dot"></div>
+        <div class="vc__dot"></div>
+        <div class="vc__dot"></div>
+      </div>
+      <h2 class="vc__title">{s7.title}</h2>
+      <p class="vc__intro">{s7.intro}</p>
+    </div>
+
+    <div class="vc__block">
+      <h3 class="vc__subtitle">{s7.driversTitle}</h3>
+      <div class="vc__grid">
+        {s7.drivers.map((driver: any) => (
+          <div class="vc__card">
+            <h4 class="vc__card-name">{driver.name}</h4>
+            <p class="vc__card-desc">{driver.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="s7__block vc__block--tinted">
+      <h3 class="s7__subtitle">{s7.supportTitle}</h3>
+      <div class="s7__quote-wrap">
+        <span class="s7__quote-icon">"</span>
+        <blockquote class="vc__quote">{s7.supportQuote}</blockquote>
+      </div>
+      <p class="s7__network">{s7.networkNote}</p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .vc {
+    background: var(--color-cream-light);
+    padding: 80px 0 96px;
+  }
+
+  .vc__container {
+    max-width: var(--max-w-xl);
+    margin: 0 auto;
+    padding: 0 var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .vc__header {
+    padding: 48px 0 40px;
+    border-bottom: var(--border-base) solid var(--color-peach-mid);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .vc__dot-row {
+    display: flex;
+    gap: 7px;
+  }
+
+  .vc__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: var(--color-peach-warm);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  .vc__dot:nth-child(2) {
+    animation-delay: 0.4s;
+    background: var(--color-peach-mid);
+  }
+  .vc__dot:nth-child(3) {
+    animation-delay: 0.8s;
+    background: var(--color-peach-soft);
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%       { transform: scale(1.5); opacity: 0.7; }
+  }
+
+  .vc__title {
+    font-family: var(--font-primary);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-black);
+    line-height: var(--leading-tight);
+    margin: 0;
+  }
+
+  .vc__intro {
+    font-size: var(--text-base);
+    color: var(--color-black);
+    line-height: var(--leading-loose);
+    max-width: 680px;
+    margin: 0;
+  }
+
+  .vc__block {
+    padding: 48px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    border-bottom: var(--border-base) solid var(--color-peach-mid);
+  }
+
+  .vc__block--tinted {
+    margin: 0 calc(-1 * var(--space-8));
+    padding: 48px var(--space-8) 40px;
+    background: var(--color-peach-soft);
+    border-bottom: none;
+  }
+
+  .vc__subtitle {
+    font-family: var(--font-primary);
+    font-size: var(--text-md);
+    font-weight: 600;
+    color: var(--color-black);
+    margin: 0;
+  }
+
+  .vc__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .vc__card {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: var(--space-6) var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    border-left: var(--border-thick) solid var(--color-peach-warm);
+    box-shadow: var(--shadow-sm);
+    transition:
+      box-shadow var(--transition-base),
+      border-color var(--transition-base),
+      transform var(--transition-base);
+  }
+
+  .vc__card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-peach-mid);
+    transform: translateX(4px);
+  }
+
+  .vc__card-name {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-black);
+    margin: 0;
+  }
+
+  .vc__card-desc {
+    font-size: var(--text-sm);
+    color: var(--color-black);
+    line-height: var(--leading-base);
+    margin: 0;
+  }
+
+  .vc__quote-wrap {
+    position: relative;
+    padding-left: 36px;
+  }
+
+  .vc__quote-icon {
+    position: absolute;
+    top: -4px;
+    left: 0;
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--color-peach-warm);
+    animation: quotePulse 3s ease-in-out infinite;
+  }
+
+  @keyframes quotePulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.4; }
+  }
+
+  .vc__quote {
+    font-size: var(--text-sm);
+    font-style: italic;
+    line-height: var(--leading-base);
+    color: var(--color-black);
+    margin: 0;
+  }
+
+  .vc__network {
+    font-size: var(--text-sm);
+    font-style: italic;
+    color: var(--color-black);
+    line-height: var(--leading-base);
+    margin: 0;
+  }
+</style>
