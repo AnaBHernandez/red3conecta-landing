@@ -4,12 +4,6 @@ Infraestructura digital compartida construida con el tercer sector, para el terc
 
 ---
 
-<<<<<<< HEAD
-## 🌿 Flujo de Trabajo en Git (Git Flow)
-- `main`: Rama sagrada de producción (Protegida).
-- `dev`: Rama común de integración para la unificación de los Sprints.
-- `landing-page`: Rama compartida donde trabaja TODO el equipo (no ramas aisladas).
-=======
 ## 🛠️ Especificaciones Técnicas
 
 * **Framework:** Astro v6 (SPA, sin `layouts/`).
@@ -96,4 +90,3 @@ Infraestructura digital compartida construida con el tercer sector, para el terc
 ---
 
 **Última actualización:** 13/06/2026 | Ana Belén (Scrum Master)
->>>>>>> landing-page
