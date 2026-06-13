@@ -1,0 +1,161 @@
+---
+import t from "../i18n/ca.json";
+
+const kpis = t.impact.kpis;
+---
+
+<div class="stats">
+  <div class="stats__header">
+    <h2>{t.impact.title}</h2>
+    <p>{t.impact.subtitle}</p>
+  </div>
+
+  <div class="stats__grid">
+    {
+      kpis.map((kpi) => {
+        const numeroEncontrado = kpi.numero.match(/\d+([.,]\d+)?/);
+        const soloElNumero = numeroEncontrado
+          ? numeroEncontrado[0].replace(",", ".")
+          : null;
+        const sePuedeAnimar = soloElNumero && !kpi.numero.includes(":");
+
+        return (
+          <div class="kpi">
+            <span
+              class="kpi__numero"
+              data-target={sePuedeAnimar ? soloElNumero : null}
+              data-formato={sePuedeAnimar ? kpi.numero : null}
+            >
+              {kpi.numero}
+            </span>
+            <p class="kpi__descripcion">{kpi.descripcion}</p>
+          </div>
+        );
+      })
+    }
+  </div>
+
+  <p class="stats__nota">{t.impact.note}</p>
+</div>
+
+<style>
+  .stats {
+    background-color: var(--color-peach-soft);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .stats__header h2 {
+    font-size: 1.8rem;
+    color: var(--color-black);
+    margin: 0 0 1rem 0;
+  }
+
+  .stats__header p {
+    color: var(--color-black);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .stats__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .kpi {
+    background-color: var(--color-white);
+    border-bottom: 4px solid var(--color-peach-warm);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .kpi:hover {
+    /* DESPUÉS (CORRECTO) */
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.08);
+    background-color: var(--color-peach-soft);
+  }
+
+  .kpi__numero {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--color-black);
+    line-height: 1;
+  }
+
+  .kpi__numero.is-animating {
+    opacity: 0.6;
+  }
+
+  .kpi__descripcion {
+    margin: 0;
+    color: var(--color-black);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .stats__nota {
+    margin: 0;
+    color: var(--color-black);
+    font-size: 0.8rem;
+    font-style: italic;
+    line-height: 1.5;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 1rem;
+  }
+</style>
+
+<script>
+  const contadores = document.querySelectorAll(".kpi__numero[data-target]");
+
+  const observador = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const el = entry.target as HTMLElement;
+        const numeroFinal = parseFloat(el.dataset.target!);
+        const textoCompleto = el.dataset.formato!;
+        const duracion = 3500;
+        const inicio = performance.now();
+
+        el.classList.add("is-animating");
+
+        const animar = (ahora: number) => {
+          const transcurrido = ahora - inicio;
+          const progreso = Math.min(transcurrido / duracion, 1);
+          const ease = 1 - Math.pow(1 - progreso, 2);
+          const actual = Math.round(ease * numeroFinal);
+
+          el.textContent = textoCompleto.replace(
+            /\d+([.,]\d+)?/,
+            String(actual),
+          );
+
+          if (progreso < 1) {
+            requestAnimationFrame(animar);
+          } else {
+            el.textContent = textoCompleto;
+            el.classList.remove("is-animating");
+          }
+        };
+
+        requestAnimationFrame(animar);
+        observador.unobserve(el);
+      });
+    },
+    { threshold: 0.3 },
+  );
+
+  contadores.forEach((el) => observador.observe(el));
+</script>

@@ -1,12 +1,197 @@
 {
   "nav": {
     "why": "Per què neix Red3Conecta",
-    "challenges": "El context i els reptes",
+    "challenges": "La plataforma",
     "ally": "Com es construeix",
     "ecosystem": "Ecosistema i col·laboradors"
+    },
+    
+  "about": {
+    "title": "Per què neix Red3Conecta?",
+    "items": [
+      "Creiem que el tercer sector mereix una infraestructura digital creada específicament per a les seves necessitats.",
+      "Red3Conecta vol facilitar la col·laboració entre entitats, professionals i persones usuàries.",
+      "El nostre objectiu és reduir les tasques administratives i augmentar el temps d'atenció a les persones."
+    ],
+    "img_alt": "Col·laboració entre entitats socials",
+    "active_tag": "Projecte actiu"
+  },
+  "hero": {
+    "title": "Menys temps gestionant. Més temps atenent.",
+    "subtitle": "Red3Conecta és la infraestructura digital construïda amb el tercer sector, per al tercer sector.",
+    "btn_demo": "Sol·licita una demo",
+    "btn_join": "Suma't a la xarxa",
+    "context": "Un projecte impulsat per Factoría F5 i Fundació Formació i Treball."
+  
+    
   },
   "footer": {
-    "collab": "Un projecte impulsat per Factoría F5 i Fundació Formació i Treball, amb el suport de UNADA, l'acceleradora social d'Aigües de Barcelona.",
-    "rights": "© 2026 Red3Conecta. Tots els drets reservats."
-  }
+    "brand": "Red3Conecta",
+    "desc": "Infraestructura digital col·laborativa construïda amb el tercer sector, per al tercer sector.",
+    "email": "contacte@red3conecta.org",
+    "nav_label": "Navegació",
+    "nav_links": [
+      "Per què neix Red3Conecta",
+      "La plataforma",
+      "Com es construeix",
+      "Ecosistema"
+    ],
+    "partners_label": "Impulsors",
+    "partners": [
+      "Factoría F5",
+      "Fundació Formació i Treball",
+      "UNADA · Aigües de Barcelona"
+    ],
+    "newsletter_label": "Rep novetats del projecte",
+    "newsletter_placeholder": "el-teu@email.cat",
+    "newsletter_ok": "✓ Gràcies! Et contactarem aviat.",
+    "chips": ["Tercer sector", "IA aplicada", "Impacte social"],
+    "bottom": "Projecte impulsat per <strong>Factoría F5</strong> i <strong>Fundació Formació i Treball</strong>.",
+    "rights": "© 2026 Red3Conecta. Tots els drets reservats.",
+    "aria_social": "Xarxes socials",
+    "aria_linkedin": "LinkedIn de Red3Conecta",
+    "aria_instagram": "Instagram de Red3Conecta",
+    "aria_twitter": "X (Twitter) de Red3Conecta",
+    "aria_subscribe": "Subscriure's"
+  },
+  "platform": {
+    "title": "Red3Conecta: la infraestructura digital compartida del tercer sector.",
+    "desc": "Una plataforma web amb IA i un catàleg centralitzat de recursos per als dos actors clau: professionals i persones ateses.",
+    "bloc_a_title": "Per a professionals del tercer sector",
+    "bloc_a_tag": "Menys temps gestionant. Més temps atenent.",
+    "bloc_a_list": [
+      "Catàleg de recursos validat i actualitzat col·lectivament.",
+      "Cercador intel·ligent amb recomanacions argumentades.",
+      "Filtres per tipologia, territori, perfil i requisits.",
+      "Coordinació i derivació entre entitats àgil.",
+      "Registre de consultes i aprenentatge continu."
+    ],
+    "bloc_b_title": "Per a les persones ateses",
+    "bloc_b_tag": "Accés clar. Sense barreres. Des de qualsevol dispositiu.",
+    "bloc_b_list": [
+      "Buscador simplificat amb llenguatge clar.",
+      "Navegació guiada cap als recursos adaptats.",
+      "Accessible des del mòbil."
+    ],
+    "casos_title": "Casos d'ús concrets",
+    "casos": [
+      {
+        "icon": "/icon-inertion-place.png",
+        "title": "Professional d'inserció laboral",
+        "description": "Una professional d'una entitat d'inserció laboral descriu el perfil d'una persona en llenguatge natural. Red3Conecta li retorna en segons els recursos del territori que millor s'adapten al cas."
+      },
+      {
+        "icon": "/icon-nursing-home.png",
+        "title": "Equip d'atenció a persones grans",
+        "description": "Un equip d'atenció a persones grans d'una entitat necessita derivar un cas a un servei especialitzat d'una altra organització. A través de Red3Conecta, localitza el recurs i formalitza la derivació en minuts."
+      },
+      {
+        "icon": "/icons-call-on-iphone.png",
+        "title": "Persona jove en situació de vulnerabilitat",
+        "description": "Una persona jove accedeix des del mòbil al cercador i navega de manera autònoma pels serveis disponibles al seu municipi."
+      }
+    ]
+  },
+  "section5": {
+    "title": "Construït des del territori. Amb el territori. I governat per ell.",
+    "subtitle": "Red3Conecta no s'ha dissenyat en un laboratori extern al tercer sector. Cada decisió s'ha definit conjuntament amb les entitats que l'utilitzen.",
+    "cards_small": [
+      {
+        "icon": "/icon-social.png",
+        "icon_alt": "icon social",
+        "title": "Cocreació real, no consulta simbòlica",
+        "desc": "En un procés d'acceleració realitzat gràcies al suport d'Unada, el projecte ha passat per processos de recerca i validacions directes amb dones usuàries."
+      },
+      {
+        "icon": "/icon-online-community.png",
+        "icon_alt": "community icon",
+        "title": "Governança compartida",
+        "desc": "Red3Conecta no pertany a cap empresa. Pertany a l'ecosistema que la construeix. Les entitats participants tenen veu en les decisions."
+      },
+      {
+        "icon": "/icon-time.png",
+        "icon_alt": "icon time",
+        "title": "Ahorro de temps real per als professionals",
+        "desc": "La intel·ligència artificial interpreta consultes en llenguatge natural i retorna recomanacions argumentades en segons."
+      },
+      {
+        "icon": "/icon-resources.png",
+        "icon_alt": "icon resources",
+        "title": "Xarxa viva d'entitats",
+        "desc": "El catàleg de recursos es construeix i s'actualitza col·lectivament entre les entitats participants."
+      }
+    ],
+    "cards_wide": [
+      {
+        "icon": "/icon-red-technology.png",
+        "icon_alt": "icon red technology",
+        "title": "Tecnologia al servei de l'impacte",
+        "desc": "La IA no és el centre del projecte. És l'eina que fa possible la connexió. El centre és el treball del tercer sector i les persones que atén."
+      },
+      {
+        "icon": "/icon-study.png",
+        "icon_alt": "icon study",
+        "title": "Pilotatge amb impacte mesurable",
+        "desc": "El projecte es pilota amb entitats reals, amb indicadors de seguiment i avaluació d'impacte. Perquè innovació social sense mesura no és innovació: és intenció."
+      }
+    ]
+  },
+  "impact": {
+    "title": "No mesurem intencions. Mesurem resultats.",
+    "subtitle": "L'impacte es mesura en temps recuperat i persones millor ateses.",
+    "kpis": [
+      { "numero": "+200", "descripcion": "persones usuàries en fase pilot" },
+      { "numero": "+23", "descripcion": "entitats socials participants" },
+      { "numero": "−50%", "descripcion": "reducció temps de cerca i coordinació" },
+      { "numero": "3,5:1", "descripcion": "SROI estimat — retorn social" }
+    ],
+    "note": "*Aquests resultats s'avaluaran al segon semestre de 2026."
+  },
+  "section7": {
+    "title": "Un projecte. Tot un ecosistema.",
+    "intro": "Red3Conecta no és una iniciativa aïllada. És el resultat d'una col·laboració real entre entitats amb trajectòria, propòsit compartit i compromís territorial.",
+    "driversTitle": "Entitats impulsores",
+    "drivers": [
+      { "name": "Factoría F5", "description": "Entitat especialitzada en formació tecnològica i innovació social. Lidera el desenvolupament tècnic." },
+      { "name": "Fundació Formació i Treball", "description": "Entitat de referència en inserció laboral i acompanyament social." }
+    ],
+    "supportTitle": "Suport institucional",
+    "supportQuote": "El projecte pilot ha estat possible gràcies al suport tècnic i financer de UNADA, l'acceleradora social d'Aigües de Barcelona.",
+    "networkNote": "Red3Conecta compta amb la participació activa d'entitats col·laboradores del tercer sector metropolità."
+  },
+  "section8": {
+    "title": "Ja coneixes el potencial de Red3Conecta?",
+    "intro": "El futur del tercer sector es construeix col·laborant. No esperis més per transformar la gestió dels teus serveis.",
+    "ctas": [
+      {
+        "label": "Sol·licita una demo",
+        "description": "Veure la plataforma en funcionament.",
+        "arrow": "→"
+      },
+      {
+        "label": "Suma't com a entitat",
+        "description": "Forma part de l'ecosistema Red3Conecta.",
+        "arrow": "→"
+      }
+    ]
+  },
+  "section9": {
+  "title": "Premis i reconeixements",
+  "intro": "Red3Conecta avança gràcies al suport d'institucions i la validació de la nostra trajectòria.",
+  "awardsTitle": "Premis",
+  "awards": [
+  { "placeholder": "Deloitte", "description": "Projecte seleccionat en categoria inserció laboral en el programa \"Conoce mi proyecto\"." },
+  { "placeholder": "Aigües de Barcelona", "description": "Projecte guanyador convocatòria UNADA, l'acceleradora social d'Aigües de Barcelona." },
+  { "placeholder": "IA for Good", "description": "Projecte seleccionat entre les 20 millors iniciatives d'IA per a fins socials de 2026." }
+],
+  "fundersTitle": "Finançadors i col·laboradors",
+  "funders": [
+  { "name": "Eduvic", "logo": "/logos/EDUVIC_blanc.png", "dark": true },
+{ "name": "GetUp Fundación", "logo": "/logos/FGU_logo_version_1.png", "dark": true },  { "name": "Surt", "logo": "/logos/Logo-2-fons-transparent_format_vectorial.svg", "dark": false },
+  { "name": "JAPI", "logo": "/logos/JAPI_blanc.jpg", "dark": false },
+  { "name": "Fundació Surt", "logo": "/logos/Logo-FS_magenta.png", "dark": false },
+  { "name": "Som Llar", "logo": "/logos/SomLlar_blanco.png", "dark": true }
+],
+  "teamNote": "Nota per a l'equip: Aquesta secció conté dades pendents d'omplir. Assegureu-vos de tenir els textos definitius abans del pas a producció."
+}
 }

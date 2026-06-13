@@ -1,10 +1,23 @@
 :root {
-  --color-light-brown: rgb(237, 207, 176);
-  --color-dark-cream: rgb(241, 229, 217);
-  --color-light-cream: rgb(252, 242, 227);
+  /* Paleta principal */
+  --color-cream-light:  #F1E5D9;   /* el más claro, casi blanco roto */
+  --color-peach-soft:   #FFD8BE;   /* melocotón suave */
+  --color-peach-mid:    #FFC7AD;   /* melocotón medio */
+  --color-peach-warm:   #FFB2A9;   /* melocotón cálido, casi salmón */
 
-  --color-white: rgb(255, 255, 255);
-  --color-black: rgb(0, 0, 0);
+  /* Aliases semánticos — úsalos en los componentes */
+  --color-background:   var(--color-cream-light);
+  --color-surface:      var(--color-peach-soft);
+  --color-accent:       var(--color-peach-mid);
+  --color-highlight:    var(--color-peach-warm);
+  /* Aliases de compatibilidad — evitan que componentes del equipo se rompan */
+--color-light-brown:  var(--color-peach-soft);
+--color-primary:      var(--color-peach-warm);
+--color-secondary:    var(--color-peach-mid);
+--color-red:          #e05a4e;
+
+  --color-white: #ffffff;
+  --color-black: #1a1a1a;     
 
   --text-xs: 0.64rem;
   --text-sm: 0.8rem;
@@ -61,4 +74,18 @@
   --max-w-xl: 1024px;
   --max-w-2xl: 1280px;
   --max-w-full: 100%;
+/* Fuentes */
+
+--font-primary:   "PT Sans", sans-serif;    /* títulos h1-h6 */
+--font-secondary: "Cantarell", sans-serif;  /* cuerpo de texto */
+
+/* Nuevo color corporativo */
+  --color-brand-orange: #f7731b;
+  --color-brand-orange-hover: #d55e0a;
+
+  /* Modificación de Alias Semánticos */
+  --color-brand-marron: var(--color-brand-orange);
+  --color-brand-marron-hover: var(--color-brand-orange-hover);
 }
+
+
