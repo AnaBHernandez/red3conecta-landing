@@ -84,7 +84,7 @@ Infraestructura digital compartida construida con el tercer sector, para el terc
 ## 🔗 Enlaces
 
 * **Wiki:** https://github.com/AnaBHernandez/red3conecta-landing/wiki
-* **Deploy:** https://red3conecta.netlify.app (próximamente)
+* **Web en Vivo (Deploy):** https://red3conecta.netlify.app/
 * **Rama compartida:** `landing-page`
 
 ---
