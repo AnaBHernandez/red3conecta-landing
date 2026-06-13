@@ -30,19 +30,26 @@ import Footer from "../components/Footer.astro";
   <body>
     <Navbar />
     <main>
-      <section id="challenges"><About /></section>
-      <section id="why"><Hero /></section>
-      <section id="ally"></section>
+      <section id="about">
+        <About />
+      </section>
 
-      <Sectionfour />
-      <Sectionfive />
+      <section id="challenges">
+        <Sectionfour />
+      </section>
+
+      <section id="ally">
+        <Sectionfive />
+      </section>
+
+      <section id="ecosystem">
+        <Sectionnine />
+      </section>
+
+      <Hero />
       <Sectionsix />
       <Sectionseven />
       <Sectioneight />
-
-      <div id="ecosystem">
-        <Sectionnine />
-      </div>
     </main>
 
     <Footer />
