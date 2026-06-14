@@ -1,11 +1,12 @@
 # 🏛️ Guía de Trabajo: Red3Conecta
 
 ## 1. Reglas de Oro (Líneas Rojas)
-1. **CSS Puro:** Prohibido Tailwind, Bootstrap o Sass. Todo el diseño debe gestionarse mediante archivos `.css` nativos y variables `:root`.
-2. **Cero Hardcoded:** Todo texto visible debe residir en `src/i18n/ca.json`.
-3. **Estructura:** Cada componente debe residir en su propio archivo `.astro` dentro de `src/components/`.
-4. **i18n:** Es obligatorio importar el diccionario en cada componente: `import t from "../i18n/ca.json";`.
-5. **WCAG AA:** Cumplimiento estricto de accesibilidad (contraste 4.5:1, etiquetas `aria-label` en elementos interactivos).
+1. **CSS Puro:** Prohibido Tailwind, Bootstrap o Sass. Todo mediante CSS nativo + variables `:root`.
+2. **Cero Hardcoded:** Todo texto en `src/i18n/ca.json` y `src/i18n/es.json`.
+3. **Estructura:** Cada componente en su archivo `.astro` propio dentro de `src/components/`.
+4. **i18n:** Importar obligatoriamente: `import t from "../i18n/ca.json";` y `import es from "../i18n/es.json";`.
+5. **WCAG AA:** Cumplimiento estricto (contraste 4.5:1, aria-label, navegación teclado).
+6. **Git:** Prohibido push directo a `main`. Usar rama `landing-page` siempre.
 
 ---
 
@@ -20,37 +21,57 @@
 ---
 
 ## 3. Git Flow (Rama Compartida)
-* **Rama de trabajo:** `landing-page` (compartida por todo el equipo).
-* **Flujo:** `landing-page` → [Merge Ana] → `dev` → `main` (Despliegue).
-* **Política:** Queda prohibido hacer push directo a `main`. Tras el merge final a `main` y la verificación de deploy, la rama `landing-page` será archivada al finalizar el Sprint 3.
+landing-page (compartida)
+
+↓ [cada uno hace push]
+
+↓ [Ana revisa + mergea]
+
+dev (actualizada)
+
+↓ [merge final Ana]
+
+main (protegida, despliegue)
+
+**Workflow Compañeras:**
+```bash
+git checkout landing-page
+git pull origin landing-page
+# [edita tu componente]
+npm run build && npm run dev
+git add .
+git commit -m "feat: descripción"
+git push origin landing-page
+# FIN — Ana hace el merge
+```
 
 ---
 
 ## 4. Estándares de Código
-* **HTML:** Semántico (uso correcto de `<section>`, `<article>`, `<nav>`, `<footer>`).
-* **CSS:** Uso de variables `:root` para colores y espacios. Diseño *mobile-first*.
-* **i18n:** Uso dinámico `{t.seccion.clave}`.
+**HTML:** Semántico (`<section>`, `<article>`, `<nav>`, `<footer>`)  
+**CSS:** Variables `:root`, mobile-first, Flexbox/Grid nativos  
+**i18n:** Dinámico `{t.seccion.clave}` en componentes  
 
 ---
 
 ## 5. Checklist de Entrega (DoD)
-Antes de solicitar un merge a Ana Belén, cada componente debe cumplir:
-- [ ] `npm run build` ejecutado sin errores.
-- [ ] `npm run dev` renderiza correctamente en localhost:4321.
-- [ ] Responsive: Adaptado a ≤375px, tablet y desktop.
-- [ ] WCAG AA: Contraste verificado y navegación por teclado operativa.
-- [ ] 100% de los textos migrados a `ca.json` (cero hardcoded).
-- [ ] CSS Puro (sin Tailwind ni frameworks).
-- [ ] Estados de interacción definidos: `:hover`, `:focus`, `:active`.
+- [ ] `npm run build` sin errores
+- [ ] `npm run dev` renderiza en localhost:4321
+- [ ] Responsive: ≤375px, tablet, desktop
+- [ ] WCAG AA: Contraste + navegación teclado
+- [ ] 100% textos en ca.json y es.json (bilingüe)
+- [ ] CSS Puro sin frameworks
+- [ ] Estados: :hover, :focus, :active, :visited
 
 ---
 
-## 6. Proceso de Review
-1. **Pull:** Ana realiza `pull` de la rama `landing-page`.
-2. **Validación:** Ejecución de `npm run build` y test de renderizado.
-3. **Auditoría:** Revisión de HTML semántico, validación de i18n y calidad de CSS.
-4. **Merge:** Si el código es conforme, se integra a `dev`.
-5. **Registro:** Actualización del estado en GitHub Projects.
+## 6. Proceso de Review (Ana)
+1. **Pull** desde landing-page
+2. **Validación:** npm run build + npm run dev
+3. **Auditoría:** HTML semántico, i18n bilingüe, CSS puro
+4. **Merge** a dev si está OK
+5. **Registro** en GitHub Projects
 
 ---
-*Última actualización: 12/06/2026 | Ana Belén (Scrum Master)*
+
+*Última actualización: 13/06/2026 | Ana Belén (Scrum Master)*
