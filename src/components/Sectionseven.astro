@@ -1,12 +1,10 @@
 ---
-import i18n from "../i18n/ca.json";
-
-const s7 = (i18n as any).section7;
+const { t } = Astro.props;
+const s7 = t.section7;
 ---
 
 <section class="vc">
   <div class="vc__container">
-
     <div class="vc__header">
       <div class="vc__dot-row">
         <div class="vc__dot"></div>
@@ -20,24 +18,25 @@ const s7 = (i18n as any).section7;
     <div class="vc__block">
       <h3 class="vc__subtitle">{s7.driversTitle}</h3>
       <div class="vc__grid">
-        {s7.drivers.map((driver: any) => (
-          <div class="vc__card">
-            <h4 class="vc__card-name">{driver.name}</h4>
-            <p class="vc__card-desc">{driver.description}</p>
-          </div>
-        ))}
+        {
+          s7.drivers.map((driver: any) => (
+            <div class="vc__card">
+              <h4 class="vc__card-name">{driver.name}</h4>
+              <p class="vc__card-desc">{driver.description}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
 
     <div class="s7__block vc__block--tinted">
       <h3 class="s7__subtitle">{s7.supportTitle}</h3>
       <div class="s7__quote-wrap">
-        <span class="s7__quote-icon">"</span>
+        <span class="s7__quote-icon"></span>
         <blockquote class="vc__quote">{s7.supportQuote}</blockquote>
       </div>
       <p class="s7__network">{s7.networkNote}</p>
     </div>
-
   </div>
 </section>
 
@@ -86,8 +85,15 @@ const s7 = (i18n as any).section7;
   }
 
   @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50%       { transform: scale(1.5); opacity: 0.7; }
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.7;
+    }
   }
 
   .vc__title {
@@ -189,8 +195,13 @@ const s7 = (i18n as any).section7;
   }
 
   @keyframes quotePulse {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0.4; }
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
   }
 
   .vc__quote {

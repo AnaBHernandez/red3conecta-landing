@@ -1,11 +1,11 @@
 {
   "nav": {
-    "why": "Per què neix Red3Conecta",
+    "why": "per qué neix REd3Coencta",
     "challenges": "La plataforma",
     "ally": "Com es construeix",
     "ecosystem": "Ecosistema i col·laboradors"
-    },
-    
+  },
+
   "about": {
     "title": "Per què neix Red3Conecta?",
     "items": [
@@ -22,8 +22,6 @@
     "btn_demo": "Sol·licita una demo",
     "btn_join": "Suma't a la xarxa",
     "context": "Un projecte impulsat per Factoría F5 i Fundació Formació i Treball."
-  
-    
   },
   "footer": {
     "brand": "Red3Conecta",
@@ -142,7 +140,10 @@
     "kpis": [
       { "numero": "+200", "descripcion": "persones usuàries en fase pilot" },
       { "numero": "+23", "descripcion": "entitats socials participants" },
-      { "numero": "−50%", "descripcion": "reducció temps de cerca i coordinació" },
+      {
+        "numero": "−50%",
+        "descripcion": "reducció temps de cerca i coordinació"
+      },
       { "numero": "3,5:1", "descripcion": "SROI estimat — retorn social" }
     ],
     "note": "*Aquests resultats s'avaluaran al segon semestre de 2026."
@@ -152,8 +153,14 @@
     "intro": "Red3Conecta no és una iniciativa aïllada. És el resultat d'una col·laboració real entre entitats amb trajectòria, propòsit compartit i compromís territorial.",
     "driversTitle": "Entitats impulsores",
     "drivers": [
-      { "name": "Factoría F5", "description": "Entitat especialitzada en formació tecnològica i innovació social. Lidera el desenvolupament tècnic." },
-      { "name": "Fundació Formació i Treball", "description": "Entitat de referència en inserció laboral i acompanyament social." }
+      {
+        "name": "Factoría F5",
+        "description": "Entitat especialitzada en formació tecnològica i innovació social. Lidera el desenvolupament tècnic."
+      },
+      {
+        "name": "Fundació Formació i Treball",
+        "description": "Entitat de referència en inserció laboral i acompanyament social."
+      }
     ],
     "supportTitle": "Suport institucional",
     "supportQuote": "El projecte pilot ha estat possible gràcies al suport tècnic i financer de UNADA, l'acceleradora social d'Aigües de Barcelona.",
@@ -176,22 +183,44 @@
     ]
   },
   "section9": {
-  "title": "Premis i reconeixements",
-  "intro": "Red3Conecta avança gràcies al suport d'institucions i la validació de la nostra trajectòria.",
-  "awardsTitle": "Premis",
-  "awards": [
-  { "placeholder": "Deloitte", "description": "Projecte seleccionat en categoria inserció laboral en el programa \"Conoce mi proyecto\"." },
-  { "placeholder": "Aigües de Barcelona", "description": "Projecte guanyador convocatòria UNADA, l'acceleradora social d'Aigües de Barcelona." },
-  { "placeholder": "IA for Good", "description": "Projecte seleccionat entre les 20 millors iniciatives d'IA per a fins socials de 2026." }
-],
-  "fundersTitle": "Finançadors i col·laboradors",
-  "funders": [
-  { "name": "Eduvic", "logo": "/logos/EDUVIC_blanc.png", "dark": true },
-{ "name": "GetUp Fundación", "logo": "/logos/FGU_logo_version_1.png", "dark": true },  { "name": "Surt", "logo": "/logos/Logo-2-fons-transparent_format_vectorial.svg", "dark": false },
-  { "name": "JAPI", "logo": "/logos/JAPI_blanc.jpg", "dark": false },
-  { "name": "Fundació Surt", "logo": "/logos/Logo-FS_magenta.png", "dark": false },
-  { "name": "Som Llar", "logo": "/logos/SomLlar_blanco.png", "dark": true }
-],
-  "teamNote": "Nota per a l'equip: Aquesta secció conté dades pendents d'omplir. Assegureu-vos de tenir els textos definitius abans del pas a producció."
-}
+    "title": "Premis i reconeixements",
+    "intro": "Red3Conecta avança gràcies al suport d'institucions i la validació de la nostra trajectòria.",
+    "awardsTitle": "Premis",
+    "awards": [
+      {
+        "placeholder": "Deloitte",
+        "description": "Projecte seleccionat en categoria inserció laboral en el programa \"Conoce mi proyecto\"."
+      },
+      {
+        "placeholder": "Aigües de Barcelona",
+        "description": "Projecte guanyador convocatòria UNADA, l'acceleradora social d'Aigües de Barcelona."
+      },
+      {
+        "placeholder": "IA for Good",
+        "description": "Projecte seleccionat entre les 20 millors iniciatives d'IA per a fins socials de 2026."
+      }
+    ],
+    "fundersTitle": "Finançadors i col·laboradors",
+    "funders": [
+      { "name": "Eduvic", "logo": "/logos/EDUVIC_blanc.png", "dark": true },
+      {
+        "name": "GetUp Fundación",
+        "logo": "/logos/FGU_logo_version_1.png",
+        "dark": true
+      },
+      {
+        "name": "Surt",
+        "logo": "/logos/Logo-2-fons-transparent_format_vectorial.svg",
+        "dark": false
+      },
+      { "name": "JAPI", "logo": "/logos/JAPI_blanc.jpg", "dark": false },
+      {
+        "name": "Fundació Surt",
+        "logo": "/logos/Logo-FS_magenta.png",
+        "dark": false
+      },
+      { "name": "Som Llar", "logo": "/logos/SomLlar_blanco.png", "dark": true }
+    ],
+    "teamNote": "Nota per a l'equip: Aquesta secció conté dades pendents d'omplir. Assegureu-vos de tenir els textos definitius abans del pas a producció."
+  }
 }

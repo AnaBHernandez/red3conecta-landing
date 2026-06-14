@@ -1,13 +1,11 @@
 ---
-// src/components/Sectioneight.astro
-import i18n from "../i18n/ca.json";
-const s8 = (i18n as any).section8;
+const { t } = Astro.props;
+const s8 = t.section8;
 ---
 
 <section class="section8" aria-labelledby="s8-heading">
   <div class="container">
     <div class="cta-card" id="s8-card">
-
       <!-- Esquinas animadas -->
       <span class="corner corner--tl" aria-hidden="true"></span>
       <span class="corner corner--tr" aria-hidden="true"></span>
@@ -21,7 +19,11 @@ const s8 = (i18n as any).section8;
         {
           s8.ctas.map((cta: any, index: number) => (
             <a
-              href={index === 0 ? "https://form.asana.com/?k=Xi-unyAAA4uXYNzBzx5bmA&d=1111991690250694" : "#"}
+              href={
+                index === 0
+                  ? "https://form.asana.com/?k=Xi-unyAAA4uXYNzBzx5bmA&d=1111991690250694"
+                  : "#"
+              }
               target={index === 0 ? "_blank" : undefined}
               rel={index === 0 ? "noopener noreferrer" : undefined}
               class:list={[
@@ -52,14 +54,14 @@ const s8 = (i18n as any).section8;
 
 <style>
   .section8 {
-    --s-bg-main: var(--color-peach-soft);       /* #FFD8BE — fondo de la card */
-    --s-bg-page: var(--color-cream-light);      /* #F1E5D9 — fondo de la sección */
-    --s-text-primary: #3a1f0d;                  /* marrón oscuro, legible sobre melocotón */
-    --s-text-secondary: #6b3a26;                /* marrón medio para texto de cuerpo */
-    --s-text-muted: #9e6b50;                    /* marrón claro para texto secundario */
-    --s-accent: var(--color-peach-warm);        /* #FFB2A9 — flechas de los botones */
-    --s-border: #3a1f0d;                        /* borde marrón oscuro de los botones */
-    --s-corner: var(--color-peach-warm);        /* #FFB2A9 — esquinas animadas */
+    --s-bg-main: var(--color-peach-soft); /* #FFD8BE — fondo de la card */
+    --s-bg-page: var(--color-cream-light); /* #F1E5D9 — fondo de la sección */
+    --s-text-primary: #3a1f0d; /* marrón oscuro, legible sobre melocotón */
+    --s-text-secondary: #6b3a26; /* marrón medio para texto de cuerpo */
+    --s-text-muted: #9e6b50; /* marrón claro para texto secundario */
+    --s-accent: var(--color-peach-warm); /* #FFB2A9 — flechas de los botones */
+    --s-border: #3a1f0d; /* borde marrón oscuro de los botones */
+    --s-corner: var(--color-peach-warm); /* #FFB2A9 — esquinas animadas */
     --s-corner-size: 22px;
     --s-corner-thick: 2.5px;
 
@@ -152,73 +154,140 @@ const s8 = (i18n as any).section8;
    */
   .cta-card.is-visible .corner--tl {
     animation:
-      cornerSlideInTL  0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards,
-      cornerBreatheTL  4s   ease-in-out                      1.15s infinite;
+      cornerSlideInTL 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards,
+      cornerBreatheTL 4s ease-in-out 1.15s infinite;
   }
 
   .cta-card.is-visible .corner--tr {
     animation:
-      cornerSlideInTR  0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.70s forwards,
-      cornerBreatheTR  4s   ease-in-out                      1.20s infinite;
+      cornerSlideInTR 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards,
+      cornerBreatheTR 4s ease-in-out 1.2s infinite;
   }
 
   .cta-card.is-visible .corner--bl {
     animation:
-      cornerSlideInBL  0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.72s forwards,
-      cornerBreatheBL  4s   ease-in-out                      1.25s infinite;
+      cornerSlideInBL 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.72s forwards,
+      cornerBreatheBL 4s ease-in-out 1.25s infinite;
   }
 
   .cta-card.is-visible .corner--br {
     animation:
-      cornerSlideInBR  0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.75s forwards,
-      cornerBreatheBR  4s   ease-in-out                      1.30s infinite;
+      cornerSlideInBR 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.75s forwards,
+      cornerBreatheBR 4s ease-in-out 1.3s infinite;
   }
 
   /* ── Keyframes ── */
   @keyframes cardDrop {
-    0%   { opacity: 0; transform: rotateX(-18deg) translateY(-24px) scale(0.97); }
-    60%  { opacity: 1; transform: rotateX(3deg) translateY(4px) scale(1.005); }
-    100% { opacity: 1; transform: rotateX(0deg) translateY(0) scale(1); }
+    0% {
+      opacity: 0;
+      transform: rotateX(-18deg) translateY(-24px) scale(0.97);
+    }
+    60% {
+      opacity: 1;
+      transform: rotateX(3deg) translateY(4px) scale(1.005);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg) translateY(0) scale(1);
+    }
   }
 
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes cornerSlideInTL {
-    from { opacity: 0; transform: translate(-6px, -6px); }
-    to   { opacity: 1; transform: translate(0, 0); }
+    from {
+      opacity: 0;
+      transform: translate(-6px, -6px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
   }
   @keyframes cornerSlideInTR {
-    from { opacity: 0; transform: translate(6px, -6px); }
-    to   { opacity: 1; transform: translate(0, 0); }
+    from {
+      opacity: 0;
+      transform: translate(6px, -6px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
   }
   @keyframes cornerSlideInBL {
-    from { opacity: 0; transform: translate(-6px, 6px); }
-    to   { opacity: 1; transform: translate(0, 0); }
+    from {
+      opacity: 0;
+      transform: translate(-6px, 6px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
   }
   @keyframes cornerSlideInBR {
-    from { opacity: 0; transform: translate(6px, 6px); }
-    to   { opacity: 1; transform: translate(0, 0); }
+    from {
+      opacity: 0;
+      transform: translate(6px, 6px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
   }
 
   /* Movimiento "respiración" — 2-3px hacia la dirección de cada esquina */
   @keyframes cornerBreatheTL {
-    0%, 100% { opacity: 1; transform: translate(0, 0); }
-    50%       { opacity: 0.7; transform: translate(-3px, -3px); }
+    0%,
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    50% {
+      opacity: 0.7;
+      transform: translate(-3px, -3px);
+    }
   }
   @keyframes cornerBreatheTR {
-    0%, 100% { opacity: 1; transform: translate(0, 0); }
-    50%       { opacity: 0.7; transform: translate(3px, -3px); }
+    0%,
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    50% {
+      opacity: 0.7;
+      transform: translate(3px, -3px);
+    }
   }
   @keyframes cornerBreatheBL {
-    0%, 100% { opacity: 1; transform: translate(0, 0); }
-    50%       { opacity: 0.7; transform: translate(-3px, 3px); }
+    0%,
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    50% {
+      opacity: 0.7;
+      transform: translate(-3px, 3px);
+    }
   }
   @keyframes cornerBreatheBR {
-    0%, 100% { opacity: 1; transform: translate(0, 0); }
-    50%       { opacity: 0.7; transform: translate(3px, 3px); }
+    0%,
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    50% {
+      opacity: 0.7;
+      transform: translate(3px, 3px);
+    }
   }
   .cta-title,
   .cta-intro,
@@ -279,11 +348,11 @@ const s8 = (i18n as any).section8;
   }
 
   .cta-btn--primary {
-    background-color: rgba(255, 178, 169, 0.18);   /* tinte peach-warm */
+    background-color: rgba(255, 178, 169, 0.18); /* tinte peach-warm */
   }
 
   .cta-btn::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(
@@ -302,7 +371,12 @@ const s8 = (i18n as any).section8;
   }
 
   .cta-btn:hover {
-    background-color: rgba(255, 178, 169, 0.30);   /* hover peach-warm más intenso */
+    background-color: rgba(
+      255,
+      178,
+      169,
+      0.3
+    ); /* hover peach-warm más intenso */
     transform: translateY(-4px) rotateX(4deg) scale(1.02);
     box-shadow: 0 8px 20px rgba(255, 114, 100, 0.18);
   }
@@ -323,20 +397,19 @@ const s8 = (i18n as any).section8;
     color: var(--s-text-secondary);
     display: block;
   }
-
 </style>
 
 <script>
-  const card = document.getElementById('s8-card');
+  const card = document.getElementById("s8-card");
   if (card) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          card.classList.add('is-visible');
+          card.classList.add("is-visible");
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
     observer.observe(card);
   }

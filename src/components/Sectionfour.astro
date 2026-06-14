@@ -1,5 +1,5 @@
 ---
-import t from "../i18n/ca.json";
+const { t } = Astro.props;
 import Card from "./Card.astro";
 ---
 
@@ -16,7 +16,7 @@ import Card from "./Card.astro";
         <h3>{t.platform.bloc_a_title}</h3>
         <p class="bloc__tagline">{t.platform.bloc_a_tag}</p>
         <ul>
-          {t.platform.bloc_a_list.map((item) => <li>{item}</li>)}
+          {(t.platform.bloc_b_list ?? []).map((item: any) => <li>{item}</li>)}
         </ul>
       </div>
     </div>
@@ -27,7 +27,7 @@ import Card from "./Card.astro";
         <h3>{t.platform.bloc_b_title}</h3>
         <p class="bloc__tagline">{t.platform.bloc_b_tag}</p>
         <ul>
-          {t.platform.bloc_b_list.map((item) => <li>{item}</li>)}
+          {(t.platform.bloc_b_list ?? []).map((item: any) => <li>{item}</li>)}
         </ul>
       </div>
     </div>
@@ -36,14 +36,16 @@ import Card from "./Card.astro";
   <div class="container__casos">
     <h3 class="casos__titulo">{t.platform.casos_title}</h3>
     <div class="casos__grid">
-      {t.platform.casos.map((caso) => (
-        <Card
-          icon={caso.icon}
-          title={caso.title}
-          description={caso.description}
-          variant="caso"
-        />
-      ))}
+      {
+        (t.platform.casos ?? []).map((caso: any) => (
+          <Card
+            icon={caso.icon}
+            title={caso.title}
+            description={caso.description}
+            variant="caso"
+          />
+        ))
+      }
     </div>
   </div>
 </div>
@@ -94,7 +96,9 @@ import Card from "./Card.astro";
     overflow: hidden;
     background-size: cover;
     background-position: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   .bloc:hover {
@@ -103,12 +107,12 @@ import Card from "./Card.astro";
   }
 
   .bloc--a {
-    background-image: url("public/imagenes/social-team.jpg");
+    background-image: url("/imagenes/social-team.jpg");
     border-left: 6px solid rgba(255, 127, 80, 0.306);
   }
 
   .bloc--b {
-    background-image: url("public/imagenes/social-media.jpg");
+    background-image: url("/imagenes/social-media.jpg");
     border-left: 6px solid rgba(255, 127, 80, 0.306);
   }
 

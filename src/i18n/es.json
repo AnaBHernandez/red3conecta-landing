@@ -16,13 +16,22 @@
     "img_alt": "Colaboración entre entidades sociales",
     "active_tag": "Proyecto activo"
   },
-
+  
+"ecosystem": {
+  "title": "Aquí va el título",
+  "intro": "Aquí va la intro",
+  "awardsTitle": "Premios",
+  "fundersTitle": "Financiadores", 
+  "awards": [],
+  "funders": []
+},
+  
   "hero": {
     "title": "Menos tiempo gestionando. Más tiempo atendiendo.",
     "subtitle": "Red3Conecta es la infraestructura digital construida con el tercer sector, para el tercer sector.",
     "btn_demo": "Solicita una demo",
     "btn_join": "Únete a la red",
-    "context": "Un proyecto impulsado por Factoría F5 y Fundació Formació i Treball, con el apoyo de UNADA, la aceleradora social de Aigües de Barcelona."
+    "context": "Un proyecto impulsado por Factoría F5 y Fundación Formació i Treball, con el apoyo de UNADA, la aceleradora social de Aigües de Barcelona."
   },
 
   "footer": {

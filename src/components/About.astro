@@ -1,58 +1,9 @@
 ---
-import t from "../i18n/ca.json";
+const { t } = Astro.props;
 const a = t.about;
 ---
 
 <section id="about" class="about">
-  <!-- Animated bg elements -->
-  <div class="about-orb about-orb--1" aria-hidden="true"></div>
-  <div class="about-orb about-orb--2" aria-hidden="true"></div>
-  <div class="about-orb about-orb--3" aria-hidden="true"></div>
-  <div class="about-dots" aria-hidden="true"></div>
-  <div class="about-ring" aria-hidden="true"></div>
-
-  <!-- Morphing blobs -->
-  <div class="about-blob about-blob--a" aria-hidden="true"></div>
-  <div class="about-blob about-blob--b" aria-hidden="true"></div>
-  <div class="about-blob about-blob--c" aria-hidden="true"></div>
-
-  <!-- Floating geometric shapes -->
-  <svg
-    class="about-geo"
-    aria-hidden="true"
-    viewBox="0 0 700 520"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <polygon class="geo-tri geo-tri--1" points="60,18 112,108 8,108"></polygon>
-    <polygon class="geo-tri geo-tri--2" points="580,310 632,400 528,400"
-    ></polygon>
-    <polygon class="geo-tri geo-tri--3" points="340,440 370,490 310,490"
-    ></polygon>
-    <rect
-      class="geo-diamond geo-diamond--1"
-      x="260"
-      y="30"
-      width="28"
-      height="28"
-      rx="3"
-      transform="rotate(45 274 44)"></rect>
-    <rect
-      class="geo-diamond geo-diamond--2"
-      x="620"
-      y="160"
-      width="20"
-      height="20"
-      rx="2"
-      transform="rotate(45 630 170)"></rect>
-    <circle class="geo-circle geo-circle--1" cx="490" cy="60" r="20"></circle>
-    <circle class="geo-circle geo-circle--2" cx="130" cy="430" r="13"></circle>
-    <line class="geo-line geo-line--1" x1="30" y1="250" x2="100" y2="310"
-    ></line>
-    <line class="geo-line geo-line--2" x1="580" y1="200" x2="640" y2="240"
-    ></line>
-  </svg>
-
   <div class="about-container">
     <div class="about-content">
       <h2
@@ -65,7 +16,7 @@ const a = t.about;
 
       <ul class="about-items" role="list">
         {
-          a.items.map((text, i) => (
+          a.items.map((text: any, i: any) => (
             <li class="about-item" data-anim data-delay={340 + i * 120}>
               <span class="about-item__num" aria-hidden="true">
                 {String(i + 1).padStart(2, "0")}
@@ -75,6 +26,7 @@ const a = t.about;
           ))
         }
       </ul>
+
       <div class="about-mini-visual" aria-hidden="true">
         <span class="node">Entitats</span>
         <span class="line"></span>
@@ -84,7 +36,6 @@ const a = t.about;
       </div>
     </div>
 
-    <!-- Right: image -->
     <div class="about-image" data-anim data-delay="180">
       <div class="about-image__frame">
         <img src="/imagenes/about1.jpg" alt={a.img_alt} loading="lazy" />

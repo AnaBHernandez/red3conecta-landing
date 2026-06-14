@@ -1,6 +1,5 @@
 ---
-import t from "../i18n/ca.json";
-
+const { t } = Astro.props;
 const kpis = t.impact.kpis;
 ---
 
@@ -12,7 +11,7 @@ const kpis = t.impact.kpis;
 
   <div class="stats__grid">
     {
-      kpis.map((kpi) => {
+      kpis.map((kpi: any) => {
         const numeroEncontrado = kpi.numero.match(/\d+([.,]\d+)?/);
         const soloElNumero = numeroEncontrado
           ? numeroEncontrado[0].replace(",", ".")

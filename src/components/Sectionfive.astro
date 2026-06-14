@@ -1,5 +1,5 @@
 ---
-import t from "../i18n/ca.json";
+const { t } = Astro.props;
 ---
 
 <div class="bk_section">
@@ -12,7 +12,7 @@ import t from "../i18n/ca.json";
 
   <div class="cards-row">
     {
-      t.section5.cards_small.map((card) => (
+      t.section5.cards_small.map((card: any) => (
         <div class="card-small" data-card-small>
           <button class="card-small__button" aria-expanded="false">
             <img src={card.icon} alt={card.icon_alt} class="card-icon" />
@@ -33,7 +33,7 @@ import t from "../i18n/ca.json";
 
   <div class="cards-column">
     {
-      t.section5.cards_wide.map((card) => (
+      t.section5.cards_wide.map((card: any) => (
         <div class="card-wide" data-card-wide>
           <button class="card-wide__button" aria-expanded="false">
             <img src={card.icon} alt={card.icon_alt} class="card-icon" />

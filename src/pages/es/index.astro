@@ -1,0 +1,69 @@
+---
+import "../../styles/global.css";
+import t from "../../i18n/es.json";
+import Navbar from "../../components/Navbar.astro";
+import About from "../../components/About.astro";
+import Hero from "../../components/Hero.astro";
+import Sectionfour from "../../components/Sectionfour.astro";
+import Sectionfive from "../../components/Sectionfive.astro";
+import Sectionsix from "../../components/Sectionsix.astro";
+import Sectionseven from "../../components/Sectionseven.astro";
+import Sectioneight from "../../components/Sectioneight.astro";
+import Sectionnine from "../../components/Sectionnine.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Red3Conecta</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <Navbar t={t} />
+
+    <main>
+      <section id="about"><About t={t} /></section>
+      <section id="hero"><Hero t={t} /></section>
+      <section id="challenges"><Sectionfour t={t} /></section>
+      <section id="ally"><Sectionfive t={t} /></section>
+      <section id="ecosystem"><Sectionnine t={t} /></section>
+      <Sectionsix t={t} />
+      <Sectionseven t={t} />
+      <Sectioneight t={t} />
+    </main>
+
+    <Footer t={t} />
+  </body>
+
+  <style is:global>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: var(--font-primary);
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-primary);
+      font-optical-sizing: auto;
+    }
+  </style>
+</html>
