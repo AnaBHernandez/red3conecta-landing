@@ -3,65 +3,76 @@
 
 ## 🎯 Estado General
 **Sprint 1-2:** ✅ COMPLETADO  
-**Sprint 3:** ⏳ EN CURSO (Refinamiento UI, i18n Bilingüe y Estandarización)
+**Sprint 3:** ⏳ EN CURSO (Sistema i18n Bilingüe + Optimización Completa)
 
 ---
 
-## ⚠️ Bloqueos / Impedimentos
-- ✅ **Resuelto:** Navegación sincronizada y funcional (Navbar ↔ índices de secciones).
-- ✅ **Implementado:** Sistema i18n bilingüe (ES/CA) con selector dinámico en Navbar.
-- ⏳ **Pendiente:** Ajuste final de estilos del 404 y refactorización de "números mágicos" en CSS.
+## ✅ Logros Sprint 3 (Rama stable-backup)
 
----
+### ✅ Sistema i18n Bilingüe (ES/CA) — IMPLEMENTADO
+- **Selector de idiomas** en Navbar (CA | ES)
+- Sincronización completa `ca.json` ↔ `es.json`
+- Carga dinámica de textos en TODOS los componentes
+- URLs amigables: `/ca/`, `/es/`, `/` (default)
+- 4 páginas generadas correctamente (npm run build)
 
-## ✅ Sprint 1 y 2 — COMPLETADO
-- Desarrollo de 8 componentes visuales (Layout, Navbar, Footer, Hero, About, 4 Sections).
-- Sincronización de anclajes (IDs) entre Navbar e index.astro completada.
-- Sistema i18n base implementado (ca.json).
-
----
-
-## ⏳ Sprint 3 — EN CURSO
-| ID | Tarea | Responsable | Estado | Notas |
-|---|---|---|---|---|
-| #18 | Migración i18n completa (ES/CA) | Equipo | ⏳ EN CURSO | Sistema bilingüe funcional. |
-| #31 | Mejoras de Estilos Dinámicos | Equipo | ✅ FINALIZADO | Variables CSS globales + transiciones 0.3s. |
-| #26 | Gestión Recursos Marca | Paula | ⏳ SIGUIENTE | Consolidación de assets. |
-| #27 | Git Merges + Deploy Netlify | Ana Belén | ⏳ SIGUIENTE | Programado tras QA final. |
-| #32 | Auditoría QA/WCAG AA | Ana Belén | 🔍 EN REVISIÓN | Validación accesibilidad + contraste. |
-
----
-
-## 🟢 Hitos Completados (Sprint 3)
-
-### [HITO 8] Sistema i18n Bilingüe
-- Selector de idiomas (ES/CA) en Navbar
-- Sincronización de claves JSON (es.json ↔ ca.json)
-- Carga dinámica de textos en componentes
-
-### [HITO 9] Optimización de Estilos
+### ✅ Optimización de Estilos — FINALIZADO
 - Migración a variables CSS globales (`:root`)
-- Transiciones suaves (0.3s ease)
-- Estados :hover, :focus, :visited, :active definidos
+- Transiciones suaves (0.3s ease) en todos los interactivos
+- Estados :hover, :focus, :visited, :active consistentes
+- Refactorización de layouts (About, Footer, Navbar, Hero)
+- Eliminación de "números mágicos" en CSS
+
+### ✅ Correcciones de Runtime — RESUELTO
+- Error `Cannot read properties of undefined` → Encadenamiento opcional (`?.`)
+- Coalescencia nula (`?? []`) en iteraciones
+- Validación de claves JSON ausentes
+- Estabilización completa sin advertencias TypeScript
+
+### ✅ Refactorización de Componentes — COMPLETADO
+- HTML semántico validado en todos los archivos
+- Grid/Flexbox optimizados para responsividad
+- Imágenes con `object-fit: cover` correctas
+- Navegación por teclado funcional
+- WCAG AA: Contraste y aria-labels verificados
+
+---
+
+## 📋 Estado Tareas Sprint 3
+| ID | Tarea | Estado | Notas |
+|---|---|---|---|
+| #18 | Migración i18n (ES/CA) | ✅ COMPLETADO | Sistema bilingüe 100% funcional |
+| #31 | Mejoras de Estilos | ✅ COMPLETADO | Variables CSS + transiciones |
+| #26 | Recursos Marca | ⏳ SIGUIENTE | Paula |
+| #27 | Deploy Netlify | ⏳ SIGUIENTE | Ana (post-QA) |
+| #32 | QA/WCAG | 🔍 EN REVISIÓN | Validación final |
+
+---
+
+## 🟢 Hitos Completados
+- [HITO 8] Sistema i18n Bilingüe Funcional
+- [HITO 9] Optimización Completa de Estilos
+- [HITO 10] Correcciones de Runtime y Estabilización
 
 ---
 
 ## 📌 Próximos Pasos
-- [ ] Refactorización final: Eliminar "números mágicos" en CSS
-- [ ] Implementación de Scroll Reveal (post-auditoría)
-- [ ] Test final de accesibilidad con lector de pantalla (NVDA/VoiceOver)
-- [ ] Deploy a producción en Netlify
+- [ ] Revisión del equipo en rama `stable-backup`
+- [ ] Merge a `landing-page` tras aprobación
+- [ ] Deploy en Netlify (#27)
+- [ ] Auditoría final QA (#32)
 
 ---
 
-## 🔧 Criterios DoD (Todos los componentes)
-✅ Responsive (desktop + móvil ≤375px)  
+## 🔧 Criterios DoD — ALCANZADOS
+✅ Responsive (≤375px, tablet, desktop)  
 ✅ WCAG AA confirmado  
-✅ 100% textos en ca.json/es.json  
-✅ CSS Puro, sin frameworks  
-✅ npm run build sin errores  
-✅ i18n Bilingüe funcional  
+✅ 100% i18n bilingüe (ES/CA)  
+✅ CSS Puro sin frameworks  
+✅ npm run build: 4 páginas sin errores  
+✅ Sin advertencias TypeScript  
+✅ Componentes refactorizados  
 
 ---
 
-*Nota: Sistema i18n bilingüe operativo. El proyecto soporta ES y CA dinámicamente.*
+*Rama: stable-backup | Build: EXITOSO (4 páginas) | Status: LISTO PARA REVISIÓN*
