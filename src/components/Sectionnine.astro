@@ -1,26 +1,8 @@
 ---
-import i18n from "../i18n/ca.json";
-const s9 = i18n.section9;
-
-const awardExtras: Record<string, { logo: string; alt: string; info?: string }> = {
-  "Deloitte": {
-    logo: "/logos/deloitte-com-logo.png",
-    alt: "Logo de Deloitte"
-  },
-  "Aigües de Barcelona": {
-    logo: "/logos/logo-vector-aigues-de-barcelona.webp",
-    alt: "Logo de Aigües de Barcelona"
-  },
-  "AI for Good": {
-    logo: "/logos/AI_for_Good_logo_2024_vertical.png",
-    alt: "Logo de AI for Good"
-  },
-};
-
-const awardsWithExtras = s9.awards.map((award: any) => ({
-  ...award,
-  ...(awardExtras[award.placeholder] ?? null),
-}));
+const { t } = Astro.props;
+const s9 = t.section9;
+const awardsWithExtras = s9.awards;
+const kpis = t.impact.kpis;
 ---
 
 <section class="section9" aria-labelledby="s9-heading">
@@ -43,7 +25,7 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
                   )}
                   <span class="item-name">{award.placeholder}</span>
                 </span>
-                <span class="accordion-icon" aria-hidden="true"></span>
+                <span class="accordion-icon" aria-hidden="true" />
               </summary>
               <div class="accordion-body">
                 <p class="item-desc">{award.description}</p>
@@ -59,16 +41,24 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
       <h3 class="subsection-title">{s9.fundersTitle}</h3>
       <div class="carousel-wrap">
         <div class="carousel-track">
-          {s9.funders.map((funder: any) => (
-            <div class:list={["logo-item", funder.dark ? "logo-item--dark" : ""]}>
-              <img src={funder.logo} alt={funder.name} />
-            </div>
-          ))}
-          {s9.funders.map((funder: any) => (
-            <div class:list={["logo-item", funder.dark ? "logo-item--dark" : ""]}>
-              <img src={funder.logo} alt={funder.name} />
-            </div>
-          ))}
+          {
+            s9.funders.map((funder: any) => (
+              <div
+                class:list={["logo-item", funder.dark ? "logo-item--dark" : ""]}
+              >
+                <img src={funder.logo} alt={funder.name} />
+              </div>
+            ))
+          }
+          {
+            s9.funders.map((funder: any) => (
+              <div
+                class:list={["logo-item", funder.dark ? "logo-item--dark" : ""]}
+              >
+                <img src={funder.logo} alt={funder.name} />
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
@@ -77,16 +67,16 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
 
 <style>
   .section9 {
-    --s-bg: var(--color-cream-light);        
-    --s-bg-row: var(--color-peach-soft);        
-    --s-bg-note: var(--color-peach-mid);       
-    --s-text-primary: #3a1f0d;           
-    --s-text-secondary: #6b3a26;               
-    --s-text-muted: #9e6b50;                    
-    --s-accent: var(--color-peach-warm);       
-    --s-accent-light: var(--color-peach-soft);  
-    --s-border: var(--color-peach-mid);         
-    --s-border-note: var(--color-peach-warm);   
+    --s-bg: var(--color-cream-light);
+    --s-bg-row: var(--color-peach-soft);
+    --s-bg-note: var(--color-peach-mid);
+    --s-text-primary: #3a1f0d;
+    --s-text-secondary: #6b3a26;
+    --s-text-muted: #9e6b50;
+    --s-accent: var(--color-peach-warm);
+    --s-accent-light: var(--color-peach-soft);
+    --s-border: var(--color-peach-mid);
+    --s-border-note: var(--color-peach-warm);
     --s-radius: 12px;
 
     background-color: var(--s-bg);
@@ -126,7 +116,6 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
     border-bottom: 2px solid var(--s-border);
   }
 
-  
   .accordion {
     display: flex;
     flex-direction: column;
@@ -140,7 +129,6 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
     background-color: var(--color-white);
   }
 
- 
   .accordion-header {
     display: flex;
     align-items: center;
@@ -187,7 +175,6 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
     text-overflow: ellipsis;
   }
 
-
   .accordion-icon {
     flex-shrink: 0;
     width: 12px;
@@ -214,8 +201,14 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
   }
 
   @keyframes accordionFadeIn {
-    from { opacity: 0; transform: translateY(-6px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .item-desc {
@@ -244,7 +237,7 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
 
   .carousel-wrap::before,
   .carousel-wrap::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
@@ -275,8 +268,12 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
   }
 
   @keyframes logoScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 
   @media (max-width: 560px) {

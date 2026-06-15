@@ -1,56 +1,99 @@
 # 🏛️ Guía de Trabajo: Red3Conecta
 
-## 1. Reglas de Oro (Líneas Rojas)
-1. **CSS Puro:** Prohibido Tailwind, Bootstrap o Sass. Todo el diseño debe gestionarse mediante archivos `.css` nativos y variables `:root`.
-2. **Cero Hardcoded:** Todo texto visible debe residir en `src/i18n/ca.json`.
-3. **Estructura:** Cada componente debe residir en su propio archivo `.astro` dentro de `src/components/`.
-4. **i18n:** Es obligatorio importar el diccionario en cada componente: `import t from "../i18n/ca.json";`.
-5. **WCAG AA:** Cumplimiento estricto de accesibilidad (contraste 4.5:1, etiquetas `aria-label` en elementos interactivos).
+## 1. Reglas de Oro (Líneas Rojas) — IMPLEMENTADAS
+1. **CSS Puro:** ✅ Prohibido Tailwind/Bootstrap/Sass. Todo mediante CSS nativo + variables `:root`.
+2. **Cero Hardcoded:** ✅ Todo texto en `ca.json` y `es.json`. Sistema bilingüe funcional.
+3. **Estructura:** ✅ Cada componente en archivo `.astro` propio en `src/components/`.
+4. **i18n:** ✅ Importación: `import t from "../i18n/ca.json";` (y es.json si aplica).
+5. **WCAG AA:** ✅ Cumplimiento estricto (contraste 4.5:1, aria-label, navegación teclado).
+6. **Git:** ✅ Prohibido push directo a `main`. Usar rama `landing-page`.
 
 ---
 
-## 2. Equipo y Asignaciones
-| Responsable | Componentes | Sprint |
-|---|---|---|
-| **Ana Belén** (Scrum Master) | Layout, Navbar, Hero, QA (#32), Deploy (#27) | 1-3 |
-| **Cintia** | About, Footer, Mejoras estilos #31 | 1-3 |
-| **Paula** | Sec. 4, 5, 6, Marca #26, Mejoras estilos #31 | 2-3 |
-| **Jessica** | Sec. 7, 8, 9, Mejoras estilos #31 | 2-3 |
+## 2. Equipo y Asignaciones (Sprint 3 Actual)
+| Responsable | Componentes | Sprint | Estado |
+|---|---|---|---|
+| **Ana Belén** (Scrum Master) | Layout, Navbar, Hero, QA (#32), Deploy (#27) | 1-3 | ✅/🔍 |
+| **Cintia** | About, Footer, Mejoras estilos #31 | 1-3 | ✅ |
+| **Paula** | Sec. 4, 5, 6, Marca #26, Mejoras estilos #31 | 2-3 | ✅/⏳ |
+| **Jessica** | Sec. 7, 8, 9, Mejoras estilos #31 | 2-3 | ✅ |
 
 ---
 
-## 3. Git Flow (Rama Compartida)
-* **Rama de trabajo:** `landing-page` (compartida por todo el equipo).
-* **Flujo:** `landing-page` → [Merge Ana] → `dev` → `main` (Despliegue).
-* **Política:** Queda prohibido hacer push directo a `main`. Tras el merge final a `main` y la verificación de deploy, la rama `landing-page` será archivada al finalizar el Sprint 3.
+## 3. Estado Actual (Rama stable-backup)
+
+### ✅ Completado
+- Sistema i18n bilingüe (ES/CA) funcional
+- Todas las mejoras de estilos aplicadas
+- Variables CSS globales en :root
+- Transiciones 0.3s en interactivos
+- Correcciones de layouts
+- Arreglos de errores runtime
+- Build: ✅ 4 páginas sin errores
+
+### ⏳ Pendiente
+- Revisión del equipo en stable-backup
+- Merge a landing-page
+- Deploy en Netlify (#27)
+- QA final (#32)
 
 ---
 
-## 4. Estándares de Código
-* **HTML:** Semántico (uso correcto de `<section>`, `<article>`, `<nav>`, `<footer>`).
-* **CSS:** Uso de variables `:root` para colores y espacios. Diseño *mobile-first*.
-* **i18n:** Uso dinámico `{t.seccion.clave}`.
+## 4. Git Flow (Rama Compartida)
+stable-backup (revisión actual)
+
+↓ [después de aprobación]
+
+landing-page (compartida)
+
+↓ [Ana mergea]
+
+dev (integración)
+
+↓ [Ana mergea]
+
+main (producción)
 
 ---
 
-## 5. Checklist de Entrega (DoD)
-Antes de solicitar un merge a Ana Belén, cada componente debe cumplir:
-- [ ] `npm run build` ejecutado sin errores.
-- [ ] `npm run dev` renderiza correctamente en localhost:4321.
-- [ ] Responsive: Adaptado a ≤375px, tablet y desktop.
-- [ ] WCAG AA: Contraste verificado y navegación por teclado operativa.
-- [ ] 100% de los textos migrados a `ca.json` (cero hardcoded).
-- [ ] CSS Puro (sin Tailwind ni frameworks).
-- [ ] Estados de interacción definidos: `:hover`, `:focus`, `:active`.
+## 5. Estándares de Código — APLICADOS
+**HTML:** ✅ Semántico (`<section>`, `<article>`, `<nav>`, `<footer>`)
+**CSS:** ✅ Variables `:root`, mobile-first, Flexbox/Grid nativos
+**i18n:** ✅ Dinámico `{t.seccion.clave}` en 100% de componentes
+**Accesibilidad:** ✅ WCAG AA + navegación teclado
+**Responsividad:** ✅ ≤375px, tablet (768px), desktop (≥1024px)
 
 ---
 
-## 6. Proceso de Review
-1. **Pull:** Ana realiza `pull` de la rama `landing-page`.
-2. **Validación:** Ejecución de `npm run build` y test de renderizado.
-3. **Auditoría:** Revisión de HTML semántico, validación de i18n y calidad de CSS.
-4. **Merge:** Si el código es conforme, se integra a `dev`.
-5. **Registro:** Actualización del estado en GitHub Projects.
+## 6. Checklist de Entrega (DoD) — CUMPLIDO
+- [x] `npm run build` sin errores ✅
+- [x] `npm run dev` renderiza en localhost:4321 ✅
+- [x] Responsive: ≤375px, tablet, desktop ✅
+- [x] WCAG AA: Contraste + navegación teclado ✅
+- [x] 100% textos en ca.json y es.json ✅
+- [x] CSS Puro sin frameworks ✅
+- [x] Estados: :hover, :focus, :active, :visited ✅
+- [x] Variables CSS globales aplicadas ✅
 
 ---
-*Última actualización: 12/06/2026 | Ana Belén (Scrum Master)*
+
+## 7. Proceso de Review — FASE ACTUAL
+1. **Equipo revisa** rama `stable-backup`
+2. **Feedback** a Ana Belén
+3. **Merge** a `landing-page` (si aprobado)
+4. **Integración** a `dev`
+5. **Deploy** a Netlify
+
+---
+
+## 📌 Próximos Pasos (Backlog)
+- [ ] Revisión equipo en stable-backup
+- [ ] Merge a landing-page
+- [ ] Deploy a Netlify
+- [ ] Test final con lector de pantalla (NVDA/VoiceOver)
+- [ ] Scroll Reveal animations (post-MVP)
+
+---
+
+*Última actualización: 13/06/2026 | Ana Belén (Scrum Master)*
+*Status Sprint 3: IMPLEMENTACIÓN COMPLETA EN stable-backup*

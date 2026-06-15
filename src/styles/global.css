@@ -10,6 +10,7 @@
   --color-surface:      var(--color-peach-soft);
   --color-accent:       var(--color-peach-mid);
   --color-highlight:    var(--color-peach-warm);
+  
   /* Aliases de compatibilidad — evitan que componentes del equipo se rompan */
 --color-light-brown:  var(--color-peach-soft);
 --color-primary:      var(--color-peach-warm);
@@ -74,8 +75,8 @@
   --max-w-xl: 1024px;
   --max-w-2xl: 1280px;
   --max-w-full: 100%;
-/* Fuentes */
 
+/* Fuentes */
 --font-primary:   "PT Sans", sans-serif;    /* títulos h1-h6 */
 --font-secondary: "Cantarell", sans-serif;  /* cuerpo de texto */
 
