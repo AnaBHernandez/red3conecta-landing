@@ -692,17 +692,3 @@ const f = t.footer;
     }
   });
 </script>
-
-<script>
-  const btn = document.getElementById("nl-btn");
-  const input = document.getElementById("nl-email") as HTMLInputElement | null;
-  const ok = document.getElementById("nl-ok") as HTMLElement | null;
-
-  btn?.addEventListener("click", () => {
-    if (input && input.value.includes("@")) {
-      input.style.display = "none";
-      btn.style.display = "none";
-      if (ok) ok.style.display = "block";
-    }
-  });
-</script>

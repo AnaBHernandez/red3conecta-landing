@@ -49,53 +49,6 @@ const a = t.about;
 </section>
 
 <style>
-  @keyframes orb-1 {
-    0%,
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-    40% {
-      transform: translate(24px, -18px) scale(1.08);
-    }
-    70% {
-      transform: translate(-14px, 12px) scale(0.93);
-    }
-  }
-  @keyframes orb-2 {
-    0%,
-    100% {
-      transform: translate(0, 0);
-    }
-    50% {
-      transform: translate(-22px, 16px);
-    }
-  }
-  @keyframes orb-3 {
-    0%,
-    100% {
-      transform: translate(0, 0) rotate(0deg);
-    }
-    50% {
-      transform: translate(18px, -12px) rotate(10deg);
-    }
-  }
-  @keyframes ring-spin {
-    from {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-    to {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-  }
-  @keyframes dots-drift {
-    0%,
-    100% {
-      transform: translate(0, 0);
-    }
-    50% {
-      transform: translate(7px, -7px);
-    }
-  }
   @keyframes float-img {
     0%,
     100% {
@@ -116,14 +69,6 @@ const a = t.about;
       box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
     }
   }
-  @keyframes draw-line {
-    from {
-      width: 0;
-    }
-    to {
-      width: 56px;
-    }
-  }
   @keyframes bg-pulse {
     0%,
     100% {
@@ -133,28 +78,6 @@ const a = t.about;
       opacity: 1;
     }
   }
-  @keyframes glow-pulse {
-    0%,
-    100% {
-      text-shadow:
-        0 0 8px rgba(198, 106, 36, 0),
-        0 2px 12px rgba(0, 0, 0, 0.08);
-    }
-    50% {
-      text-shadow:
-        0 0 18px rgba(198, 106, 36, 0.28),
-        0 2px 12px rgba(0, 0, 0, 0.08);
-    }
-  }
-  @keyframes shimmer-text {
-    0% {
-      background-position: -200% center;
-    }
-    100% {
-      background-position: 200% center;
-    }
-  }
-
   [data-anim] {
     opacity: 0;
     transform: translateY(24px);
@@ -192,70 +115,6 @@ const a = t.about;
     pointer-events: none;
   }
 
-  .about-orb {
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-  }
-  .about-orb--1 {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(
-      circle,
-      rgba(216, 185, 143, 0.3) 0%,
-      transparent 70%
-    );
-    top: -110px;
-    left: -110px;
-    animation: orb-1 13s ease-in-out infinite;
-  }
-  .about-orb--2 {
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(
-      circle,
-      rgba(198, 106, 36, 0.18) 0%,
-      transparent 70%
-    );
-    bottom: -70px;
-    right: -50px;
-    animation: orb-2 10s ease-in-out infinite;
-  }
-  .about-orb--3 {
-    width: 140px;
-    height: 140px;
-    background: radial-gradient(
-      circle,
-      rgba(216, 185, 143, 0.15) 0%,
-      transparent 70%
-    );
-    top: 40%;
-    right: 4%;
-    animation: orb-3 15s ease-in-out infinite;
-  }
-  .about-dots {
-    position: absolute;
-    top: 15%;
-    right: 12%;
-    width: 80px;
-    height: 80px;
-    opacity: 0.2;
-    background-image: radial-gradient(#c97a2b 2px, transparent 2px);
-    background-size: 14px 14px;
-    animation: dots-drift 9s ease-in-out infinite;
-  }
-  .about-ring {
-    position: absolute;
-    top: 30%;
-    left: 5%;
-    width: 120px;
-    height: 120px;
-    border: 1px dashed rgba(198, 106, 36, 0.18);
-    border-radius: 50%;
-    animation: ring-spin 20s linear infinite;
-    pointer-events: none;
-  }
-
   .about-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -274,28 +133,6 @@ const a = t.about;
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
-  }
-
-  @keyframes glow-pulse {
-    0%,
-    100% {
-      text-shadow:
-        0 0 8px rgba(198, 106, 36, 0),
-        0 2px 12px rgba(0, 0, 0, 0.08);
-    }
-    50% {
-      text-shadow:
-        0 0 18px rgba(198, 106, 36, 0.28),
-        0 2px 12px rgba(0, 0, 0, 0.08);
-    }
-  }
-  @keyframes shimmer-text {
-    0% {
-      background-position: -200% center;
-    }
-    100% {
-      background-position: 200% center;
-    }
   }
 
   .about-content h2 {
@@ -430,114 +267,6 @@ const a = t.about;
     background: #22c55e;
     flex-shrink: 0;
     animation: dot-ping 2.5s ease-in-out infinite;
-  }
-
-  .about-blob {
-    position: absolute;
-    pointer-events: none;
-    filter: blur(55px);
-    mix-blend-mode: multiply;
-    will-change: border-radius, transform;
-  }
-  .about-blob--a {
-    width: 380px;
-    height: 320px;
-    background: radial-gradient(
-      circle at 40% 40%,
-      rgba(249, 115, 22, 0.22),
-      rgba(216, 185, 143, 0.12) 70%
-    );
-    top: -80px;
-    right: -60px;
-    animation:
-      morph-a 18s ease-in-out infinite,
-      orb-1 22s ease-in-out infinite;
-  }
-  .about-blob--b {
-    width: 280px;
-    height: 260px;
-    background: radial-gradient(
-      circle at 55% 55%,
-      rgba(198, 106, 36, 0.18),
-      rgba(253, 186, 116, 0.1) 70%
-    );
-    bottom: -60px;
-    left: -40px;
-    animation:
-      morph-b 14s ease-in-out infinite,
-      orb-2 18s ease-in-out infinite;
-  }
-  .about-blob--c {
-    width: 180px;
-    height: 180px;
-    background: radial-gradient(
-      circle,
-      rgba(216, 185, 143, 0.2),
-      transparent 70%
-    );
-    top: 55%;
-    left: 38%;
-    animation: morph-c 20s ease-in-out infinite;
-  }
-
-  .about-geo {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: visible;
-  }
-  .geo-tri {
-    fill: none;
-    stroke: #c66a24;
-    stroke-width: 1.2;
-    opacity: 0.1;
-  }
-  .geo-tri--1 {
-    animation: geo-float-1 9s ease-in-out infinite;
-  }
-  .geo-tri--2 {
-    animation: geo-float-1 11s ease-in-out infinite 1.5s;
-  }
-  .geo-tri--3 {
-    fill: rgba(249, 115, 22, 0.06);
-    animation: geo-float-3 7s ease-in-out infinite 0.8s;
-  }
-  .geo-diamond {
-    fill: none;
-    stroke: #d8b98f;
-    stroke-width: 1;
-    opacity: 0.13;
-  }
-  .geo-diamond--1 {
-    animation: geo-float-2 12s ease-in-out infinite;
-  }
-  .geo-diamond--2 {
-    animation: geo-float-2 8s ease-in-out infinite 2s;
-  }
-  .geo-circle {
-    fill: none;
-    stroke: #c66a24;
-    stroke-width: 1;
-    stroke-dasharray: 6 4;
-    opacity: 0.11;
-  }
-  .geo-circle--1 {
-    animation: geo-float-1 10s ease-in-out infinite 0.5s;
-  }
-  .geo-circle--2 {
-    animation: geo-float-3 13s ease-in-out infinite 1s;
-  }
-  .geo-line {
-    stroke: #d8b98f;
-    stroke-width: 1;
-    stroke-dasharray: 6 5;
-    opacity: 0.12;
-    animation: geo-float-3 15s ease-in-out infinite;
-  }
-  .geo-line--2 {
-    animation-delay: 3s;
   }
 
   @media (max-width: 900px) {
