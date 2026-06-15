@@ -187,7 +187,8 @@
   "fundersTitle": "Finançadors i col·laboradors",
   "funders": [
   { "name": "Eduvic", "logo": "/logos/EDUVIC_blanc.png", "dark": true },
-{ "name": "GetUp Fundación", "logo": "/logos/FGU_logo_version_1.png", "dark": true },  { "name": "Surt", "logo": "/logos/Logo-2-fons-transparent_format_vectorial.svg", "dark": false },
+  { "name": "GetUp Fundación", "logo": "/logos/FGU_logo_version_1.png", "dark": true },  
+  { "name": "Surt", "logo": "/logos/Logo-2-fons-transparent_format_vectorial.svg", "dark": false },
   { "name": "JAPI", "logo": "/logos/JAPI_blanc.jpg", "dark": false },
   { "name": "Fundació Surt", "logo": "/logos/Logo-FS_magenta.png", "dark": false },
   { "name": "Som Llar", "logo": "/logos/SomLlar_blanco.png", "dark": true },
