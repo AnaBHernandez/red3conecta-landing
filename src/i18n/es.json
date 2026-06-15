@@ -66,6 +66,7 @@
 
   "platform": {
     "title": "Red3Conecta: la infraestructura digital compartida del tercer sector.",
+    "cta_toggle": "Ver más",
     "desc": "Una plataforma web con inteligencia artificial conversacional y un catálogo centralizado de recursos, diseñada para los dos actores clave de cualquier servicio social: los profesionales que acompañan y las personas que necesitan apoyo.",
     "bloc_a_title": "Para profesionales del tercer sector",
     "bloc_a_tag": "Menos tiempo gestionando. Más tiempo atendiendo.",
@@ -106,6 +107,7 @@
   "section5": {
     "title": "Construido desde el territorio. Con el territorio. Y gobernado por él.",
     "subtitle": "Red3Conecta no se ha diseñado en un laboratorio externo al tercer sector. Cada decisión se ha definido conjuntamente con las entidades que lo utilizan.",
+    "cta_toggle": "Ver más",
     "cards_small": [
       {
         "icon": "/icon-social.png",

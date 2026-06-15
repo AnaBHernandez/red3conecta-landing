@@ -54,6 +54,7 @@
   },
   "platform": {
     "title": "Red3Conecta: la infraestructura digital compartida del tercer sector.",
+    "cta_toggle": "Veure més",
     "desc": "Una plataforma web amb IA i un catàleg centralitzat de recursos per als dos actors clau: professionals i persones ateses.",
     "bloc_a_title": "Per a professionals del tercer sector",
     "bloc_a_tag": "Menys temps gestionant. Més temps atenent.",
@@ -93,6 +94,7 @@
   "section5": {
     "title": "Construït des del territori. Amb el territori. I governat per ell.",
     "subtitle": "Red3Conecta no s'ha dissenyat en un laboratori extern al tercer sector. Cada decisió s'ha definit conjuntament amb les entitats que l'utilitzen.",
+    "cta_toggle": "Veure més",
     "cards_small": [
       {
         "icon": "/icon-social.png",
@@ -140,10 +142,12 @@
     "kpis": [
       { "numero": "+200", "descripcion": "persones usuàries en fase pilot" },
       { "numero": "+23", "descripcion": "entitats socials participants" },
-      {
-        "numero": "−50%",
-        "descripcion": "reducció temps de cerca i coordinació"
-      },
+      {"numero": "+23", "descripcion": "professionals del tercer sector implicats"},
+      {"numero": "−50%","descripcion": "reducció temps de cerca i coordinació"},
+      {"numero":"+30%" ,"descripcion": "millora esperada de l'autonomia de les persones ateses"},
+
+
+      {"numero":"9+", "descripcion": "cicles de validació completats amb professionals i persones usuàries"},
       { "numero": "3,5:1", "descripcion": "SROI estimat — retorn social" }
     ],
     "note": "*Aquests resultats s'avaluaran al segon semestre de 2026."

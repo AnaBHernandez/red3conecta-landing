@@ -1,6 +1,5 @@
 ---
-const { t } = Astro.props;
-const { variant, icon, title, description } = Astro.props;
+const { icon, title, description, variant = "default", ctaLabel = "Veure més" } = Astro.props;
 ---
 
 <div class={`card card--${variant}`} data-card>
@@ -11,7 +10,8 @@ const { variant, icon, title, description } = Astro.props;
     </div>
     <!-- PILL CTA -->
     <span class="card__cta">
-      <span class="card__cta-text">Veure més</span>
+      {ctaLabel}
+      <span class="card__cta-text"></span>
       <span class="card__flecha">▾</span>
     </span>
   </button>
