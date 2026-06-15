@@ -141,7 +141,7 @@ const { t } = Astro.props;
   .navbar__toggle {
     display: none;
     background: none;
-    border: 1px solid var(--color-accent);
+    border-color: 1px solid;
     padding: 0.5rem;
     cursor: pointer;
   }
@@ -150,7 +150,8 @@ const { t } = Astro.props;
     width: 25px;
     height: 3px;
     background: var(--color-brand-orange);
-    margin: 4px 0;
+    margin:  0;
+    padding: 0;
   }
 
   /* ESTILOS IDIOMA */
@@ -171,7 +172,10 @@ const { t } = Astro.props;
 
   @media (max-width: 768px) {
     .navbar__toggle {
-      display: flex !important;
+    display: flex !important;
+    flex-direction: column; 
+    justify-content: center;
+    gap: 5px;
     }
     .navbar__menu {
       display: none;
