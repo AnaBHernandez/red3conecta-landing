@@ -204,9 +204,9 @@
     "intro": "Red3Conecta ha recibido el reconocimiento de diversas instituciones y ha ido sumando el apoyo de nuevos financiadores y colaboradores que creen en el potencial del proyecto.",
     "awardsTitle": "Premios y reconocimientos",
     "awards": [
-      { "placeholder": "Deloitte", "description": "Proyecto seleccionado en categoría inserción laboral en el programa \"Conoce mi proyecto\"." },
-      { "placeholder": "Aigües de Barcelona", "description": "Proyecto ganador convocatoria UNADA, la aceleradora social de Aigües de Barcelona." },
-      { "placeholder": "IA for Good", "description": "Proyecto seleccionado entre las 20 mejores iniciativas de IA para fines sociales de 2026." }
+      { "placeholder": "Deloitte", "logo": "/logos/deloitte-com-logo.png", "alt": "Logo de Deloitte", "description": "Proyecto seleccionado en categoría inserción laboral en el programa \"Conoce mi proyecto\"." },
+      { "placeholder": "Aigües de Barcelona", "logo": "/logos/logo-vector-aigues-de-barcelona.webp", "alt": "Logo de Aigües de Barcelona", "description": "Proyecto ganador convocatoria UNADA, la aceleradora social de Aigües de Barcelona." },
+      { "placeholder": "IA for Good", "logo": "/logos/AI_for_Good_logo_2024_vertical.png", "alt": "Logo de IA for Good", "description": "Proyecto seleccionado entre las 20 mejores iniciativas de IA para fines sociales de 2026." }
     ],
     "fundersTitle": "Financiadores y colaboradores",
     "funders": [

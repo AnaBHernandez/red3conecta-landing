@@ -189,38 +189,32 @@
     "awards": [
       {
         "placeholder": "Deloitte",
+        "logo": "/logos/deloitte-com-logo.png",
+        "alt": "Logo de Deloitte",
         "description": "Projecte seleccionat en categoria inserció laboral en el programa \"Conoce mi proyecto\"."
       },
       {
         "placeholder": "Aigües de Barcelona",
+        "logo": "/logos/logo-vector-aigues-de-barcelona.webp",
+        "alt": "Logo d'Aigües de Barcelona",
         "description": "Projecte guanyador convocatòria UNADA, l'acceleradora social d'Aigües de Barcelona."
       },
       {
-        "placeholder": "IA for Good",
+        "placeholder": "AI for Good",
+        "logo": "/logos/AI_for_Good_logo_2024_vertical.png",
+        "alt": "Logo de AI for Good",
         "description": "Projecte seleccionat entre les 20 millors iniciatives d'IA per a fins socials de 2026."
       }
     ],
     "fundersTitle": "Finançadors i col·laboradors",
     "funders": [
       { "name": "Eduvic", "logo": "/logos/EDUVIC_blanc.png", "dark": true },
-      {
-        "name": "GetUp Fundación",
-        "logo": "/logos/FGU_logo_version_1.png",
-        "dark": true
-      },
-      {
-        "name": "Surt",
-        "logo": "/logos/Logo-2-fons-transparent_format_vectorial.svg",
-        "dark": false
-      },
+      {"name": "GetUp Fundación","logo": "/logos/FGU_logo_version_1.png","dark": true},
+      {"name": "Surt","logo": "/logos/Logo-2-fons-transparent_format_vectorial.svg","dark": false},
       { "name": "JAPI", "logo": "/logos/JAPI_blanc.jpg", "dark": false },
-      {
-        "name": "Fundació Surt",
-        "logo": "/logos/Logo-FS_magenta.png",
-        "dark": false
-      },
-      { "name": "Som Llar", "logo": "/logos/SomLlar_blanco.png", "dark": true }
-    ],
-    "teamNote": "Nota per a l'equip: Aquesta secció conté dades pendents d'omplir. Assegureu-vos de tenir els textos definitius abans del pas a producció."
+      {"name": "Fundació Surt","logo": "/logos/Logo-FS_magenta.png","dark": false},
+      { "name": "Som Llar", "logo": "/logos/SomLlar_blanco.png", "dark": true },
+      { "name": "ECAS - Entitats Catalanes d'Acció Social", "logo": "/logos/logo-ecas.png", "dark": false }
+    ]
   }
 }
