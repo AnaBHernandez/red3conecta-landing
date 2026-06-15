@@ -87,5 +87,18 @@
   --color-brand-marron: var(--color-brand-orange);
   --color-brand-marron-hover: var(--color-brand-orange-hover);
 }
+.logo-item img {
+  filter: grayscale(100%);
+  transition: filter 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
 
+.logo-item:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.08);
+}
+
+.logo-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 3;
+}
 

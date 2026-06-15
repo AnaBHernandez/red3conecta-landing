@@ -182,7 +182,7 @@
   "awards": [
   { "placeholder": "Deloitte", "description": "Projecte seleccionat en categoria inserció laboral en el programa \"Conoce mi proyecto\"." },
   { "placeholder": "Aigües de Barcelona", "description": "Projecte guanyador convocatòria UNADA, l'acceleradora social d'Aigües de Barcelona." },
-  { "placeholder": "IA for Good", "description": "Projecte seleccionat entre les 20 millors iniciatives d'IA per a fins socials de 2026." }
+  { "placeholder": "AI for Good", "description": "Projecte seleccionat entre les 20 millors iniciatives d'IA per a fins socials de 2026." }
 ],
   "fundersTitle": "Finançadors i col·laboradors",
   "funders": [
