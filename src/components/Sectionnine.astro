@@ -90,7 +90,10 @@ const kpis = t.impact.kpis;
     display: flex;
     flex-direction: column;
     gap: clamp(2.5rem, 6vw, 4rem);
+    background-color: var(--color-peach-soft);
+    border-radius: 12px;
   }
+
 
   .section-title {
     font-size: clamp(1.75rem, 4.5vw, 2.75rem);
@@ -136,8 +139,8 @@ const kpis = t.impact.kpis;
     gap: 1rem;
     padding: 1rem 1.25rem;
     cursor: pointer;
-    background-color: var(--s-bg-row);
     list-style: none;
+    background-color: var(--color-peach-warm);
     transition: background-color 0.2s ease;
   }
 
@@ -146,7 +149,7 @@ const kpis = t.impact.kpis;
   }
 
   .accordion-header:hover {
-    background-color: var(--s-accent-light);
+    background-color: rgba(255, 130, 119, 0.861);
   }
 
   .accordion-label {

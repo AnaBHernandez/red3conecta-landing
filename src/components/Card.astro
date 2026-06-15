@@ -33,7 +33,6 @@ const { variant, icon, title, description } = Astro.props;
     overflow: hidden;
     height: auto;
     min-height: 70px;
-    /* expansión horizontal al abrirse */
     width: fit-content;
     min-width: 280px;
     max-width: 420px;
@@ -44,9 +43,10 @@ const { variant, icon, title, description } = Astro.props;
       box-shadow 0.25s ease,
       outline 0.2s ease,
       background-color 0.25s ease;
+      margin:5px;
   }
 
-  /* Al abrirse ocupa todo el ancho disponible */
+  
   .card--abierta {
     width: 100%;
     max-width: 100%;
