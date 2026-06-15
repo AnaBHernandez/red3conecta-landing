@@ -6,10 +6,27 @@ Infraestructura digital compartida construida con el tercer sector, para el terc
 
 ## 🛠️ Especificaciones Técnicas
 
-* **Framework:** Astro v4 (SPA, sin `layouts/`).
+* **Framework:** Astro v6 (SPA, sin `layouts/`).
 * **Estilos:** CSS Nativo (`src/styles/global.css`) usando variables `:root`. PROHIBIDO: Tailwind, Bootstrap, Sass.
 * **Internacionalización (i18n):** Catalán exclusivo (Català). Textos dinámicos en `src/i18n/ca.json`. Cero hardcoded strings.
 * **Accesibilidad:** Estándar estricto WCAG AA (ARIA labels, focus visible, contraste 4.5:1).
+
+## 🚀 Cómo empezar
+
+1. **Clonar el repositorio:**
+   `git clone https://github.com/AnaBHernandez/red3conecta-landing.git`
+
+2. **Entrar en la carpeta:**
+   `cd red3conecta-landing`
+
+3. **Cambiar a la rama de trabajo:**
+   `git checkout landing-page`
+
+4. **Instalar todas las librerías necesarias:**
+   `npm install`
+
+5. **Ejecutar en modo desarrollo:**
+   `npm run dev`
 
 ---
 
@@ -72,4 +89,4 @@ Infraestructura digital compartida construida con el tercer sector, para el terc
 
 ---
 
-**Última actualización:** 10/06/2026 | Ana Belén (Scrum Master)
+**Última actualización:** 13/06/2026 | Ana Belén (Scrum Master)

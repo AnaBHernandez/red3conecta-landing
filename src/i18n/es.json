@@ -1,0 +1,213 @@
+{
+  "nav": {
+    "why": "Por qué nace Red3Conecta",
+    "challenges": "La plataforma",
+    "ally": "Cómo se construye",
+    "ecosystem": "Ecosistema y colaboradores"
+  },
+
+  "about": {
+    "title": "¿Por qué nace Red3Conecta?",
+    "items": [
+      "Creemos que el tercer sector merece una infraestructura digital creada específicamente para sus necesidades.",
+      "Red3Conecta quiere facilitar la colaboración entre entidades, profesionales y personas usuarias.",
+      "Nuestro objetivo es reducir las tareas administrativas y aumentar el tiempo de atención a las personas."
+    ],
+    "img_alt": "Colaboración entre entidades sociales",
+    "active_tag": "Proyecto activo"
+  },
+
+  "hero": {
+    "title": "Menos tiempo gestionando. Más tiempo atendiendo.",
+    "subtitle": "Red3Conecta es la infraestructura digital construida con el tercer sector, para el tercer sector.",
+    "btn_demo": "Solicita una demo",
+    "btn_join": "Únete a la red",
+    "context": "Un proyecto impulsado por Factoría F5 y Fundació Formació i Treball, con el apoyo de UNADA, la aceleradora social de Aigües de Barcelona."
+  },
+
+  "footer": {
+    "brand": "Red3Conecta",
+    "desc": "Infraestructura digital colaborativa construida con el tercer sector, para el tercer sector.",
+    "email": "contacte@red3conecta.org",
+    "nav_label": "Navegación",
+    "nav_links": [
+      "Por qué nace Red3Conecta",
+      "La plataforma",
+      "Cómo se construye",
+      "Ecosistema"
+    ],
+    "partners_label": "Impulsores",
+    "partners": [
+      "Factoría F5",
+      "Fundació Formació i Treball",
+      "UNADA · Aigües de Barcelona"
+    ],
+    "newsletter_label": "Recibe novedades del proyecto",
+    "newsletter_placeholder": "tu@email.es",
+    "newsletter_ok": "✓ ¡Gracias! Te contactaremos pronto.",
+    "chips": ["Tercer sector", "IA aplicada", "Impacto social"],
+    "bottom": "Proyecto impulsado por <strong>Factoría F5</strong> y <strong>Fundació Formació i Treball</strong>.",
+    "rights": "© 2026 Red3Conecta. Todos los derechos reservados.",
+    "aria_social": "Redes sociales",
+    "aria_linkedin": "LinkedIn de Red3Conecta",
+    "aria_instagram": "Instagram de Red3Conecta",
+    "aria_twitter": "X (Twitter) de Red3Conecta",
+    "aria_subscribe": "Suscribirse"
+  },
+
+  "platform": {
+    "title": "Red3Conecta: la infraestructura digital compartida del tercer sector.",
+    "desc": "Una plataforma web con inteligencia artificial conversacional y un catálogo centralizado de recursos, diseñada para los dos actores clave de cualquier servicio social: los profesionales que acompañan y las personas que necesitan apoyo.",
+    "bloc_a_title": "Para profesionales del tercer sector",
+    "bloc_a_tag": "Menos tiempo gestionando. Más tiempo atendiendo.",
+    "bloc_a_list": [
+      "Catálogo de recursos validado, editable y actualizado colectivamente por las entidades de la red.",
+      "Buscador inteligente: describe el caso en lenguaje natural y obtén recomendaciones argumentadas en segundos.",
+      "Filtros por tipología de recurso, territorio, perfil de persona y requisitos de acceso.",
+      "Coordinación y derivación entre entidades de manera ágil y trazable.",
+      "Registro de consultas y aprendizaje continuo de la plataforma."
+    ],
+    "bloc_b_title": "Para las personas atendidas",
+    "bloc_b_tag": "Acceso claro. Sin barreras. Desde cualquier dispositivo.",
+    "bloc_b_list": [
+      "Buscador simplificado con lenguaje claro y accesible.",
+      "Navegación guiada hacia los recursos y servicios adaptados a su perfil y situación.",
+      "Accesible desde el móvil, sin necesidad de conocimientos tecnológicos avanzados."
+    ],
+    "casos_title": "Casos de uso concretos",
+    "casos": [
+      {
+        "icon": "/icon-inertion-place.png",
+        "title": "Profesional de inserción laboral",
+        "description": "Una profesional de una entidad de inserción laboral describe el perfil de una persona en lenguaje natural. Red3Conecta le devuelve en segundos los recursos del territorio que mejor se adaptan al caso — formación, apoyo económico, acompañamiento psicosocial —, con justificación de cada recomendación e información de contacto directa."
+      },
+      {
+        "icon": "/icon-nursing-home.png",
+        "title": "Equipo de atención a personas mayores",
+        "description": "Un equipo de atención a personas mayores de una entidad necesita derivar un caso a un servicio especializado de otra organización. A través de Red3Conecta, localiza el recurso, comprueba la disponibilidad y formaliza la derivación — todo desde un único entorno, en minutos."
+      },
+      {
+        "icon": "/icons-call-on-iphone.png",
+        "title": "Persona joven en situación de vulnerabilidad",
+        "description": "Una persona joven en situación de vulnerabilidad accede desde el móvil al buscador y navega de manera autónoma por los servicios disponibles en su municipio, filtrados por tipo de apoyo y requisitos de acceso."
+      }
+    ]
+  },
+
+  "section5": {
+    "title": "Construido desde el territorio. Con el territorio. Y gobernado por él.",
+    "subtitle": "Red3Conecta no se ha diseñado en un laboratorio externo al tercer sector. Cada decisión se ha definido conjuntamente con las entidades que lo utilizan.",
+    "cards_small": [
+      {
+        "icon": "/icon-social.png",
+        "icon_alt": "icon social",
+        "title": "Cocreación real, no consulta simbólica",
+        "desc": "El proyecto ha pasado por procesos de investigación, sesiones de cocreación y ciclos de validación con profesionales y personas usuarias reales. Las entidades no han sido consultadas: han sido coautoras."
+      },
+      {
+        "icon": "/icon-online-community.png",
+        "icon_alt": "community icon",
+        "title": "Gobernanza compartida",
+        "desc": "Red3Conecta no pertenece a ninguna empresa. Pertenece al ecosistema que la construye. Las entidades participantes tienen voz en las decisiones, en la evolución de la plataforma y en cómo se gestionan los datos."
+      },
+      {
+        "icon": "/icon-time.png",
+        "icon_alt": "icon time",
+        "title": "Ahorro de tiempo real para los profesionales",
+        "desc": "La inteligencia artificial interpreta consultas en lenguaje natural y devuelve recomendaciones argumentadas en segundos. Menos tiempo buscando. Más tiempo para las personas."
+      },
+      {
+        "icon": "/icon-resources.png",
+        "icon_alt": "icon resources",
+        "title": "Red viva de entidades",
+        "desc": "El catálogo de recursos se construye y actualiza colectivamente entre las entidades participantes. Cada entidad suma conocimiento a la red. Cada actualización beneficia a todas las demás."
+      }
+    ],
+    "cards_wide": [
+      {
+        "icon": "/icon-red-technology.png",
+        "icon_alt": "icon red technology",
+        "title": "Tecnología al servicio del impacto",
+        "desc": "La IA no es el centro del proyecto. Es la herramienta que hace posible la conexión. El centro es el trabajo del tercer sector y las personas que atiende."
+      },
+      {
+        "icon": "/icon-study.png",
+        "icon_alt": "icon study",
+        "title": "Pilotaje con impacto medible",
+        "desc": "El proyecto se pilota con entidades reales, con indicadores de seguimiento y evaluación de impacto. Porque innovación social sin medición no es innovación: es intención."
+      }
+    ]
+  },
+
+  "impact": {
+    "title": "No medimos intenciones. Medimos resultados.",
+    "subtitle": "Red3Conecta se evalúa con indicadores reales, desde el primer día de pilotaje. El impacto se mide en tiempo recuperado, derivaciones mejoradas y personas mejor atendidas.",
+    "kpis": [
+      { "numero": "+200", "descripcion": "personas usuarias en fase piloto" },
+      { "numero": "+23", "descripcion": "entidades sociales participantes" },
+      { "numero": "+23", "descripcion": "profesionales del tercer sector implicados" },
+      { "numero": "−50%", "descripcion": "reducción esperada del tiempo de búsqueda y coordinación manual" },
+      { "numero": "+30%", "descripcion": "mejora esperada de la autonomía de las personas atendidas" },
+      { "numero": "9+", "descripcion": "ciclos de validación completados con profesionales y personas usuarias" },
+      { "numero": "3,5:1", "descripcion": "SROI estimado — retorno social por euro invertido" }
+    ],
+    "note": "*Estos resultados se evaluarán en el marco de un proceso formal de análisis SROI previsto para el segundo semestre de 2026."
+  },
+
+  "section7": {
+    "title": "Un proyecto. Todo un ecosistema.",
+    "intro": "Red3Conecta no es una iniciativa aislada. Es el resultado de una colaboración real entre entidades con trayectoria, propósito compartido y compromiso territorial. Las entidades que forman parte de ella no son usuarias de una herramienta ajena: son parte del proyecto.",
+    "driversTitle": "Entidades impulsoras",
+    "drivers": [
+      {
+        "name": "Factoría F5",
+        "description": "Entidad especializada en formación tecnológica e innovación social. Lidera el desarrollo técnico y la coordinación del proyecto."
+      },
+      {
+        "name": "Fundació Formació i Treball",
+        "description": "Entidad de referencia en inserción laboral y acompañamiento social. Aporta el conocimiento territorial y la relación directa con las personas usuarias y los profesionales del sector."
+      }
+    ],
+    "supportTitle": "Apoyo institucional",
+    "supportQuote": "El proyecto piloto ha sido posible gracias al apoyo técnico y financiero de UNADA, la aceleradora social de Aigües de Barcelona, que apuesta por proyectos de innovación social con impacto real en el territorio.",
+    "networkNote": "Red3Conecta cuenta también con la participación activa de entidades colaboradoras del tercer sector metropolitano, redes de servicios sociales y profesionales del territorio."
+  },
+
+  "section8": {
+    "title": "El tercer sector es más fuerte cuando trabaja en red. Red3Conecta es la red.",
+    "intro": "Si formas parte de una entidad del tercer sector, trabajas en atención a personas o crees que la tecnología puede ponerse al servicio del bien común, Red3Conecta es tu proyecto.",
+    "ctas": [
+      {
+        "label": "Solicita una demo",
+        "description": "Descubre cómo Red3Conecta puede dar soporte a tu entidad, a tus equipos y a las personas que atiendes.",
+        "arrow": "→"
+      },
+      {
+        "label": "Únete como entidad de la red",
+        "description": "Forma parte del ecosistema. Construye con nosotros una infraestructura digital que pertenezca al tercer sector.",
+        "arrow": "→"
+      }
+    ]
+  },
+
+  "section9": {
+    "title": "Un proyecto reconocido. Una comunidad que crece.",
+    "intro": "Red3Conecta ha recibido el reconocimiento de diversas instituciones y ha ido sumando el apoyo de nuevos financiadores y colaboradores que creen en el potencial del proyecto.",
+    "awardsTitle": "Premios y reconocimientos",
+    "awards": [
+      { "placeholder": "Deloitte", "description": "Proyecto seleccionado en categoría inserción laboral en el programa \"Conoce mi proyecto\"." },
+      { "placeholder": "Aigües de Barcelona", "description": "Proyecto ganador convocatoria UNADA, la aceleradora social de Aigües de Barcelona." },
+      { "placeholder": "IA for Good", "description": "Proyecto seleccionado entre las 20 mejores iniciativas de IA para fines sociales de 2026." }
+    ],
+    "fundersTitle": "Financiadores y colaboradores",
+    "funders": [
+      { "name": "Eduvic", "logo": "/logos/EDUVIC_blanc.png", "dark": true },
+      { "name": "GetUp Fundación", "logo": "/logos/FGU_logo_version_1.png", "dark": true },
+      { "name": "Surt", "logo": "/logos/Logo-2-fons-transparent_format_vectorial.svg", "dark": false },
+      { "name": "JAPI", "logo": "/logos/JAPI_blanc.jpg", "dark": false },
+      { "name": "Fundació Surt", "logo": "/logos/Logo-FS_magenta.png", "dark": false },
+      { "name": "Som Llar", "logo": "/logos/SomLlar_blanco.png", "dark": true }
+    ],
+    "teamNote": "Nota para el equipo: Esta sección contiene datos pendientes de completar. Aseguraos de tener los textos definitivos antes del paso a producción."
+  }
+}

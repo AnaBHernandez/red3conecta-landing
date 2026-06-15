@@ -1,5 +1,6 @@
 ---
 import t from "../i18n/ca.json";
+import "../styles/global.css";
 ---
 
 <nav class="navbar">
@@ -11,7 +12,7 @@ import t from "../i18n/ca.json";
 
     <div class="navbar__menu" id="navbar-menu">
       <ul class="navbar__list">
-        <li><a href="#why" class="navbar__link">{t.nav.why}</a></li>
+        <li><a href="#about" class="navbar__link">{t.nav.why}</a></li>
         <li>
           <a href="#challenges" class="navbar__link">{t.nav.challenges}</a>
         </li>
@@ -20,7 +21,12 @@ import t from "../i18n/ca.json";
       </ul>
     </div>
 
-    <button class="navbar__toggle" aria-label="Menú">
+    <button
+      class="navbar__toggle"
+      aria-label="Menú"
+      aria-expanded="false"
+      aria-controls="navbar-menu"
+    >
       <span class="toggle__bar"></span>
       <span class="toggle__bar"></span>
       <span class="toggle__bar"></span>
@@ -29,7 +35,7 @@ import t from "../i18n/ca.json";
 </nav>
 
 <style>
-  /* Animación del efecto brillo */
+  /* --- 1. ANIMACIONES GLOBALES --- */
   @keyframes name-shimmer {
     0% {
       background-position: -300% center;
@@ -39,9 +45,10 @@ import t from "../i18n/ca.json";
     }
   }
 
+  /* --- 2. ESTILOS DE ESCRITORIO (BASE) --- */
   .navbar {
     background-color: var(--color-black);
-    padding: 1rem 2rem;
+    padding: var(--space-4) var(--space-8);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -55,7 +62,6 @@ import t from "../i18n/ca.json";
     margin: 0 auto;
   }
 
-  /* Bloque Logo + Título */
   .navbar__brand {
     display: flex;
     align-items: center;
@@ -68,7 +74,7 @@ import t from "../i18n/ca.json";
     object-fit: contain;
     padding: 4px;
     background: rgba(255, 255, 255, 0.03);
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     box-shadow: 0 0 10px rgba(249, 115, 22, 0.15);
     transition: transform 0.3s ease;
   }
@@ -78,7 +84,7 @@ import t from "../i18n/ca.json";
 
   .navbar__title {
     font-family: var(--font-primary);
-    font-size: 1.4rem;
+    font-size: var(--text-xl);
     font-weight: 800;
     margin: 0;
     line-height: 1;
@@ -100,27 +106,41 @@ import t from "../i18n/ca.json";
     -webkit-text-fill-color: var(--color-brand-marron);
   }
 
-  /* --- MENU ESCRITORIO --- */
   .navbar__menu {
     display: flex;
   }
   .navbar__list {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 3.5rem;
     margin: 0;
   }
   .navbar__link {
     color: var(--color-brand-orange);
     font-weight: 700;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: var(--text-base);
+    transition: color var(--transition-base);
+    position: relative;
   }
   .navbar__link:hover {
-    color: #fff;
+    color: var(--color-white);
+  }
+  .navbar__link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Centrado */
+    width: 0;
+    height: 2px;
+    background-color: var(--color-brand-orange);
+    transition: width 0.3s ease;
+    transform: translateX(-50%); /* Centrado perfecto */
+  }
+  .navbar__link:hover::after {
+    width: 80%; /* El subrayado crece al pasar el ratón */
   }
 
-  /* --- MENU MOVIL --- */
   .navbar__toggle {
     display: none;
     background: none;
@@ -136,44 +156,69 @@ import t from "../i18n/ca.json";
     margin: 4px 0;
   }
 
+  /* --- 3. ESTILOS MÓVIL --- */
   @media (max-width: 768px) {
     .navbar__toggle {
       display: flex !important;
     }
+
     .navbar__menu {
       display: none;
       position: absolute;
       top: 100%;
       left: 0;
       width: 100%;
-      height: 100vh;
+      height: auto;
       background: var(--color-black);
-      padding: 2rem;
+      padding: var(--space-8) 0;
       z-index: 1500;
       flex-direction: column;
       align-items: center;
+      border-bottom: 2px solid var(--color-brand-orange);
     }
     .navbar__menu.is-open {
       display: flex !important;
     }
+
     .navbar__list {
       flex-direction: column !important;
       align-items: center !important;
-      gap: 2rem !important;
-      margin-top: 2rem;
+      gap: 2.5rem !important;
+      width: 100%;
+    }
+    .navbar__link {
+      font-size: var(--text-md);
+      padding: 0.5rem 1rem;
+      position: relative;
+    }
+
+    .navbar__link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-brand-orange);
+      transition: width 0.3s ease;
+      transform: translateX(-50%);
+    }
+    .navbar__link:hover::after {
+      width: 80%;
     }
   }
 </style>
-<script>
-  const toggle = document.querySelector(".navbar__toggle");
-  const menu = document.getElementById("navbar-menu");
 
-  if (toggle && menu) {
-    toggle.addEventListener("click", () => {
-      menu.classList.toggle("is-open");
-      const isExpanded = menu.classList.contains("is-open");
-      toggle.setAttribute("aria-expanded", String(isExpanded));
-      console.log("Menú cambiado:", isExpanded); // Esto te ayudará a ver si hace algo
-    });
-  }
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".navbar__toggle");
+    const menu = document.getElementById("navbar-menu");
+
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        const isExpanded = menu.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", isExpanded.toString());
+      });
+    }
+  });
 </script>

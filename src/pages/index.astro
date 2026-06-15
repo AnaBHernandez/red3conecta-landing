@@ -26,27 +26,39 @@ import Footer from "../components/Footer.astro";
       rel="stylesheet"
     />
   </head>
+
+  <body>
+    <Navbar />
+
+    <main>
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="hero">
+        <Hero />
+      </section>
+
+      <section id="challenges">
+        <Sectionfour />
+      </section>
+
+      <section id="ally">
+        <Sectionfive />
+      </section>
+
+      <section id="ecosystem">
+        <Sectionnine />
+      </section>
+
+      <Sectionsix />
+      <Sectionseven />
+      <Sectioneight />
+    </main>
+
+    <Footer />
+  </body>
 </html>
-<body>
-  <Navbar />
-  <main>
-    <section id="challenges"><About /></section>
-    <section id="why"><Hero /></section>
-    <section id="ally"></section>
-
-    <Sectionfour />
-    <Sectionfive />
-    <Sectionsix />
-    <Sectionseven />
-    <Sectioneight />
-
-    <div id="ecosystem">
-      <Sectionnine />
-    </div>
-  </main>
-
-  <Footer />
-</body>
 
 <style is:global>
   *,
