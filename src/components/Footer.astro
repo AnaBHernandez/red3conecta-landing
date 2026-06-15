@@ -485,7 +485,7 @@ const f = t.footer;
   }
   .footer__partner:hover {
     background: rgba(249, 115, 22, 0.12);
-    transform: translateX(5px);
+    transform: translateY(-3px);
     box-shadow: inset 0 0 0 1px rgba(249, 115, 22, 0.2);
   }
   .footer__partner-dot {
@@ -677,6 +677,18 @@ const f = t.footer;
       display: none;
     }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .footer__glow,
+    .footer__ring,
+    .footer__orb,
+    .footer__name,
+    .footer__partner-dot,
+    .footer__partner-dot--alt,
+    .footer::after {
+      animation: none;
+    }
+  }
 </style>
 
 <script>
@@ -685,7 +697,7 @@ const f = t.footer;
   const ok = document.getElementById("nl-ok") as HTMLElement | null;
 
   btn?.addEventListener("click", () => {
-    if (input && input.value.includes("@")) {
+    if (input && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
       input.style.display = "none";
       btn.style.display = "none";
       if (ok) ok.style.display = "block";
