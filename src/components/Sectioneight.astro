@@ -6,7 +6,6 @@ const s8 = t.section8;
 <section class="section8" aria-labelledby="s8-heading">
   <div class="container">
     <div class="cta-card" id="s8-card">
-      <!-- Esquinas animadas -->
       <span class="corner corner--tl" aria-hidden="true"></span>
       <span class="corner corner--tr" aria-hidden="true"></span>
       <span class="corner corner--bl" aria-hidden="true"></span>
@@ -54,14 +53,14 @@ const s8 = t.section8;
 
 <style>
   .section8 {
-    --s-bg-main: var(--color-peach-soft); /* #FFD8BE — fondo de la card */
-    --s-bg-page: var(--color-cream-light); /* #F1E5D9 — fondo de la sección */
-    --s-text-primary: #3a1f0d; /* marrón oscuro, legible sobre melocotón */
-    --s-text-secondary: #6b3a26; /* marrón medio para texto de cuerpo */
-    --s-text-muted: #9e6b50; /* marrón claro para texto secundario */
-    --s-accent: var(--color-peach-warm); /* #FFB2A9 — flechas de los botones */
-    --s-border: #3a1f0d; /* borde marrón oscuro de los botones */
-    --s-corner: var(--color-peach-warm); /* #FFB2A9 — esquinas animadas */
+    --s-bg-main: var(--color-peach-soft);
+    --s-bg-page: var(--color-cream-light);
+    --s-text-primary: #3a1f0d;
+    --s-text-secondary: #6b3a26;
+    --s-text-muted: #9e6b50;
+    --s-accent: var(--color-peach-warm);
+    --s-border: #3a1f0d;
+    --s-corner: var(--color-peach-warm);
     --s-corner-size: 22px;
     --s-corner-thick: 2.5px;
 
@@ -102,7 +101,6 @@ const s8 = t.section8;
     animation: cardDrop 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
-  /* ── Corner brackets ── */
   .corner {
     position: absolute;
     width: var(--s-corner-size);
@@ -176,7 +174,6 @@ const s8 = t.section8;
       cornerBreatheBR 4s ease-in-out 1.3s infinite;
   }
 
-  /* ── Keyframes ── */
   @keyframes cardDrop {
     0% {
       opacity: 0;

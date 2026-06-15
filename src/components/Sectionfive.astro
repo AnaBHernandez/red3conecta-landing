@@ -83,7 +83,6 @@ const { t } = Astro.props;
     margin-bottom: var(--space-1);
   }
 
-  /* --- CARDS PEQUEÑAS --- */
   .cards-row {
     display: flex;
     flex-direction: row;
@@ -122,7 +121,7 @@ const { t } = Astro.props;
     padding: 1.2rem 1rem;
     background: none;
     border: none;
-    cursor: pointer;
+   cursor: pointer;
     text-align: center;
     border-radius: 1rem;
     transition: background 0.2s ease;
@@ -144,7 +143,6 @@ const { t } = Astro.props;
     opacity: 0.7;
   }
 
-  /* cuerpo cerrado */
   .card-small__body {
     max-height: 0;
     overflow: hidden;
@@ -152,7 +150,6 @@ const { t } = Astro.props;
     transition: max-height 0.4s ease, padding 0.4s ease;
   }
 
-  /* cuerpo abierto */
   .card-small--abierta .card-small__body {
     max-height: 200px;
     padding: 0 1rem 1rem;
@@ -175,7 +172,6 @@ const { t } = Astro.props;
     transform: translateY(0);
   }
 
-  /* --- CARDS ANCHAS --- */
   .cards-column {
     display: flex;
     flex-direction: row;
@@ -273,7 +269,6 @@ const { t } = Astro.props;
     transform: translateX(0);
   }
 
-  /* --- PILL CTA --- */
   .card__cta {
     display: flex;
     align-items: center;
@@ -292,13 +287,11 @@ const { t } = Astro.props;
     background: rgba(0, 0, 0, 0.13);
   }
 
-  /* Texto del pill desaparece al abrir */
   .card-small--abierta .card__cta-text,
   .card-wide--abierta .card__cta-text {
     display: none;
   }
 
-  /* Flecha gira al abrir */
   .card__flecha {
     font-size: 1rem;
     color: var(--color-black);
@@ -311,7 +304,6 @@ const { t } = Astro.props;
     transform: rotate(180deg);
   }
 
-  /* --- COMÚN --- */
   .card-icon {
     width: 48px;
     height: 48px;
@@ -337,7 +329,6 @@ const { t } = Astro.props;
 </style>
 
 <script>
-  // Cards pequeñas
   const tarjetasSmall = document.querySelectorAll("[data-card-small]");
 
   tarjetasSmall.forEach((tarjeta) => {
@@ -358,7 +349,6 @@ const { t } = Astro.props;
     });
   });
 
-  // Cards anchas
   const tarjetasWide = document.querySelectorAll("[data-card-wide]");
 
   tarjetasWide.forEach((tarjeta) => {
