@@ -102,3 +102,6 @@
   z-index: 3;
 }
 
+html {
+  scroll-padding-top: 55px;
+}

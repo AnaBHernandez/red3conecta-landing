@@ -9,7 +9,6 @@ const f = t.footer;
   <div class="footer__orb" aria-hidden="true"></div>
 
   <div class="footer__top">
-    <!-- Brand -->
     <div class="footer__brand">
       <h2 class="footer__name">Red<span>3</span>Conecta</h2>
       <p class="footer__desc">{f.desc}</p>
@@ -17,7 +16,6 @@ const f = t.footer;
         ✉ {f.email}
       </a>
 
-      <!-- Redes sociales -->
       <div class="footer__social" aria-label={f.aria_social}>
         <a href="#" class="footer__social-btn" aria-label={f.aria_linkedin}>
           <svg
@@ -65,16 +63,14 @@ const f = t.footer;
       </div>
     </div>
 
-    <!-- Navegació -->
     <nav class="footer__nav" aria-label="Peu de pàgina">
       <span class="footer__nav-label">{f.nav_label}</span>
-      <a href="#why">{f.nav_links[0]}</a>
+      <a href="#about">{f.nav_links[0]}</a>
       <a href="#challenges">{f.nav_links[1]}</a>
       <a href="#ally">{f.nav_links[2]}</a>
       <a href="#ecosystem">{f.nav_links[3]}</a>
     </nav>
 
-    <!-- Impulsors + Newsletter -->
     <div class="footer__info">
       <span class="footer__nav-label">{f.partners_label}</span>
       {
@@ -125,86 +121,38 @@ const f = t.footer;
 <style>
   /* ── Keyframes ─────────────────────────────────────────── */
   @keyframes glow-breathe {
-    0%,
-    100% {
-      opacity: 1;
-      transform: translateX(-50%) scaleX(1);
-    }
-    50% {
-      opacity: 0.5;
-      transform: translateX(-50%) scaleX(0.8);
-    }
+    0%, 100% { opacity: 1; transform: translateX(-50%) scaleX(1); }
+    50% { opacity: 0.5; transform: translateX(-50%) scaleX(0.8); }
   }
   @keyframes fade-up {
-    from {
-      opacity: 0;
-      transform: translateY(18px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   @keyframes dot-ping {
-    0% {
-      box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.45);
-    }
-    70% {
-      box-shadow: 0 0 0 5px rgba(249, 115, 22, 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.45); }
+    70% { box-shadow: 0 0 0 5px rgba(249, 115, 22, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
   }
   @keyframes arrow-nudge {
-    0%,
-    100% {
-      transform: translateX(0);
-    }
-    50% {
-      transform: translateX(3px);
-    }
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(3px); }
   }
   @keyframes name-shimmer {
-    0% {
-      background-position: -300% center;
-    }
-    100% {
-      background-position: 300% center;
-    }
+    0% { background-position: -300% center; }
+    100% { background-position: 300% center; }
   }
   @keyframes ring-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
   @keyframes scan-line {
-    0% {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(100vw);
-      opacity: 0;
-    }
+    0% { transform: translateX(-100%); opacity: 0; }
+    10%, 90% { opacity: 1; }
+    100% { transform: translateX(100vw); opacity: 0; }
   }
   @keyframes orb-drift {
-    0%,
-    100% {
-      transform: translate(0, 0);
-    }
-    50% {
-      transform: translate(20px, -14px);
-    }
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, -14px); }
   }
 
   /* ── Base ─────────────────────────────────────────────── */
@@ -216,89 +164,54 @@ const f = t.footer;
     position: relative;
     overflow: hidden;
   }
-
-  /* Warm haze top bridge */
   .footer::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     height: 120px;
-    background: linear-gradient(
-      to bottom,
-      rgba(237, 207, 176, 0.06) 0%,
-      transparent 100%
-    );
+    background: linear-gradient(to bottom, rgba(237, 207, 176, 0.06) 0%, transparent 100%);
     pointer-events: none;
     z-index: 0;
   }
-
-  /* Scan line that sweeps every 8s */
   .footer::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 160px;
     height: 2px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(249, 115, 22, 0.35),
-      transparent
-    );
+    background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.35), transparent);
     pointer-events: none;
     z-index: 2;
     animation: scan-line 8s ease-in-out infinite;
   }
-
   .footer__glow {
     position: absolute;
-    top: 0;
-    left: 50%;
+    top: 0; left: 50%;
     transform: translateX(-50%);
     width: 800px;
     height: 260px;
-    background: radial-gradient(
-      ellipse at top,
-      rgba(249, 115, 22, 0.18) 0%,
-      transparent 65%
-    );
+    background: radial-gradient(ellipse at top, rgba(249, 115, 22, 0.18) 0%, transparent 65%);
     pointer-events: none;
     animation: glow-breathe 5s ease-in-out infinite;
   }
-
-  /* Decorative spinning ring bottom-right */
   .footer__ring {
     position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    width: 90px;
-    height: 90px;
+    bottom: 2rem; right: 2rem;
+    width: 90px; height: 90px;
     border: 1px dashed rgba(249, 115, 22, 0.15);
     border-radius: 50%;
     animation: ring-spin 18s linear infinite;
     pointer-events: none;
   }
-
-  /* Floating orb bottom-left */
   .footer__orb {
     position: absolute;
-    bottom: -30px;
-    left: 5%;
-    width: 160px;
-    height: 160px;
-    background: radial-gradient(
-      circle,
-      rgba(249, 115, 22, 0.07) 0%,
-      transparent 70%
-    );
+    bottom: -30px; left: 5%;
+    width: 160px; height: 160px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.07) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     animation: orb-drift 10s ease-in-out infinite;
   }
-
   .footer__top {
     max-width: 1100px;
     margin: 0 auto;
@@ -312,15 +225,9 @@ const f = t.footer;
   }
 
   /* ── Fade-up on load (staggered) ─────────────────────── */
-  .footer__brand {
-    animation: fade-up 0.55s ease both;
-  }
-  .footer__nav {
-    animation: fade-up 0.55s 0.1s ease both;
-  }
-  .footer__info {
-    animation: fade-up 0.55s 0.2s ease both;
-  }
+  .footer__brand { animation: fade-up 0.55s ease both; }
+  .footer__nav   { animation: fade-up 0.55s 0.1s ease both; }
+  .footer__info  { animation: fade-up 0.55s 0.2s ease both; }
 
   /* ── Brand ───────────────────────────────────────────── */
   .footer__name {
@@ -328,23 +235,14 @@ const f = t.footer;
     font-size: 1.4rem;
     font-weight: 800;
     margin: 0 0 0.5rem;
-    background: linear-gradient(
-      90deg,
-      #fdf6ec 30%,
-      #fdba74 50%,
-      #f97316 60%,
-      #fdf6ec 75%
-    );
+    background: linear-gradient(90deg, #fdf6ec 30%, #fdba74 50%, #f97316 60%, #fdf6ec 75%);
     background-size: 300% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: name-shimmer 5s linear infinite;
   }
-  .footer__name span {
-    -webkit-text-fill-color: transparent;
-  }
-
+  .footer__name span { -webkit-text-fill-color: transparent; }
   .footer__desc {
     font-size: 0.85rem;
     line-height: 1.65;
@@ -352,7 +250,6 @@ const f = t.footer;
     max-width: 280px;
     margin: 0 0 0.75rem;
   }
-
   .footer__email {
     display: inline-flex;
     align-items: center;
@@ -365,11 +262,7 @@ const f = t.footer;
     border: 1px solid rgba(253, 186, 116, 0.25);
     border-radius: 999px;
     background: rgba(253, 186, 116, 0.06);
-    transition:
-      color 200ms,
-      border-color 200ms,
-      background 200ms,
-      box-shadow 200ms;
+    transition: color 200ms, border-color 200ms, background 200ms, box-shadow 200ms;
   }
   .footer__email:hover {
     color: #fff;
@@ -379,14 +272,9 @@ const f = t.footer;
   }
 
   /* ── Social ──────────────────────────────────────────── */
-  .footer__social {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
+  .footer__social { display: flex; gap: 0.5rem; margin-top: 1rem; }
   .footer__social-btn {
-    width: 34px;
-    height: 34px;
+    width: 34px; height: 34px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -395,12 +283,7 @@ const f = t.footer;
     border-radius: 9px;
     color: #c9a97a;
     text-decoration: none;
-    transition:
-      background 200ms,
-      color 200ms,
-      border-color 200ms,
-      transform 200ms,
-      box-shadow 200ms;
+    transition: background 200ms, color 200ms, border-color 200ms, transform 200ms, box-shadow 200ms;
   }
   .footer__social-btn:hover {
     background: rgba(249, 115, 22, 0.2);
@@ -411,12 +294,7 @@ const f = t.footer;
   }
 
   /* ── Chips ───────────────────────────────────────────── */
-  .footer__chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
+  .footer__chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
   .footer__chips span {
     font-size: 0.72rem;
     font-weight: 600;
@@ -425,11 +303,7 @@ const f = t.footer;
     border: 1px solid rgba(201, 169, 122, 0.15);
     padding: 3px 10px;
     border-radius: 999px;
-    transition:
-      background 200ms,
-      border-color 200ms,
-      color 200ms,
-      transform 200ms;
+    transition: background 200ms, border-color 200ms, color 200ms, transform 200ms;
     cursor: default;
   }
   .footer__chips span:hover {
@@ -448,7 +322,6 @@ const f = t.footer;
     position: relative;
     z-index: 1;
   }
-
   .footer__nav-label {
     font-size: 0.68rem;
     font-weight: 700;
@@ -457,7 +330,6 @@ const f = t.footer;
     color: #f97316;
     margin-bottom: 0.35rem;
   }
-
   .footer__nav a {
     font-size: 0.85rem;
     color: #d9bf9a;
@@ -465,9 +337,7 @@ const f = t.footer;
     display: flex;
     align-items: center;
     gap: 0;
-    transition:
-      color 200ms,
-      gap 200ms;
+    transition: color 200ms, gap 200ms;
   }
   .footer__nav a::before {
     content: "→";
@@ -476,21 +346,12 @@ const f = t.footer;
     opacity: 0;
     width: 0;
     overflow: hidden;
-    transition:
-      opacity 200ms,
-      width 200ms;
+    transition: opacity 200ms, width 200ms;
   }
   .footer__nav a:hover,
-  .footer__nav a:focus-visible {
-    color: #fdf6ec;
-    gap: 0.35rem;
-    outline: none;
-  }
+  .footer__nav a:focus-visible { color: #fdf6ec; gap: 0.35rem; outline: none; }
   .footer__nav a:hover::before,
-  .footer__nav a:focus-visible::before {
-    opacity: 1;
-    width: 0.9rem;
-  }
+  .footer__nav a:focus-visible::before { opacity: 1; width: 0.9rem; }
 
   /* ── Partners ────────────────────────────────────────── */
   .footer__partner {
@@ -500,10 +361,7 @@ const f = t.footer;
     padding: 0.35rem 0.5rem;
     border-radius: 8px;
     margin: 0 -0.5rem;
-    transition:
-      background 220ms,
-      transform 220ms,
-      box-shadow 220ms;
+    transition: background 220ms, transform 220ms, box-shadow 220ms;
     cursor: default;
   }
   .footer__partner:hover {
@@ -512,15 +370,12 @@ const f = t.footer;
     box-shadow: inset 0 0 0 1px rgba(249, 115, 22, 0.2);
   }
   .footer__partner-dot {
-    width: 8px;
-    height: 8px;
+    width: 8px; height: 8px;
     border-radius: 50%;
     background: #f97316;
     flex-shrink: 0;
     animation: dot-ping 2.8s ease-in-out infinite;
-    transition:
-      transform 220ms,
-      box-shadow 220ms;
+    transition: transform 220ms, box-shadow 220ms;
   }
   .footer__partner:hover .footer__partner-dot {
     transform: scale(1.6);
@@ -531,9 +386,7 @@ const f = t.footer;
     animation-delay: 1.2s;
     animation-name: dot-ping;
   }
-  .footer__partner:hover .footer__partner-dot--alt {
-    box-shadow: 0 0 8px rgba(253, 186, 116, 0.6);
-  }
+  .footer__partner:hover .footer__partner-dot--alt { box-shadow: 0 0 8px rgba(253, 186, 116, 0.6); }
   .footer__partner p {
     font-size: 0.85rem;
     color: #d9bf9a;
@@ -541,9 +394,7 @@ const f = t.footer;
     font-weight: 500;
     transition: color 220ms;
   }
-  .footer__partner:hover p {
-    color: #fdf6ec;
-  }
+  .footer__partner:hover p { color: #fdf6ec; }
 
   /* ── Newsletter ──────────────────────────────────────── */
   .footer__newsletter {
@@ -559,10 +410,7 @@ const f = t.footer;
     letter-spacing: 0.8px;
     margin: 0 0 0.5rem;
   }
-  .footer__newsletter-row {
-    display: flex;
-    gap: 0.4rem;
-  }
+  .footer__newsletter-row { display: flex; gap: 0.4rem; }
   .footer__newsletter-input {
     flex: 1;
     background: rgba(255, 255, 255, 0.06);
@@ -574,14 +422,9 @@ const f = t.footer;
     font-family: var(--font-secondary);
     outline: none;
     min-width: 0;
-    transition:
-      border-color 200ms,
-      background 200ms,
-      box-shadow 200ms;
+    transition: border-color 200ms, background 200ms, box-shadow 200ms;
   }
-  .footer__newsletter-input::placeholder {
-    color: rgba(201, 169, 122, 0.4);
-  }
+  .footer__newsletter-input::placeholder { color: rgba(201, 169, 122, 0.4); }
   .footer__newsletter-input:focus {
     border-color: rgba(249, 115, 22, 0.5);
     background: rgba(255, 255, 255, 0.09);
@@ -591,8 +434,7 @@ const f = t.footer;
     background: #f97316;
     border: none;
     border-radius: 8px;
-    width: 34px;
-    height: 34px;
+    width: 34px; height: 34px;
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
@@ -600,10 +442,7 @@ const f = t.footer;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition:
-      background 200ms,
-      transform 200ms,
-      box-shadow 200ms;
+    transition: background 200ms, transform 200ms, box-shadow 200ms;
   }
   .footer__newsletter-btn:hover {
     background: #ea580c;
@@ -611,11 +450,7 @@ const f = t.footer;
     box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
     animation: arrow-nudge 0.6s ease infinite;
   }
-  .footer__newsletter-ok {
-    font-size: 0.82rem;
-    color: #fdba74;
-    margin: 0.5rem 0 0;
-  }
+  .footer__newsletter-ok { font-size: 0.82rem; color: #fdba74; margin: 0.5rem 0 0; }
 
   /* ── Divider ─────────────────────────────────────────── */
   .footer__divider {
@@ -635,12 +470,8 @@ const f = t.footer;
     height: 1px;
     background: rgba(255, 255, 255, 0.06);
   }
-  .footer__divider::before {
-    left: 0;
-  }
-  .footer__divider::after {
-    right: 0;
-  }
+  .footer__divider::before { left: 0; }
+  .footer__divider::after { right: 0; }
   .footer__divider-name {
     font-family: var(--font-primary);
     font-size: 1rem;
@@ -650,13 +481,8 @@ const f = t.footer;
     text-transform: uppercase;
     transition: color 300ms;
   }
-  .footer__divider-name:hover {
-    color: rgba(201, 169, 122, 0.55);
-  }
-  .footer__divider-name em {
-    font-style: normal;
-    color: rgba(249, 115, 22, 0.4);
-  }
+  .footer__divider-name:hover { color: rgba(201, 169, 122, 0.55); }
+  .footer__divider-name em { font-style: normal; color: rgba(249, 115, 22, 0.4); }
 
   /* ── Bottom ──────────────────────────────────────────── */
   .footer__bottom {
@@ -669,39 +495,19 @@ const f = t.footer;
     position: relative;
     z-index: 1;
   }
-  .footer__bottom p {
-    font-size: 0.78rem;
-    color: rgba(220, 185, 140, 0.7);
-    margin: 0;
-  }
-  .footer__bottom strong {
-    color: rgba(235, 205, 160, 0.95);
-  }
+  .footer__bottom p { font-size: 0.78rem; color: rgba(220, 185, 140, 0.7); margin: 0; }
+  .footer__bottom strong { color: rgba(235, 205, 160, 0.95); }
 
   @media (max-width: 900px) {
-    .footer__top {
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-    .footer__brand {
-      grid-column: 1 / -1;
-    }
-    .footer__desc {
-      max-width: none;
-    }
+    .footer__top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .footer__brand { grid-column: 1 / -1; }
+    .footer__desc { max-width: none; }
   }
   @media (max-width: 480px) {
-    .footer__top {
-      grid-template-columns: 1fr;
-      gap: 1.75rem;
-    }
-    .footer__bottom {
-      flex-direction: column;
-    }
+    .footer__top { grid-template-columns: 1fr; gap: 1.75rem; }
+    .footer__bottom { flex-direction: column; }
     .footer__divider::before,
-    .footer__divider::after {
-      display: none;
-    }
+    .footer__divider::after { display: none; }
   }
 </style>
 
