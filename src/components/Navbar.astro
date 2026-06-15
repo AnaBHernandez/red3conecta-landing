@@ -5,7 +5,7 @@ const { t } = Astro.props;
 <nav class="navbar">
   <div class="navbar__container">
     <a href="/" class="navbar__brand">
-      <img src="/Modelo_B.png" alt="Logo" width="50" height="50" />
+      <img src="/Modelo_B.png" alt="Logo" width="77" height="77" />
       <h1 class="navbar__title">RED<span>3</span>CONECTA</h1>
     </a>
 
@@ -18,8 +18,8 @@ const { t } = Astro.props;
         <li><a href="#ally" class="navbar__link">{t.nav.ally}</a></li>
         <li><a href="#ecosystem" class="navbar__link">{t.nav.ecosystem}</a></li>
         <li class="navbar__lang">
-          <a href="/ca/" style="color:white; font-size: 0.8rem;">CA</a> |
-          <a href="/es/" style="color:white; font-size: 0.8rem;">ES</a>
+          <a href="/ca/" style="color:white; font-size: 1.0rem;">CA</a> |
+          <a href="/es/" style="color:white; font-size: 1.0rem;">ES</a>
         </li>
       </ul>
     </div>
@@ -50,7 +50,7 @@ const { t } = Astro.props;
 
   .navbar {
     background-color: var(--color-black);
-    padding: var(--space-4) var(--space-8);
+    padding: var(--space-0) 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -71,8 +71,8 @@ const { t } = Astro.props;
     text-decoration: none;
   }
   .navbar__brand img {
-    width: 45px;
-    height: 45px;
+    width: 77px;
+    height: 77px;
     object-fit: contain;
     padding: 4px;
     background: rgba(255, 255, 255, 0.03);
@@ -81,7 +81,7 @@ const { t } = Astro.props;
     transition: transform 0.3s ease;
   }
   .navbar__brand:hover img {
-    transform: scale(1.05);
+    transform: scale(1.33);
   }
   .navbar__title {
     background: linear-gradient(

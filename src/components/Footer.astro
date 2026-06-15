@@ -1,5 +1,5 @@
 ---
-import t from "../i18n/ca.json";
+const { t } = Astro.props;
 const f = t.footer;
 ---
 
@@ -61,7 +61,7 @@ const f = t.footer;
       </div>
 
       <div class="footer__chips">
-        {f.chips.map((chip) => <span>{chip}</span>)}
+        {f.chips.map((chip: any) => <span>{chip}</span>)}
       </div>
     </div>
 
@@ -79,7 +79,7 @@ const f = t.footer;
     <div class="footer__info">
       <span class="footer__nav-label">{f.partners_label}</span>
       {
-        f.partners.map((name, i) => (
+        f.partners.map((name: any, i: any) => (
           <div class="footer__partner">
             <span
               class={`footer__partner-dot${i === 2 ? " footer__partner-dot--alt" : ""}`}
