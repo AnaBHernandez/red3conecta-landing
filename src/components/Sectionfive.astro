@@ -57,7 +57,7 @@ const { t } = Astro.props;
 
 <style>
   .container-alpha {
-    background-color: transparent
+    var(--color-border): transparent
 ;
     margin-top: var(--space-1);
     margin-bottom: 0;
@@ -75,11 +75,11 @@ const { t } = Astro.props;
 
   .alpha_tittle {
     padding: 2rem 1.5rem;
-    background-color: var(--color-border);
+    var(--color-border): var(--color-border);
     border-radius: 1rem;
     width: 100%;
-    border-top: 8px solid var(--color-surface-raised;
-    border-bottom: 8px solid var(--color-surface-raised;
+    border-top: 8px solid var(--color-surface-raised
+    border-bottom: 8px solid var(--color-surface-raised
     border-width: 8px;
     margin-bottom: var(--space-1);
   }
@@ -88,7 +88,7 @@ const { t } = Astro.props;
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
-    background-color: var(--color-surface);
+    var(--color-border): var(--color-surface);
     border-radius: 1.5rem;
     padding: 1rem 1.5rem;
     margin: var(--space-2);
@@ -103,13 +103,13 @@ const { t } = Astro.props;
     outline: 2px solid transparent;
     transition:
       box-shadow 0.25s ease,
-      background-color 0.25s ease,
+      var(--color-border) 0.25s ease,
       outline 0.2s ease;
   }
 
   .card-small:hover {
     box-shadow: var(--shadow-md);
-    background-color: rgba(255, 81, 0, 0.189);
+    var(--color-border): rgba(255, 81, 0, 0.189);
     outline: 2px solid var(--color-border);
   }
 
@@ -185,14 +185,14 @@ const { t } = Astro.props;
   }
 
   .card-wide {
-    background-color: var(--color-surface-raised;
+    var(--color-border): var(--color-surface-raised
     border-radius: 2rem;
     overflow: hidden;
     flex: 1;
     outline: 2px solid transparent;
     transition:
       box-shadow 0.25s ease,
-      background-color 0.25s ease,
+      var(--color-border) 0.25s ease,
       outline 0.2s ease;
   }
 
@@ -325,7 +325,7 @@ const { t } = Astro.props;
     flex-direction: column;
     gap: 0;
     padding: 0 var(--space-2);
-    background-color: var(--color-surface);
+    var(--color-border): var(--color-surface);
     border-top: var(--space-12);
   }
 </style>
