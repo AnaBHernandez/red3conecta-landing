@@ -57,7 +57,8 @@ const { t } = Astro.props;
 
 <style>
   .container-alpha {
-    background-color: rgba(233, 150, 122, 0.045);
+    background-color: transparent
+;
     margin-top: var(--space-1);
     margin-bottom: 0;
     padding: 2rem 1.5rem;
@@ -74,11 +75,11 @@ const { t } = Astro.props;
 
   .alpha_tittle {
     padding: 2rem 1.5rem;
-    background-color: var(--color-peach-warm);
+    background-color: var(--color-border);
     border-radius: 1rem;
     width: 100%;
-    border-top: 8px solid var(--color-peach-soft);
-    border-bottom: 8px solid var(--color-peach-soft);
+    border-top: 8px solid var(--color-surface-raised;
+    border-bottom: 8px solid var(--color-surface-raised;
     border-width: 8px;
     margin-bottom: var(--space-1);
   }
@@ -87,7 +88,7 @@ const { t } = Astro.props;
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
-    background-color: rgba(245, 194, 117, 0.419);
+    background-color: var(--color-surface);
     border-radius: 1.5rem;
     padding: 1rem 1.5rem;
     margin: var(--space-2);
@@ -109,7 +110,7 @@ const { t } = Astro.props;
   .card-small:hover {
     box-shadow: var(--shadow-md);
     background-color: rgba(255, 81, 0, 0.189);
-    outline: 2px solid var(--color-peach-warm);
+    outline: 2px solid var(--color-border);
   }
 
   .card-small__button {
@@ -128,7 +129,7 @@ const { t } = Astro.props;
   }
 
   .card-small__button:focus-visible {
-    outline: 2px solid var(--color-peach-warm);
+    outline: 2px solid var(--color-border);
   }
 
   .card-small__button h3 {
@@ -184,7 +185,7 @@ const { t } = Astro.props;
   }
 
   .card-wide {
-    background-color: var(--color-peach-soft);
+    background-color: var(--color-surface-raised;
     border-radius: 2rem;
     overflow: hidden;
     flex: 1;
@@ -197,7 +198,7 @@ const { t } = Astro.props;
 
   .card-wide:hover {
     box-shadow: var(--shadow-md);
-    outline: 2px solid var(--color-peach-warm);
+    outline: 2px solid var(--color-border);
    
   }
 
@@ -217,7 +218,7 @@ const { t } = Astro.props;
   }
 
   .card-wide__button:focus-visible {
-    outline: 2px solid var(--color-peach-warm);
+    outline: 2px solid var(--color-border);
   }
 
   .card-wide__header {
@@ -324,7 +325,7 @@ const { t } = Astro.props;
     flex-direction: column;
     gap: 0;
     padding: 0 var(--space-2);
-    background-color: rgba(255, 176, 119, 0.364);
+    background-color: var(--color-surface);
     border-top: var(--space-12);
   }
 </style>
