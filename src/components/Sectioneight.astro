@@ -382,6 +382,56 @@ const s8 = t.section8;
     color: var(--s-text-secondary);
     display: block;
   }
+
+
+  @media (max-width: 768px) {
+    .container {
+      gap: 2rem;
+    }
+
+    .cta-card {
+      gap: 1.5rem;
+    }
+
+    .corner {
+      --s-corner-size: 18px;
+    }
+
+    .cta-buttons {
+      gap: 1rem;
+    }
+
+    .cta-btn {
+      min-width: 200px;
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  
+  @media (max-width: 375px) {
+    .cta-card {
+      padding: 2rem 1.25rem;
+      gap: 1.25rem;
+    }
+
+    .corner {
+      display: none; 
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .cta-btn {
+      min-width: 100%;
+      max-width: 100%;
+      padding: 0.9rem 1.25rem;
+    }
+
+    .cta-btn__desc {
+      font-size: 0.75rem;
+    }
+  }
 </style>
 
 <script>

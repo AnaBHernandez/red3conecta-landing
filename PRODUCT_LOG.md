@@ -6,15 +6,12 @@
 - ✅ #14 Footer (Cintia)
 - ✅ Estabilización de entorno (Astro v6.4.2, TypeScript, CSS puro)
 
-## Sprint 2 - Ajustes de Estilo y Corrección de Sintaxis (Jun 17, 2026)
-*   **Corrección**: Eliminadas redefiniciones de variables CSS ilegales en `src/components/Sectioneight.astro` y `src/components/Sectionnine.astro`.
-*   **Optimización**: Normalizada la sintaxis de bordes (`border-color` y `border`) cumpliendo con los estándares de CSS puro exigidos.
-*   **Accesibilidad**: Ajustada la cascada de estados de enlaces (`a:visited`, `a:focus`, `a:active`) para cumplimiento WCAG AA.
-*   **Estado del Build**: 100% Correcto.
-* **Corrección**: Corregido error de sintaxis en `Navbar.astro` (.navbar__title clase corregida).
-* **Estado**: Rama `landing-page` sincronizada con remoto tras resolución de conflictos.
-* **Build**: Build estático validado y exitoso.
-
+## Sprint 2 - Actualización de Navegación y Merge (Jun 17, 2026)
+* **Refactor**: Reestructuración del componente `Navbar.astro` (división lógica mediante `navbar__right-group`).
+* **Corrección**: Resuelto error de sintaxis CSS en `.navbar__title` tras conflicto de fusión en rama `styles-changes`.
+* **UX/UI**: Unificado selector de idiomas (`CA | ES`) fuera del flujo del menú hamburguesa para persistencia de estado.
+* **Layout**: Ajustada distribución de espacio mediante Flexbox en escritorio y móvil, optimizando la alineación del menú en una línea.
+* **Integración**: Merge completado de `landing-page` a `styles-changes` tras resolución de conflictos.
 
 ## Sprint 3 En Curso (Jun 15-22)
 - ☑ #18 Migración i18n (ES/CA) — 100% funcional.

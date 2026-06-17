@@ -9,10 +9,20 @@ const { t } = Astro.props;
       <h1 class="navbar__title">RED<span>3</span>CONECTA</h1>
     </a>
 
+    <div class="navbar__menu" id="navbar-menu">
+      <ul class="navbar__list">
+        <li><a href="#about" class="navbar__link">{t.nav.why}</a></li>
+        <li>
+          <a href="#challenges" class="navbar__link">{t.nav.challenges}</a>
+        </li>
+        <li><a href="#ally" class="navbar__link">{t.nav.ally}</a></li>
+        <li><a href="#ecosystem" class="navbar__link">{t.nav.ecosystem}</a></li>
+      </ul>
+    </div>
+
     <div class="navbar__right-group">
       <div class="navbar__lang">
-        <a href="/ca/">CA</a> |
-        <a href="/es/">ES</a>
+        <a href="/ca/">CA</a> | <a href="/es/">ES</a>
       </div>
 
       <button
@@ -26,22 +36,10 @@ const { t } = Astro.props;
         <span class="toggle__bar"></span>
       </button>
     </div>
-
-    <div class="navbar__menu" id="navbar-menu">
-      <ul class="navbar__list">
-        <li><a href="#about" class="navbar__link">{t.nav.why}</a></li>
-        <li>
-          <a href="#challenges" class="navbar__link">{t.nav.challenges}</a>
-        </li>
-        <li><a href="#ally" class="navbar__link">{t.nav.ally}</a></li>
-        <li><a href="#ecosystem" class="navbar__link">{t.nav.ecosystem}</a></li>
-      </ul>
-    </div>
   </div>
 </nav>
 
 <style>
-  /* --- Animaciones --- */
   @keyframes name-shimmer {
     0% {
       background-position: -300% center;
@@ -51,21 +49,21 @@ const { t } = Astro.props;
     }
   }
 
-  /* --- Contenedor Principal --- */
   .navbar {
     background-color: var(--color-black);
-    padding: 0.5rem 0; /* Ajustado de var(--space-0) para visibilidad */
+    padding: 0.5rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid var(--color-accent);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Efecto solicitado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   }
+
   .navbar__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1100px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 1rem;
   }
@@ -83,7 +81,6 @@ const { t } = Astro.props;
     padding: 4px;
     background: rgba(255, 255, 255, 0.03);
     border-radius: var(--radius-md);
-    box-shadow: 0 0 10px rgba(249, 115, 22, 0.15);
     transition: transform 0.3s ease;
   }
   .navbar__brand:hover img {
@@ -117,6 +114,7 @@ const { t } = Astro.props;
     display: flex;
     list-style: none;
     gap: 2rem;
+    margin-left: 2rem;
   }
   .navbar__link {
     color: var(--color-brand-orange);
@@ -144,6 +142,24 @@ const { t } = Astro.props;
     width: 80%;
   }
 
+  .navbar__right-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+  }
+  .navbar__lang {
+    display: flex;
+    gap: 0.5rem;
+    color: var(--color-white);
+    font-weight: bold;
+    margin-left: 1.5rem;
+  }
+  .navbar__lang a {
+    color: var(--color-white);
+    text-decoration: none;
+  }
+
   .navbar__toggle {
     display: none;
     background: none;
@@ -165,26 +181,7 @@ const { t } = Astro.props;
     background: var(--color-brand-orange);
     margin: 4px 0;
   }
-  .navbar__right-group {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem; /* Espacio entre el idioma y el botón */
-    margin-left: auto; /* Fuerza todo el grupo a la derecha */
-  }
 
-  .navbar__lang {
-    display: flex;
-    gap: 0.5rem;
-    color: var(--color-white);
-    font-weight: bold;
-    order: 1;
-  }
-
-  .navbar__toggle {
-    order: 2;
-  }
-
-  /* --- Mobile --- */
   @media (max-width: 768px) {
     .navbar__toggle {
       display: flex !important;

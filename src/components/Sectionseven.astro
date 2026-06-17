@@ -223,4 +223,67 @@ const s7 = t.section7;
     line-height: var(--leading-base);
     margin: 0;
   }
+
+
+  @media (max-width: 768px) {
+    .vc {
+      padding: 56px 0 64px;
+    }
+
+    .vc__container {
+      padding: 0 24px;
+    }
+
+    .vc__header {
+      padding: 32px 0 28px;
+      gap: var(--space-3);
+    }
+
+    .vc__title {
+      font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    .vc__block {
+      padding: 32px 0 28px;
+      gap: var(--space-4);
+    }
+
+    .vc__block--tinted {
+      margin: 0 -24px;
+      padding: 32px 24px 28px;
+    }
+
+    .vc__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .vc__quote-icon {
+      font-size: 2.25rem;
+    }
+  }
+
+
+  @media (max-width: 375px) {
+    .vc__container {
+      padding: 0 16px;
+    }
+
+    .vc__block--tinted {
+      margin: 0 -16px;
+      padding: 28px 16px 24px;
+    }
+
+    .vc__card {
+      padding: var(--space-5) var(--space-4);
+    }
+
+    .vc__quote-wrap {
+      padding-left: 28px;
+    }
+
+    .vc__quote-icon {
+      font-size: 2rem;
+      top: -2px;
+    }
+  }
 </style>

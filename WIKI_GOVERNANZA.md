@@ -10,28 +10,27 @@
 
 ---
 
-## 2. Equipo y Asignaciones
-| Responsable | Componentes | Estado |
-|---|---|---|
-| **Ana Belén** (Scrum Master) | Layout, Navbar, Hero, global.css, QA, Deploy, Merges | ✅ / 🔜 |
-| **Cintia** | About, Footer | ✅ / 🔜 |
-| **Paula** | Sectionfour, Sectionfive, Sectionsix, Recursos de Marca | ✅ / ⏳ |
-| **Jessica** | Sectionseven, Sectioneight, Sectionnine | ✅ / 🔜 |
+## 2. Equipo y Asignaciones (Sprint 3 Actual)
+| Responsable | Componentes | Sprint | Estado |
+|---|---|---|---|
+| **Ana Belén** | Layout, Navbar, Hero, QA (#32), Deploy (#27) | 1-3 | ✅/🔍 |
+| **Cintia** | About, Footer, Mejoras estilos #31 | 1-3 | ✅ |
+| **Paula** | Sec. 4, 5, 6, Marca #26, Mejoras estilos #31 | 2-3 | ✅/⏳ |
+| **Jessica** | Sec. 7, 8, 9, Mejoras estilos #31 | 2-3 | ✅ |
 
 ---
 
 ## 3. Estado Actual (Rama `styles-changes`)
 
 ### ✅ Completado
-* Sistema i18n bilingüe (ES/CA) funcional.
-* Mejoras de estilos #31 aplicadas (Variables CSS, transiciones, Navbar 3D).
-* Componente Navbar (#13) validado.
+* **Sistema i18n bilingüe** (ES/CA) funcional.
+* **Componente Navbar (#13)**: Refactorizado con estructura Flexbox robusta, selector de idiomas independiente y layout optimizado.
+* **Mejoras de estilos #31**: Variables CSS, transiciones 3D en botones y animaciones *shimmer*.
 
 ### ⏳ Pendiente
-* Revisión del equipo en rama `styles-changes`.
-* Merge a `landing-page`.
-* Deploy en Netlify (#27).
-* QA final (#32).
+* **QA Central (#32)**: Ejecución en rama `stable-backup`.
+* **Merge final**: Integración de `styles-changes` -> `landing-page`.
+* **Deploy Netlify (#27)**: Pendiente de validación QA.
 
 ---
 
@@ -54,10 +53,10 @@
 
 ## 5. Checklist de Entrega (DoD)
 - [x] `npm run build` sin errores ✅
-- [x] `npm run dev` renderiza en localhost:4321 ✅
-- [x] Responsive: ≤375px, tablet, desktop ✅
-- [x] WCAG AA: Contraste + navegación teclado ✅
-- [x] Estados interactivos implementados (:hover, :focus, :active, :visited) ✅
+- [x] Estructura DOM Navbar: Layout corregido (Logo - Menú - GrupoDerecho) ✅
+- [x] Responsive: Alineación derecha en móvil (lang/toggle) ✅
+- [x] WCAG AA: Navegación teclado y estados `:hover/:focus` ✅
+- [x] Estados interactivos implementados ✅
 
 ---
 
