@@ -38,7 +38,7 @@ const a = t.about;
 
     <div class="about-image" data-anim data-delay="180">
       <div class="about-image__frame">
-        <img src="/imagenes/about1.jpg" alt={a.img_alt} loading="lazy" />
+        <img src="/imagenes/image.png" alt={a.img_alt} loading="lazy" />
         <div class="about-image__tag">
           <span class="about-image__tag-dot"></span>
           {a.active_tag}
@@ -116,30 +116,36 @@ const a = t.about;
   }
 
   .about-container {
-    max-width: 1100px;
+    max-width: 1500px;
+    width: 95%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
-    gap: 2.5rem;
+    gap: 2rem;
     position: relative;
     z-index: 1;
     border-radius: 15px;
     padding: 20px;
     background-color: var(--color-surface);
+    box-sizing: border-box;
   }
 
   .about-content {
     background: linear-gradient(145deg, #ffffff8f 0%, #ff800057 100%);
-    padding: 3.5rem 3.5rem 3rem;
+    padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    height: autos;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .about-content h2 {
-    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-size: clamp(2.5, 4vw, 4rem);
     line-height: 1.15;
     font-weight: 800;
     color: #1f1a16;
@@ -204,19 +210,22 @@ const a = t.about;
     opacity: 1;
   }
   .about-item p {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.2rem;
+    line-height: 1.65;
     color: #4a3b31;
     margin: 0;
   }
 
   .about-image {
-    height: 100%;
+    min-height: auto;
     position: relative;
+    min-width: auto;
+    box-sizing: border-box;
   }
   .about-image__frame {
     position: relative;
-    height: 100%;
+    height: 500px;
+    min-height: 0;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.1);
@@ -278,13 +287,10 @@ const a = t.about;
     }
     .about-image {
       order: -1;
-      min-height: 260px;
+      min-height: auto;
     }
     .about-image__frame {
-      min-height: 260px;
-      animation: none;
-    }
-    .about-content {
+      min-height: 320px;
       animation: none;
     }
   }
