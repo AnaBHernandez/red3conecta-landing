@@ -5,17 +5,20 @@
 - ☑ #13 Navbar.
 - ☑ Estabilización de entorno (Astro v4, TypeScript, Build estático).
 
-## Sprint 2 Completado (Jun 08-14)
-- ☑ #19 Hero, #20 About, #21 Challenges, #22 Ally.
-- ☑ Refactorización de componentes y optimización de runtime (coalescencia nula).
-- ☑ Correcciones de accesibilidad (WCAG AA).
+## Sprint 2 - Ajustes de Estilo y Corrección de Sintaxis (Jun 17, 2026)
+*   **Corrección**: Eliminadas redefiniciones de variables CSS ilegales en `src/components/Sectioneight.astro` y `src/components/Sectionnine.astro`.
+*   **Optimización**: Normalizada la sintaxis de bordes (`border-color` y `border`) cumpliendo con los estándares de CSS puro exigidos.
+*   **Accesibilidad**: Ajustada la cascada de estados de enlaces (`a:visited`, `a:focus`, `a:active`) para cumplimiento WCAG AA.
+*   **Estado del Build**: 100% Correcto.
 
 ## Sprint 3 En Curso (Jun 15-22)
 - ☑ #18 Migración i18n (ES/CA) — 100% funcional.
 - ☑ #31 Mejoras de Estilos — Variables CSS :root + transiciones.
+- ☑ #13 Navbar — Refactorizado (estilo 3D, responsive, accesibilidad).
 - 🔍 #32 QA Central (En revisión en rama `stable-backup`).
 - ⏳ #27 Deploy Netlify (Pendiente).
 
 ---
+*Rama de trabajo actual: styles-changes*
 *Hash del último commit: [ae8f219]*
 *QA-IA: Validado mediante tsc --noEmit y build estático.*

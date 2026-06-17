@@ -13,14 +13,13 @@
 
   /* Alias semánticos (para que los componentes del equipo no se rompan) */
   --color-primary:     var(--color-brand-orange);
-  --color-secondary:   var(--color-surface);
   --color-accent:      var(--color-brand-orange);
   --color-highlight:   var(--color-surface-raised);
   --color-background-alt: var(--color-surface);
 
   /* Compatibilidad con nombres anteriores */
   --color-cream-light:    var(--color-background);
-  --color-highlight:ft:     var(--color-surface);
+ --color-highlight-ft: var(--color-surface);
   --color-peach-mid:      var(--color-surface-raised);
   --color-secondarym:     var(--color-surface-raised);
   --color-light-brown:    var(--color-surface);
@@ -125,4 +124,18 @@
 /* ─── Scroll offset (navbar fija) ───────────────────────────── */
 html {
   scroll-padding-top: 55px;
+}
+/* Evita scroll horizontal en toda la página */
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+a:visited {
+  color: var(--color-brand-orange-hover);
+}
+
+a:focus, a:active {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
 }
