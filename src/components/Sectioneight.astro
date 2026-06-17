@@ -64,7 +64,7 @@ const s8 = t.section8;
     --s-corner-size: 22px;
     --s-corner-thick: 2.5px;
 
-  background-color: var(--s-bg-page);
+    background-color: var(--s-bg-page);
     padding: clamp(3rem, 8vw, 6rem) 0;
     perspective: 1200px;
   }
@@ -77,7 +77,6 @@ const s8 = t.section8;
     flex-direction: column;
     align-items: center;
     gap: 2.5rem;
-    
   }
 
   .cta-card {
@@ -338,8 +337,7 @@ const s8 = t.section8;
   }
 
   .cta-btn--primary {
-    var(--color-border): 
-
+    border-color: var(--color-border);
   }
 
   .cta-btn::after {
@@ -362,13 +360,8 @@ const s8 = t.section8;
   }
 
   .cta-btn:hover {
-    background-color:rgb(255, 94, 0, 0.272);
-    var(--color-border): rgba(
-      255,
-      178,
-      169,
-      0.3
-    ); 
+    background-color: rgb(255, 94, 0, 0.272);
+    border-color: rgba(255, 178, 169, 0.3);
     transform: translateY(-4px) rotateX(4deg) scale(1.02);
     box-shadow: 0 8px 20px rgba(255, 114, 100, 0.18);
   }

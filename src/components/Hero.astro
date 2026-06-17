@@ -46,6 +46,7 @@ const { t } = Astro.props;
 </section>
 
 <style>
+  /* 1. Contenedor Principal */
   .hero {
     padding: 2.5rem 1.25rem;
     text-align: center;
@@ -53,6 +54,8 @@ const { t } = Astro.props;
     display: flex;
     justify-content: center;
   }
+
+  /* 2. Tarjeta y Animación */
   .hero__card {
     background-color: var(--color-surface-card);
     border-radius: 12px;
@@ -70,6 +73,8 @@ const { t } = Astro.props;
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* 3. Tipografía */
   .hero__title {
     margin-bottom: 0.5rem;
   }
@@ -78,6 +83,7 @@ const { t } = Astro.props;
     opacity: 0.9;
   }
 
+  /* 4. Botones / CTA */
   .hero__cta {
     display: flex;
     flex-wrap: wrap;
@@ -115,7 +121,10 @@ const { t } = Astro.props;
     opacity: 0.8;
   }
 
-  /* Efecto Hover */
+  .cta-btn:hover {
+    transform: translateY(-4px);
+    background-color: rgba(255, 94, 0, 0.272);
+  }
   .cta-btn::after {
     content: "";
     position: absolute;
@@ -132,12 +141,8 @@ const { t } = Astro.props;
   .cta-btn:hover::after {
     transform: translateX(120%);
   }
-  .cta-btn:hover {
-    transform: translateY(-4px);
-    background-color: rgba(255, 94, 0, 0.272);
-  }
 
-  /* Esquinas */
+  /* 5. Esquinas decorativas */
   .corner {
     position: absolute;
     width: 22px;
@@ -174,6 +179,24 @@ const { t } = Astro.props;
   }
   .hero__card.is-visible .corner {
     opacity: 1;
+  }
+
+  /* 6. Media Queries */
+  @media (max-width: 375px) {
+    .hero {
+      padding: 1.5rem 0.5rem;
+    }
+    .hero__card {
+      padding: 2rem 1rem;
+    }
+    .hero__cta {
+      flex-direction: column;
+      align-items: center;
+    }
+    .cta-btn {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
   }
 </style>
 
