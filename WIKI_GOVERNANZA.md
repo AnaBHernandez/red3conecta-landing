@@ -1,99 +1,94 @@
-# 🏛️ Guía de Trabajo: Red3Conecta
+# 🏛️ Guía de Gobernanza: Red3Conecta
 
-## 1. Reglas de Oro (Líneas Rojas) — IMPLEMENTADAS
-1. **CSS Puro:** ✅ Prohibido Tailwind/Bootstrap/Sass. Todo mediante CSS nativo + variables `:root`.
-2. **Cero Hardcoded:** ✅ Todo texto en `ca.json` y `es.json`. Sistema bilingüe funcional.
-3. **Estructura:** ✅ Cada componente en archivo `.astro` propio en `src/components/`.
-4. **i18n:** ✅ Importación: `import t from "../i18n/ca.json";` (y es.json si aplica).
-5. **WCAG AA:** ✅ Cumplimiento estricto (contraste 4.5:1, aria-label, navegación teclado).
-6. **Git:** ✅ Prohibido push directo a `main`. Usar rama `landing-page`.
+## 1. Reglas de Oro (Líneas Rojas)
+1. **CSS Puro:** Prohibido Tailwind/Bootstrap/Sass. Todo mediante CSS nativo + variables `:root`.
+2. **Cero Hardcoded:** Todo texto en `ca.json` y `es.json`. Sistema bilingüe funcional.
+3. **Estructura:** Cada componente en archivo `.astro` propio en `src/components/`.
+4. **i18n:** Importación: `import t from "../i18n/ca.json";` (y es.json si aplica).
+5. **WCAG AA:** Cumplimiento estricto (contraste 4.5:1, aria-label, navegación teclado).
+6. **Git:** Prohibido push directo a `main`. Rama activa: `landing-page`.
 
 ---
 
-## 2. Equipo y Asignaciones (Sprint 3 Actual)
-| Responsable | Componentes | Sprint | Estado |
+## 2. Equipo y Asignaciones
+| Responsable | Componentes | Estado |
+|---|---|---|
+| **Ana Belén** (Scrum Master) | Layout, Navbar, Hero, global.css, QA, Deploy, Merges | ✅ / 🔜 |
+| **Cintia** | About, Footer | ✅ / 🔜 |
+| **Paula** | Sectionfour, Sectionfive, Sectionsix, Recursos de Marca | ✅ / ⏳ |
+| **Jessica** | Sectionseven, Sectioneight, Sectionnine | ✅ / 🔜 |
+
+---
+
+## 3. Stack Técnico Confirmado
+- **Framework:** Astro v6.4.2
+- **Lenguaje:** TypeScript nativo
+- **Estilos:** CSS puro (sin Tailwind/Bootstrap/Sass)
+- **i18n:** ca.json + es.json (sin hardcode en componentes)
+- **Fuentes:** Cantarell + PT Sans (Google Fonts)
+- **Gestor de paquetes:** npm
+- **Comando dev:** `npm run dev` → localhost:4321
+
+---
+
+## 4. Git Flow
+```
+landing-page (rama activa de trabajo)
+     ↓ [Ana Belén mergea tras revisión]
+main (producción — intocable)
+```
+- Commits en `landing-page` únicamente
+- Conventional commits: `feat:` `fix:` `style:` `docs:` `chore:`
+- PR a Ana Belén antes de cualquier merge
+
+---
+
+## 5. Estado Sprint 3 (Jun 15–22)
+| ID | Tarea | Asignado | Estado |
 |---|---|---|---|
-| **Ana Belén** (Scrum Master) | Layout, Navbar, Hero, QA (#32), Deploy (#27) | 1-3 | ✅/🔍 |
-| **Cintia** | About, Footer, Mejoras estilos #31 | 1-3 | ✅ |
-| **Paula** | Sec. 4, 5, 6, Marca #26, Mejoras estilos #31 | 2-3 | ✅/⏳ |
-| **Jessica** | Sec. 7, 8, 9, Mejoras estilos #31 | 2-3 | ✅ |
+| #18 | Migración i18n (ca.json + es.json) | Equipo | ✅ HECHO |
+| #31 | Mejoras de Estilos Dinámicos | Equipo | ✅ HECHO |
+| #27 | Git Merges + Deploy Netlify | Ana Belén | ✅ HECHO |
+| #32 | QA, Accesibilidad y WCAG AA | Ana Belén | ✅ HECHO |
+| #26 | Gestión de Recursos de Marca | Paula | ⏳ REVISIÓN |
+| #33 | Responsive: Media Queries por componente | Equipo | 🔜 TODO |
+| #34 | Fix: Overflow horizontal en global.css | Ana Belén | 🔜 TODO |
+| #35 | Fix: footer__glow en Footer.astro | Cintia | 🔜 TODO |
+| #36 | Fix: carousel-track en Sectionnine.astro | Jessica | 🔜 TODO |
 
 ---
 
-## 3. Estado Actual (Rama stable-backup)
-
-### ✅ Completado
-- Sistema i18n bilingüe (ES/CA) funcional
-- Todas las mejoras de estilos aplicadas
-- Variables CSS globales en :root
-- Transiciones 0.3s en interactivos
-- Correcciones de layouts
-- Arreglos de errores runtime
-- Build: ✅ 4 páginas sin errores
-
-### ⏳ Pendiente
-- Revisión del equipo en stable-backup
-- Merge a landing-page
-- Deploy en Netlify (#27)
-- QA final (#32)
+## 6. Bugs Detectados en QA Móvil
+| Bug | Causa | Archivo | Responsable |
+|---|---|---|---|
+| Scroll horizontal | `.carousel-track` 2576px | Sectionnine.astro | Jessica (#36) |
+| Scroll horizontal | `.footer__glow` 800px | Footer.astro | Cintia (#35) |
+| Overflow global | Sin `overflow-x: hidden` en html/body | global.css | Ana Belén (#34) |
 
 ---
 
-## 4. Git Flow (Rama Compartida)
-stable-backup (revisión actual)
-
-↓ [después de aprobación]
-
-landing-page (compartida)
-
-↓ [Ana mergea]
-
-dev (integración)
-
-↓ [Ana mergea]
-
-main (producción)
+## 7. Breakpoints Responsive
+⚠️ A consensuar en daily antes de iniciar tarea #33.  
+Propuesta para validar en equipo:
+- Móvil base: ≤375px (sin media query — estilos por defecto)
+- Tablet: `min-width: 768px`
+- Desktop: `min-width: 1024px`
+- Desktop XL: `min-width: 1280px`
 
 ---
 
-## 5. Estándares de Código — APLICADOS
-**HTML:** ✅ Semántico (`<section>`, `<article>`, `<nav>`, `<footer>`)
-**CSS:** ✅ Variables `:root`, mobile-first, Flexbox/Grid nativos
-**i18n:** ✅ Dinámico `{t.seccion.clave}` en 100% de componentes
-**Accesibilidad:** ✅ WCAG AA + navegación teclado
-**Responsividad:** ✅ ≤375px, tablet (768px), desktop (≥1024px)
+## 8. Checklist DoD (Definition of Done)
+- [ ] Móvil ≤375px sin scroll horizontal
+- [ ] Tablet 768px funciona
+- [ ] Desktop 1024px funciona
+- [ ] WCAG AA: contraste 4.5:1 + navegación teclado
+- [ ] 100% textos en ca.json y es.json
+- [ ] CSS puro sin frameworks
+- [ ] Estados :hover :focus :visited :active explícitos
+- [ ] `npm run build` sin errores
+- [ ] PR enviada a Ana Belén para merge
 
 ---
 
-## 6. Checklist de Entrega (DoD) — CUMPLIDO
-- [x] `npm run build` sin errores ✅
-- [x] `npm run dev` renderiza en localhost:4321 ✅
-- [x] Responsive: ≤375px, tablet, desktop ✅
-- [x] WCAG AA: Contraste + navegación teclado ✅
-- [x] 100% textos en ca.json y es.json ✅
-- [x] CSS Puro sin frameworks ✅
-- [x] Estados: :hover, :focus, :active, :visited ✅
-- [x] Variables CSS globales aplicadas ✅
-
----
-
-## 7. Proceso de Review — FASE ACTUAL
-1. **Equipo revisa** rama `stable-backup`
-2. **Feedback** a Ana Belén
-3. **Merge** a `landing-page` (si aprobado)
-4. **Integración** a `dev`
-5. **Deploy** a Netlify
-
----
-
-## 📌 Próximos Pasos (Backlog)
-- [ ] Revisión equipo en stable-backup
-- [ ] Merge a landing-page
-- [ ] Deploy a Netlify
-- [ ] Test final con lector de pantalla (NVDA/VoiceOver)
-- [ ] Scroll Reveal animations (post-MVP)
-
----
-
-*Última actualización: 13/06/2026 | Ana Belén (Scrum Master)*
-*Status Sprint 3: IMPLEMENTACIÓN COMPLETA EN stable-backup*
+*Última actualización: 17/06/2026 | Ana Belén Hernández (Scrum Master)*
+*Astro v6.4.2 confirmado · Deploy activo en Netlify*

@@ -175,6 +175,183 @@ const { t } = Astro.props;
   .hero__card.is-visible .corner {
     opacity: 1;
   }
+  ---
+const { t } = Astro.props;
+---
+
+<section class="hero" id="hero-section">
+  <div class="hero__card" id="hero-card">
+    <span class="corner corner--tl" aria-hidden="true"></span>
+    <span class="corner corner--tr" aria-hidden="true"></span>
+    <span class="corner corner--bl" aria-hidden="true"></span>
+    <span class="corner corner--br" aria-hidden="true"></span>
+
+    <h1 class="hero__title">{t.hero.title}</h1>
+    <p class="hero__subtitle">{t.hero.subtitle}</p>
+
+    <div class="hero__cta">
+      <a
+        href="https://form.asana.com/?k=Xi-unyAAA4uXYNzBzx5bmA&d=1111991690250694"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cta-btn cta-btn--primary"
+      >
+        <span class="cta-btn__arrow" aria-hidden="true">→</span>
+        <span class="cta-btn__text">
+          <strong class="cta-btn__label">{t.hero.btn_demo}</strong>
+          <span class="cta-btn__desc">Veure la plataforma en funcionament.</span
+          >
+        </span>
+      </a>
+
+      <a
+        href="#"
+        class="cta-btn cta-btn--secondary"
+        aria-disabled="true"
+        onclick="return false;"
+      >
+        <span class="cta-btn__arrow" aria-hidden="true">→</span>
+        <span class="cta-btn__text">
+          <strong class="cta-btn__label">{t.hero.btn_join}</strong>
+          <span class="cta-btn__desc"
+            >Forma part de l'ecosistema Red3Conecta.</span
+          >
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 2.5rem 1.25rem;
+    text-align: center;
+    background-color: var(--color-cream-light);
+    display: flex;
+    justify-content: center;
+  }
+  .hero__card {
+    background-color: var(--color-peach-soft);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    width: 100%;
+    max-width: 750px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+  }
+  .hero__card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .hero__title {
+    margin-bottom: 0.5rem;
+  }
+  .hero__subtitle {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  .cta-btn {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.25rem;
+    border: 2px solid var(--color-black);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--color-black);
+    flex: 1 1 300px;
+    max-width: 340px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.28s ease;
+  }
+  .cta-btn__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 2px;
+  }
+  .cta-btn__label {
+    font-weight: 800;
+  }
+  .cta-btn__desc {
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+
+  /* Efecto Hover */
+  .cta-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      115deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 70%
+    );
+    transform: translateX(-120%);
+    transition: transform 0.5s ease;
+  }
+  .cta-btn:hover::after {
+    transform: translateX(120%);
+  }
+  .cta-btn:hover {
+    transform: translateY(-4px);
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  /* Esquinas */
+  .corner {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-color: var(--color-peach-warm);
+    border-style: solid;
+    border-width: 2.5px;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.5s;
+  }
+  .corner--tl {
+    top: 14px;
+    left: 14px;
+    border-right: none;
+    border-bottom: none;
+  }
+  .corner--tr {
+    top: 14px;
+    right: 14px;
+    border-left: none;
+    border-bottom: none;
+  }
+  .corner--bl {
+    bottom: 14px;
+    left: 14px;
+    border-top: none;
+    border-right: none;
+  }
+  .corner--br {
+    bottom: 14px;
+    right: 14px;
+    border-top: none;
+    border-left: none;
+  }
+  .hero__card.is-visible .corner {
+    opacity: 1;
+  }
 </style>
 
 <script>
@@ -187,3 +364,4 @@ const { t } = Astro.props;
   );
   if (heroCard) observer.observe(heroCard);
 </script>
+
