@@ -141,7 +141,8 @@ const s7 = t.section7;
 
   .vc__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+    justify-content: center;
     gap: var(--space-6);
   }
 
@@ -223,7 +224,7 @@ const s7 = t.section7;
     margin: 0;
   }
 
-  /* ===== Tablet (≤768px) ===== */
+
   @media (max-width: 768px) {
     .vc {
       padding: 56px 0 64px;
@@ -261,7 +262,7 @@ const s7 = t.section7;
     }
   }
 
-  
+
   @media (max-width: 375px) {
     .vc__container {
       padding: 0 16px;
