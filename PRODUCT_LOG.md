@@ -11,6 +11,10 @@
 *   **Optimización**: Normalizada la sintaxis de bordes (`border-color` y `border`) cumpliendo con los estándares de CSS puro exigidos.
 *   **Accesibilidad**: Ajustada la cascada de estados de enlaces (`a:visited`, `a:focus`, `a:active`) para cumplimiento WCAG AA.
 *   **Estado del Build**: 100% Correcto.
+* **Corrección**: Corregido error de sintaxis en `Navbar.astro` (.navbar__title clase corregida).
+* **Estado**: Rama `landing-page` sincronizada con remoto tras resolución de conflictos.
+* **Build**: Build estático validado y exitoso.
+
 
 ## Sprint 3 En Curso (Jun 15-22)
 - ☑ #18 Migración i18n (ES/CA) — 100% funcional.

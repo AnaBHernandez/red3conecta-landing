@@ -9,6 +9,24 @@ const { t } = Astro.props;
       <h1 class="navbar__title">RED<span>3</span>CONECTA</h1>
     </a>
 
+    <div class="navbar__right-group">
+      <div class="navbar__lang">
+        <a href="/ca/">CA</a> |
+        <a href="/es/">ES</a>
+      </div>
+
+      <button
+        class="navbar__toggle"
+        aria-label="Menú"
+        aria-expanded="false"
+        aria-controls="navbar-menu"
+      >
+        <span class="toggle__bar"></span>
+        <span class="toggle__bar"></span>
+        <span class="toggle__bar"></span>
+      </button>
+    </div>
+
     <div class="navbar__menu" id="navbar-menu">
       <ul class="navbar__list">
         <li><a href="#about" class="navbar__link">{t.nav.why}</a></li>
@@ -17,23 +35,8 @@ const { t } = Astro.props;
         </li>
         <li><a href="#ally" class="navbar__link">{t.nav.ally}</a></li>
         <li><a href="#ecosystem" class="navbar__link">{t.nav.ecosystem}</a></li>
-        <li class="navbar__lang">
-          <a href="/ca/" style="color:white; font-size: 1.0rem;">CA</a> |
-          <a href="/es/" style="color:white; font-size: 1.0rem;">ES</a>
-        </li>
       </ul>
     </div>
-
-    <button
-      class="navbar__toggle"
-      aria-label="Menú"
-      aria-expanded="false"
-      aria-controls="navbar-menu"
-    >
-      <span class="toggle__bar"></span>
-      <span class="toggle__bar"></span>
-      <span class="toggle__bar"></span>
-    </button>
   </div>
 </nav>
 
@@ -67,7 +70,6 @@ const { t } = Astro.props;
     padding: 0 1rem;
   }
 
-  /* --- Marca --- */
   .navbar__brand {
     display: flex;
     align-items: center;
@@ -106,7 +108,6 @@ const { t } = Astro.props;
     -webkit-text-fill-color: var(--color-brand-marron);
   }
 
-  /* --- Menú y Links --- */
   .navbar__menu {
     display: flex;
     align-items: center;
@@ -143,7 +144,6 @@ const { t } = Astro.props;
     width: 80%;
   }
 
-  /* --- Botón Hamburguesa (Con efecto 3D original) --- */
   .navbar__toggle {
     display: none;
     background: none;
@@ -165,13 +165,23 @@ const { t } = Astro.props;
     background: var(--color-brand-orange);
     margin: 4px 0;
   }
+  .navbar__right-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Espacio entre el idioma y el botón */
+    margin-left: auto; /* Fuerza todo el grupo a la derecha */
+  }
 
-  /* --- Idioma --- */
   .navbar__lang {
     display: flex;
     gap: 0.5rem;
     color: var(--color-white);
     font-weight: bold;
+    order: 1;
+  }
+
+  .navbar__toggle {
+    order: 2;
   }
 
   /* --- Mobile --- */
@@ -180,6 +190,7 @@ const { t } = Astro.props;
       display: flex !important;
       flex-direction: column;
     }
+
     .navbar__menu {
       display: none;
       position: absolute;
