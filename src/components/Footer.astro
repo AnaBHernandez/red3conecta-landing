@@ -241,7 +241,7 @@ const f = t.footer;
     );
     pointer-events: none;
     z-index: 2;
-    animation: scan-line 8s ease-in-out infinite;
+    animation: scan-line 8s ease-in-out 1;
   }
   .footer__glow {
     position: absolute;
@@ -256,7 +256,7 @@ const f = t.footer;
       transparent 65%
     );
     pointer-events: none;
-    animation: glow-breathe 5s ease-in-out infinite;
+    animation: glow-breathe 5s ease-in-out 2;
   }
 
   .footer__ring {
@@ -287,7 +287,8 @@ const f = t.footer;
     animation: orb-drift 10s ease-in-out infinite;
   }
   .footer__top {
-    max-width: 1100px;
+    max-width: 1500px;
+    width: 95%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1.6fr 1fr 1.4fr;
