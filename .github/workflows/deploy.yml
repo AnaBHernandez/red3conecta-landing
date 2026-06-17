@@ -23,11 +23,17 @@ jobs:
       - name: Build Astro
         run: npm run build
 
+      - name: List Projects (Diagnòstic)
+        run: |
+          curl -X GET "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/pages/projects" \
+               -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+               -H "Content-Type:application/json"
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1.5.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}       
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: 'red3conecta-landing'
           directory: 'dist'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
