@@ -53,14 +53,14 @@ const s8 = t.section8;
 
 <style>
   .section8 {
-    --s-bg-main: var(--color-peach-soft);
+    --s-bg-main: var(--color-surface-raised);
     --s-bg-page: var(--color-cream-light);
     --s-text-primary: #3a1f0d;
     --s-text-secondary: #6b3a26;
     --s-text-muted: #9e6b50;
-    --s-accent: var(--color-peach-warm);
+    --s-accent: var(--color-border);
     --s-border: #3a1f0d;
-    --s-corner: var(--color-peach-warm);
+    --s-corner: var(--color-border);
     --s-corner-size: 22px;
     --s-corner-thick: 2.5px;
 
@@ -70,7 +70,7 @@ const s8 = t.section8;
   }
 
   .container {
-    max-width: 960px;
+    max-width: 980px;
     margin: 0 auto;
     padding: 0 clamp(1rem, 5vw, 2.5rem);
     display: flex;
@@ -80,7 +80,7 @@ const s8 = t.section8;
   }
 
   .cta-card {
-    background-color: var(--s-bg-main);
+    background-color: var(--color-surface-raised);
     border-radius: 12px;
     padding: clamp(2.5rem, 7vw, 5rem) clamp(2rem, 6vw, 5rem);
     display: flex;
@@ -94,6 +94,7 @@ const s8 = t.section8;
     opacity: 0;
     transform: rotateX(-18deg) translateY(-24px) scale(0.97);
     transition: none;
+    background-color: var(--color-surface-card);
   }
 
   .cta-card.is-visible {
@@ -336,7 +337,7 @@ const s8 = t.section8;
   }
 
   .cta-btn--primary {
-    background-color: rgba(255, 178, 169, 0.18); /* tinte peach-warm */
+    border-color: var(--color-border);
   }
 
   .cta-btn::after {
@@ -359,12 +360,8 @@ const s8 = t.section8;
   }
 
   .cta-btn:hover {
-    background-color: rgba(
-      255,
-      178,
-      169,
-      0.3
-    ); /* hover peach-warm más intenso */
+    background-color: rgb(255, 94, 0, 0.272);
+    border-color: rgba(255, 178, 169, 0.3);
     transform: translateY(-4px) rotateX(4deg) scale(1.02);
     box-shadow: 0 8px 20px rgba(255, 114, 100, 0.18);
   }

@@ -68,15 +68,15 @@ const kpis = t.impact.kpis;
 <style>
   .section9 {
     --s-bg: var(--color-cream-light);
-    --s-bg-row: var(--color-peach-soft);
-    --s-bg-note: var(--color-peach-mid);
+    --s-bg-row: var(--color-surface-raised);
+    --s-bg-note: var(--color-border-subtle);
     --s-text-primary: #3a1f0d;
     --s-text-secondary: #6b3a26;
     --s-text-muted: #9e6b50;
-    --s-accent: var(--color-peach-warm);
-    --s-accent-light: var(--color-peach-soft);
-    --s-border: var(--color-peach-mid);
-    --s-border-note: var(--color-peach-warm);
+    --s-accent: var(--color-border);
+    --s-accent-light: var(--color-surface-raised);
+    --s-border: var(--color-border-subtle);
+    --s-border-note: var(--color-border);
     --s-radius: 12px;
 
     background-color: var(--s-bg);
@@ -90,10 +90,9 @@ const kpis = t.impact.kpis;
     display: flex;
     flex-direction: column;
     gap: clamp(2.5rem, 6vw, 4rem);
-    background-color: var(--color-peach-soft);
+    background-color: rgb(250, 229, 215);
     border-radius: 12px;
   }
-
 
   .section-title {
     font-size: clamp(1.75rem, 4.5vw, 2.75rem);
@@ -140,8 +139,8 @@ const kpis = t.impact.kpis;
     padding: 1rem 1.25rem;
     cursor: pointer;
     list-style: none;
-    background-color: var(--color-peach-warm);
-    transition: background-color 0.2s ease;
+    background-color: rgb(235, 198, 178);
+    transition: var(--color-border) 0.2s ease;
   }
 
   .accordion-header::-webkit-details-marker {
@@ -149,7 +148,7 @@ const kpis = t.impact.kpis;
   }
 
   .accordion-header:hover {
-    background-color: rgba(255, 130, 119, 0.861);
+    background-color: rgba(255, 180, 139, 0.58);
   }
 
   .accordion-label {
@@ -165,7 +164,7 @@ const kpis = t.impact.kpis;
     max-width: 100px;
     object-fit: contain;
     flex-shrink: 0;
-    background-color: var(--color-white);
+    border: 1px solid var(--color-white);
     border-radius: 4px;
     padding: 2px 6px;
   }
@@ -295,7 +294,7 @@ const kpis = t.impact.kpis;
 <style is:global>
   .logo-item {
     background: #ffffff;
-    border: 1px solid var(--color-peach-mid);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 12px;
     width: 160px;
     height: 80px;

@@ -47,7 +47,7 @@ const s7 = t.section7;
   }
 
   .vc__container {
-     background-color:rgba(248, 181, 106, 0.142);
+    background-color:var(--color-surface);
      border-radius: 15px;
     max-width: var(--max-w-xl);
     margin: 0 auto;
@@ -59,7 +59,7 @@ const s7 = t.section7;
 
   .vc__header {
     padding: 48px 0 40px;
-    border-bottom: var(--border-base) solid var(--color-peach-mid);
+    border-bottom: var(--border-base) solid var(--color-border-subtle);
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
@@ -74,16 +74,16 @@ const s7 = t.section7;
     width: 8px;
     height: 8px;
     border-radius: var(--radius-full);
-    background: var(--color-peach-warm);
+    background: var(--color-border);
     animation: pulse 2.4s ease-in-out infinite;
   }
   .vc__dot:nth-child(2) {
     animation-delay: 0.4s;
-    background: var(--color-peach-mid);
+    background: var(--color-border-subtle);
   }
   .vc__dot:nth-child(3) {
     animation-delay: 0.8s;
-    background: var(--color-peach-soft);
+    background: var(--color-surface-raised);
   }
 
   @keyframes pulse {
@@ -120,13 +120,13 @@ const s7 = t.section7;
     display: flex;
     flex-direction: column;
     gap: var(--space-6);
-    border-bottom: var(--border-base) solid var(--color-peach-mid);
+    border-bottom: var(--border-base) solid var(--color-border-subtle);
   }
 
   .vc__block--tinted {
     margin: 0 calc(-1 * var(--space-8));
     padding: 48px var(--space-8) 40px;
-    background: var(--color-peach-soft);
+    background: var(--color-surface-raised);
     border-bottom: none;
     border-radius: 15px;
   }
@@ -141,7 +141,8 @@ const s7 = t.section7;
 
   .vc__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+    justify-content: center;
     gap: var(--space-6);
   }
 
@@ -152,7 +153,7 @@ const s7 = t.section7;
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
-    border-left: var(--border-thick) solid var(--color-peach-warm);
+    border-left: var(--border-thick) solid var(--color-border);
     box-shadow: var(--shadow-sm);
     transition:
       box-shadow var(--transition-base),
@@ -162,7 +163,7 @@ const s7 = t.section7;
 
   .vc__card:hover {
     box-shadow: var(--shadow-md);
-    border-color: var(--color-peach-mid);
+    border-color: var(--color-border-subtle);
     transform: translateX(4px);
   }
 
@@ -193,7 +194,7 @@ const s7 = t.section7;
     font-family: Georgia, serif;
     font-size: 3rem;
     line-height: 1;
-    color: var(--color-peach-warm);
+    color: var(--color-border);
     animation: quotePulse 3s ease-in-out infinite;
   }
 
