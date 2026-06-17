@@ -1,13 +1,12 @@
 :root {
   /* ─── Paleta base ─────────────────────────────────────────────
-     Tres roles: fondo · superficie · acento (regla 60/30/10)
-     Sin melocotones saturados — cremas lino neutras + naranja solo.
+    
   ──────────────────────────────────────────────────────────────── */
 
   --color-background:     #F5EFE6;   /* 60% — fondo de página, crema lino neutro     */
   --color-surface:        #EDE4D8;   /* 30% — secciones, contenedores grandes         */
   --color-surface-raised: #F0E8DC;   /* variante suave: acordeones, banners internos  */
-  --color-surface-card:   #ffffff;   /* tarjetas sobre superficie                     */
+  --color-surface-card:   #ff9c5e58;   /* tarjetas sobre superficie                     */
 
   --color-brand-orange:        #f7731b;
   --color-brand-orange-hover:  #d55e0a;

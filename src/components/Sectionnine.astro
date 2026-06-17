@@ -68,18 +68,18 @@ const kpis = t.impact.kpis;
 <style>
   .section9 {
     --s-bg: var(--color-cream-light);
-    --s-bg-row: var(--color-surface-raised
+    --s-bg-row: var(--color-surface-raised);
     --s-bg-note: var(--color-border-subtle);
     --s-text-primary: #3a1f0d;
     --s-text-secondary: #6b3a26;
     --s-text-muted: #9e6b50;
     --s-accent: var(--color-border);
-    --s-accent-light: var(--color-surface-raised
+    --s-accent-light: var(--color-surface-raised);
     --s-border: var(--color-border-subtle);
     --s-border-note: var(--color-border);
     --s-radius: 12px;
 
-    var(--color-border): var(--s-bg);
+    background-color: var(--s-bg);
     padding: clamp(3rem, 8vw, 6rem) 0;
   }
 
@@ -90,7 +90,7 @@ const kpis = t.impact.kpis;
     display: flex;
     flex-direction: column;
     gap: clamp(2.5rem, 6vw, 4rem);
-    var(--color-border): var(--color-surface-raised
+    background-color:rgb(250, 229, 215);
     border-radius: 12px;
   }
 
@@ -129,7 +129,7 @@ const kpis = t.impact.kpis;
     border: 1px solid var(--s-border);
     border-radius: var(--s-radius);
     overflow: hidden;
-    var(--color-border): var(--color-white);
+    background-color: var(--color-white);
   }
 
   .accordion-header {
@@ -140,7 +140,7 @@ const kpis = t.impact.kpis;
     padding: 1rem 1.25rem;
     cursor: pointer;
     list-style: none;
-    var(--color-border): var(--color-border);
+    background-color:rgb(235, 198, 178);
     transition: var(--color-border) 0.2s ease;
   }
 
@@ -149,7 +149,7 @@ const kpis = t.impact.kpis;
   }
 
   .accordion-header:hover {
-    var(--color-border): rgba(255, 130, 119, 0.861);
+   background-color: rgba(255, 180, 139, 0.58);
   }
 
   .accordion-label {

@@ -56,17 +56,22 @@ const { t } = Astro.props;
 </div>
 
 <style>
+  .bk_section{
+    background-color: var(--color-surface-raised);
+    margin-bottom: var(--space-20);
+    margin-top: var(--space-20);
+  }
   .container-alpha {
-    var(--color-border): transparent
-;
-    margin-top: var(--space-1);
+    background-color: var(--color-surface);
+    
     margin-bottom: 0;
     padding: 2rem 1.5rem;
     border-radius: 1rem;
   }
 
   .container-alpha h2 {
-    color: var(--color-black);
+    color: var(--color-primary);
+    text-decoration-line: underline;
   }
 
   .container-alpha__subtitle {
@@ -74,12 +79,11 @@ const { t } = Astro.props;
   }
 
   .alpha_tittle {
-    padding: 2rem 1.5rem;
-    var(--color-border): var(--color-border);
+    padding: 1rem 1.5rem;
+   background: linear-gradient(170deg,  #f7e7d0ce 15%, #ffbc7a 70%);
     border-radius: 1rem;
     width: 100%;
-    border-top: 8px solid var(--color-surface-raised
-    border-bottom: 8px solid var(--color-surface-raised
+
     border-width: 8px;
     margin-bottom: var(--space-1);
   }
@@ -87,29 +91,35 @@ const { t } = Astro.props;
   .cards-row {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 1.5rem;
-    var(--color-border): var(--color-surface);
     border-radius: 1.5rem;
     padding: 1rem 1.5rem;
-    margin: var(--space-2);
+    margin: var(--space-12);
     margin-top: 0;
     align-items: flex-start;
+    background-color: var(--color-background);
   }
 
   .card-small {
     flex: 1;
+    background-color: var(--color-surface-raised);
     border-radius: 1rem;
     overflow: hidden;
     outline: 2px solid transparent;
+    margin: 1px;
+    padding: 10px;
     transition:
       box-shadow 0.25s ease,
       var(--color-border) 0.25s ease,
       outline 0.2s ease;
+      max-width: 500px;
+      outline: 2px solid rgba(185, 102, 0, 0.201);
   }
 
   .card-small:hover {
     box-shadow: var(--shadow-md);
-    var(--color-border): rgba(255, 81, 0, 0.189);
+    background-color:rgba(255, 202, 137, 0.148);
     outline: 2px solid var(--color-border);
   }
 
@@ -185,7 +195,7 @@ const { t } = Astro.props;
   }
 
   .card-wide {
-    var(--color-border): var(--color-surface-raised
+   background-color: ; var(--color-surface-raised);
     border-radius: 2rem;
     overflow: hidden;
     flex: 1;
@@ -194,11 +204,13 @@ const { t } = Astro.props;
       box-shadow 0.25s ease,
       var(--color-border) 0.25s ease,
       outline 0.2s ease;
+          outline: 2px solid rgba(220, 121, 0, 0.055);
   }
 
   .card-wide:hover {
     box-shadow: var(--shadow-md);
     outline: 2px solid var(--color-border);
+    background-color:rgba(255, 202, 137, 0.148);
    
   }
 
@@ -325,7 +337,7 @@ const { t } = Astro.props;
     flex-direction: column;
     gap: 0;
     padding: 0 var(--space-2);
-    var(--color-border): var(--color-surface);
+    background-color: var(--color-surface);
     border-top: var(--space-12);
   }
 </style>
