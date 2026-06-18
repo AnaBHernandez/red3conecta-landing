@@ -43,29 +43,22 @@ import Card from "./Card.astro";
             title={caso.title}
             description={caso.description}
             variant="caso"
-            ctaLabel={t.platform.cta_toggle} 
+            ctaLabel={t.platform.cta_toggle}
           />
         ))
       }
     </div>
   </div>
 </div>
-
 <style>
-  /* ============================================
-     BASE — Mobile first (por defecto: columna)
-     ============================================ */
-
   .container {
     background-color: var(--color-surface);
     width: auto;
   }
-
   .container__header {
     padding: 1.5rem 1.25rem 1rem;
     background: linear-gradient(145deg, #f7e7d0ce 0%, #ff800071 100%);
   }
-
   .container__header h2 {
     color: var(--color-primary);
     text-decoration-line: underline;
@@ -73,14 +66,12 @@ import Card from "./Card.astro";
     line-height: var(--leading-tight);
     margin: 0 0 0.75rem 0;
   }
-
   .container__header p {
     color: var(--color-black);
     font-size: var(--text-base);
     opacity: 0.7;
     margin: 0;
   }
-
   li {
     background: rgba(237, 121, 33, 0.15);
     padding: 0.5rem 0.75rem;
@@ -89,15 +80,12 @@ import Card from "./Card.astro";
     font-weight: bolder;
     font-size: var(--text-sm);
   }
-
-  /* Bloques: columna por defecto en móvil */
   .container__blocs {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
     padding: 1.25rem 1rem;
   }
-
   .bloc {
     position: relative;
     border-radius: 1rem;
@@ -110,22 +98,18 @@ import Card from "./Card.astro";
       transform 0.3s ease,
       box-shadow 0.3s ease;
   }
-
   .bloc:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
   }
-
   .bloc--a {
     background-image: url("/imagenes/social-team.jpg");
     border-left: 6px solid rgba(255, 127, 80, 0.306);
   }
-
   .bloc--b {
     background-image: url("/imagenes/social-media.jpg");
     border-left: 6px solid rgba(255, 127, 80, 0.306);
   }
-
   .bloc__overlay {
     position: absolute;
     inset: 0;
@@ -133,11 +117,9 @@ import Card from "./Card.astro";
     backdrop-filter: blur(2px);
     z-index: 0;
   }
-
   .bloc:hover .bloc__overlay {
     background: rgba(0, 0, 0, 0.38);
   }
-
   .bloc__content {
     position: relative;
     z-index: 1;
@@ -154,20 +136,17 @@ import Card from "./Card.astro";
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   }
-
   .bloc__content h3 {
     margin: 0;
     color: white;
     font-size: 1.1rem;
   }
-
   .bloc__tagline {
     font-style: italic;
     color: rgba(255, 255, 255, 0.85);
     margin: 0;
     font-size: var(--text-sm);
   }
-
   .bloc ul {
     padding-left: 1.2rem;
     display: flex;
@@ -175,12 +154,10 @@ import Card from "./Card.astro";
     gap: 0.5rem;
     margin: 0;
   }
-
   .bloc li {
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.9);
   }
-
   .bloc__result {
     margin: 0;
     font-weight: bold;
@@ -191,7 +168,6 @@ import Card from "./Card.astro";
     border-radius: 0.5rem;
     backdrop-filter: blur(4px);
   }
-
   .casos__titulo {
     color: var(--color-primary);
     text-decoration-line: underline;
@@ -208,14 +184,11 @@ import Card from "./Card.astro";
     letter-spacing: -0.02em;
     padding: 1rem 1.25rem;
   }
-
   .container__casos {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
   }
-
-  
   .casos__grid {
     display: flex;
     flex-direction: column;
@@ -224,10 +197,6 @@ import Card from "./Card.astro";
     align-items: stretch;
     padding: 0 1rem 1.5rem;
   }
-
-  /* ============================================
-                            MÓVIL
-     ============================================ */
   @media (max-width: 450px) {
     .container__header {
       padding: 1.25rem 1rem 0.75rem;
@@ -267,12 +236,7 @@ import Card from "./Card.astro";
       flex: 1 1 auto;
       min-width: 0;
       width: 100%;
-    }
-  }
-
-  /* ============================================
-                        TABLET 
-     ============================================ */
+    }}
   @media (min-width: 600px) {
     .container__header {
       padding: 2rem 2rem 1rem;
@@ -300,12 +264,7 @@ import Card from "./Card.astro";
     .casos__grid > * {
       flex: 1 1 calc(50% - 0.5rem);
       min-width: 0;
-    }
-  }
-
-  /* ============================================
-                  DESKTOP 
-     ============================================ */
+    }}
   @media (min-width: 1024px) {
     .container__header {
       padding: 2.5rem 3rem 1rem;
@@ -348,6 +307,5 @@ import Card from "./Card.astro";
     .casos__grid > * {
       flex: 1;
       min-width: 0;
-    }
-  }
+    }}
 </style>

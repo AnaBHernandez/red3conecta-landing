@@ -90,14 +90,12 @@ const { t } = Astro.props;
 
   .cards-row {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5rem;
-    border-radius: 1.5rem;
-    padding: 1rem 1.5rem;
-    margin: var(--space-12);
-    margin-top: 0;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 0.75rem;
+    border-radius: 1.5rem;
+    padding: 0.75rem;
+    margin: var(--space-2);
     background-color: var(--color-background);
   }
 
@@ -109,11 +107,11 @@ const { t } = Astro.props;
     outline: 2px solid transparent;
     margin: 1px;
     padding: 10px;
+    max-width: 100%;
     transition:
       box-shadow 0.25s ease,
       var(--color-border) 0.25s ease,
       outline 0.2s ease;
-      max-width: 500px;
       outline: 2px solid rgba(185, 102, 0, 0.201);
   }
 
@@ -185,13 +183,15 @@ const { t } = Astro.props;
 
   .cards-column {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 1.5rem;
     align-items: flex-start;
     padding: var(--space-3);
     margin-bottom: var(--space-12);
     width: 100%;
     box-sizing: border-box;
+    background-color: var(--color-background);
+    border-radius: 10px;
   }
 
   .card-wide {
@@ -341,47 +341,6 @@ const { t } = Astro.props;
     border-top: var(--space-12);
   }
 
-  @media (max-width: 768px) {
-    .alpha_tittle {
-      padding: 1rem;
-    }
-
-    .cards-row {
-      flex-direction: column;
-      margin: var(--space-4);
-      gap: 1rem;
-      padding: 1rem;
-    }
-
-    .card-small {
-      max-width: 100%;
-    }
-
-    .cards-column {
-      flex-direction: column;
-      padding: var(--space-2);
-      margin-bottom: var(--space-6);
-      gap: 1rem;
-    }
-
-    .card-wide__button {
-      padding: 1rem 1.2rem;
-      gap: 0.8rem;
-    }
-
-    .card-wide__header {
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .card-wide--abierta .card-wide__body {
-      padding: 0.25rem 1.2rem 1rem 1.2rem;
-    }
-  }
-
-  /* ============================================
-                   MÓVIL 
-     ============================================ */
   @media (max-width: 450px) {
     .container-alpha {
       padding: 1.5rem 1rem;
@@ -391,14 +350,7 @@ const { t } = Astro.props;
       padding: 0.875rem 1rem;
     }
 
-    .cards-row {
-      margin: var(--space-2);
-      padding: 0.75rem;
-      gap: 0.75rem;
-    }
-
     .card-small {
-      max-width: 100%;
       padding: 8px;
     }
 
@@ -409,12 +361,16 @@ const { t } = Astro.props;
     .cards-column {
       padding: var(--space-1);
       margin-bottom: var(--space-4);
-      gap: 0.75rem;
     }
 
     .card-wide__button {
       padding: 0.875rem 1rem;
       gap: 0.6rem;
+    }
+
+    .card-wide__header {
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
     .card-wide--abierta .card-wide__body {
@@ -429,6 +385,62 @@ const { t } = Astro.props;
     .card__cta {
       padding: 3px 8px;
       font-size: 0.68rem;
+    }
+  }
+
+  @media (min-width: 600px) {
+    .cards-row {
+      flex-direction: row;
+    }
+
+    .cards-column {
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-alpha {
+      padding: 2rem 1.5rem;
+    }
+
+    .alpha_tittle {
+      padding: 1rem 1.5rem;
+    }
+
+    .cards-row {
+      margin: var(--space-12);
+      margin-top: 0;
+      padding: 1rem 1.5rem;
+      gap: 1.5rem;
+    }
+
+    .card-small {
+      max-width: 500px;
+    }
+
+    .cards-column {
+      padding: var(--space-3);
+      margin-bottom: var(--space-12);
+      gap: 1.5rem;
+    }
+
+    .card-wide__button {
+      padding: 1.2rem 1.5rem;
+      gap: 1.2rem;
+    }
+
+    .card-wide--abierta .card-wide__body {
+      padding: 0.25rem 1.5rem 1.2rem 4.5rem;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    .card__cta {
+      padding: 4px 10px;
+      font-size: 0.75rem;
     }
   }
 </style>

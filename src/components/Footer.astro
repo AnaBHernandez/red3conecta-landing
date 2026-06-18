@@ -267,7 +267,7 @@ const f = t.footer;
     height: 90px;
     border: 1px dashed rgba(249, 115, 22, 0.15);
     border-radius: 50%;
-    animation: ring-spin 18s linear infinite;
+    animation: ring-spin 18s linear 3;
     pointer-events: none;
   }
 
@@ -284,7 +284,7 @@ const f = t.footer;
     );
     border-radius: 50%;
     pointer-events: none;
-    animation: orb-drift 10s ease-in-out infinite;
+    animation: orb-drift 10s ease-in-out 1;
   }
   .footer__top {
     max-width: 1500px;
@@ -325,7 +325,11 @@ const f = t.footer;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: name-shimmer 5s linear infinite;
+    transition: transform 0.3s ease;
+  }
+  .footer__brand:hover .footer__name {
+    animation: name-shimmer 1.5s linear;
+    transform: scale(1.03);
   }
   .footer__name span {
     -webkit-text-fill-color: transparent;
@@ -495,7 +499,7 @@ const f = t.footer;
     border-radius: 50%;
     background: #f97316;
     flex-shrink: 0;
-    animation: dot-ping 2.8s ease-in-out infinite;
+    animation: dot-ping 2.8s ease-in-out 1;
     transition:
       transform 220ms,
       box-shadow 220ms;
@@ -586,7 +590,7 @@ const f = t.footer;
     background: #ea580c;
     transform: scale(1.08);
     box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
-    animation: arrow-nudge 0.6s ease infinite;
+    animation: arrow-nudge 0.6s ease 1;
   }
   .footer__newsletter-ok {
     font-size: 0.82rem;
@@ -653,7 +657,18 @@ const f = t.footer;
     color: rgba(235, 205, 160, 0.95);
   }
 
-  @media (max-width: 900px) {
+  @media (min-width: 1024px) {
+    .footer__top {
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 3rem;
+    }
+    .footer__brand {
+      grid-column: auto;
+    }
+  }
+   
+
+  @media (min-width: 600px) and (max-width: 1023px) {
     .footer__top {
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
@@ -665,7 +680,7 @@ const f = t.footer;
       max-width: none;
     }
   }
-  @media (max-width: 480px) {
+  @media (max-width: 450px) {
     .footer__top {
       grid-template-columns: 1fr;
       gap: 1.75rem;
@@ -678,6 +693,7 @@ const f = t.footer;
       display: none;
     }
   }
+
 
   @media (prefers-reduced-motion: reduce) {
     .footer__glow,
