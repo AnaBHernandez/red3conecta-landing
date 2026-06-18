@@ -1,92 +1,120 @@
-# 📊 Red3Conecta - Landing Page (ConnectaDona)
+# Red3Conecta — Landing Page
 
-Infraestructura digital compartida construida con el tercer sector, para el tercer sector. Un proyecto impulsado por Factoría F5 y Fundació Formació i Treball, con el soporte de UNADA.
-
----
-
-## 🛠️ Especificaciones Técnicas
-
-* **Framework:** Astro v6 (SPA, sin `layouts/`).
-* **Estilos:** CSS Nativo (`src/styles/global.css`) usando variables `:root`. PROHIBIDO: Tailwind, Bootstrap, Sass.
-* **Internacionalización (i18n):** Catalán exclusivo (Català). Textos dinámicos en `src/i18n/ca.json`. Cero hardcoded strings.
-* **Accesibilidad:** Estándar estricto WCAG AA (ARIA labels, focus visible, contraste 4.5:1).
-
-## 🚀 Cómo empezar
-
-1. **Clonar el repositorio:**
-   `git clone https://github.com/AnaBHernandez/red3conecta-landing.git`
-
-2. **Entrar en la carpeta:**
-   `cd red3conecta-landing`
-
-3. **Cambiar a la rama de trabajo:**
-   `git checkout landing-page`
-
-4. **Instalar todas las librerías necesarias:**
-   `npm install`
-
-5. **Ejecutar en modo desarrollo:**
-   `npm run dev`
+Infraestructura digital compartida construida con el tercer sector, para el tercer sector.  
+Proyecto impulsado por **Factoría F5** y **Fundació Formació i Treball**, con el apoyo de **UNADA · Aigües de Barcelona**.
 
 ---
 
-## 🌿 Flujo de Trabajo (Git Flow)
+## 🛠️ Stack Técnico
 
-1. `main`: Producción (Bloqueado).
-2. `dev`: Integración.
-3. `landing-page`: Rama compartida de trabajo diario.
+| | |
+|---|---|
+| **Framework** | Astro v6.4.2 (SPA, sin `layouts/`) |
+| **Lenguaje** | TypeScript nativo |
+| **Estilos** | CSS puro · variables `:root` · sin Tailwind/Bootstrap/Sass |
+| **i18n** | Bilingüe català/castellano · `ca.json` + `es.json` · cero hardcoding |
+| **Accesibilidad** | WCAG AA · ARIA labels · contraste 4.5:1 · navegación teclado |
+| **Gestor paquetes** | npm |
 
 ---
 
-## 📋 Estado del Proyecto (Sprints)
+## 🚀 Inicio Rápido
 
-### Sprint 1 ✅ TERMINADO
-| ID | Componente | Estado |
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/AnaBHernandez/red3conecta-astro-landing.git
+
+# 2. Entrar en la carpeta
+cd red3conecta-astro-landing
+
+# 3. Cambiar a la rama de trabajo
+git checkout landing-page
+
+# 4. Instalar dependencias
+npm install
+
+# 5. Arrancar en desarrollo
+npm run dev
+# → http://localhost:4321
+```
+
+---
+
+## 🌿 Git Flow
+
+| Rama | Uso |
+|---|---|
+| `main` | Producción — **intocable** |
+| `landing-page` | Rama activa de trabajo diario |
+| `stable-backup` | Copia de seguridad — sincronizada con `landing-page` |
+
+**Conventional commits:** `feat:` `fix:` `style:` `docs:` `chore:`  
+**Merges:** responsabilidad exclusiva de Ana Belén (Scrum Master)
+
+---
+
+## 📋 Estado del Proyecto
+
+### Sprint 1 ✅
+| ID | Componente | Asignado |
 |---|---|---|
-| #12 | Layout + Base CSS | ✅ HECHO |
-| #13 | Navbar.astro | ✅ HECHO |
-| #14 | Footer.astro | ✅ HECHO |
+| #12 | Layout + Base CSS | Ana Belén |
+| #13 | Navbar.astro | Ana Belén |
+| #14 | Footer.astro | Cintia |
 
-### Sprint 2 ✅ COMPLETADO
-| ID | Componente | Estado |
+### Sprint 2 ✅
+| ID | Componente | Asignado |
 |---|---|---|
-| #19 | Hero.astro | ✅ HECHO |
-| #20 | About.astro | ✅ HECHO |
-| #22 | Sectionfour.astro (Challenges) | ✅ HECHO |
-| #21 | Sectionfive.astro (Ally) | ✅ HECHO |
-| #29 | Sectionsix.astro (Impact) | ✅ HECHO |
-| #24 | Sectioneight.astro (Ecosystem) | ✅ HECHO |
-| #25 | Sectionseven.astro (Partners) | ✅ HECHO |
-| #30 | Sectionnine.astro (Awards) | ✅ HECHO |
+| #19 | Hero.astro | Ana Belén |
+| #20 | About.astro | Cintia |
+| #21 | Sectionfive.astro | Paula |
+| #22 | Sectionfour.astro | Paula |
+| #29 | Sectionsix.astro | Paula |
+| #24 | Sectioneight.astro | Jessica |
+| #25 | Sectionseven.astro | Jessica |
+| #30 | Sectionnine.astro | Jessica |
 
-### Sprint 3 ⏳ EN CURSO
-| ID | Tarea | Estado |
+### Sprint 3 ✅
+| ID | Tarea | Asignado |
 |---|---|---|
-| #18 | Migración i18n (ca.json mejorado) | ⏳ EN CURSO |
-| #31 | Mejoras de Estilos Dinámicos | ⏳ EN CURSO |
-| #26 | Gestión de Recursos de Marca | ⏳ SIGUIENTE |
-| #27 | Git Merges + Deploy Netlify | ⏳ SIGUIENTE |
-| #32 | Estrategia de Calidad: QA, Accesibilidad y WCAG AA | 🔍 EN REVISIÓN |
+| #18 | Migración i18n (ca.json + es.json) | Equipo | 
+| #31 | Mejoras de Estilos Dinámicos | Equipo | 
+| #27 | Git Merges + Deploy Netlify | Ana Belén | 
+| #32 | QA, Accesibilidad y WCAG AA | Ana Belén |
+| #26 | Gestión de Recursos de Marca | Paula | 
+| #33 | Media Queries responsive | Equipo | 
+| #34 | Fix overflow horizontal global.css | Ana Belén | 
+| #35 | Fix footer__glow Footer.astro | Cintia |
+| #36 | Fix carousel-track Sectionnine.astro | Jessica | 
 
 ---
 
-## 🛡️ Líneas Rojas de Desarrollo
+## 🛡️ Líneas Rojas
 
-* Prohibido hacer `push` directo a `main`.
-* Prohibido incluir comentarios metodológicos en el código visual.
-* Obligatorio `npm run build` antes de cualquier `push`.
-* **100% textos en `ca.json`** — Cero hardcoded.
-* **CSS Puro** — Sin frameworks.
-* **WCAG AA obligatorio** — Contraste 4.5:1 mínimo.
+- Prohibido push directo a `main`
+- Prohibido texto hardcoded en componentes `.astro`
+- `npm run build` obligatorio antes de cualquier push
+- CSS puro — sin frameworks
+- WCAG AA obligatorio
 
 ---
 
 ## 🔗 Enlaces
 
-* **Wiki:** https://github.com/AnaBHernandez/red3conecta-landing/wiki
-* **Deploy:** https://red3conecta.netlify.app (próximamente)
-* **Rama compartida:** `landing-page`
+- 📁 **Repositorio:** https://github.com/AnaBHernandez/red3conecta-astro-landing
+- 📖 **Wiki:** https://github.com/AnaBHernandez/red3conecta-landing/wiki
+- 📋 **Board:** https://github.com/users/AnaBHernandez/projects/13
+- 🚀 **Deploy:** https://red3conecta-landing.netlify.app
 
 ---
 
-**Última actualización:** 13/06/2026 | Ana Belén (Scrum Master)
+## 👥 Equipo
+
+- 🧭 **Scrum Master:** [Ana Belén](https://github.com/AnaBHernandez)
+- 📌 **Product Owner:** [Paula](https://github.com/paulova0121-alt)
+- 💻 **Dev:** [Cintia](https://github.com/Zebdon)
+- 💻 **Dev:** [Jessica](https://github.com/rodriguezjessika36-debug)
+
+---
+
+*Última actualización: 18/06/2026 · Ana Belén Hernández (Scrum Master)*
