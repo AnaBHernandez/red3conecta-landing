@@ -43,7 +43,7 @@ const s7 = t.section7;
 <style>
   .vc {
     background-color: var(--color-cream-light);
-    padding: 80px 0 96px;
+    padding: 56px 0 64px;
   }
 
   .vc__container {
@@ -51,18 +51,18 @@ const s7 = t.section7;
      border-radius: 15px;
     max-width: var(--max-w-xl);
     margin: 0 auto;
-    padding: 0 var(--space-8);
+    padding: 0 24px;
     display: flex;
     flex-direction: column;
     gap: 0;
   }
 
   .vc__header {
-    padding: 48px 0 40px;
+    padding: 32px 0 28px;
     border-bottom: var(--border-base) solid var(--color-border-subtle);
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-3);
   }
 
   .vc__dot-row {
@@ -100,7 +100,7 @@ const s7 = t.section7;
 
   .vc__title {
     font-family: var(--font-primary);
-    font-size: var(--text-3xl);
+    font-size: clamp(1.5rem, 6vw, 2rem);
     font-weight: 700;
     color: var(--color-black);
     line-height: var(--leading-tight);
@@ -116,16 +116,16 @@ const s7 = t.section7;
   }
 
   .vc__block {
-    padding: 48px 0 40px;
+    padding: 32px 0 28px;
     display: flex;
     flex-direction: column;
-    gap: var(--space-6);
+    gap: var(--space-4);
     border-bottom: var(--border-base) solid var(--color-border-subtle);
   }
 
   .vc__block--tinted {
-    margin: 0 calc(-1 * var(--space-8));
-    padding: 48px var(--space-8) 40px;
+    margin: 0 -24px;
+    padding: 32px 24px 28px;
     background: var(--color-surface-raised);
     border-bottom: none;
     border-radius: 15px;
@@ -141,7 +141,7 @@ const s7 = t.section7;
 
   .vc__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+    grid-template-columns: 1fr;
     justify-content: center;
     gap: var(--space-6);
   }
@@ -192,7 +192,7 @@ const s7 = t.section7;
     top: -4px;
     left: 0;
     font-family: Georgia, serif;
-    font-size: 3rem;
+    font-size: 2.25rem;
     line-height: 1;
     color: var(--color-border);
     animation: quotePulse 3s ease-in-out infinite;
@@ -225,45 +225,7 @@ const s7 = t.section7;
   }
 
 
-  @media (max-width: 768px) {
-    .vc {
-      padding: 56px 0 64px;
-    }
-
-    .vc__container {
-      padding: 0 24px;
-    }
-
-    .vc__header {
-      padding: 32px 0 28px;
-      gap: var(--space-3);
-    }
-
-    .vc__title {
-      font-size: clamp(1.5rem, 6vw, 2rem);
-    }
-
-    .vc__block {
-      padding: 32px 0 28px;
-      gap: var(--space-4);
-    }
-
-    .vc__block--tinted {
-      margin: 0 -24px;
-      padding: 32px 24px 28px;
-    }
-
-    .vc__grid {
-      grid-template-columns: 1fr;
-    }
-
-    .vc__quote-icon {
-      font-size: 2.25rem;
-    }
-  }
-
-
-  @media (max-width: 375px) {
+  @media (max-width: 450px) {
     .vc__container {
       padding: 0 16px;
     }
@@ -284,6 +246,78 @@ const s7 = t.section7;
     .vc__quote-icon {
       font-size: 2rem;
       top: -2px;
+    }
+  }
+
+
+  @media (min-width: 600px) {
+    .vc {
+      padding: 64px 0 80px;
+    }
+
+    .vc__container {
+      padding: 0 32px;
+    }
+
+    .vc__header {
+      padding: 40px 0 32px;
+      gap: var(--space-4);
+    }
+
+    .vc__title {
+      font-size: var(--text-3xl);
+    }
+
+    .vc__block {
+      padding: 40px 0 32px;
+      gap: var(--space-5);
+    }
+
+    .vc__block--tinted {
+      margin: 0 -32px;
+      padding: 40px 32px 32px;
+    }
+
+    .vc__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .vc__quote-icon {
+      font-size: 2.5rem;
+    }
+  }
+
+
+  @media (min-width: 1024px) {
+    .vc {
+      padding: 80px 0 96px;
+    }
+
+    .vc__container {
+      padding: 0 var(--space-8);
+    }
+
+    .vc__header {
+      padding: 48px 0 40px;
+      gap: var(--space-4);
+    }
+
+    .vc__block {
+      padding: 48px 0 40px;
+      gap: var(--space-6);
+    }
+
+    .vc__block--tinted {
+      margin: 0 calc(-1 * var(--space-8));
+      padding: 48px var(--space-8) 40px;
+    }
+
+    .vc__grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+    }
+
+    .vc__quote-icon {
+      font-size: 3rem;
     }
   }
 </style>

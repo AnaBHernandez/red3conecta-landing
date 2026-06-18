@@ -40,10 +40,10 @@ const kpis = t.impact.kpis;
 <style>
   .stats {
     background-color: var(--color-surface-raised);
-    padding: 3rem;
+    padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 1.25rem;
   }
 
   .stats__header h2 {
@@ -60,15 +60,15 @@ const kpis = t.impact.kpis;
 
   .stats__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 
   .kpi {
     background-color: var(--color-white);
     border-bottom: 4px solid var(--color-border);
     border-radius: 1rem;
-    padding: 1.5rem;
+    padding: 1.1rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -111,7 +111,17 @@ const kpis = t.impact.kpis;
     padding-top: 1rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 450px) {
+    .stats__header h2 {
+      font-size: 1.4rem;
+    }
+
+    .kpi__numero {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media (min-width: 600px) {
     .stats {
       padding: 2rem 1.25rem;
       gap: 1.75rem;
@@ -127,27 +137,23 @@ const kpis = t.impact.kpis;
     }
   }
 
-  @media (max-width: 450px) {
+  @media (min-width: 1024px) {
     .stats {
-      padding: 1.5rem 1rem;
-      gap: 1.25rem;
-    }
-
-    .stats__header h2 {
-      font-size: 1.4rem;
+      padding: 3rem;
+      gap: 2.5rem;
     }
 
     .stats__grid {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
     }
 
     .kpi {
-      padding: 1.1rem;
+      padding: 1.5rem;
     }
 
-    .kpi__numero {
-      font-size: 1.8rem;
+    .kpi:hover {
+      transform: translateY(-4px) scale(1.1);
     }
   }
 </style>

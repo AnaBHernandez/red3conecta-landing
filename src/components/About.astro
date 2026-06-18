@@ -111,7 +111,7 @@ const a = t.about;
         rgba(216, 185, 143, 0.08) 0%,
         transparent 55%
       );
-    animation: bg-pulse 9s ease-in-out infinite;
+    animation: bg-pulse 4s ease-in-out 1;
     pointer-events: none;
   }
 
@@ -229,7 +229,7 @@ const a = t.about;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.1);
-    animation: float-img 5s ease-in-out infinite;
+    animation: float-img 3s ease-in-out 1;
     transition: box-shadow 300ms;
   }
   .about-image__frame:hover {
@@ -277,10 +277,21 @@ const a = t.about;
     border-radius: 50%;
     background: #22c55e;
     flex-shrink: 0;
-    animation: dot-ping 2.5s ease-in-out infinite;
+    animation: dot-ping 2.5s ease-in-out 1;
   }
 
-  @media (max-width: 900px) {
+  @media (min-width: 1024px) {
+    .about-container {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .about-image {
+      order: 0;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 1023px) {
     .about-container {
       grid-template-columns: 1fr;
       gap: 2rem;
@@ -290,11 +301,16 @@ const a = t.about;
       min-height: auto;
     }
     .about-image__frame {
-      min-height: 320px;
+      height: 220px;
+      min-height: 220px;
       animation: none;
     }
   }
-  @media (max-width: 480px) {
+  @media (max-width: 450px) {
+    .about-image__frame {
+      height: 180px;
+      min-height: 180px;
+    }
     .about {
       padding: 3.5rem 1.25rem;
     }
