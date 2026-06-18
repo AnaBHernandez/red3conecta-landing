@@ -1,4 +1,4 @@
-1. Verificar configuración de Astro: asegurar que `dist/` es el directorio de salida.
-2. Comprobación de dependencias: confirmar `npm run build` sin errores.
-3. Despliegue: ejecutar comando de despliegue o configurar Vercel desde panel web.
-4. QA post-despliegue: verificar URL de producción y accesibilidad global.
+1. Estado: landing-page contiene Navbar/Hero recuperados y validados.
+2. Integración: Merge de `landing-page` -> `dev`.
+3. Verificación: npm run build en `dev`.
+4. Producción: Merge de `dev` -> `main` y push a origen.
