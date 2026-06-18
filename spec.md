@@ -1,6 +1,4 @@
-# spec.md
-Objetivo: Validar la ejecución del pipeline tras configurar los secretos.
-Acción: Hacer push a rama `landing-page` y monitorear logs en pestaña Actions.
-DoD:
-- Pipeline completa el job `deploy` con éxito (check verde).
-- El log ya no muestra el error 404.
+1. Verificar configuración de Astro: asegurar que `dist/` es el directorio de salida.
+2. Comprobación de dependencias: confirmar `npm run build` sin errores.
+3. Despliegue: ejecutar comando de despliegue o configurar Vercel desde panel web.
+4. QA post-despliegue: verificar URL de producción y accesibilidad global.

@@ -209,6 +209,30 @@ const { t } = Astro.props;
       align-items: center !important;
       gap: 2.5rem !important;
     }
+
+    .navbar__list {
+      flex-direction: row !important;
+      margin-left: 2rem;
+    }
+    @media (max-width: 450px) {
+      .navbar__toggle {
+        display: flex !important;
+      }
+      .navbar__menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-black);
+        padding: var(--space-4);
+        text-align: center;
+      }
+      .navbar__menu.is-open {
+        display: flex !important;
+      }
+    }
   }
 </style>
 

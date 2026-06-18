@@ -72,7 +72,6 @@ const { t } = Astro.props;
     transform: translateY(0);
   }
 
-  /* 3. Tipografía */
   .hero__title {
     margin-bottom: 0.5rem;
   }
@@ -177,20 +176,54 @@ const { t } = Astro.props;
     opacity: 1;
   }
 
-  @media (max-width: 375px) {
+  .hero__card {
+    background-color: var(--color-surface-card);
+    border-radius: 12px;
+    padding: 2rem 1rem; /* Móvil < 450px */
+    width: 100%;
+    max-width: 750px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+  }
+  .hero__cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cta-btn {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  @media (min-width: 1024px) {
     .hero {
-      padding: 1.5rem 0.5rem;
+      padding: 6rem 2rem;
     }
     .hero__card {
-      padding: 2rem 1rem;
+      max-width: 900px; /* Expansión visual en escritorio */
     }
     .hero__cta {
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row; /* Mantener horizontal en pantallas grandes */
+      gap: 2rem;
     }
     .cta-btn {
-      flex: 1 1 100%;
-      max-width: 100%;
+      flex: 1 1 340px; /* Tamaño fijo óptimo */
+    }
+  }
+
+  @media (min-width: 600px) {
+    .hero {
+      padding: 4rem 2rem;
+    }
+    .hero__card {
+      padding: 4rem 3rem;
+    }
+  }
+  @media (max-width: 450px) {
+    .hero {
+      padding: 1.5rem 0.5rem;
     }
   }
 </style>
