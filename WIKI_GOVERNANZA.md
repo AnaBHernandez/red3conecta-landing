@@ -26,8 +26,6 @@
 * **Sistema i18n bilingüe** (ES/CA) funcional.
 * **Componente Navbar (#13)**: Refactorizado con estructura Flexbox robusta, selector de idiomas independiente y layout optimizado.
 * **Mejoras de estilos #31**: Variables CSS, transiciones 3D en botones y animaciones *shimmer*.
-
-### ⏳ Pendiente
 * **QA Central (#32)**: Ejecución en rama `stable-backup`.
 * **Merge final**: Integración de `styles-changes` -> `landing-page`.
 * **Deploy Netlify (#27)**: Pendiente de validación QA.

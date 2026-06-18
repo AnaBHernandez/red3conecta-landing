@@ -6,21 +6,25 @@
 - ✅ #14 Footer (Cintia)
 - ✅ Estabilización de entorno (Astro v6.4.2, TypeScript, CSS puro)
 
-## Sprint 2 - Actualización de Navegación y Merge (Jun 17, 2026)
-* **Refactor**: Reestructuración del componente `Navbar.astro` (división lógica mediante `navbar__right-group`).
-* **Corrección**: Resuelto error de sintaxis CSS en `.navbar__title` tras conflicto de fusión en rama `styles-changes`.
-* **UX/UI**: Unificado selector de idiomas (`CA | ES`) fuera del flujo del menú hamburguesa para persistencia de estado.
-* **Layout**: Ajustada distribución de espacio mediante Flexbox en escritorio y móvil, optimizando la alineación del menú en una línea.
-* **Integración**: Merge completado de `landing-page` a `styles-changes` tras resolución de conflictos.
+## Sprint 2 — Actualización de Navegación y Merge (Jun 17, 2026)
+- ✅ #19 Hero (Imágenes, Media Queries, botones i18n)
+- ✅ #20 About (Grid, blockquote)
+- ✅ #21 Challenges (Tarjetas, sombras CSS)
+- ✅ #22 Ally (Iconos, transiciones)
+- ✅ #23 Control de Calidad (Revisiones parciales)
+- ✅ **Reestructuración**: Navbar (#13) refinado con Flexbox; selector idiomas integrado.
+- ✅ **Integración**: Merge de `landing-page` a `dev` completado tras resolución de conflictos en `styles-changes`.
+- ✅ **Limpieza**: Eliminación definitiva de ficheros de configuración de GitHub Actions/Cloudflare (decisión: despliegue manual en Netlify).
 
-## Sprint 3 En Curso (Jun 15-22)
-- ☑ #18 Migración i18n (ES/CA) — 100% funcional.
-- ☑ #31 Mejoras de Estilos — Variables CSS :root + transiciones.
-- ☑ #13 Navbar — Refactorizado (estilo 3D, responsive, accesibilidad).
-- 🔍 #32 QA Central (En revisión en rama `stable-backup`).
-- ⏳ #27 Deploy Netlify (Pendiente).
+## Sprint 3 — En Curso (Jun 15-22)
+- ✅ #24 Ecosystem (Red de innovación, botones)
+- ✅ #25 Partners (Logos, grid responsive)
+- ✅ #31 Mejoras de estilos (Variables :root, transiciones 3D)
+- 🔍 #32 QA Central (En revisión en rama `stable-backup`)
+- ✅ #27 Despliegue Manual a Netlify (Preparado para entrega el 19/06)
+- ⏳ #26 Gestión Recursos Marca (Pendiente)
 
 ---
-*Rama de trabajo actual: styles-changes*
-*Hash del último commit: [ae8f219]*
-*QA-IA: Validado mediante tsc --noEmit y build estático.*
+*Rama de trabajo actual: dev (tras el merge de landing-page)*
+*Estado: Todo el código integrado y limpio de workflows de Actions.*
+*Próximo paso: Validación QA final y despliegue manual en Netlify.*
