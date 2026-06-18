@@ -291,37 +291,51 @@ const a = t.about;
     }
   }
 
-  @media (min-width: 600px) and (max-width: 1023px) {
+  @media (min-width: 600px)  and (max-width: 1023px) {
     .about-container {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
     .about-image {
       order: -1;
-      min-height: auto;
+      min-height: 100%;
     }
     .about-image__frame {
-      height: 220px;
-      min-height: 220px;
+      height: 320px;
+      min-height: 320px;
       animation: none;
     }
   }
-  @media (max-width: 375px) {
-    .about-image__frame {
-      height: 180px;
-      min-height: 180px;
-    }
-    .about {
-      padding: 3.5rem 1.25rem;
-    }
-    .about-content {
-      padding: 1.75rem 1.5rem 1.5rem;
-    }
-    .about-item {
-      padding: 0.65rem 0.75rem 0.65rem 0.85rem;
-    }
+ @media (max-width: 600px) {
+  .about-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
+  .about-image {
+    order: -1;
+    width: 100%;
+  }
+
+  .about-image__frame {
+    height: 300px;
+    min-height: 300px;
+  }
+
+  .about {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .about-content {
+    width: 100%;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .about-item {
+    padding: 0.65rem 0.75rem 0.65rem 0.85rem;
+  }
+}
   .about-mini-visual {
     margin-top: 2rem;
     display: flex;
