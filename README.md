@@ -92,11 +92,10 @@ Infraestructura digital compartida construida con el tercer sector, para el terc
 
 ## 👥 Equipo
 
-| Desarrolladora | Página | Responsabilidad |
-|---|---|---|
-| [Paula](https://github.com/paulova0121-alt) 
-| [Cynthia](https://github.com/Zebdon) 
-| [Ana Belén](https://github.com/AnaBHernandez) 
-| [Jessica](https://github.com/rodriguezjessika36-debug) 
+
+[Paula](https://github.com/paulova0121-alt) 
+[Cynthia](https://github.com/Zebdon) 
+[Ana Belén](https://github.com/AnaBHernandez) 
+[Jessica](https://github.com/rodriguezjessika36-debug) 
 
 **Última actualización:** 18/06/2026 | Ana Belén (Scrum Master)
