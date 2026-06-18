@@ -1,12 +1,11 @@
 ---
-import t from "../i18n/ca.json";
-import "../styles/global.css";
+const { t } = Astro.props;
 ---
 
 <nav class="navbar">
   <div class="navbar__container">
     <a href="/" class="navbar__brand">
-      <img src="/Modelo_B.png" alt="Logo" width="50" height="50" />
+      <img src="/Modelo_B.png" alt="Logo" width="77" height="77" />
       <h1 class="navbar__title">RED<span>3</span>CONECTA</h1>
     </a>
 
@@ -21,21 +20,26 @@ import "../styles/global.css";
       </ul>
     </div>
 
-    <button
-      class="navbar__toggle"
-      aria-label="Menú"
-      aria-expanded="false"
-      aria-controls="navbar-menu"
-    >
-      <span class="toggle__bar"></span>
-      <span class="toggle__bar"></span>
-      <span class="toggle__bar"></span>
-    </button>
+    <div class="navbar__right-group">
+      <div class="navbar__lang">
+        <a href="/ca/">CA</a> | <a href="/es/">ES</a>
+      </div>
+
+      <button
+        class="navbar__toggle"
+        aria-label="Menú"
+        aria-expanded="false"
+        aria-controls="navbar-menu"
+      >
+        <span class="toggle__bar"></span>
+        <span class="toggle__bar"></span>
+        <span class="toggle__bar"></span>
+      </button>
+    </div>
   </div>
 </nav>
 
 <style>
-  /* --- 1. ANIMACIONES GLOBALES --- */
   @keyframes name-shimmer {
     0% {
       background-position: -300% center;
@@ -45,21 +49,23 @@ import "../styles/global.css";
     }
   }
 
-  /* --- 2. ESTILOS DE ESCRITORIO (BASE) --- */
   .navbar {
     background-color: var(--color-black);
-    padding: var(--space-4) var(--space-8);
+    padding: 0.5rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid var(--color-accent);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   }
+
   .navbar__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1100px;
+    max-width: 1280px;
     margin: 0 auto;
+    padding: 0 1rem;
   }
 
   .navbar__brand {
@@ -69,25 +75,18 @@ import "../styles/global.css";
     text-decoration: none;
   }
   .navbar__brand img {
-    width: 45px;
-    height: 45px;
+    width: 77px;
+    height: 77px;
     object-fit: contain;
     padding: 4px;
     background: rgba(255, 255, 255, 0.03);
     border-radius: var(--radius-md);
-    box-shadow: 0 0 10px rgba(249, 115, 22, 0.15);
     transition: transform 0.3s ease;
   }
   .navbar__brand:hover img {
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
-
   .navbar__title {
-    font-family: var(--font-primary);
-    font-size: var(--text-xl);
-    font-weight: 800;
-    margin: 0;
-    line-height: 1;
     background: linear-gradient(
       90deg,
       #fdf6ec 30%,
@@ -99,7 +98,7 @@ import "../styles/global.css";
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: name-shimmer 5s linear infinite;
+    animation: name-shimmer 22s linear infinite;
   }
   .navbar__title span {
     color: var(--color-brand-marron);
@@ -108,12 +107,14 @@ import "../styles/global.css";
 
   .navbar__menu {
     display: flex;
+    align-items: center;
+    gap: 2rem;
   }
   .navbar__list {
     display: flex;
     list-style: none;
-    gap: 3.5rem;
-    margin: 0;
+    gap: 2rem;
+    margin-left: 2rem;
   }
   .navbar__link {
     color: var(--color-brand-orange);
@@ -130,23 +131,48 @@ import "../styles/global.css";
     content: "";
     position: absolute;
     bottom: 0;
-    left: 50%; /* Centrado */
+    left: 50%;
     width: 0;
     height: 2px;
     background-color: var(--color-brand-orange);
     transition: width 0.3s ease;
-    transform: translateX(-50%); /* Centrado perfecto */
+    transform: translateX(-50%);
   }
   .navbar__link:hover::after {
-    width: 80%; /* El subrayado crece al pasar el ratón */
+    width: 80%;
+  }
+
+  .navbar__right-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+  }
+  .navbar__lang {
+    display: flex;
+    gap: 0.5rem;
+    color: var(--color-white);
+    font-weight: bold;
+    margin-left: 1.5rem;
+  }
+  .navbar__lang a {
+    color: var(--color-white);
+    text-decoration: none;
   }
 
   .navbar__toggle {
     display: none;
     background: none;
-    border: 1px solid var(--color-accent);
     padding: 0.5rem;
     cursor: pointer;
+    border: 2px solid var(--color-brand-orange);
+    border-radius: 4px;
+    box-shadow: 3px 3px 0px var(--color-brand-orange);
+    transition: transform 0.1s ease;
+  }
+  .navbar__toggle:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px var(--color-brand-orange);
   }
   .toggle__bar {
     display: block;
@@ -156,10 +182,10 @@ import "../styles/global.css";
     margin: 4px 0;
   }
 
-  /* --- 3. ESTILOS MÓVIL --- */
   @media (max-width: 768px) {
     .navbar__toggle {
       display: flex !important;
+      flex-direction: column;
     }
 
     .navbar__menu {
@@ -168,7 +194,6 @@ import "../styles/global.css";
       top: 100%;
       left: 0;
       width: 100%;
-      height: auto;
       background: var(--color-black);
       padding: var(--space-8) 0;
       z-index: 1500;
@@ -179,32 +204,34 @@ import "../styles/global.css";
     .navbar__menu.is-open {
       display: flex !important;
     }
-
     .navbar__list {
       flex-direction: column !important;
       align-items: center !important;
       gap: 2.5rem !important;
-      width: 100%;
-    }
-    .navbar__link {
-      font-size: var(--text-md);
-      padding: 0.5rem 1rem;
-      position: relative;
     }
 
-    .navbar__link::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background-color: var(--color-brand-orange);
-      transition: width 0.3s ease;
-      transform: translateX(-50%);
+    .navbar__list {
+      flex-direction: row !important;
+      margin-left: 2rem;
     }
-    .navbar__link:hover::after {
-      width: 80%;
+    @media (max-width: 450px) {
+      .navbar__toggle {
+        display: flex !important;
+      }
+      .navbar__menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-black);
+        padding: var(--space-4);
+        text-align: center;
+      }
+      .navbar__menu.is-open {
+        display: flex !important;
+      }
     }
   }
 </style>
@@ -213,7 +240,6 @@ import "../styles/global.css";
   document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.querySelector(".navbar__toggle");
     const menu = document.getElementById("navbar-menu");
-
     if (toggle && menu) {
       toggle.addEventListener("click", () => {
         const isExpanded = menu.classList.toggle("is-open");

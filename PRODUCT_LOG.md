@@ -1,28 +1,30 @@
-# 📊 Bitácora de Proyecto: Red3Conecta
-*Última actualización: 13/06/2026*
+# PRODUCT_LOG.md — Bitácora de Proyecto: Red3Conecta
 
-## 🎯 Estado General
-**Sprint 1-2:** ✅ COMPLETADO  
-**Sprint 3:** ⏳ EN CURSO (Refinamiento UI y Estandarización)
+## Sprint 1 — ✅ Completado (Jun 01–07)
+- ✅ #12 Layout + Base CSS
+- ✅ #13 Navbar
+- ✅ #14 Footer (Cintia)
+- ✅ Estabilización de entorno (Astro v6.4.2, TypeScript, CSS puro)
 
-## ⚠️ Bloqueos / Impedimentos
-- Ninguno. **Navegación sincronizada y funcional.**
-- *Pendiente revisión: Ajuste final de estilos del 404.*
+## Sprint 2 — Actualización de Navegación y Merge (Jun 17, 2026)
+- ✅ #19 Hero (Imágenes, Media Queries, botones i18n)
+- ✅ #20 About (Grid, blockquote)
+- ✅ #21 Challenges (Tarjetas, sombras CSS)
+- ✅ #22 Ally (Iconos, transiciones)
+- ✅ #23 Control de Calidad (Revisiones parciales)
+- ✅ **Reestructuración**: Navbar (#13) refinado con Flexbox; selector idiomas integrado.
+- ✅ **Integración**: Merge de `landing-page` a `dev` completado tras resolución de conflictos en `styles-changes`.
+- ✅ **Limpieza**: Eliminación definitiva de ficheros de configuración de GitHub Actions/Cloudflare (decisión: despliegue manual en Netlify).
 
-## ✅ Sprint 1 y 2 — COMPLETADO
-- Desarrollo de 8 componentes visuales.
-- **Sincronización de anclajes (IDs de secciones):** Alineación entre `Navbar.astro` e `index.astro` completada.
+## Sprint 3 — ✅ COMPLETADO (Jun 18, 2026)
+- ✅ #24 Ecosystem, #25 Partners: Implementación de grids y responsive.
+- ✅ #31 Mejoras de estilos: Transiciones y variables :root.
+- ✅ #32 Migración i18n: ca.json + es.json.
+- ✅ #33 Responsive: Media Queries.
+- ✅ #34, #35, #36: Fixes de overflows globales.
+- ✅ #26: Gestión de Recursos de Marca.
+- ✅ #27: Merge final a dev y despliegue exitoso en Vercel.
 
-## ⏳ Sprint 3 — EN CURSO
-| ID | Tarea | Responsable | Estado | Notas |
-|---|---|---|---|---|
-| #18 | Migración i18n (ca.json) | Equipo | ⏳ EN CURSO | - |
-| #31 | Mejoras de Estilos Dinámicos | ✅ FINALIZADO | Migración a variables CSS globales (sistema de diseño). |
-| #26 | Recursos Marca y Testeo | Paula | ⏳ POR HACER | - |
-| #27 | Git Merges + Deploy Netlify | Ana Belén | ⏳ POR HACER | Programado tras validación final. |
-| #32 | Auditoría Final (QA/WCAG) | Ana Belén | 🔍 EN REVISIÓN | Validación de consistencia visual. |
-
-## 🚀 Próximos pasos (Backlog)
-- [ ] Refactorización final: Sustituir los últimos "números mágicos" en el resto de componentes para cumplir al 100% con el sistema de diseño del `global.css`.
-- [ ] Implementación de *Scroll Reveal* (Post-auditoría).
-- [ ] Test final de accesibilidad con lector de pantalla (NVDA/VoiceOver).
+---
+*Rama de trabajo actual: dev (tras el merge de landing-page)*
+*Última actualización: 18/06/2026 | Ana Belén (Scrum Master)*

@@ -1,12 +1,10 @@
 ---
-import i18n from "../i18n/ca.json";
-
-const s7 = (i18n as any).section7;
+const { t } = Astro.props;
+const s7 = t.section7;
 ---
 
 <section class="vc">
   <div class="vc__container">
-
     <div class="vc__header">
       <div class="vc__dot-row">
         <div class="vc__dot"></div>
@@ -20,48 +18,51 @@ const s7 = (i18n as any).section7;
     <div class="vc__block">
       <h3 class="vc__subtitle">{s7.driversTitle}</h3>
       <div class="vc__grid">
-        {s7.drivers.map((driver: any) => (
-          <div class="vc__card">
-            <h4 class="vc__card-name">{driver.name}</h4>
-            <p class="vc__card-desc">{driver.description}</p>
-          </div>
-        ))}
+        {
+          s7.drivers.map((driver: any) => (
+            <div class="vc__card">
+              <h4 class="vc__card-name">{driver.name}</h4>
+              <p class="vc__card-desc">{driver.description}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
 
     <div class="s7__block vc__block--tinted">
       <h3 class="s7__subtitle">{s7.supportTitle}</h3>
       <div class="s7__quote-wrap">
-        <span class="s7__quote-icon">"</span>
+        <span class="s7__quote-icon"></span>
         <blockquote class="vc__quote">{s7.supportQuote}</blockquote>
       </div>
       <p class="s7__network">{s7.networkNote}</p>
     </div>
-
   </div>
 </section>
 
 <style>
   .vc {
-    background: var(--color-cream-light);
-    padding: 80px 0 96px;
+    background-color: var(--color-cream-light);
+    padding: 56px 0 64px;
   }
 
   .vc__container {
+    background-color:var(--color-surface);
+     border-radius: 15px;
     max-width: var(--max-w-xl);
     margin: 0 auto;
-    padding: 0 var(--space-8);
+    padding: 0 24px;
     display: flex;
     flex-direction: column;
     gap: 0;
   }
 
   .vc__header {
-    padding: 48px 0 40px;
-    border-bottom: var(--border-base) solid var(--color-peach-mid);
+    padding: 32px 0 28px;
+    border-bottom: var(--border-base) solid var(--color-border-subtle);
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-3);
   }
 
   .vc__dot-row {
@@ -73,26 +74,33 @@ const s7 = (i18n as any).section7;
     width: 8px;
     height: 8px;
     border-radius: var(--radius-full);
-    background: var(--color-peach-warm);
+    background: var(--color-border);
     animation: pulse 2.4s ease-in-out infinite;
   }
   .vc__dot:nth-child(2) {
     animation-delay: 0.4s;
-    background: var(--color-peach-mid);
+    background: var(--color-border-subtle);
   }
   .vc__dot:nth-child(3) {
     animation-delay: 0.8s;
-    background: var(--color-peach-soft);
+    background: var(--color-surface-raised);
   }
 
   @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50%       { transform: scale(1.5); opacity: 0.7; }
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.7;
+    }
   }
 
   .vc__title {
     font-family: var(--font-primary);
-    font-size: var(--text-3xl);
+    font-size: clamp(1.5rem, 6vw, 2rem);
     font-weight: 700;
     color: var(--color-black);
     line-height: var(--leading-tight);
@@ -108,18 +116,19 @@ const s7 = (i18n as any).section7;
   }
 
   .vc__block {
-    padding: 48px 0 40px;
+    padding: 32px 0 28px;
     display: flex;
     flex-direction: column;
-    gap: var(--space-6);
-    border-bottom: var(--border-base) solid var(--color-peach-mid);
+    gap: var(--space-4);
+    border-bottom: var(--border-base) solid var(--color-border-subtle);
   }
 
   .vc__block--tinted {
-    margin: 0 calc(-1 * var(--space-8));
-    padding: 48px var(--space-8) 40px;
-    background: var(--color-peach-soft);
+    margin: 0 -24px;
+    padding: 32px 24px 28px;
+    background: var(--color-surface-raised);
     border-bottom: none;
+    border-radius: 15px;
   }
 
   .vc__subtitle {
@@ -132,7 +141,8 @@ const s7 = (i18n as any).section7;
 
   .vc__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: 1fr;
+    justify-content: center;
     gap: var(--space-6);
   }
 
@@ -143,7 +153,7 @@ const s7 = (i18n as any).section7;
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
-    border-left: var(--border-thick) solid var(--color-peach-warm);
+    border-left: var(--border-thick) solid var(--color-border);
     box-shadow: var(--shadow-sm);
     transition:
       box-shadow var(--transition-base),
@@ -153,7 +163,7 @@ const s7 = (i18n as any).section7;
 
   .vc__card:hover {
     box-shadow: var(--shadow-md);
-    border-color: var(--color-peach-mid);
+    border-color: var(--color-border-subtle);
     transform: translateX(4px);
   }
 
@@ -182,15 +192,20 @@ const s7 = (i18n as any).section7;
     top: -4px;
     left: 0;
     font-family: Georgia, serif;
-    font-size: 3rem;
+    font-size: 2.25rem;
     line-height: 1;
-    color: var(--color-peach-warm);
+    color: var(--color-border);
     animation: quotePulse 3s ease-in-out infinite;
   }
 
   @keyframes quotePulse {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0.4; }
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
   }
 
   .vc__quote {
@@ -207,5 +222,102 @@ const s7 = (i18n as any).section7;
     color: var(--color-black);
     line-height: var(--leading-base);
     margin: 0;
+  }
+
+
+  @media (max-width: 450px) {
+    .vc__container {
+      padding: 0 16px;
+    }
+
+    .vc__block--tinted {
+      margin: 0 -16px;
+      padding: 28px 16px 24px;
+    }
+
+    .vc__card {
+      padding: var(--space-5) var(--space-4);
+    }
+
+    .vc__quote-wrap {
+      padding-left: 28px;
+    }
+
+    .vc__quote-icon {
+      font-size: 2rem;
+      top: -2px;
+    }
+  }
+
+
+  @media (min-width: 600px) {
+    .vc {
+      padding: 64px 0 80px;
+    }
+
+    .vc__container {
+      padding: 0 32px;
+    }
+
+    .vc__header {
+      padding: 40px 0 32px;
+      gap: var(--space-4);
+    }
+
+    .vc__title {
+      font-size: var(--text-3xl);
+    }
+
+    .vc__block {
+      padding: 40px 0 32px;
+      gap: var(--space-5);
+    }
+
+    .vc__block--tinted {
+      margin: 0 -32px;
+      padding: 40px 32px 32px;
+    }
+
+    .vc__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .vc__quote-icon {
+      font-size: 2.5rem;
+    }
+  }
+
+
+  @media (min-width: 1024px) {
+    .vc {
+      padding: 80px 0 96px;
+    }
+
+    .vc__container {
+      padding: 0 var(--space-8);
+    }
+
+    .vc__header {
+      padding: 48px 0 40px;
+      gap: var(--space-4);
+    }
+
+    .vc__block {
+      padding: 48px 0 40px;
+      gap: var(--space-6);
+    }
+
+    .vc__block--tinted {
+      margin: 0 calc(-1 * var(--space-8));
+      padding: 48px var(--space-8) 40px;
+    }
+
+    .vc__grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+    }
+
+    .vc__quote-icon {
+      font-size: 3rem;
+    }
   }
 </style>

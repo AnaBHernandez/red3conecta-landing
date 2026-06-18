@@ -16,13 +16,22 @@
     "img_alt": "Colaboración entre entidades sociales",
     "active_tag": "Proyecto activo"
   },
-
+  
+"ecosystem": {
+  "title": "Aquí va el título",
+  "intro": "Aquí va la intro",
+  "awardsTitle": "Premios",
+  "fundersTitle": "Financiadores", 
+  "awards": [],
+  "funders": []
+},
+  
   "hero": {
     "title": "Menos tiempo gestionando. Más tiempo atendiendo.",
     "subtitle": "Red3Conecta es la infraestructura digital construida con el tercer sector, para el tercer sector.",
     "btn_demo": "Solicita una demo",
     "btn_join": "Únete a la red",
-    "context": "Un proyecto impulsado por Factoría F5 y Fundació Formació i Treball, con el apoyo de UNADA, la aceleradora social de Aigües de Barcelona."
+    "context": "Un proyecto impulsado por Factoría F5 y Fundación Formació i Treball, con el apoyo de UNADA, la aceleradora social de Aigües de Barcelona."
   },
 
   "footer": {
@@ -57,6 +66,7 @@
 
   "platform": {
     "title": "Red3Conecta: la infraestructura digital compartida del tercer sector.",
+    "cta_toggle": "Ver más",
     "desc": "Una plataforma web con inteligencia artificial conversacional y un catálogo centralizado de recursos, diseñada para los dos actores clave de cualquier servicio social: los profesionales que acompañan y las personas que necesitan apoyo.",
     "bloc_a_title": "Para profesionales del tercer sector",
     "bloc_a_tag": "Menos tiempo gestionando. Más tiempo atendiendo.",
@@ -97,6 +107,7 @@
   "section5": {
     "title": "Construido desde el territorio. Con el territorio. Y gobernado por él.",
     "subtitle": "Red3Conecta no se ha diseñado en un laboratorio externo al tercer sector. Cada decisión se ha definido conjuntamente con las entidades que lo utilizan.",
+    "cta_toggle": "Ver más",
     "cards_small": [
       {
         "icon": "/icon-social.png",
@@ -195,9 +206,9 @@
     "intro": "Red3Conecta ha recibido el reconocimiento de diversas instituciones y ha ido sumando el apoyo de nuevos financiadores y colaboradores que creen en el potencial del proyecto.",
     "awardsTitle": "Premios y reconocimientos",
     "awards": [
-      { "placeholder": "Deloitte", "description": "Proyecto seleccionado en categoría inserción laboral en el programa \"Conoce mi proyecto\"." },
-      { "placeholder": "Aigües de Barcelona", "description": "Proyecto ganador convocatoria UNADA, la aceleradora social de Aigües de Barcelona." },
-      { "placeholder": "IA for Good", "description": "Proyecto seleccionado entre las 20 mejores iniciativas de IA para fines sociales de 2026." }
+      { "placeholder": "Deloitte", "logo": "/logos/deloitte-com-logo.png", "alt": "Logo de Deloitte", "description": "Proyecto seleccionado en categoría inserción laboral en el programa \"Conoce mi proyecto\"." },
+      { "placeholder": "Aigües de Barcelona", "logo": "/logos/logo-vector-aigues-de-barcelona.webp", "alt": "Logo de Aigües de Barcelona", "description": "Proyecto ganador convocatoria UNADA, la aceleradora social de Aigües de Barcelona." },
+      { "placeholder": "IA for Good", "logo": "/logos/AI_for_Good_logo_2024_vertical.png", "alt": "Logo de IA for Good", "description": "Proyecto seleccionado entre las 20 mejores iniciativas de IA para fines sociales de 2026." }
     ],
     "fundersTitle": "Financiadores y colaboradores",
     "funders": [
@@ -206,7 +217,9 @@
       { "name": "Surt", "logo": "/logos/Logo-2-fons-transparent_format_vectorial.svg", "dark": false },
       { "name": "JAPI", "logo": "/logos/JAPI_blanc.jpg", "dark": false },
       { "name": "Fundació Surt", "logo": "/logos/Logo-FS_magenta.png", "dark": false },
-      { "name": "Som Llar", "logo": "/logos/SomLlar_blanco.png", "dark": true }
+      { "name": "Som Llar", "logo": "/logos/SomLlar_blanco.png", "dark": true },
+      { "name": "ECAS - Entitats Catalanes d'Acció Social", "logo": "/logos/logo-ecas.png", "dark": false }
+ 
     ],
     "teamNote": "Nota para el equipo: Esta sección contiene datos pendientes de completar. Aseguraos de tener los textos definitivos antes del paso a producción."
   }

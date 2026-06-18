@@ -1,29 +1,8 @@
 ---
-import i18n from "../i18n/ca.json";
-const s9 = i18n.section9;
-
-const awardExtras: Record<
-  string,
-  { logo: string; alt: string; info?: string }
-> = {
-  Deloitte: {
-    logo: "/logos/deloitte-com-logo.png",
-    alt: "Logo de Deloitte",
-  },
-  "Aigües de Barcelona": {
-    logo: "/logos/logo-vector-aigues-de-barcelona.webp",
-    alt: "Logo de Aigües de Barcelona",
-  },
-  "IA for Good": {
-    logo: "/logos/AI_for_Good_logo_2024_vertical.png",
-    alt: "Logo de IA for Good",
-  },
-};
-
-const awardsWithExtras = s9.awards.map((award: any) => ({
-  ...award,
-  ...(awardExtras[award.placeholder] ?? null),
-}));
+const { t } = Astro.props;
+const s9 = t.section9;
+const awardsWithExtras = s9.awards;
+const kpis = t.impact.kpis;
 ---
 
 <section class="section9" aria-labelledby="s9-heading">
@@ -88,20 +67,16 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
 
 <style>
   .section9 {
-    --s-bg: var(
-      --color-cream-light
-    ); /* #F1E5D9 — fondo general de la sección */
-    --s-bg-row: var(
-      --color-peach-soft
-    ); /* #FFD8BE — fondo de cabeceras del acordeón */
-    --s-bg-note: var(--color-peach-mid); /* #FFC7AD — notas destacadas */
-    --s-text-primary: #3a1f0d; /* marrón oscuro para títulos */
-    --s-text-secondary: #6b3a26; /* marrón medio para texto de cuerpo */
-    --s-text-muted: #9e6b50; /* marrón claro para texto secundario */
-    --s-accent: var(--color-peach-warm); /* #FFB2A9 — acentos / hover */
-    --s-accent-light: var(--color-peach-soft); /* #FFD8BE */
-    --s-border: var(--color-peach-mid); /* #FFC7AD — bordes de tarjetas */
-    --s-border-note: var(--color-peach-warm); /* #FFB2A9 */
+    --s-bg: var(--color-cream-light);
+    --s-bg-row: var(--color-surface-raised);
+    --s-bg-note: var(--color-border-subtle);
+    --s-text-primary: #3a1f0d;
+    --s-text-secondary: #6b3a26;
+    --s-text-muted: #9e6b50;
+    --s-accent: var(--color-border);
+    --s-accent-light: var(--color-surface-raised);
+    --s-border: var(--color-border-subtle);
+    --s-border-note: var(--color-border);
     --s-radius: 12px;
 
     background-color: var(--s-bg);
@@ -114,7 +89,9 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
     padding: 0 clamp(1rem, 5vw, 2.5rem);
     display: flex;
     flex-direction: column;
-    gap: clamp(2.5rem, 6vw, 4rem);
+    gap: 2rem;
+    background-color: rgb(250, 229, 215);
+    border-radius: 12px;
   }
 
   .section-title {
@@ -141,7 +118,6 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
     border-bottom: 2px solid var(--s-border);
   }
 
-  /* ── Acordeón de premios ── */
   .accordion {
     display: flex;
     flex-direction: column;
@@ -155,17 +131,16 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
     background-color: var(--color-white);
   }
 
-  /* Quita el triángulo nativo del <summary> */
   .accordion-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1rem 1.25rem;
+    padding: 0.875rem 1rem;
     cursor: pointer;
-    background-color: var(--s-bg-row);
     list-style: none;
-    transition: background-color 0.2s ease;
+    background-color: rgb(235, 198, 178);
+    transition: var(--color-border) 0.2s ease;
   }
 
   .accordion-header::-webkit-details-marker {
@@ -173,7 +148,7 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
   }
 
   .accordion-header:hover {
-    background-color: var(--s-accent-light);
+    background-color: rgba(255, 180, 139, 0.58);
   }
 
   .accordion-label {
@@ -184,25 +159,25 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
   }
 
   .item-logo {
-    height: 32px;
+    height: 26px;
     width: auto;
     max-width: 100px;
     object-fit: contain;
     flex-shrink: 0;
-    background-color: var(--color-white);
+    border: 1px solid var(--color-white);
     border-radius: 4px;
     padding: 2px 6px;
   }
 
   .item-name {
     font-weight: 700;
+    font-size: 0.875rem;
     color: var(--s-text-primary);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* Flecha que rota al abrir/cerrar */
   .accordion-icon {
     flex-shrink: 0;
     width: 12px;
@@ -256,11 +231,15 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    max-width: 100%;
+    overflow-x: hidden; 
   }
 
   .carousel-wrap {
     overflow: hidden;
     position: relative;
+    width: 100%;
+    max-width: 100%; 
   }
 
   .carousel-wrap::before,
@@ -269,7 +248,7 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 60px;
+    width: 40px;
     z-index: 2;
     pointer-events: none;
   }
@@ -304,15 +283,83 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
     }
   }
 
-  @media (max-width: 560px) {
+
+  /* ============================================
+     MÓVIL
+  ============================================ */
+  @media (max-width: 450px) {
+    .section-title {
+      font-size: 1.5rem;
+    }
+
     .accordion-header {
-      padding: 0.875rem 1rem;
+      padding: 0.75rem 0.875rem;
+      gap: 0.75rem;
     }
-    .item-logo {
-      height: 26px;
+
+    .accordion-label {
+      gap: 0.625rem;
     }
+
     .item-name {
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
+    }
+
+    .carousel-wrap::before,
+    .carousel-wrap::after {
+      width: 28px;
+    }
+  }
+
+  /* ============================================
+     TABLET
+  ============================================ */
+  @media (min-width: 600px) {
+    .container {
+      gap: clamp(2rem, 5vw, 3rem);
+    }
+
+    .accordion-header {
+      padding: 1rem 1.125rem;
+    }
+
+    .item-logo {
+      height: 30px;
+    }
+
+    .item-name {
+      font-size: 0.9375rem;
+    }
+
+    .carousel-wrap::before,
+    .carousel-wrap::after {
+      width: 50px;
+    }
+  }
+
+  /* ============================================
+     DESKTOP
+  ============================================ */
+  @media (min-width: 1024px) {
+    .container {
+      gap: clamp(2.5rem, 6vw, 4rem);
+    }
+
+    .accordion-header {
+      padding: 1rem 1.25rem;
+    }
+
+    .item-logo {
+      height: 32px;
+    }
+
+    .item-name {
+      font-size: 1rem;
+    }
+
+    .carousel-wrap::before,
+    .carousel-wrap::after {
+      width: 60px;
     }
   }
 </style>
@@ -320,14 +367,14 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
 <style is:global>
   .logo-item {
     background: #ffffff;
-    border: 1px solid var(--color-peach-mid);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 12px;
-    width: 160px;
-    height: 80px;
+    width: 130px;
+    height: 68px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 12px;
+    margin: 0 10px;
     flex-shrink: 0;
     padding: 12px 16px;
   }
@@ -341,5 +388,34 @@ const awardsWithExtras = s9.awards.map((award: any) => ({
   .logo-item--dark {
     background: #1a1a1a;
     border-color: #333;
+  }
+
+
+
+  @media (max-width: 450px) {
+    .logo-item {
+      width: 110px;
+      height: 56px;
+      margin: 0 8px;
+    }
+  }
+
+  
+  @media (min-width: 600px) {
+    .logo-item {
+      width: 145px;
+      height: 74px;
+      margin: 0 11px;
+    }
+  }
+
+
+
+  @media (min-width: 1024px) {
+    .logo-item {
+      width: 160px;
+      height: 80px;
+      margin: 0 12px;
+    }
   }
 </style>

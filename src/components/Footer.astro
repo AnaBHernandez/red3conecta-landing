@@ -1,5 +1,5 @@
 ---
-import t from "../i18n/ca.json";
+const { t } = Astro.props;
 const f = t.footer;
 ---
 
@@ -9,7 +9,6 @@ const f = t.footer;
   <div class="footer__orb" aria-hidden="true"></div>
 
   <div class="footer__top">
-    <!-- Brand -->
     <div class="footer__brand">
       <h2 class="footer__name">Red<span>3</span>Conecta</h2>
       <p class="footer__desc">{f.desc}</p>
@@ -17,7 +16,6 @@ const f = t.footer;
         ✉ {f.email}
       </a>
 
-      <!-- Redes sociales -->
       <div class="footer__social" aria-label={f.aria_social}>
         <a href="#" class="footer__social-btn" aria-label={f.aria_linkedin}>
           <svg
@@ -61,24 +59,23 @@ const f = t.footer;
       </div>
 
       <div class="footer__chips">
-        {f.chips.map((chip) => <span>{chip}</span>)}
+        {f.chips.map((chip: any) => <span>{chip}</span>)}
       </div>
     </div>
 
-    <!-- Navegació -->
     <nav class="footer__nav" aria-label="Peu de pàgina">
-      <span class="footer__nav-label">{f.nav_label}</span>
-      <a href="#why">{f.nav_links[0]}</a>
-      <a href="#challenges">{f.nav_links[1]}</a>
-      <a href="#ally">{f.nav_links[2]}</a>
-      <a href="#ecosystem">{f.nav_links[3]}</a>
+      <span class="footer__nav-label">Navegación</span>
+
+      <a href="#about">{t.nav.why}</a>
+      <a href="#challenges">{t.nav.challenges}</a>
+      <a href="#ally">{t.nav.ally}</a>
+      <a href="#ecosystem">{t.nav.ecosystem}</a>
     </nav>
 
-    <!-- Impulsors + Newsletter -->
     <div class="footer__info">
       <span class="footer__nav-label">{f.partners_label}</span>
       {
-        f.partners.map((name, i) => (
+        f.partners.map((name: any, i: any) => (
           <div class="footer__partner">
             <span
               class={`footer__partner-dot${i === 2 ? " footer__partner-dot--alt" : ""}`}
@@ -123,7 +120,6 @@ const f = t.footer;
 </footer>
 
 <style>
-  /* ── Keyframes ─────────────────────────────────────────── */
   @keyframes glow-breathe {
     0%,
     100% {
@@ -186,9 +182,7 @@ const f = t.footer;
       transform: translateX(-100%);
       opacity: 0;
     }
-    10% {
-      opacity: 1;
-    }
+    10%,
     90% {
       opacity: 1;
     }
@@ -207,17 +201,15 @@ const f = t.footer;
     }
   }
 
-  /* ── Base ─────────────────────────────────────────────── */
   .footer {
     background-color: #1a0d04;
     padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem) 1rem;
     border-top: 1px solid rgba(249, 115, 22, 0.22);
-    border-radius: 24px 24px 0 0;
+    border-radius: 4px 4px 0 0;
     position: relative;
     overflow: hidden;
   }
 
-  /* Warm haze top bridge */
   .footer::before {
     content: "";
     position: absolute;
@@ -234,7 +226,6 @@ const f = t.footer;
     z-index: 0;
   }
 
-  /* Scan line that sweeps every 8s */
   .footer::after {
     content: "";
     position: absolute;
@@ -250,9 +241,8 @@ const f = t.footer;
     );
     pointer-events: none;
     z-index: 2;
-    animation: scan-line 8s ease-in-out infinite;
+    animation: scan-line 8s ease-in-out 1;
   }
-
   .footer__glow {
     position: absolute;
     top: 0;
@@ -266,10 +256,9 @@ const f = t.footer;
       transparent 65%
     );
     pointer-events: none;
-    animation: glow-breathe 5s ease-in-out infinite;
+    animation: glow-breathe 5s ease-in-out 2;
   }
 
-  /* Decorative spinning ring bottom-right */
   .footer__ring {
     position: absolute;
     bottom: 2rem;
@@ -278,11 +267,10 @@ const f = t.footer;
     height: 90px;
     border: 1px dashed rgba(249, 115, 22, 0.15);
     border-radius: 50%;
-    animation: ring-spin 18s linear infinite;
+    animation: ring-spin 18s linear 3;
     pointer-events: none;
   }
 
-  /* Floating orb bottom-left */
   .footer__orb {
     position: absolute;
     bottom: -30px;
@@ -296,11 +284,11 @@ const f = t.footer;
     );
     border-radius: 50%;
     pointer-events: none;
-    animation: orb-drift 10s ease-in-out infinite;
+    animation: orb-drift 10s ease-in-out 1;
   }
-
   .footer__top {
-    max-width: 1100px;
+    max-width: 1500px;
+    width: 95%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1.6fr 1fr 1.4fr;
@@ -311,7 +299,6 @@ const f = t.footer;
     z-index: 1;
   }
 
-  /* ── Fade-up on load (staggered) ─────────────────────── */
   .footer__brand {
     animation: fade-up 0.55s ease both;
   }
@@ -322,7 +309,6 @@ const f = t.footer;
     animation: fade-up 0.55s 0.2s ease both;
   }
 
-  /* ── Brand ───────────────────────────────────────────── */
   .footer__name {
     font-family: var(--font-primary);
     font-size: 1.4rem;
@@ -339,12 +325,16 @@ const f = t.footer;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: name-shimmer 5s linear infinite;
+    transition: transform 0.3s ease;
+  }
+  .footer__brand:hover .footer__name {
+    animation: name-shimmer 1.5s linear;
+    transform: scale(1.03);
   }
   .footer__name span {
-    -webkit-text-fill-color: transparent;
+    color: var(--color-brand-marron);
+    -webkit-text-fill-color: var(--color-brand-marron);
   }
-
   .footer__desc {
     font-size: 0.85rem;
     line-height: 1.65;
@@ -352,7 +342,6 @@ const f = t.footer;
     max-width: 280px;
     margin: 0 0 0.75rem;
   }
-
   .footer__email {
     display: inline-flex;
     align-items: center;
@@ -378,7 +367,6 @@ const f = t.footer;
     box-shadow: 0 0 14px rgba(253, 186, 116, 0.15);
   }
 
-  /* ── Social ──────────────────────────────────────────── */
   .footer__social {
     display: flex;
     gap: 0.5rem;
@@ -410,7 +398,6 @@ const f = t.footer;
     box-shadow: 0 6px 16px rgba(249, 115, 22, 0.18);
   }
 
-  /* ── Chips ───────────────────────────────────────────── */
   .footer__chips {
     display: flex;
     flex-wrap: wrap;
@@ -439,7 +426,6 @@ const f = t.footer;
     transform: translateY(-1px);
   }
 
-  /* ── Nav ─────────────────────────────────────────────── */
   .footer__nav,
   .footer__info {
     display: flex;
@@ -448,7 +434,6 @@ const f = t.footer;
     position: relative;
     z-index: 1;
   }
-
   .footer__nav-label {
     font-size: 0.68rem;
     font-weight: 700;
@@ -457,7 +442,6 @@ const f = t.footer;
     color: #f97316;
     margin-bottom: 0.35rem;
   }
-
   .footer__nav a {
     font-size: 0.85rem;
     color: #d9bf9a;
@@ -492,7 +476,6 @@ const f = t.footer;
     width: 0.9rem;
   }
 
-  /* ── Partners ────────────────────────────────────────── */
   .footer__partner {
     display: flex;
     align-items: center;
@@ -508,7 +491,7 @@ const f = t.footer;
   }
   .footer__partner:hover {
     background: rgba(249, 115, 22, 0.12);
-    transform: translateX(5px);
+    transform: translateY(-3px);
     box-shadow: inset 0 0 0 1px rgba(249, 115, 22, 0.2);
   }
   .footer__partner-dot {
@@ -517,7 +500,7 @@ const f = t.footer;
     border-radius: 50%;
     background: #f97316;
     flex-shrink: 0;
-    animation: dot-ping 2.8s ease-in-out infinite;
+    animation: dot-ping 2.8s ease-in-out 1;
     transition:
       transform 220ms,
       box-shadow 220ms;
@@ -545,7 +528,6 @@ const f = t.footer;
     color: #fdf6ec;
   }
 
-  /* ── Newsletter ──────────────────────────────────────── */
   .footer__newsletter {
     margin-top: 1rem;
     padding-top: 1rem;
@@ -609,7 +591,7 @@ const f = t.footer;
     background: #ea580c;
     transform: scale(1.08);
     box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
-    animation: arrow-nudge 0.6s ease infinite;
+    animation: arrow-nudge 0.6s ease 1;
   }
   .footer__newsletter-ok {
     font-size: 0.82rem;
@@ -617,7 +599,6 @@ const f = t.footer;
     margin: 0.5rem 0 0;
   }
 
-  /* ── Divider ─────────────────────────────────────────── */
   .footer__divider {
     max-width: 1100px;
     margin: 0 auto;
@@ -658,7 +639,6 @@ const f = t.footer;
     color: rgba(249, 115, 22, 0.4);
   }
 
-  /* ── Bottom ──────────────────────────────────────────── */
   .footer__bottom {
     max-width: 1100px;
     margin: 0 auto;
@@ -678,7 +658,18 @@ const f = t.footer;
     color: rgba(235, 205, 160, 0.95);
   }
 
-  @media (max-width: 900px) {
+  @media (min-width: 1024px) {
+    .footer__top {
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 3rem;
+    }
+    .footer__brand {
+      grid-column: auto;
+    }
+  }
+   
+
+  @media (min-width: 600px) and (max-width: 1023px) {
     .footer__top {
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
@@ -690,7 +681,7 @@ const f = t.footer;
       max-width: none;
     }
   }
-  @media (max-width: 480px) {
+  @media (max-width: 450px) {
     .footer__top {
       grid-template-columns: 1fr;
       gap: 1.75rem;
@@ -703,6 +694,19 @@ const f = t.footer;
       display: none;
     }
   }
+
+
+  @media (prefers-reduced-motion: reduce) {
+    .footer__glow,
+    .footer__ring,
+    .footer__orb,
+    .footer__name,
+    .footer__partner-dot,
+    .footer__partner-dot--alt,
+    .footer::after {
+      animation: none;
+    }
+  }
 </style>
 
 <script>
@@ -711,7 +715,7 @@ const f = t.footer;
   const ok = document.getElementById("nl-ok") as HTMLElement | null;
 
   btn?.addEventListener("click", () => {
-    if (input && input.value.includes("@")) {
+    if (input && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
       input.style.display = "none";
       btn.style.display = "none";
       if (ok) ok.style.display = "block";
