@@ -75,8 +75,8 @@ const { t } = Astro.props;
     text-decoration: none;
   }
   .navbar__brand img {
-    width: 77px;
-    height: 77px;
+    width: 55px;
+    height: 55px;
     object-fit: contain;
     padding: 4px;
     background: rgba(255, 255, 255, 0.03);
@@ -87,6 +87,7 @@ const { t } = Astro.props;
     transform: scale(1.1);
   }
   .navbar__title {
+    font-size: 1rem;
     background: linear-gradient(
       90deg,
       #fdf6ec 30%,
@@ -127,6 +128,16 @@ const { t } = Astro.props;
   .navbar__link:hover {
     color: var(--color-white);
   }
+  .navbar__link:focus {
+    outline: 2px solid var(--color-brand-orange);
+    outline-offset: 2px;
+  }
+  .navbar__link:visited {
+    color: var(--color-brand-orange);
+  }
+  .navbar__link:active {
+    color: var(--color-white);
+  }
   .navbar__link::after {
     content: "";
     position: absolute;
@@ -159,6 +170,20 @@ const { t } = Astro.props;
     color: var(--color-white);
     text-decoration: none;
   }
+  .navbar__lang a:hover {
+    color: var(--color-brand-orange);
+    text-decoration: underline;
+  }
+  .navbar__lang a:focus {
+    outline: 2px solid var(--color-brand-orange);
+    outline-offset: 2px;
+  }
+  .navbar__lang a:visited {
+    color: var(--color-white);
+  }
+  .navbar__lang a:active {
+    color: var(--color-brand-orange);
+  }
 
   .navbar__toggle {
     display: none;
@@ -183,8 +208,9 @@ const { t } = Astro.props;
   }
 
   @media (max-width: 768px) {
+    /* Muestra hamburguesa en móvil */
     .navbar__toggle {
-      display: flex !important;
+      display: flex;
       flex-direction: column;
     }
 
@@ -195,56 +221,49 @@ const { t } = Astro.props;
       left: 0;
       width: 100%;
       background: var(--color-black);
-      padding: var(--space-8) 0;
-      z-index: 1500;
       flex-direction: column;
-      align-items: center;
-      border-bottom: 2px solid var(--color-brand-orange);
+      padding: 1rem 0;
     }
+
     .navbar__menu.is-open {
-      display: flex !important;
-    }
-    .navbar__list {
-      flex-direction: column !important;
-      align-items: center !important;
-      gap: 2.5rem !important;
+      display: flex;
+      flex-direction: column;
     }
 
     .navbar__list {
-      flex-direction: row !important;
-      margin-left: 2rem;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+      gap: 1.5rem;
     }
-    @media (max-width: 450px) {
-      .navbar__toggle {
-        display: flex !important;
-      }
-      .navbar__menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--color-black);
-        padding: var(--space-4);
-        text-align: center;
-      }
-      .navbar__menu.is-open {
-        display: flex !important;
-      }
+  }
+  @media (max-width: 300px) {
+    .navbar__toggle {
+      display: flex;
+    }
+    .navbar__menu {
+      padding: var(--space-4);
+      text-align: center;
     }
   }
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.querySelector(".navbar__toggle");
-    const menu = document.getElementById("navbar-menu");
-    if (toggle && menu) {
-      toggle.addEventListener("click", () => {
-        const isExpanded = menu.classList.toggle("is-open");
-        toggle.setAttribute("aria-expanded", isExpanded.toString());
+  const toggle = document.querySelector(".navbar__toggle");
+  const menu = document.getElementById("navbar-menu");
+  const links = document.querySelectorAll(".navbar__link");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const isExpanded = menu.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", isExpanded.toString());
+    });
+
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
       });
-    }
-  });
+    });
+  }
 </script>
