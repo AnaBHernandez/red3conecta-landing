@@ -1,4 +1,4 @@
-1. Estado: landing-page contiene Navbar/Hero recuperados y validados.
-2. Integración: Merge de `landing-page` -> `dev`.
-3. Verificación: npm run build en `dev`.
-4. Producción: Merge de `dev` -> `main` y push a origen.
+# spec.md
+1. Objetivo: Sincronizar cambios de gobernanza y especificaciones.
+2. Acción: Commit de WIKI_GOVERNANZA.md y spec.md.
+3. Commit: `docs: update governance wiki and technical spec`
