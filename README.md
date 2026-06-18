@@ -76,7 +76,7 @@ npm run dev
 
 ### Sprint 3 ✅
 | ID | Tarea | Asignado |
-|---|---|---|---|
+|---|---|---|
 | #18 | Migración i18n (ca.json + es.json) | Equipo | 
 | #31 | Mejoras de Estilos Dinámicos | Equipo | 
 | #27 | Git Merges + Deploy Netlify | Ana Belén | 
