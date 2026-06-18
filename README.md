@@ -8,7 +8,7 @@ Infraestructura digital compartida construida con el tercer sector, para el terc
 
 * **Framework:** Astro v6 (SPA, sin `layouts/`).
 * **Estilos:** CSS Nativo (`src/styles/global.css`) usando variables `:root`. PROHIBIDO: Tailwind, Bootstrap, Sass.
-* **Internacionalización (i18n):** Catalán exclusivo (Català). Textos dinámicos en `src/i18n/ca.json`. Cero hardcoded strings.
+* **Internacionalización (i18n):** Bilingüe (Català / Castellano). Textos dinámicos en `src/i18n/ca.json` y `src/i18n/es.json`. Cero hardcoded strings.
 * **Accesibilidad:** Estándar estricto WCAG AA (ARIA labels, focus visible, contraste 4.5:1).
 
 ## 🚀 Cómo empezar
@@ -59,14 +59,14 @@ Infraestructura digital compartida construida con el tercer sector, para el terc
 | #25 | Sectionseven.astro (Partners) | ✅ HECHO |
 | #30 | Sectionnine.astro (Awards) | ✅ HECHO |
 
-### Sprint 3 ⏳ EN CURSO
+### Sprint 3 ✅ COMPLETADO
 | ID | Tarea | Estado |
 |---|---|---|
-| #18 | Migración i18n (ca.json mejorado) | ⏳ EN CURSO |
-| #31 | Mejoras de Estilos Dinámicos | ⏳ EN CURSO |
-| #26 | Gestión de Recursos de Marca | ⏳ SIGUIENTE |
-| #27 | Git Merges + Deploy Netlify | ⏳ SIGUIENTE |
-| #32 | Estrategia de Calidad: QA, Accesibilidad y WCAG AA | 🔍 EN REVISIÓN |
+| #18 | Migración i18n (ca.json + es.json) | ✅ HECHO |
+| #31 | Mejoras de Estilos Dinámicos | ✅ HECHO |
+| #26 | Gestión de Recursos de Marca | ✅ HECHO |
+| #27 | Git Merges + Deploy Vercel | ✅ HECHO |
+| #32 | Estrategia de Calidad: QA, Accesibilidad y WCAG AA | ✅ HECHO |
 
 ---
 
@@ -75,7 +75,7 @@ Infraestructura digital compartida construida con el tercer sector, para el terc
 * Prohibido hacer `push` directo a `main`.
 * Prohibido incluir comentarios metodológicos en el código visual.
 * Obligatorio `npm run build` antes de cualquier `push`.
-* **100% textos en `ca.json`** — Cero hardcoded.
+* **100% textos en archivos i18n** — Cero hardcoded.
 * **CSS Puro** — Sin frameworks.
 * **WCAG AA obligatorio** — Contraste 4.5:1 mínimo.
 
@@ -84,9 +84,19 @@ Infraestructura digital compartida construida con el tercer sector, para el terc
 ## 🔗 Enlaces
 
 * **Wiki:** https://github.com/AnaBHernandez/red3conecta-landing/wiki
-* **Deploy:** https://red3conecta.netlify.app (próximamente)
+* **Projects:** https://github.com/users/AnaBHernandez/projects/13
+* **Deploy:** https://red3conecta-landing.vercel.app/ 
 * **Rama compartida:** `landing-page`
 
 ---
 
-**Última actualización:** 13/06/2026 | Ana Belén (Scrum Master)
+## 👥 Equipo
+
+| Desarrolladora | Página | Responsabilidad |
+|---|---|---|
+| [Paula](https://github.com/paulova0121-alt) 
+| [Cynthia](https://github.com/Zebdon) 
+| [Ana Belén](https://github.com/AnaBHernandez) 
+| [Jessica](https://github.com/rodriguezjessika36-debug) 
+
+**Última actualización:** 18/06/2026 | Ana Belén (Scrum Master)
