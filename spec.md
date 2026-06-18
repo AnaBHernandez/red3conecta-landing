@@ -1,3 +1,3 @@
-1. Objetivo: Sincronizar README.md y spec.md con el estado final de producción.
-2. Acción: Commit y push a la rama `dev`.
-3. Commit: `docs: update deployment links and i18n support in readme`
+1. Objetivo: Sincronizar cambios en el entorno y registro de trabajo.
+2. Acción: Confirmar cambios en `package-lock.json` y `spec.md` (DoD final).
+3. Commit: `chore: update dependencies and finalize sprint 3 spec`
