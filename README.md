@@ -75,8 +75,8 @@ npm run dev
 | #30 | Sectionnine.astro | Jessica |
 
 ### Sprint 3 ✅
-| ID | Tarea | Asignado | Estado |
-|---|---|---|---|
+| ID | Tarea | Asignado |
+|---|---|---|
 | #18 | Migración i18n (ca.json + es.json) | Equipo | 
 | #31 | Mejoras de Estilos Dinámicos | Equipo | 
 | #27 | Git Merges + Deploy Netlify | Ana Belén | 
@@ -101,23 +101,19 @@ npm run dev
 
 ## 🔗 Enlaces
 
-| | |
-|---|---|
-| **Repositorio** | https://github.com/AnaBHernandez/red3conecta-astro-landing |
-| **Wiki** | https://github.com/AnaBHernandez/red3conecta-landing/wiki |
-| **Board** | https://github.com/users/AnaBHernandez/projects/13 |
-| **Deploy** | https://red3conecta-landing.netlify.app |
+- 📁 **Repositorio:** https://github.com/AnaBHernandez/red3conecta-astro-landing
+- 📖 **Wiki:** https://github.com/AnaBHernandez/red3conecta-landing/wiki
+- 📋 **Board:** https://github.com/users/AnaBHernandez/projects/13
+- 🚀 **Deploy:** https://red3conecta-landing.netlify.app
 
 ---
 
 ## 👥 Equipo
 
-| Rol | Persona |
-|---|---|
-| Scrum Master | [Ana Belén](https://github.com/AnaBHernandez) |
-| Product Owner | [Paula](https://github.com/paulova0121-alt) |
-| Dev | [Cintia](https://github.com/Zebdon) |
-| Dev | [Jessica](https://github.com/rodriguezjessika36-debug) |
+- 🧭 **Scrum Master:** [Ana Belén](https://github.com/AnaBHernandez)
+- 📌 **Product Owner:** [Paula](https://github.com/paulova0121-alt)
+- 💻 **Dev:** [Cintia](https://github.com/Zebdon)
+- 💻 **Dev:** [Jessica](https://github.com/rodriguezjessika36-debug)
 
 ---
 
