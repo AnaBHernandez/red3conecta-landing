@@ -2,7 +2,7 @@ name: CI Red3Conecta
 
 on:
   push:
-    branches: [ landing-page, dev, main ]
+    branches: [ landing-page, staging, dev, main ]
   pull_request:
     branches: [ main ]
 

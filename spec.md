@@ -1,5 +1,5 @@
 # spec.md
-Objetivo: Guardar el estado actual del Sprint 4 en la rama 'landing-page'.
-1. Registrar cambios en PRODUCT_LOG.md y WIKI_GOVERNANZA.md.
-2. Hacer commit de las actualizaciones.
-3. Asegurar repositorio limpio antes de cambiar de rama.
+Objetivo: Sincronizar actualización del workflow en todas las ramas para activar CI/CD.
+1. Commit del archivo .github/workflows/main.yml actualizado.
+2. Push a las ramas 'landing-page', 'dev' y 'staging'.
+3. Verificación de disparos en la pestaña Actions.
