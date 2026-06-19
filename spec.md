@@ -1,4 +1,3 @@
-# Objetivo: Optimizar triggers del CI/CD
-1. Actualizar `on.pull_request.branches` para incluir `staging` y `dev`.
-2. Asegurar consistencia de entorno Node.js 22.
-3. Mantener triggers de `push` intactos.
+1. Objetivo: Sincronizar cambios en el entorno y registro de trabajo.
+2. Acción: Confirmar cambios en `package-lock.json` y `spec.md` (DoD final).
+3. Commit: `chore: update dependencies and finalize sprint 3 spec`

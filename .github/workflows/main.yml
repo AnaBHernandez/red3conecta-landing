@@ -4,7 +4,7 @@ on:
   push:
     branches: [ landing-page, staging, dev, main ]
   pull_request:
-    branches: [ main, staging, dev ]
+    branches: [ main, staging, dev ]  
 
 jobs:
   validate:
