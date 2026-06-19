@@ -1,5 +1,5 @@
 # spec.md
-Objetivo: Guardar el estado actual del Sprint 4 en la rama 'landing-page'.
-1. Registrar cambios en PRODUCT_LOG.md y WIKI_GOVERNANZA.md.
-2. Hacer commit de las actualizaciones.
-3. Asegurar repositorio limpio antes de cambiar de rama.
+# Objetivo: Actualizar triggers de CI/CD para incluir staging y dev en PRs
+1. Modificar on.pull_request.branches incluyendo staging y dev.
+2. Mantener triggers actuales de push.
+3. Commit usando convención semántica en inglés.
