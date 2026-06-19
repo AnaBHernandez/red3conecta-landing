@@ -24,7 +24,12 @@
 - ✅ #27 Despliegue Manual a Netlify (Preparado para entrega el 19/06)
 - ⏳ #26 Gestión Recursos Marca (Pendiente)
 
+## Sprint 4 — Finalizado (Jun 19, 2026)
+- [x] #33 Limpieza de ramas obsoletas (remote & local).
+- [x] #34 Creación de rama 'staging' (puente entre dev/main).
+- [x] #35 Implementación de CI/CD (GitHub Actions) en '.github/workflows/main.yml'.
+- ✅ QA técnico: Auditoría WCAG AA completada; todos los estados de enlace verificados.
+- ✅ Despliegue: Proyecto validado y listo para entrega en Vercel.
+
 ---
-*Rama de trabajo actual: dev (tras el merge de landing-page)*
-*Estado: Todo el código integrado y limpio de workflows de Actions.*
-*Próximo paso: Validación QA final y despliegue manual en Netlify.*
+*Estado: PROYECTO FINALIZADO. Listo para despliegue manual en Netlify.*

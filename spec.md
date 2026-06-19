@@ -1,4 +1,5 @@
-1. Verificar configuración de Astro: asegurar que `dist/` es el directorio de salida.
-2. Comprobación de dependencias: confirmar `npm run build` sin errores.
-3. Despliegue: ejecutar comando de despliegue o configurar Vercel desde panel web.
-4. QA post-despliegue: verificar URL de producción y accesibilidad global.
+# spec.md
+# Objetivo: Actualizar triggers de CI/CD para incluir staging y dev en PRs
+1. Modificar on.pull_request.branches incluyendo staging y dev.
+2. Mantener triggers actuales de push.
+3. Commit usando convención semántica en inglés.
