@@ -31,10 +31,11 @@
 
 ---
 
-## 4. Git Flow
-`landing-page` (trabajo diario) 
-→ `dev` (integración continua) 
-→ `main` (producción Vercel)
+## 4. Política de ramas
+- main: Rama sagrada de producción.
+- staging: Rama de integración final (pre-prod).
+- dev: Rama de integración de Sprints.
+- landing-page: Rama de desarrollo de componentes.
 
 ---
 

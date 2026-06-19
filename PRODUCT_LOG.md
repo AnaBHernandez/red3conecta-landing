@@ -25,6 +25,12 @@
 - ✅ #26: Gestión de Recursos de Marca.
 - ✅ #27: Merge final a dev y despliegue exitoso en Vercel.
 
+## Sprint 4 — En curso (Jun 19, 2026)
+- [x] #33 Limpieza de ramas obsoletas (remote & local).
+- [x] #34 Creación de rama 'staging' (puente entre dev/main).
+- [x] #35 Implementación de CI/CD (GitHub Actions) en '.github/workflows/main.yml'.
+
 ---
+
 *Rama de trabajo actual: dev (tras el merge de landing-page)*
 *Última actualización: 18/06/2026 | Ana Belén (Scrum Master)*
