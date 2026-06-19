@@ -52,7 +52,10 @@ const { t } = Astro.props;
   .navbar {
     background-color: var(--color-black);
     padding: 0.5rem 0;
-    position: sticky;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid var(--color-accent);
