@@ -1,5 +1,4 @@
-# spec.md
-Objetivo: Sincronizar actualización del workflow en todas las ramas para activar CI/CD.
-1. Commit del archivo .github/workflows/main.yml actualizado.
-2. Push a las ramas 'landing-page', 'dev' y 'staging'.
-3. Verificación de disparos en la pestaña Actions.
+# Objetivo: Optimizar triggers del CI/CD
+1. Actualizar `on.pull_request.branches` para incluir `staging` y `dev`.
+2. Asegurar consistencia de entorno Node.js 22.
+3. Mantener triggers de `push` intactos.
