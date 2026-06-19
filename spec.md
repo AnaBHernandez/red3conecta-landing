@@ -1,4 +1,5 @@
-1. Verificar configuración de Astro: asegurar que `dist/` es el directorio de salida.
-2. Comprobación de dependencias: confirmar `npm run build` sin errores.
-3. Despliegue: ejecutar comando de despliegue o configurar Vercel desde panel web.
-4. QA post-despliegue: verificar URL de producción y accesibilidad global.
+# spec.md
+Objetivo: Guardar el estado actual del Sprint 4 en la rama 'landing-page'.
+1. Registrar cambios en PRODUCT_LOG.md y WIKI_GOVERNANZA.md.
+2. Hacer commit de las actualizaciones.
+3. Asegurar repositorio limpio antes de cambiar de rama.
