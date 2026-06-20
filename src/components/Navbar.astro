@@ -78,8 +78,8 @@ const { t } = Astro.props;
     text-decoration: none;
   }
   .navbar__brand img {
-    width: 77px;
-    height: 77px;
+    width: 55px;
+    height: 55px;
     object-fit: contain;
     padding: 4px;
     background: rgba(255, 255, 255, 0.03);
@@ -130,6 +130,16 @@ const { t } = Astro.props;
   .navbar__link:hover {
     color: var(--color-white);
   }
+  .navbar__link:focus {
+    outline: 2px solid var(--color-brand-orange);
+    outline-offset: 2px;
+  }
+  .navbar__link:visited {
+    color: var(--color-brand-orange);
+  }
+  .navbar__link:active {
+    color: var(--color-white);
+  }
   .navbar__link::after {
     content: "";
     position: absolute;
@@ -162,9 +172,23 @@ const { t } = Astro.props;
     color: var(--color-white);
     text-decoration: none;
   }
+  .navbar__lang a:hover {
+    color: var(--color-brand-orange);
+    text-decoration: underline;
+  }
+  .navbar__lang a:focus {
+    outline: 2px solid var(--color-brand-orange);
+    outline-offset: 2px;
+  }
+  .navbar__lang a:visited {
+    color: var(--color-white);
+  }
+  .navbar__lang a:active {
+    color: var(--color-brand-orange);
+  }
 
   .navbar__toggle {
-    display: none !important;
+    display: none;
     background: none;
     padding: 0.5rem;
     cursor: pointer;
@@ -186,66 +210,78 @@ const { t } = Astro.props;
   }
 
   @media (max-width: 768px) {
-    .navbar {
-      padding: 1rem 0 !important; /* Más aire arriba y abajo */
-      min-height: 80px; /* Altura mínima para que el logo respire */
-    }
     .navbar__container {
-      flex-wrap: wrap; /* ¡Clave! Permite que los elementos se muevan si no caben */
-      padding: 0 1.5rem !important;
+      flex-wrap: nowrap !important;
+      padding: 0 0.5rem !important;
     }
-    .navbar__brand img {     
-    width: 55px !important;  /* Un pelín más grande que 45px */
-    height: 55px !important;
-  }
-    }
-    .navbar__title {
-      font-size: 0.9rem !important; /* Título más pequeño */
-    }
-    .navbar__lang {
-      font-size: 0.7rem !important;
-      gap: 0.2rem !important;
-      margin-left: 0.5rem !important;
-    }
+    /* Muestra hamburguesa en móvil */
     .navbar__toggle {
-      display: flex !important;
+      display: flex;
       flex-direction: column;
-      justify-content: center;
-      margin-left: 0.5rem;
     }
     .navbar__menu {
       display: none;
       position: fixed;
-      top: 80%;
+      top: 80px;
       left: 0;
       width: 100vw;
       height: calc(100vh - 80px);
       background: var(--color-black);
-      padding: 2rem;
       z-index: 9999;
-      flex-direction: column; /* Asegura que los elementos se apilen */
+      flex-direction: column;
       align-items: center;
+      justify-content: center; /* Centra los enlaces verticalmente */
     }
-
     .navbar__menu.is-open {
       display: flex !important;
     }
-    .navbar__right-group {
-      display: flex !important;
-      align-items: center !important;
+
+    .navbar__brand img {
+      width: 45px !important; /* Más pequeño para dejar sitio */
+      height: 45px !important;
+    }
+    .navbar__title {
+      font-size: 0.8rem !important; /* Título reducido para pantallas muy estrechas */
+    }
+
+    .navbar__lang {
+      font-size: 0.7rem !important;
+      margin-left: 0.2rem !important;
+    }
+
+    .navbar__list {
+      flex-direction: column;
+      gap: 2rem;
+      margin-left: 0;
+    }
+  }
+  @media (max-width: 300px) {
+    .navbar__toggle {
+      display: flex;
+    }
+    .navbar__menu {
+      padding: var(--space-4);
+      text-align: center;
     }
   }
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.querySelector(".navbar__toggle");
-    const menu = document.getElementById("navbar-menu");
-    if (toggle && menu) {
-      toggle.addEventListener("click", () => {
-        const isExpanded = menu.classList.toggle("is-open");
-        toggle.setAttribute("aria-expanded", isExpanded.toString());
+  const toggle = document.querySelector(".navbar__toggle");
+  const menu = document.getElementById("navbar-menu");
+  const links = document.querySelectorAll(".navbar__link");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const isExpanded = menu.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", isExpanded.toString());
+    });
+
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
       });
-    }
-  });
+    });
+  }
 </script>
