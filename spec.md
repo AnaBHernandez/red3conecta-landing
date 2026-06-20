@@ -1,3 +1,4 @@
-1. Objetivo: Sincronizar cambios en el entorno y registro de trabajo.
-2. Acción: Confirmar cambios en `package-lock.json` y `spec.md` (DoD final).
-3. Commit: `chore: update dependencies and finalize sprint 3 spec`
+1. Verificar configuración de Astro: asegurar que `dist/` es el directorio de salida.
+2. Comprobación de dependencias: confirmar `npm run build` sin errores.
+3. Despliegue: ejecutar comando de despliegue o configurar Vercel desde panel web.
+4. QA post-despliegue: verificar URL de producción y accesibilidad global.

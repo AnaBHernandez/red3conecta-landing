@@ -210,33 +210,49 @@ const { t } = Astro.props;
   }
 
   @media (max-width: 768px) {
+    .navbar__container {
+      flex-wrap: nowrap !important;
+      padding: 0 0.5rem !important;
+    }
     /* Muestra hamburguesa en móvil */
     .navbar__toggle {
       display: flex;
       flex-direction: column;
     }
-
     .navbar__menu {
       display: none;
-      position: absolute;
-      top: 100%;
+      position: fixed;
+      top: 80px;
       left: 0;
-      width: 100%;
+      width: 100vw;
+      height: calc(100vh - 80px);
       background: var(--color-black);
+      z-index: 9999;
       flex-direction: column;
-      padding: 1rem 0;
+      align-items: center;
+      justify-content: center; /* Centra los enlaces verticalmente */
+    }
+    .navbar__menu.is-open {
+      display: flex !important;
     }
 
-    .navbar__menu.is-open {
-      display: flex;
-      flex-direction: column;
+    .navbar__brand img {
+      width: 45px !important; /* Más pequeño para dejar sitio */
+      height: 45px !important;
+    }
+    .navbar__title {
+      font-size: 0.8rem !important; /* Título reducido para pantallas muy estrechas */
+    }
+
+    .navbar__lang {
+      font-size: 0.7rem !important;
+      margin-left: 0.2rem !important;
     }
 
     .navbar__list {
       flex-direction: column;
-      align-items: center;
+      gap: 2rem;
       margin-left: 0;
-      gap: 1.5rem;
     }
   }
   @media (max-width: 300px) {

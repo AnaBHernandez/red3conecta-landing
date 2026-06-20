@@ -48,7 +48,6 @@
 * ** [x] Accesibilidad (WCAG AA): Navegación por teclado, estados :hover/:focus y contraste verificado (4.5:1).✅
 * ** [x] Integridad: PRODUCT_LOG.md y README.md sincronizados con el estado real del Board.✅
 
-
 ---
 
 *Última actualización: 18/06/2026 | Ana Belén (Scrum Master)*
