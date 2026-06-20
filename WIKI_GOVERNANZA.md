@@ -32,11 +32,20 @@
 
 ---
 
-## 4. Política de ramas
-- main: Rama sagrada de producción.
-- staging: Rama de integración final (pre-prod).
-- dev: Rama de integración de Sprints.
-- landing-page: Rama de desarrollo de componentes.
+## 4. Git Flow (Rama Compartida)
+`styles-changes` (revisión actual)
+
+↓ [después de aprobación]
+
+`landing-page` (compartida)
+
+↓ [Ana mergea]
+
+`dev` (integración)
+
+↓ [Ana mergea]
+
+`main` (producción)
 
 ---
 
