@@ -36,3 +36,6 @@ Thumbs.db
 ehthumbs.db
 desktop.ini
 >>>>>>> landing-page
+
+# Excluir carpeta de documentación técnica
+docs/
